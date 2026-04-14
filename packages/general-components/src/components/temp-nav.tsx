@@ -10,6 +10,7 @@ const navLinks = [
 function TempNav({ className, ...props }: React.ComponentProps<'nav'>) {
   return (
     <nav
+      data-component="temp-nav"
       className={cn('flex items-center justify-between', className)}
       {...props}
     >
