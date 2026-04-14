@@ -24,6 +24,13 @@ import { Skeleton } from '../components/ui/skeleton';
 import { ScrollArea } from '../components/ui/scroll-area';
 import { AspectRatio } from '../components/ui/aspect-ratio';
 import { TempNav } from '../components/temp-nav';
+import { CassetteCarousel } from '../components/cassette-carousel';
+import { Playlist } from '../components/playlist';
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '../components/ui/tooltip';
 
 function Section({
   title,
@@ -171,6 +178,30 @@ export default function UiKitPage() {
         </Dialog>
       </Section>
 
+      {/* Tooltip */}
+      <Section title="Tooltip">
+        <div className="flex flex-wrap gap-4">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline">Hover me</Button>
+            </TooltipTrigger>
+            <TooltipContent>This is a tooltip</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="secondary">With delay</Button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">Appears on the bottom</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Badge variant="outline" className="cursor-default">Badge tooltip</Badge>
+            </TooltipTrigger>
+            <TooltipContent side="right">Works on any element</TooltipContent>
+          </Tooltip>
+        </div>
+      </Section>
+
       {/* Separator */}
       <Section title="Separator">
         <div className="space-y-4">
@@ -229,6 +260,48 @@ export default function UiKitPage() {
             ))}
           </div>
         </ScrollArea>
+      </Section>
+
+      {/* Cassette Carousel */}
+      <Section title="Cassette Carousel">
+        <div className="space-y-6">
+          <div>
+            <p className="mb-2 text-sm text-[var(--sea-ink-soft)]">
+              Horizontal (default)
+            </p>
+            <CassetteCarousel
+              slides={[
+                { id: '1', label: 'Side A', sublabel: 'Mixtape Vol. 1', modalContent: <p>Content for Side A</p> },
+                { id: '2', label: 'Side B', sublabel: 'Chill Vibes', modalContent: <p>Content for Side B</p> },
+                { id: '3', label: 'Demo', sublabel: 'Unreleased', modalContent: <p>Demo tape content</p> },
+                { id: '4', label: 'Lo-Fi', sublabel: 'Late Night', modalContent: <p>Lo-fi tape content</p> },
+              ]}
+            />
+          </div>
+          <div>
+            <p className="mb-2 text-sm text-[var(--sea-ink-soft)]">
+              Vertical
+            </p>
+            <CassetteCarousel
+              orientation="vertical"
+              className="h-64"
+              slides={[
+                { id: '1', label: 'Track 1', sublabel: 'Intro' },
+                { id: '2', label: 'Track 2', sublabel: 'Main Theme' },
+                { id: '3', label: 'Track 3', sublabel: 'Outro' },
+              ]}
+            />
+          </div>
+        </div>
+      </Section>
+
+      {/* Playlist */}
+      <Section title="Playlist">
+        <Playlist
+          videos={[
+            { id: 'vteCosE9qnM', title: 'Track 1' },
+          ]}
+        />
       </Section>
     </main>
   );

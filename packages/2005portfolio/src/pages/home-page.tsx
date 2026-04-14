@@ -16,7 +16,7 @@ export default function HomePage() {
             <TempNav />
           </div>
         </header>
-        <section className="grid grid-cols-[150px_1fr] gap-8 mt-4">
+        <section className="grid grid-cols-[175px_1fr] gap-4 mt-4">
           <SidebarOld />
           <section className=" h-[calc(100vh-670px)] border p-4 overflow-hidden">
             <ScrollArea className='h-1/2'>

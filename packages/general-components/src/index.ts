@@ -40,6 +40,16 @@ export { ScrollArea, ScrollBar } from './components/ui/scroll-area';
 export { Separator } from './components/ui/separator';
 export { Skeleton } from './components/ui/skeleton';
 export { TempNav } from './components/temp-nav';
+export { CassetteCarousel } from './components/cassette-carousel';
+export type { CassetteSlide, CassetteCarouselProps } from './components/cassette-carousel';
+export { Playlist } from './components/playlist';
+export type { PlaylistVideo, PlaylistProps } from './components/playlist';
+export {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './components/ui/tooltip';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';

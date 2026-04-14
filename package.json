@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@2005portfolio/feature": "*",
-    "@json/data": "*",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@general/components": "*",
+    "@json/data": "*",
     "@modern/feature": "*",
     "@phosphor-icons/react": "^2.1.10",
     "@tailwindcss/vite": "^4.1.18",
@@ -52,6 +52,7 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@types/youtube": "^0.2.0",
     "@vitejs/plugin-react": "^5.1.4",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
