@@ -15,14 +15,20 @@
     "paths": {
       "#/*": ["./src/*"],
       "@/*": ["./src/*"],
+      "@general/components": ["./packages/general-components/src/index.ts"],
       "@general/components/*": ["./packages/general-components/src/components/ui/*"],
-      "@general/lib/*": ["./packages/general-components/src/lib/*"]
+      "@general/pages/*": ["./packages/general-components/src/pages/*"],
+      "@general/lib/*": ["./packages/general-components/src/lib/*"],
+      "@modern/*": ["./packages/modern/src/*"],
+      "@2005portfolio/*": ["./packages/2005portfolio/src/*"],
+      "@json/*": ["./packages/json/src/*"]
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,

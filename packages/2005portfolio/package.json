@@ -1,5 +1,5 @@
 {
-  "name": "@general/components",
+  "name": "@2005portfolio/feature",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -7,9 +7,7 @@
   "types": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./ui/*": "./src/components/ui/*",
-    "./pages/*": "./src/pages/*",
-    "./lib/*": "./src/lib/*"
+    "./*": "./src/*"
   },
   "peerDependencies": {
     "react": "^19.0.0",

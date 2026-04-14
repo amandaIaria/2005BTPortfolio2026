@@ -1,5 +1,6 @@
 // UI Components
 export { AspectRatio } from './components/ui/aspect-ratio';
+export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
 export {
   Card,
@@ -37,6 +38,10 @@ export {
 export { ScrollArea, ScrollBar } from './components/ui/scroll-area';
 export { Separator } from './components/ui/separator';
 export { Skeleton } from './components/ui/skeleton';
+export { TempNav } from './components/temp-nav';
+
+// Pages
+export { default as UiKitPage } from './pages/ui-kit-page';
 
 // Utilities
 export { cn } from './lib/utils';
