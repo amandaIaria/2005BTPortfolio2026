@@ -2,6 +2,7 @@
 export { AspectRatio } from './components/ui/aspect-ratio';
 export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
+export { Container } from './components/ui/container';
 export {
   Card,
   CardHeader,

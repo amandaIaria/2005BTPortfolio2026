@@ -137,6 +137,17 @@ Invoke in Copilot chat with `/<skill-name>`.
 - Import UI components from the package: `import { Button } from '@general/components/button'`
 - Import utilities from the package: `import { cn } from '@general/lib/utils'`
 - Add new shadcn components via `npx shadcn@latest add <name>` (they land in the package per `components.json`)
+- The parent/root element of every component must include a `data-component` attribute with the component name in kebab-case:
+
+```tsx
+function ImageHeader({ ... }: ImageHeaderProps) {
+  return (
+    <div data-component="image-header" className={cn('relative', className)}>
+      ...
+    </div>
+  );
+}
+```
 
 ## Styling
 
