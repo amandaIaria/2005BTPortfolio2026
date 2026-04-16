@@ -1,7 +1,7 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router';
+import { Outlet, createRootRoute, useNavigate } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { TooltipProvider } from '@general/components';
+import { AppHeader, TooltipProvider } from '@general/components';
 
 import '../styles.css';
 
@@ -10,8 +10,11 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const nav = useNavigate();
+
   return (
     <TooltipProvider>
+      <AppHeader navigate={(path) => nav({ to: path })} />
       <Outlet />
       <TanStackDevtools
         config={{

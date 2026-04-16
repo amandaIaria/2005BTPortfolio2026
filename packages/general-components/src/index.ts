@@ -3,6 +3,7 @@ export { AspectRatio } from './components/ui/aspect-ratio';
 export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
 export { Container } from './components/ui/container';
+export { Switch } from './components/ui/switch';
 export {
   Card,
   CardHeader,
@@ -44,6 +45,14 @@ export { CassetteCarousel } from './components/cassette-carousel';
 export type { CassetteSlide, CassetteCarouselProps } from './components/cassette-carousel';
 export { Playlist } from './components/playlist';
 export type { PlaylistVideo, PlaylistProps } from './components/playlist';
+export { AnimatedFooter } from './components/animated-footer';
+export type { AnimatedFooterProps } from './components/animated-footer';
+export { TentacleFooter } from './components/tentacle-footer';
+export type { TentacleFooterProps } from './components/tentacle-footer';
+export { SpriteAnimation } from './components/sprite-animation';
+export type { SpriteAnimationProps } from './components/sprite-animation';
+export { AppHeader } from './components/app-header';
+export type { AppHeaderProps, ThemeVariant, ColorMode } from './components/app-header';
 export {
   Tooltip,
   TooltipContent,

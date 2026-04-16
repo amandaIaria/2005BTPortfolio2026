@@ -148,6 +148,7 @@ function ImageHeader({ ... }: ImageHeaderProps) {
   );
 }
 ```
+- When creating a new general component, add a live example to the UI Kit page at `packages/general-components/src/pages/ui-kit-page.tsx` using the `<Section title="ComponentName">` wrapper
 
 ## Styling
 

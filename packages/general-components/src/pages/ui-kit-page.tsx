@@ -26,6 +26,11 @@ import { AspectRatio } from '../components/ui/aspect-ratio';
 import { TempNav } from '../components/temp-nav';
 import { CassetteCarousel } from '../components/cassette-carousel';
 import { Playlist } from '../components/playlist';
+import { AnimatedFooter } from '../components/animated-footer';
+import { TentacleFooter } from '../components/tentacle-footer';
+import { SpriteAnimation } from '../components/sprite-animation';
+import { AppHeader } from '../components/app-header';
+import { Switch } from '../components/ui/switch';
 import {
   Tooltip,
   TooltipTrigger,
@@ -53,7 +58,7 @@ export default function UiKitPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <main className="page-wrap space-y-10 px-4 pb-16 pt-14">
+    <main className="page-wrap bg-black text-foreground space-y-10 px-4 pb-16 pt-14">
       <header>
         <TempNav />
       </header>
@@ -69,6 +74,29 @@ export default function UiKitPage() {
       </div>
 
       <Separator />
+
+      {/* Switch */}
+      <Section title="Switch">
+        <div className="flex flex-wrap items-center gap-6">
+          <div className="flex items-center gap-2">
+            <Switch id="switch-demo" />
+            <label htmlFor="switch-demo" className="text-sm">Default</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Switch id="switch-sm" size="sm" />
+            <label htmlFor="switch-sm" className="text-sm">Small</label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Switch id="switch-disabled" disabled />
+            <label htmlFor="switch-disabled" className="text-sm text-muted-foreground">Disabled</label>
+          </div>
+        </div>
+      </Section>
+
+      {/* App Header */}
+      <Section title="App Header">
+        <AppHeader className="rounded-lg border border-[var(--line)] bg-[var(--surface)]" />
+      </Section>
 
       {/* Buttons */}
       <Section title="Button">
@@ -302,6 +330,51 @@ export default function UiKitPage() {
             { id: 'vteCosE9qnM', title: 'Track 1' },
           ]}
         />
+      </Section>
+
+      {/* Animated Footer */}
+      <Section title="Animated Footer">
+        <AnimatedFooter
+          text="© 2026 Portfolio"
+          className="rounded-lg"
+        />
+      </Section>
+
+      {/* Tentacle Footer */}
+      <Section title="Tentacle Footer">
+        <TentacleFooter
+          text="© 2026 Portfolio"
+          className="rounded-lg"
+        />
+      </Section>
+
+      {/* Sprite Animation */}
+      <Section title="Sprite Animation">
+        <div className="flex flex-wrap items-end gap-6">
+          <SpriteAnimation
+            src="/tenacleAsset.png"
+            columns={10}
+            rows={2}
+            frameCount={20}
+            frameWidth={150}
+            frameHeight={150}
+            duration={1600}
+          />
+          <SpriteAnimation
+            src="/tenacleAsset.png"
+            columns={10}
+            rows={2}
+            frameCount={20}
+            frameWidth={150}
+            frameHeight={150}
+            duration={1600}
+            scale={0.5}
+          />
+        </div>
+        <p className="mt-3 text-sm text-white/60">
+          Uses <code>tenacleAsset.png</code> sprite sheet — 10 columns × 2 rows, 20 frames.
+          Adjust <code>frameWidth</code>/<code>frameHeight</code> to match your sprite dimensions.
+        </p>
       </Section>
     </main>
   );

@@ -10,11 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UiKitRouteImport } from './routes/ui-kit'
+import { Route as ModernRouteRouteImport } from './routes/modern/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ModernIndexRouteImport } from './routes/modern/index'
 
 const UiKitRoute = UiKitRouteImport.update({
   id: '/ui-kit',
   path: '/ui-kit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModernRouteRoute = ModernRouteRouteImport.update({
+  id: '/modern',
+  path: '/modern',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,30 +29,41 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ModernIndexRoute = ModernIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/modern': typeof ModernRouteRouteWithChildren
   '/ui-kit': typeof UiKitRoute
+  '/modern/': typeof ModernIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ui-kit': typeof UiKitRoute
+  '/modern': typeof ModernIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/modern': typeof ModernRouteRouteWithChildren
   '/ui-kit': typeof UiKitRoute
+  '/modern/': typeof ModernIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ui-kit'
+  fullPaths: '/' | '/modern' | '/ui-kit' | '/modern/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ui-kit'
-  id: '__root__' | '/' | '/ui-kit'
+  to: '/' | '/ui-kit' | '/modern'
+  id: '__root__' | '/' | '/modern' | '/ui-kit' | '/modern/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ModernRouteRoute: typeof ModernRouteRouteWithChildren
   UiKitRoute: typeof UiKitRoute
 }
 
@@ -58,6 +76,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/modern': {
+      id: '/modern'
+      path: '/modern'
+      fullPath: '/modern'
+      preLoaderRoute: typeof ModernRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -65,11 +90,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/modern/': {
+      id: '/modern/'
+      path: '/'
+      fullPath: '/modern/'
+      preLoaderRoute: typeof ModernIndexRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
   }
 }
 
+interface ModernRouteRouteChildren {
+  ModernIndexRoute: typeof ModernIndexRoute
+}
+
+const ModernRouteRouteChildren: ModernRouteRouteChildren = {
+  ModernIndexRoute: ModernIndexRoute,
+}
+
+const ModernRouteRouteWithChildren = ModernRouteRoute._addFileChildren(
+  ModernRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ModernRouteRoute: ModernRouteRouteWithChildren,
   UiKitRoute: UiKitRoute,
 }
 export const routeTree = rootRouteImport
