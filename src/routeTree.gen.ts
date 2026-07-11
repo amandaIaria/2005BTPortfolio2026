@@ -9,12 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as UiKitRouteImport } from './routes/ui-kit'
+import { Route as UiKitRouteRouteImport } from './routes/ui-kit/route'
 import { Route as ModernRouteRouteImport } from './routes/modern/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UiKitIndexRouteImport } from './routes/ui-kit/index'
 import { Route as ModernIndexRouteImport } from './routes/modern/index'
+import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/webgl-tentacle-footer'
 
-const UiKitRoute = UiKitRouteImport.update({
+const UiKitRouteRoute = UiKitRouteRouteImport.update({
   id: '/ui-kit',
   path: '/ui-kit',
   getParentRoute: () => rootRouteImport,
@@ -29,42 +31,71 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UiKitIndexRoute = UiKitIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => UiKitRouteRoute,
+} as any)
 const ModernIndexRoute = ModernIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ModernRouteRoute,
 } as any)
+const UiKitWebglTentacleFooterRoute =
+  UiKitWebglTentacleFooterRouteImport.update({
+    id: '/webgl-tentacle-footer',
+    path: '/webgl-tentacle-footer',
+    getParentRoute: () => UiKitRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/modern': typeof ModernRouteRouteWithChildren
-  '/ui-kit': typeof UiKitRoute
+  '/ui-kit': typeof UiKitRouteRouteWithChildren
+  '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
+  '/ui-kit/': typeof UiKitIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/ui-kit': typeof UiKitRoute
+  '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern': typeof ModernIndexRoute
+  '/ui-kit': typeof UiKitIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/modern': typeof ModernRouteRouteWithChildren
-  '/ui-kit': typeof UiKitRoute
+  '/ui-kit': typeof UiKitRouteRouteWithChildren
+  '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
+  '/ui-kit/': typeof UiKitIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/modern' | '/ui-kit' | '/modern/'
+  fullPaths:
+    | '/'
+    | '/modern'
+    | '/ui-kit'
+    | '/ui-kit/webgl-tentacle-footer'
+    | '/modern/'
+    | '/ui-kit/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ui-kit' | '/modern'
-  id: '__root__' | '/' | '/modern' | '/ui-kit' | '/modern/'
+  to: '/' | '/ui-kit/webgl-tentacle-footer' | '/modern' | '/ui-kit'
+  id:
+    | '__root__'
+    | '/'
+    | '/modern'
+    | '/ui-kit'
+    | '/ui-kit/webgl-tentacle-footer'
+    | '/modern/'
+    | '/ui-kit/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ModernRouteRoute: typeof ModernRouteRouteWithChildren
-  UiKitRoute: typeof UiKitRoute
+  UiKitRouteRoute: typeof UiKitRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -73,7 +104,7 @@ declare module '@tanstack/react-router' {
       id: '/ui-kit'
       path: '/ui-kit'
       fullPath: '/ui-kit'
-      preLoaderRoute: typeof UiKitRouteImport
+      preLoaderRoute: typeof UiKitRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/modern': {
@@ -90,12 +121,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ui-kit/': {
+      id: '/ui-kit/'
+      path: '/'
+      fullPath: '/ui-kit/'
+      preLoaderRoute: typeof UiKitIndexRouteImport
+      parentRoute: typeof UiKitRouteRoute
+    }
     '/modern/': {
       id: '/modern/'
       path: '/'
       fullPath: '/modern/'
       preLoaderRoute: typeof ModernIndexRouteImport
       parentRoute: typeof ModernRouteRoute
+    }
+    '/ui-kit/webgl-tentacle-footer': {
+      id: '/ui-kit/webgl-tentacle-footer'
+      path: '/webgl-tentacle-footer'
+      fullPath: '/ui-kit/webgl-tentacle-footer'
+      preLoaderRoute: typeof UiKitWebglTentacleFooterRouteImport
+      parentRoute: typeof UiKitRouteRoute
     }
   }
 }
@@ -112,10 +157,24 @@ const ModernRouteRouteWithChildren = ModernRouteRoute._addFileChildren(
   ModernRouteRouteChildren,
 )
 
+interface UiKitRouteRouteChildren {
+  UiKitWebglTentacleFooterRoute: typeof UiKitWebglTentacleFooterRoute
+  UiKitIndexRoute: typeof UiKitIndexRoute
+}
+
+const UiKitRouteRouteChildren: UiKitRouteRouteChildren = {
+  UiKitWebglTentacleFooterRoute: UiKitWebglTentacleFooterRoute,
+  UiKitIndexRoute: UiKitIndexRoute,
+}
+
+const UiKitRouteRouteWithChildren = UiKitRouteRoute._addFileChildren(
+  UiKitRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ModernRouteRoute: ModernRouteRouteWithChildren,
-  UiKitRoute: UiKitRoute,
+  UiKitRouteRoute: UiKitRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
