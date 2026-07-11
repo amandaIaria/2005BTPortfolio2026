@@ -59,7 +59,9 @@ export function SidebarOld({
             <a href="#">
               <img src="https://lupinus.neocities.org/phantomoftheparadisestamp.png" alt="" />
             </a> 
-
+            <a href="#">
+              <img src="https://decayedg1rl.neocities.org/buttons/lain.gif" alt="" />
+            </a>
           </div>
         </div>
         <div className="px-4 -mx-4 mt-4">
