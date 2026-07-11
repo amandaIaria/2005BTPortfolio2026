@@ -1,9 +1,6 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
+import { ModernHomePage } from '@modern/feature';
 
 export const Route = createFileRoute('/modern/')({
-  component: RouteComponent,
-})
-
-function RouteComponent() {
-  return <div>Hello "/modern/"!</div>
-}
+  component: ModernHomePage,
+});
