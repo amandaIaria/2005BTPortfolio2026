@@ -103,31 +103,22 @@ export const Route = createFileRoute("/<feature-name>")({
 
 ## AI Assistants
 
+### Claude Code
+
+`CLAUDE.md` in the repo root is automatically loaded into Claude Code's context. Use Claude Code with:
+- `/react-tanstack-best-practices` — routing, preloading, layouts, data loading
+- `/tailwind-design-tokens` — tokens, dark mode, custom utilities
+- `/component-testing` — Vitest + Testing Library patterns
+- `/accessibility` — semantic HTML, ARIA, a11y
+- `/seo-and-meta` — meta tags, Open Graph, structured data
+- `/responsive-layout` — mobile-first, breakpoints, spacing
+- `/shade-extension <component>` — extend shadcn/ui safely
+
 ### GitHub Copilot
 
 This file (`.github/copilot-instructions.md`) is automatically loaded into Copilot's context for every chat request. Custom prompts and agents can be added in `.github/prompts/` and `.github/agents/`.
 
-### Claude
-
-When using Claude (via Claude Code or the API), point it to this file for project context:
-
-```
-Read .github/copilot-instructions.md for project conventions before making changes.
-```
-
-### Available Skills
-
-| Skill | Purpose |
-|-------|---------|
-| `react-tanstack-best-practices` | Type-safe routing, preloading, layout patterns, navigation, route data loading |
-| `tailwind-design-tokens` | Project colour tokens, dark mode, custom utility classes, typography |
-| `component-testing` | Vitest + Testing Library patterns for components, routes, theme toggle |
-| `accessibility` | Semantic HTML, keyboard nav, ARIA, colour contrast, Radix a11y |
-| `seo-and-meta` | Page titles, Open Graph, structured data, route-level head management |
-| `responsive-layout` | Mobile-first patterns, breakpoints, grid/flex, project spacing conventions |
-| `shade-extension` | Extend shadcn/ui components without modifying originals — invoke with `/shade-extension <component>` |
-
-Invoke in Copilot chat with `/<skill-name>`.
+Custom prompts and agents can be added in `.github/prompts/` and `.github/agents/`.
 
 
 ## Components

@@ -1,0 +1,21 @@
+{
+  "description": "Portfolio 2026 — React 19 + TanStack Router + Tailwind CSS 4",
+  "commands": {
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "test": "npm run test",
+    "lint": "npm run lint",
+    "format": "npm run format",
+    "check": "npm run check"
+  },
+  "permissions": [
+    {
+      "commands": ["npm", "node", "git"],
+      "scope": "global"
+    },
+    {
+      "commands": ["bash"],
+      "scope": "project"
+    }
+  ]
+}
