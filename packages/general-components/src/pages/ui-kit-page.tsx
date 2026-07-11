@@ -28,6 +28,8 @@ import { CassetteCarousel } from '../components/cassette-carousel';
 import { Playlist } from '../components/playlist';
 import { AnimatedFooter } from '../components/animated-footer';
 import { TentacleFooter } from '../components/tentacle-footer';
+import { WebGLTentacleFooter } from '../components/webgl-tentacle-footer';
+import { WebGLTentacleWall } from '../components/webgl-tentacle-wall';
 import { SpriteAnimation } from '../components/sprite-animation';
 import { AppHeader } from '../components/app-header';
 import { Switch } from '../components/ui/switch';
@@ -345,6 +347,23 @@ export default function UiKitPage() {
         <TentacleFooter
           text="© 2026 Portfolio"
           className="rounded-lg"
+        />
+      </Section>
+
+      {/* WebGL Tentacle Footer */}
+      <Section title="WebGL Tentacle Footer">
+        <WebGLTentacleFooter
+          text="© 2026 Portfolio"
+          tentacleCount={8}
+          className="rounded-lg"
+        />
+      </Section>
+
+      {/* WebGL Tentacle Wall */}
+      <Section title="WebGL Tentacle Wall">
+        <WebGLTentacleWall
+          tentacleCount={6}
+          className="h-[50vh] w-full rounded-lg"
         />
       </Section>
 
