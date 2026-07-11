@@ -1,0 +1,404 @@
+<!--
+  ============================================================
+  avoidOverlap — Vanilla JS demo
+  ============================================================
+
+  WHAT IT DOES
+  An absolutely-positioned "obstacle" image overlaps content
+  areas. avoidOverlap() does two things for each target:
+
+  1. clip-path polygon — carves out the corner where the
+     obstacle intrudes so backgrounds / borders are shaped.
+  2. Floated spacer + shape-outside — injected into scrollable
+     targets so that *text actually reflows* around the clipped
+     region instead of just being visually cut off.
+
+  Plain (non-scrollable) targets like the footer only get a
+  clip-path (no spacer) to avoid a resize feedback loop.
+
+  HOW TO USE IN CODEPEN
+  • Paste the HTML into the HTML panel.
+  • Paste the CSS into the CSS panel.
+  • Paste the JS  into the JS  panel.
+  • Hit Run — resize the viewport or scroll the text areas
+    to see it update live.
+  ============================================================
+-->
+
+<!-- ===================== HTML ===================== -->
+
+<div class="page">
+  <!-- header -->
+  <header class="header">
+    <img
+      src="https://picsum.photos/seed/header/960/180"
+      alt=""
+      class="header-img"
+    />
+  </header>
+
+  <!-- main two-column area -->
+  <section class="main">
+    <!-- sidebar -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Links</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- content column — two scroll areas -->
+    <div class="content-col">
+      <div class="scroll-target" id="scroll1">
+        <div class="scroll-viewport">
+          <div class="scroll-content">
+            <p>Welcome to my page! This is a bunch of text that should wrap around the obstacle image on the right side of the layout. The clip-path carves out the corner visually, and the floated spacer with shape-outside makes the text reflow so words aren't cut in half. Try resizing the browser or scrolling to see it update in real time. Welcome to my page! This is a bunch of text that should wrap around the obstacle image. The clip-path carves out the corner visually, and the floated spacer with shape-outside makes the text reflow so words aren't cut in half. Try resizing or scrolling to see it update. Welcome to my page! This is more text to demonstrate wrapping. The clip-path carves out the corner and the spacer makes text reflow properly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-target" id="scroll2">
+        <div class="scroll-viewport">
+          <div class="scroll-content">
+            <p>This is a second scrollable area. It also gets a clip-path and a float spacer so text flows around the obstacle. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Sed do eiusmod tempor incididunt ut labore.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer — gets clip-path only, no spacer -->
+  <footer class="footer" id="footer">Footer content goes here</footer>
+
+  <!-- obstacle image (absolutely positioned) -->
+  <div class="obstacle" id="obstacle">
+    <img
+      src="https://picsum.photos/seed/obstacle/256/500"
+      alt=""
+    />
+  </div>
+</div>
+
+<!-- ===================== CSS (paste into CSS panel) ===================== -->
+<style>
+  /* ---------- reset & base ---------- */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #1a1a2e;
+    color: #c9d1d9;
+  }
+
+  a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+
+  /* ---------- page wrapper ---------- */
+  .page {
+    position: relative; /* positioning context for the obstacle */
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  /* ---------- header ---------- */
+  .header-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #30363d;
+  }
+
+  /* ---------- main grid ---------- */
+  .main {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    margin-top: 16px;
+    max-height: calc(100vh - 340px);
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar {
+    border: 1px solid #30363d;
+    padding: 12px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+  }
+
+  .sidebar li + li {
+    margin-top: 8px;
+  }
+
+  /* ---------- content column ---------- */
+  .content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+  }
+
+  /* ---------- scroll targets ---------- */
+  .scroll-target {
+    border: 1px solid #30363d;
+    padding: 12px;
+    overflow: hidden;
+    flex: 1 1 0;
+    min-height: 0;
+  }
+
+  .scroll-viewport {
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  /* ---------- footer ---------- */
+  .footer {
+    margin-top: 16px;
+    border: 1px solid #30363d;
+    padding: 12px;
+  }
+
+  /* ---------- obstacle ---------- */
+  .obstacle {
+    position: absolute;
+    bottom: -10px;
+    right: -40px;
+    width: 256px;
+    height: 500px;
+  }
+
+  .obstacle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<!-- ===================== JS (paste into JS panel) ===================== -->
+<script>
+  /**
+   * avoidOverlap — vanilla JS
+   *
+   * Dynamically adjusts target elements so they don't overlap
+   * with an absolutely-positioned obstacle element.
+   *
+   * In clip-path mode (default):
+   *   • A polygon clips the visible area around the obstacle corner.
+   *   • For scrollable targets a floated spacer with shape-outside
+   *     is injected so inline text reflows within the clipped region.
+   *
+   * Returns a cleanup function that removes all listeners,
+   * observers, and injected DOM nodes.
+   *
+   * @param {HTMLElement}   obstacle  — the overlapping element
+   * @param {HTMLElement[]} targets   — elements to protect
+   * @param {Object}        [opts]
+   * @param {'right'|'left'} [opts.side='right']
+   * @param {number}         [opts.gap=12]
+   * @param {'clip-path'|'padding'} [opts.mode='clip-path']
+   */
+  function avoidOverlap(obstacle, targets, opts = {}) {
+    const { side = "right", gap = 12, mode = "clip-path" } = opts;
+    const SPACER_ATTR = "data-avoid-overlap-spacer";
+    const paddingProp = side === "right" ? "paddingRight" : "paddingLeft";
+    const spacers = [];
+
+    // ---- helpers ----
+
+    /** Find the inner content container (first child of a .scroll-viewport) */
+    function findContentContainer(el) {
+      const viewport = el.querySelector(".scroll-viewport");
+      if (viewport) {
+        const wrapper = viewport.firstElementChild;
+        return wrapper || viewport;
+      }
+      return el;
+    }
+
+    /** Detect whether an element has a scrollable viewport child */
+    function hasViewport(el) {
+      return !!el.querySelector(".scroll-viewport");
+    }
+
+    /** Get or create a float spacer inside the content container */
+    function getOrCreateSpacer(el) {
+      const container = findContentContainer(el);
+      let spacer = container.querySelector(`[${SPACER_ATTR}]`);
+      if (!spacer) {
+        spacer = document.createElement("div");
+        spacer.setAttribute(SPACER_ATTR, "");
+        spacer.setAttribute("aria-hidden", "true");
+        Object.assign(spacer.style, {
+          pointerEvents: "none",
+          padding: "0",
+          margin: "0",
+          border: "none",
+          background: "transparent",
+        });
+        container.prepend(spacer);
+        spacers.push(spacer);
+      }
+      return spacer;
+    }
+
+    // ---- main update loop ----
+
+    function update() {
+      const obsRect = obstacle.getBoundingClientRect();
+
+      for (const el of targets) {
+        const tRect = el.getBoundingClientRect();
+
+        // Vertical overlap check
+        const overlaps =
+          tRect.top < obsRect.bottom && tRect.bottom > obsRect.top;
+
+        if (!overlaps) {
+          el.style.clipPath = "";
+          el.style[paddingProp] = "";
+          const sp = el.querySelector(`[${SPACER_ATTR}]`);
+          if (sp) sp.style.display = "none";
+          continue;
+        }
+
+        const tW = tRect.width;
+        const tH = tRect.height;
+
+        if (mode === "clip-path") {
+          // obstacle position relative to target
+          const obsTop = Math.max(0, obsRect.top - tRect.top - gap);
+          const obsLeft =
+            side === "right"
+              ? Math.max(0, obsRect.left - tRect.left - gap)
+              : 0;
+          const obsRight =
+            side === "left"
+              ? Math.min(tW, obsRect.right - tRect.left + gap)
+              : tW;
+
+          // percentages
+          const topPct = (obsTop / tH) * 100;
+          const leftPct = (obsLeft / tW) * 100;
+          const rightPct = (obsRight / tW) * 100;
+
+          // polygon
+          const polygon =
+            side === "right"
+              ? `polygon(
+                  0% 0%, 100% 0%, 100% ${topPct}%,
+                  ${leftPct}% ${topPct}%, ${leftPct}% 100%, 0% 100%
+                )`
+              : `polygon(
+                  0% 0%, 100% 0%, 100% 100%,
+                  ${rightPct}% 100%, ${rightPct}% ${topPct}%, 0% ${topPct}%
+                )`;
+
+          el.style.clipPath = polygon;
+          el.style[paddingProp] = "";
+
+          // Float spacer — only for scrollable targets
+          if (hasViewport(el)) {
+            const spacer = getOrCreateSpacer(el);
+            spacer.style.display = "block";
+            spacer.style.float = side === "right" ? "right" : "left";
+
+            let intrusionW =
+              side === "right"
+                ? tRect.right - obsRect.left + gap
+                : obsRect.right - tRect.left + gap;
+            intrusionW = Math.max(0, intrusionW);
+
+            const viewport = el.querySelector(".scroll-viewport");
+            const scrollTop = viewport ? viewport.scrollTop : 0;
+            const contentTopOffset = Math.max(
+              0,
+              obsRect.top - tRect.top + scrollTop - gap
+            );
+
+            const container = findContentContainer(el);
+            const contentH = Math.max(container.scrollHeight, tH);
+
+            spacer.style.width = intrusionW + "px";
+            spacer.style.height = contentH + "px";
+            spacer.style.shapeOutside = `inset(${contentTopOffset}px 0 0 0)`;
+          }
+        } else {
+          // padding mode
+          let intrusion =
+            side === "right"
+              ? tRect.right - obsRect.left + gap
+              : obsRect.right - tRect.left + gap;
+
+          el.style.clipPath = "";
+          el.style[paddingProp] = intrusion > 0 ? intrusion + "px" : "";
+        }
+      }
+    }
+
+    // ---- observers & listeners ----
+
+    update();
+
+    const ro = new ResizeObserver(update);
+    ro.observe(obstacle);
+    targets.forEach((t) => ro.observe(t));
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+
+    // viewport scroll listeners
+    const vpCleanups = [];
+    for (const el of targets) {
+      const vp = el.querySelector(".scroll-viewport");
+      if (vp) {
+        vp.addEventListener("scroll", update, { passive: true });
+        vpCleanups.push(() => vp.removeEventListener("scroll", update));
+      }
+    }
+
+    // ---- cleanup ----
+    return function destroy() {
+      ro.disconnect();
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      vpCleanups.forEach((fn) => fn());
+      spacers.forEach((s) => s.remove());
+      targets.forEach((el) => {
+        el.style.clipPath = "";
+        el.style[paddingProp] = "";
+      });
+    };
+  }
+
+  // ============================================================
+  // INIT — wire it up
+  // ============================================================
+  const obstacle = document.getElementById("obstacle");
+  const scroll1 = document.getElementById("scroll1");
+  const scroll2 = document.getElementById("scroll2");
+  const footer = document.getElementById("footer");
+
+  avoidOverlap(obstacle, [scroll1, scroll2, footer], {
+    side: "right",
+    gap: 16,
+  });
+</script>
