@@ -65,3 +65,7 @@ export { default as UiKitPage } from './pages/ui-kit-page';
 
 // Utilities
 export { cn } from './lib/utils';
+
+// Hooks
+export { useAvoidOverlap } from './hooks/use-avoid-overlap';
+export type { UseAvoidOverlapOptions } from './hooks/use-avoid-overlap';
