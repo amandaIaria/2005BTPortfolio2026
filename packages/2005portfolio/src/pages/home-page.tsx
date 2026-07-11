@@ -1,12 +1,24 @@
-import { Container, ScrollArea, TempNav } from '@general/components';
+import { useRef } from 'react';
+import { Container, ScrollArea, TempNav, useAvoidOverlap } from '@general/components';
 import { ImageHeader } from '../components/image-header';
 import { SidebarOld } from '../components/sidebar-old';
 
 export default function HomePage() {
+  const obstacleRef = useRef<HTMLDivElement>(null);
+  const scrollArea1Ref = useRef<HTMLDivElement>(null);
+  const scrollArea2Ref = useRef<HTMLDivElement>(null);
+  const scrollAreaRefContainer = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
+
+  useAvoidOverlap(obstacleRef, [scrollArea1Ref, scrollArea2Ref, footerRef], {
+    side: 'right',
+    gap: 16,
+  });
+
   return (
     
       <Container>
-        <header>
+        <header data-section="header">
           <ImageHeader
             pageName="Home"
             src="./temp-header.jpg"
@@ -16,19 +28,21 @@ export default function HomePage() {
             <TempNav />
           </div>
         </header>
-        <section className="grid grid-cols-[175px_1fr] gap-4 mt-4">
+        <section className="grid grid-cols-[175px_1fr] gap-4 mt-4 grid-rows-1 max-h-[calc(100vh-704px)] h-full" data-section="main-content">
           <SidebarOld />
-          <section className=" h-[calc(100vh-670px)] border p-4 overflow-hidden">
-            <ScrollArea className='h-1/2'>
-              This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. 
-            </ScrollArea>
-            <ScrollArea className="h-1/2 mt-8 w-[calc(100%-130px)]">
-              This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. 
+          <section className="h-full  border p-4 overflow-hidden grid grid-rows-[max-content_1fr]" ref={scrollAreaRefContainer}>
+            <ScrollArea>
+              <ScrollArea ref={scrollArea1Ref} className='max-h-max h-full'>
+                This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. 
+              </ScrollArea>
+              <ScrollArea ref={scrollArea2Ref} className="max-h-1/2 h-full mt-8">
+                This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. This is the home page of the portfolio. 
+              </ScrollArea>
             </ScrollArea>
           </section>
         </section>
-        <footer className="mt-4 border p-4 w-[calc(100%-150px)]">footer</footer>
-        <div className="absolute -bottom-10 -right-20 w-[256px] h-[500px]">
+        <footer ref={footerRef} data-section="footer" className="mt-4 border p-4">footer</footer>
+        <div ref={obstacleRef} className="absolute -bottom-10 -right-20 w-[256px] h-[500px]">
           <img src="./side-image.png" alt="" className="w-full h-full object-cover" />
         </div>
       </Container>

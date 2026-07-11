@@ -14,7 +14,7 @@ export function SidebarOld({
   return (
     <aside
       data-component="sidebar-old"
-      className={cn('grid grid-rows-[auto_1fr] gap-4 h-full border p-4', className)}
+      className={cn('grid grid-rows-[max-content_1fr] overflow-hidden gap-4 h-full border p-4', className)}
       {...props}
     >
       <div className="overflow-hidden">
