@@ -7,3 +7,5 @@ export const resources = {
 } as const;
 
 export type DefaultNamespace = 'common';
+
+export { sliderSamples, sliderFeatured } from './slider-samples';

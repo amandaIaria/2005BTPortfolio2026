@@ -40,6 +40,7 @@ import {
   TooltipContent,
 } from '../components/ui/tooltip';
 import { AnimatedTitle } from '../components/animated-title';
+import { sliderSamples } from '@json/data';
 
 function Section({
   title,
@@ -148,35 +149,7 @@ export default function UiKitPage() {
       {/* Slider */}
       <Section title="Slider">
         <div className="h-96 rounded-lg overflow-hidden border border-[var(--line)]">
-          <Slider
-            slides={[
-              {
-                left: {
-                  image: { src: './temp-header.jpg', alt: 'Project image 1' },
-                },
-                right: {
-                  title: 'Project One',
-                  description:
-                    'A beautiful portfolio project built with React and modern web technologies. This slide demonstrates the layout and styling of the component.',
-                  list: ['React 19', 'TypeScript', 'Tailwind CSS'],
-                  link: { url: '#', copy: 'View Project' },
-                },
-              },
-              {
-                left: {
-                  image: { src: './temp-header.jpg', alt: 'Project image 2' },
-                },
-                right: {
-                  title: 'Project Two',
-                  description:
-                    'Another exemplary project showcasing the versatility and responsiveness of the Slider component across different screen sizes and interaction modes.',
-                  list: ['Vite', 'TanStack Router', 'Container Queries'],
-                  link: { url: '#', copy: 'Explore' },
-                },
-              },
-            ]}
-            ariaLabel="Featured projects"
-          />
+          <Slider slides={sliderSamples} ariaLabel="Featured projects" />
         </div>
         <p className="mt-4 text-sm text-[var(--sea-ink-soft)]">
           Bounded container demo. The Slider fills its parent height (h-96).
