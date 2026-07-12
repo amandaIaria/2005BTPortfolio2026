@@ -2,7 +2,12 @@ import type { SliderSlides } from '@general/components';
 
 export const sliderSamples: SliderSlides = [
   {
-    left: { image: { src: './temp-header.jpg', alt: 'Project image 1' } },
+    left: {
+      image: {
+        src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+        alt: 'Project image 1',
+      },
+    },
     right: {
       title: 'Project One',
       description:
@@ -12,7 +17,12 @@ export const sliderSamples: SliderSlides = [
     },
   },
   {
-    left: { image: { src: './temp-header.jpg', alt: 'Project image 2' } },
+    left: {
+      image: {
+        src: 'https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=800&h=600&fit=crop',
+        alt: 'Project image 2',
+      },
+    },
     right: {
       title: 'Project Two',
       description:
@@ -26,7 +36,10 @@ export const sliderSamples: SliderSlides = [
 export const sliderFeatured: SliderSlides = [
   {
     left: {
-      image: { src: './temp-header.jpg', alt: 'Project showcase image 1' },
+      image: {
+        src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+        alt: 'Project showcase image 1',
+      },
     },
     right: {
       title: 'Project Alpha',
@@ -44,7 +57,10 @@ export const sliderFeatured: SliderSlides = [
   },
   {
     left: {
-      image: { src: './temp-header.jpg', alt: 'Project showcase image 2' },
+      image: {
+        src: 'https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=800&h=600&fit=crop',
+        alt: 'Project showcase image 2',
+      },
     },
     right: {
       title: 'Project Beta',
@@ -56,7 +72,10 @@ export const sliderFeatured: SliderSlides = [
   },
   {
     left: {
-      image: { src: './temp-header.jpg', alt: 'Project showcase image 3' },
+      image: {
+        src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+        alt: 'Project showcase image 3',
+      },
     },
     right: {
       title: 'Project Gamma',
