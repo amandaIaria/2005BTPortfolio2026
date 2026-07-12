@@ -42,7 +42,10 @@ export { Separator } from './components/ui/separator';
 export { Skeleton } from './components/ui/skeleton';
 export { TempNav } from './components/temp-nav';
 export { CassetteCarousel } from './components/cassette-carousel';
-export type { CassetteSlide, CassetteCarouselProps } from './components/cassette-carousel';
+export type {
+  CassetteSlide,
+  CassetteCarouselProps,
+} from './components/cassette-carousel';
 export { Playlist } from './components/playlist';
 export type { PlaylistVideo, PlaylistProps } from './components/playlist';
 export { AnimatedFooter } from './components/animated-footer';
@@ -56,7 +59,19 @@ export type { WebGLTentacleWallProps } from './components/webgl-tentacle-wall';
 export { SpriteAnimation } from './components/sprite-animation';
 export type { SpriteAnimationProps } from './components/sprite-animation';
 export { AppHeader } from './components/app-header';
-export type { AppHeaderProps, ThemeVariant, ColorMode } from './components/app-header';
+export type {
+  AppHeaderProps,
+  ThemeVariant,
+  ColorMode,
+} from './components/app-header';
+export { AnimatedTitle } from './components/animated-title';
+export type { AnimatedTitleProps } from './components/animated-title';
+export { Slider } from './components/slider';
+export type {
+  SliderProps,
+  SliderSlide,
+  SliderSlides,
+} from './components/slider';
 export {
   Tooltip,
   TooltipContent,
@@ -73,3 +88,4 @@ export { cn } from './lib/utils';
 // Hooks
 export { useAvoidOverlap } from './hooks/use-avoid-overlap';
 export type { UseAvoidOverlapOptions } from './hooks/use-avoid-overlap';
+export { useSlider } from './hooks/use-slider';

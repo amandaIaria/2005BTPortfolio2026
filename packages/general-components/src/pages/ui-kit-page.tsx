@@ -33,11 +33,13 @@ import { WebGLTentacleWall } from '../components/webgl-tentacle-wall';
 import { SpriteAnimation } from '../components/sprite-animation';
 import { AppHeader } from '../components/app-header';
 import { Switch } from '../components/ui/switch';
+import { Slider } from '../components/slider';
 import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
 } from '../components/ui/tooltip';
+import { AnimatedTitle } from '../components/animated-title';
 
 function Section({
   title,
@@ -82,15 +84,24 @@ export default function UiKitPage() {
         <div className="flex flex-wrap items-center gap-6">
           <div className="flex items-center gap-2">
             <Switch id="switch-demo" />
-            <label htmlFor="switch-demo" className="text-sm">Default</label>
+            <label htmlFor="switch-demo" className="text-sm">
+              Default
+            </label>
           </div>
           <div className="flex items-center gap-2">
             <Switch id="switch-sm" size="sm" />
-            <label htmlFor="switch-sm" className="text-sm">Small</label>
+            <label htmlFor="switch-sm" className="text-sm">
+              Small
+            </label>
           </div>
           <div className="flex items-center gap-2">
             <Switch id="switch-disabled" disabled />
-            <label htmlFor="switch-disabled" className="text-sm text-muted-foreground">Disabled</label>
+            <label
+              htmlFor="switch-disabled"
+              className="text-sm text-muted-foreground"
+            >
+              Disabled
+            </label>
           </div>
         </div>
       </Section>
@@ -117,6 +128,60 @@ export default function UiKitPage() {
           <Button size="lg">Large</Button>
           <Button disabled>Disabled</Button>
         </div>
+      </Section>
+
+      {/* Animated Title */}
+      <Section title="Animated Title">
+        <div className="space-y-6">
+          <AnimatedTitle className="text-2xl">
+            Hover for animation
+          </AnimatedTitle>
+          <AnimatedTitle className="text-3xl font-bold">
+            Large animated title
+          </AnimatedTitle>
+          <AnimatedTitle className="text-xl">
+            Small animated title
+          </AnimatedTitle>
+        </div>
+      </Section>
+
+      {/* Slider */}
+      <Section title="Slider">
+        <div className="h-96 rounded-lg overflow-hidden border border-[var(--line)]">
+          <Slider
+            slides={[
+              {
+                left: {
+                  image: { src: './temp-header.jpg', alt: 'Project image 1' },
+                },
+                right: {
+                  title: 'Project One',
+                  description:
+                    'A beautiful portfolio project built with React and modern web technologies. This slide demonstrates the layout and styling of the component.',
+                  list: ['React 19', 'TypeScript', 'Tailwind CSS'],
+                  link: { url: '#', copy: 'View Project' },
+                },
+              },
+              {
+                left: {
+                  image: { src: './temp-header.jpg', alt: 'Project image 2' },
+                },
+                right: {
+                  title: 'Project Two',
+                  description:
+                    'Another exemplary project showcasing the versatility and responsiveness of the Slider component across different screen sizes and interaction modes.',
+                  list: ['Vite', 'TanStack Router', 'Container Queries'],
+                  link: { url: '#', copy: 'Explore' },
+                },
+              },
+            ]}
+            ariaLabel="Featured projects"
+          />
+        </div>
+        <p className="mt-4 text-sm text-[var(--sea-ink-soft)]">
+          Bounded container demo. The Slider fills its parent height (h-96).
+          Try: keyboard arrows, swipe on mobile, click pagination dots.
+        </p>
       </Section>
 
       {/* Badge */}
@@ -225,7 +290,9 @@ export default function UiKitPage() {
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Badge variant="outline" className="cursor-default">Badge tooltip</Badge>
+              <Badge variant="outline" className="cursor-default">
+                Badge tooltip
+              </Badge>
             </TooltipTrigger>
             <TooltipContent side="right">Works on any element</TooltipContent>
           </Tooltip>
@@ -301,17 +368,35 @@ export default function UiKitPage() {
             </p>
             <CassetteCarousel
               slides={[
-                { id: '1', label: 'Side A', sublabel: 'Mixtape Vol. 1', modalContent: <p>Content for Side A</p> },
-                { id: '2', label: 'Side B', sublabel: 'Chill Vibes', modalContent: <p>Content for Side B</p> },
-                { id: '3', label: 'Demo', sublabel: 'Unreleased', modalContent: <p>Demo tape content</p> },
-                { id: '4', label: 'Lo-Fi', sublabel: 'Late Night', modalContent: <p>Lo-fi tape content</p> },
+                {
+                  id: '1',
+                  label: 'Side A',
+                  sublabel: 'Mixtape Vol. 1',
+                  modalContent: <p>Content for Side A</p>,
+                },
+                {
+                  id: '2',
+                  label: 'Side B',
+                  sublabel: 'Chill Vibes',
+                  modalContent: <p>Content for Side B</p>,
+                },
+                {
+                  id: '3',
+                  label: 'Demo',
+                  sublabel: 'Unreleased',
+                  modalContent: <p>Demo tape content</p>,
+                },
+                {
+                  id: '4',
+                  label: 'Lo-Fi',
+                  sublabel: 'Late Night',
+                  modalContent: <p>Lo-fi tape content</p>,
+                },
               ]}
             />
           </div>
           <div>
-            <p className="mb-2 text-sm text-[var(--sea-ink-soft)]">
-              Vertical
-            </p>
+            <p className="mb-2 text-sm text-[var(--sea-ink-soft)]">Vertical</p>
             <CassetteCarousel
               orientation="vertical"
               className="h-64"
@@ -327,27 +412,17 @@ export default function UiKitPage() {
 
       {/* Playlist */}
       <Section title="Playlist">
-        <Playlist
-          videos={[
-            { id: 'vteCosE9qnM', title: 'Track 1' },
-          ]}
-        />
+        <Playlist videos={[{ id: 'vteCosE9qnM', title: 'Track 1' }]} />
       </Section>
 
       {/* Animated Footer */}
       <Section title="Animated Footer">
-        <AnimatedFooter
-          text="© 2026 Portfolio"
-          className="rounded-lg"
-        />
+        <AnimatedFooter text="© 2026 Portfolio" className="rounded-lg" />
       </Section>
 
       {/* Tentacle Footer */}
       <Section title="Tentacle Footer">
-        <TentacleFooter
-          text="© 2026 Portfolio"
-          className="rounded-lg"
-        />
+        <TentacleFooter text="© 2026 Portfolio" className="rounded-lg" />
       </Section>
 
       {/* WebGL Tentacle Footer */}
@@ -391,8 +466,9 @@ export default function UiKitPage() {
           />
         </div>
         <p className="mt-3 text-sm text-white/60">
-          Uses <code>tenacleAsset.png</code> sprite sheet — 10 columns × 2 rows, 20 frames.
-          Adjust <code>frameWidth</code>/<code>frameHeight</code> to match your sprite dimensions.
+          Uses <code>tenacleAsset.png</code> sprite sheet — 10 columns × 2 rows,
+          20 frames. Adjust <code>frameWidth</code>/<code>frameHeight</code> to
+          match your sprite dimensions.
         </p>
       </Section>
     </main>
