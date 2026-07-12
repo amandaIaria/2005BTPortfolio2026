@@ -320,8 +320,8 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden @lg:block pointer-events-none"
           aria-hidden="true"
         >
-          <div className="w-2 h-2 rounded-full bg-[var(--lagoon)] mx-auto" />
-          <div className="w-8 h-px bg-[var(--lagoon)] mt-1" />
+          <div className="w-3 h-3 rounded-full bg-[var(--lagoon)] mx-auto" />
+          <div className="w-12 h-px bg-[var(--lagoon)] mt-1" />
         </div>
 
         {/* Right pane (copy) */}
@@ -330,52 +330,62 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(
             previous !== null && direction === 1 ? outgoingPaneRef : undefined
           }
           data-pane="right"
-          className="absolute inset-0 w-full h-full @lg:w-1/2 @lg:left-1/2 bg-white dark:bg-[var(--sand)] flex flex-col justify-center p-6 @lg:p-8"
+          className="absolute inset-0 w-full h-full @lg:w-1/2 @lg:left-1/2 bg-white dark:bg-[var(--sand)] flex flex-col p-6 @lg:p-8"
           aria-hidden={previous === null || index === previous}
         >
           {previous !== null && (
             <div
               data-phase="outgoing"
-              className="absolute inset-0 w-full h-full p-6 @lg:p-8 flex flex-col justify-center"
+              className="absolute inset-0 w-full h-full p-6 @lg:p-8 flex flex-col"
               inert={isTransitioning}
             >
-              <h2 className="text-3xl @lg:text-4xl font-bold text-[var(--sea-ink)] dark:text-white mb-2">
+              <h2
+                className="text-4xl @lg:text-5xl font-bold text-[var(--sea-ink)] dark:text-white mb-2"
+                style={{ fontFamily: "'Fraunces', serif" }}
+              >
                 {outgoingSlide!.right.title}
               </h2>
-              <div className="w-12 h-px bg-[var(--lagoon)] mb-4" />
-              <p className="text-sm @lg:text-base text-[var(--sea-ink-soft)] dark:text-white/80 mb-6 max-h-48 overflow-hidden">
-                {outgoingSlide!.right.description}
-              </p>
-              <div className="w-8 h-px bg-[var(--lagoon)] mb-4" />
-              <ul className="list-disc list-inside mb-8 space-y-1 text-sm @lg:text-base text-[var(--sea-ink)] dark:text-white">
-                {outgoingSlide!.right.list.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
+              <div className="w-full max-w-[90%] h-0.5 bg-[var(--sea-ink)] mx-auto mb-4" />
+              <div className="max-w-xl">
+                <p className="text-sm @lg:text-base text-[var(--sea-ink-soft)] dark:text-white/80 mb-6 max-h-48 overflow-hidden">
+                  {outgoingSlide!.right.description}
+                </p>
+                <div className="w-8 h-px bg-[var(--sea-ink)] mx-auto mb-4" />
+                <ul className="list-disc list-inside mb-8 space-y-1 text-sm @lg:text-base text-[var(--sea-ink)] dark:text-white">
+                  {outgoingSlide!.right.list.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           )}
 
           <div
             data-phase="incoming"
-            className="absolute inset-0 w-full h-full p-6 @lg:p-8 flex flex-col justify-center"
+            className="absolute inset-0 w-full h-full p-6 @lg:p-8 flex flex-col"
           >
-            <h2 className="text-3xl @lg:text-4xl font-bold text-[var(--sea-ink)] dark:text-white mb-2">
+            <h2
+              className="text-4xl @lg:text-5xl font-bold text-[var(--sea-ink)] dark:text-white mb-2"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
               {currentSlide.right.title}
             </h2>
-            <div className="w-12 h-px bg-[var(--lagoon)] mb-4" />
-            <p className="text-sm @lg:text-base text-[var(--sea-ink-soft)] dark:text-white/80 mb-6 max-h-48 overflow-hidden">
-              {currentSlide.right.description}
-            </p>
-            <div className="w-8 h-px bg-[var(--lagoon)] mb-4" />
-            <ul className="list-disc list-inside mb-8 space-y-1 text-sm @lg:text-base text-[var(--sea-ink)] dark:text-white">
-              {currentSlide.right.list.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+            <div className="w-full max-w-[90%] h-0.5 bg-[var(--sea-ink)] mx-auto mb-4" />
+            <div className="max-w-xl flex-1 flex flex-col">
+              <p className="text-sm @lg:text-base text-[var(--sea-ink-soft)] dark:text-white/80 mb-6 max-h-48 overflow-hidden">
+                {currentSlide.right.description}
+              </p>
+              <div className="w-8 h-px bg-[var(--sea-ink)] mx-auto mb-4" />
+              <ul className="list-disc list-inside mb-8 space-y-1 text-sm @lg:text-base text-[var(--sea-ink)] dark:text-white">
+                {currentSlide.right.list.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
             <div className="mt-auto">
               <Button
                 asChild
-                size="default"
+                size="lg"
                 className="bg-[var(--lagoon)] text-white hover:bg-[var(--lagoon-deep)]"
               >
                 <a
@@ -420,16 +430,16 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(
         </div>
 
         {/* Pagination controls */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-6 z-10">
           <Button
             variant="ghost"
-            size="icon"
+            size="lg"
             aria-label="Previous slide"
             onClick={prev}
             disabled={!loop && isFirst}
-            className="bg-white dark:bg-[var(--sand)] text-[var(--sea-ink)] hover:bg-white/90 dark:hover:bg-[var(--sand)]/90 rounded-full"
+            className="bg-white dark:bg-[var(--sand)] text-[var(--sea-ink)] hover:bg-white/90 dark:hover:bg-[var(--sand)]/90 rounded-full shadow-md"
           >
-            <CaretLeftIcon size={24} aria-hidden="true" />
+            <CaretLeftIcon size={28} aria-hidden="true" />
           </Button>
 
           {/* Pagination dots */}
@@ -437,9 +447,9 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(
             ref={dotsTrackRef}
             role="tablist"
             aria-label="Slides"
-            className="w-32 h-6 overflow-hidden flex items-center bg-white/80 dark:bg-[var(--sand)]/80 rounded-full px-1"
+            className="overflow-hidden flex items-center"
           >
-            <div ref={dotsInnerRef} className="flex gap-1 w-fit">
+            <div ref={dotsInnerRef} className="flex gap-3 w-fit">
               {slides.map((_, i) => (
                 <button
                   key={i}
@@ -449,10 +459,10 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(
                   aria-label={`Go to slide ${i + 1} of ${slides.length}`}
                   onClick={() => goTo(i)}
                   className={cn(
-                    'w-2 h-2 rounded-full transition-colors flex-shrink-0',
+                    'rounded-full transition-all flex-shrink-0',
                     i === index
-                      ? 'bg-[var(--lagoon)]'
-                      : 'bg-[var(--sea-ink)]/30 dark:bg-white/30 hover:bg-[var(--sea-ink)]/50 dark:hover:bg-white/50',
+                      ? 'w-3 h-3 bg-[var(--lagoon)]'
+                      : 'w-1.5 h-1.5 bg-[var(--sea-ink)]/30 dark:bg-white/30 hover:bg-[var(--sea-ink)]/50 dark:hover:bg-white/50',
                   )}
                 />
               ))}
@@ -461,13 +471,13 @@ const Slider = forwardRef<HTMLDivElement, SliderProps>(
 
           <Button
             variant="ghost"
-            size="icon"
+            size="lg"
             aria-label="Next slide"
             onClick={next}
             disabled={!loop && isLast}
-            className="bg-white dark:bg-[var(--sand)] text-[var(--sea-ink)] hover:bg-white/90 dark:hover:bg-[var(--sand)]/90 rounded-full"
+            className="bg-white dark:bg-[var(--sand)] text-[var(--sea-ink)] hover:bg-white/90 dark:hover:bg-[var(--sand)]/90 rounded-full shadow-md"
           >
-            <CaretRightIcon size={24} aria-hidden="true" />
+            <CaretRightIcon size={28} aria-hidden="true" />
           </Button>
         </div>
 
