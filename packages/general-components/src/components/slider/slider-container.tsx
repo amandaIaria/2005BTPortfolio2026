@@ -11,6 +11,7 @@ import { useSlider } from '../../hooks/use-slider';
 import { SlidePaneImage, SlidePaneRight, SlideMobileImage } from './slide-pane';
 import { SliderPagination } from './slider-pagination';
 import type { SliderProps, SliderSlides } from './types';
+import { SliderMiddle } from './slide-middle';
 
 const TRANSITION_MS = 500;
 
@@ -235,7 +236,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
             }
           }
         `}</style>
-
+        {/* 
         {previous !== null && outgoingSlide && (
           <>
             <SlidePaneImage
@@ -256,7 +257,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
               isTransitioning={isTransitioning}
             />
           </>
-        )}
+        )} */}
 
         <SlidePaneImage
           slide={currentSlide}
@@ -264,18 +265,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
           isTransitioning={isTransitioning}
         />
 
-        <div
-          className="absolute top-0 left-1/2 w-px h-full bg-[var(--line)] hidden @lg:block pointer-events-none"
-          aria-hidden="true"
-        />
-
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden @lg:block pointer-events-none"
-          aria-hidden="true"
-        >
-          <div className="w-3 h-3 rounded-full bg-[var(--lagoon)] mx-auto" />
-          <div className="w-12 h-px bg-[var(--lagoon)] mt-1" />
-        </div>
+        <SliderMiddle />
 
         <SlidePaneRight
           slide={currentSlide}

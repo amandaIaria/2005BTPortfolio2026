@@ -59,7 +59,7 @@ export function SlidePaneRight({
     >
       <div
         data-phase={isOutgoing ? 'outgoing' : 'incoming'}
-        className="absolute inset-0 w-full h-full p-6 @lg:p-8 flex flex-col"
+        className="absolute inset-0 w-full h-full p-6 @lg:p-8 grid items-center justify-center"
         inert={isTransitioning}
       >
         <SlideContent slide={slide} />
