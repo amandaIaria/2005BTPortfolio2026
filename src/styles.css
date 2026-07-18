@@ -7,10 +7,6 @@
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
-@theme {
-
-}
-
 :root {
   --color-flat-black: #333333;
   --sea-ink: #173a40;
@@ -65,7 +61,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "DM Serif Text";
+  --font-serif: 'DM Serif Text';
   --text-body: var(--color-flat-black);
 }
 
@@ -310,7 +306,6 @@
   .page-wrap {
     @apply max-w-4xl mx-auto;
   }
-
 
   .slider-content {
     @apply font-sans text-body text-sm @lg:text-base;
