@@ -2,13 +2,13 @@ import { Container, WebGLTentacleWall } from '@general/components';
 
 function ModernHomePage() {
   const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/about', label: 'Projects' },
-  { href: '/about', label: 'Art' },
-  { href: '/about', label: 'Shrines' },
-  { href: '/ui-kit', label: 'Ui Kit' },
-];
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/about', label: 'Projects' },
+    { href: '/about', label: 'Art' },
+    { href: '/about', label: 'Shrines' },
+    { href: '/ui-kit', label: 'Ui Kit' },
+  ];
 
   return (
     <>
@@ -23,11 +23,15 @@ function ModernHomePage() {
         <nav className="">
           <ul className="grid gap-4 text-9xl font-bold uppercase text-white mix-blend-difference">
             {navLinks.map((link) => (
-          <li key={link.href}>
-            <a href={link.href} className="text-current underline decoration-8 decoration-current underline-offset-16">{link.label}</a>
-          </li>
-        ))}
-            
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-current underline decoration-8 decoration-current underline-offset-16"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </Container>

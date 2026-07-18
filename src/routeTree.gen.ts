@@ -15,6 +15,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as UiKitIndexRouteImport } from './routes/ui-kit/index'
 import { Route as ModernIndexRouteImport } from './routes/modern/index'
 import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/webgl-tentacle-footer'
+import { Route as UiKitSliderRouteImport } from './routes/ui-kit/slider'
 
 const UiKitRouteRoute = UiKitRouteRouteImport.update({
   id: '/ui-kit',
@@ -47,17 +48,24 @@ const UiKitWebglTentacleFooterRoute =
     path: '/webgl-tentacle-footer',
     getParentRoute: () => UiKitRouteRoute,
   } as any)
+const UiKitSliderRoute = UiKitSliderRouteImport.update({
+  id: '/slider',
+  path: '/slider',
+  getParentRoute: () => UiKitRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/modern': typeof ModernRouteRouteWithChildren
   '/ui-kit': typeof UiKitRouteRouteWithChildren
+  '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
   '/ui-kit/': typeof UiKitIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern': typeof ModernIndexRoute
   '/ui-kit': typeof UiKitIndexRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/modern': typeof ModernRouteRouteWithChildren
   '/ui-kit': typeof UiKitRouteRouteWithChildren
+  '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
   '/ui-kit/': typeof UiKitIndexRoute
@@ -77,16 +86,23 @@ export interface FileRouteTypes {
     | '/'
     | '/modern'
     | '/ui-kit'
+    | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern/'
     | '/ui-kit/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ui-kit/webgl-tentacle-footer' | '/modern' | '/ui-kit'
+  to:
+    | '/'
+    | '/ui-kit/slider'
+    | '/ui-kit/webgl-tentacle-footer'
+    | '/modern'
+    | '/ui-kit'
   id:
     | '__root__'
     | '/'
     | '/modern'
     | '/ui-kit'
+    | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern/'
     | '/ui-kit/'
@@ -142,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitWebglTentacleFooterRouteImport
       parentRoute: typeof UiKitRouteRoute
     }
+    '/ui-kit/slider': {
+      id: '/ui-kit/slider'
+      path: '/slider'
+      fullPath: '/ui-kit/slider'
+      preLoaderRoute: typeof UiKitSliderRouteImport
+      parentRoute: typeof UiKitRouteRoute
+    }
   }
 }
 
@@ -158,11 +181,13 @@ const ModernRouteRouteWithChildren = ModernRouteRoute._addFileChildren(
 )
 
 interface UiKitRouteRouteChildren {
+  UiKitSliderRoute: typeof UiKitSliderRoute
   UiKitWebglTentacleFooterRoute: typeof UiKitWebglTentacleFooterRoute
   UiKitIndexRoute: typeof UiKitIndexRoute
 }
 
 const UiKitRouteRouteChildren: UiKitRouteRouteChildren = {
+  UiKitSliderRoute: UiKitSliderRoute,
   UiKitWebglTentacleFooterRoute: UiKitWebglTentacleFooterRoute,
   UiKitIndexRoute: UiKitIndexRoute,
 }

@@ -32,11 +32,11 @@ function MyPage() {
 
 Located in `src/router.tsx`. Current settings:
 
-| Setting | Value | Purpose |
-|---------|-------|---------|
-| `scrollRestoration` | `true` | Restore scroll position on back/forward |
-| `defaultPreload` | `'intent'` | Preload routes on hover/focus |
-| `defaultPreloadStaleTime` | `0` | Always fresh preloads |
+| Setting                   | Value      | Purpose                                 |
+| ------------------------- | ---------- | --------------------------------------- |
+| `scrollRestoration`       | `true`     | Restore scroll position on back/forward |
+| `defaultPreload`          | `'intent'` | Preload routes on hover/focus           |
+| `defaultPreloadStaleTime` | `0`        | Always fresh preloads                   |
 
 ## Type-Safe Navigation
 
@@ -120,7 +120,11 @@ export const Route = createFileRoute('/search')({
 
 function SearchPage() {
   const { q, page } = Route.useSearch();
-  return <div>Searching: {q}, page {page}</div>;
+  return (
+    <div>
+      Searching: {q}, page {page}
+    </div>
+  );
 }
 ```
 

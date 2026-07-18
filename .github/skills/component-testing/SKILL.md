@@ -26,10 +26,17 @@ import { describe, expect, it } from 'vitest';
 import Header from '@/components/header';
 
 // TanStack Router components need a router wrapper
-import { createRouter, createMemoryHistory, RouterProvider } from '@tanstack/react-router';
+import {
+  createRouter,
+  createMemoryHistory,
+  RouterProvider,
+} from '@tanstack/react-router';
 import { routeTree } from '@/routeTree.gen';
 
-function renderWithRouter(component: React.ReactNode, { initialPath = '/' } = {}) {
+function renderWithRouter(
+  component: React.ReactNode,
+  { initialPath = '/' } = {},
+) {
   const router = createRouter({
     routeTree,
     history: createMemoryHistory({ initialEntries: [initialPath] }),
@@ -59,7 +66,9 @@ import { PillButton } from '@/components/PillButton';
 describe('PillButton', () => {
   it('renders children', () => {
     render(<PillButton>Click me</PillButton>);
-    expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Click me' }),
+    ).toBeInTheDocument();
   });
 
   it('forwards click handler', async () => {

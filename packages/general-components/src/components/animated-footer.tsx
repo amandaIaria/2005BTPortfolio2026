@@ -62,7 +62,15 @@ function Building({
   );
 }
 
-function Star({ top, left, delay }: { top: number; left: number; delay: number }) {
+function Star({
+  top,
+  left,
+  delay,
+}: {
+  top: number;
+  left: number;
+  delay: number;
+}) {
   return (
     <div
       className="animated-footer-star absolute h-[2px] w-[2px] rounded-full bg-white"
@@ -96,7 +104,12 @@ const stars = Array.from({ length: 30 }, (_, i) => ({
   delay: Math.random() * 4,
 }));
 
-function AnimatedFooter({ text, className, children, ...props }: AnimatedFooterProps) {
+function AnimatedFooter({
+  text,
+  className,
+  children,
+  ...props
+}: AnimatedFooterProps) {
   return (
     <footer
       data-component="animated-footer"

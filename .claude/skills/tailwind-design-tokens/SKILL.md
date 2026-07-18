@@ -11,29 +11,29 @@ All custom tokens are CSS variables in `src/styles.css`. Always use tokens inste
 
 ### Colour Tokens
 
-| Token | Light | Dark | Usage |
-|-------|-------|------|-------|
-| `--sea-ink` | `#173a40` | `#d7ece8` | Primary text |
-| `--sea-ink-soft` | `#416166` | `#afcdc8` | Secondary/muted text |
-| `--lagoon` | `#4fb8b2` | `#60d7cf` | Accent colour |
-| `--lagoon-deep` | `#328f97` | `#8de5db` | Links, interactive accent |
-| `--palm` | `#2f6a4a` | `#6ec89a` | Success / nature accent |
-| `--sand` | `#e7f0e8` | `#0f1a1e` | Light background fill |
-| `--foam` | `#f3faf5` | `#101d22` | Lighter background |
-| `--bg-base` | `#e7f3ec` | `#0a1418` | Page background |
+| Token            | Light     | Dark      | Usage                     |
+| ---------------- | --------- | --------- | ------------------------- |
+| `--sea-ink`      | `#173a40` | `#d7ece8` | Primary text              |
+| `--sea-ink-soft` | `#416166` | `#afcdc8` | Secondary/muted text      |
+| `--lagoon`       | `#4fb8b2` | `#60d7cf` | Accent colour             |
+| `--lagoon-deep`  | `#328f97` | `#8de5db` | Links, interactive accent |
+| `--palm`         | `#2f6a4a` | `#6ec89a` | Success / nature accent   |
+| `--sand`         | `#e7f0e8` | `#0f1a1e` | Light background fill     |
+| `--foam`         | `#f3faf5` | `#101d22` | Lighter background        |
+| `--bg-base`      | `#e7f3ec` | `#0a1418` | Page background           |
 
 ### Surface & UI Tokens
 
-| Token | Usage |
-|-------|-------|
-| `--surface` | Card/panel background (semi-transparent) |
-| `--surface-strong` | Elevated surface (higher opacity) |
-| `--header-bg` | Sticky header background (blur-backed) |
-| `--line` | Borders and dividers |
-| `--chip-bg` | Tag/chip background |
-| `--chip-line` | Tag/chip border |
-| `--link-bg-hover` | Link hover background |
-| `--kicker` | Small label text |
+| Token              | Usage                                    |
+| ------------------ | ---------------------------------------- |
+| `--surface`        | Card/panel background (semi-transparent) |
+| `--surface-strong` | Elevated surface (higher opacity)        |
+| `--header-bg`      | Sticky header background (blur-backed)   |
+| `--line`           | Borders and dividers                     |
+| `--chip-bg`        | Tag/chip background                      |
+| `--chip-line`      | Tag/chip border                          |
+| `--link-bg-hover`  | Link hover background                    |
+| `--kicker`         | Small label text                         |
 
 ### shadcn Tokens (OKLCH)
 
@@ -64,6 +64,7 @@ The project uses a dual dark-mode strategy:
 3. **System fallback**: `prefers-color-scheme` media query when no explicit theme is set
 
 The custom variant is configured as:
+
 ```css
 @custom-variant dark (&:is(.dark *));
 ```
@@ -82,24 +83,24 @@ The custom variant is configured as:
 
 Use these project-defined classes from `src/styles.css`:
 
-| Class | Purpose |
-|-------|---------|
-| `.page-wrap` | Main content container (max-width, centered) |
-| `.island-shell` | Primary card with gradient, shadow, backdrop blur |
-| `.feature-card` | Lighter card with hover lift effect |
-| `.display-title` | Fraunces serif display heading |
-| `.island-kicker` | Small uppercase label (0.16em tracking) |
-| `.nav-link` | Navigation link base style |
-| `.nav-link.is-active` | Active navigation state |
-| `.rise-in` | Entrance animation |
+| Class                 | Purpose                                           |
+| --------------------- | ------------------------------------------------- |
+| `.page-wrap`          | Main content container (max-width, centered)      |
+| `.island-shell`       | Primary card with gradient, shadow, backdrop blur |
+| `.feature-card`       | Lighter card with hover lift effect               |
+| `.display-title`      | Fraunces serif display heading                    |
+| `.island-kicker`      | Small uppercase label (0.16em tracking)           |
+| `.nav-link`           | Navigation link base style                        |
+| `.nav-link.is-active` | Active navigation state                           |
+| `.rise-in`            | Entrance animation                                |
 
 ## Typography
 
-| Font | Variable | Usage |
-|------|----------|-------|
-| Manrope | `--font-sans` (default) | Body text, UI |
-| Fraunces | `.display-title` | Headlines, display |
-| JetBrains Mono | `font-mono` | Code blocks |
+| Font           | Variable                | Usage              |
+| -------------- | ----------------------- | ------------------ |
+| Manrope        | `--font-sans` (default) | Body text, UI      |
+| Fraunces       | `.display-title`        | Headlines, display |
+| JetBrains Mono | `font-mono`             | Code blocks        |
 
 ## Rules
 

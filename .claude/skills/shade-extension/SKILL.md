@@ -69,7 +69,12 @@ export { LagoonButton };
 ### Card with extra behaviour
 
 ```tsx
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from '@/components/ui/card';
 import type { ComponentProps, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -102,9 +107,7 @@ export { FeatureCard };
 If you need a one-off variant, just pass `className` directly — no wrapper needed:
 
 ```tsx
-<Button className="rounded-full bg-[var(--palm)] text-white">
-  Save
-</Button>
+<Button className="rounded-full bg-[var(--palm)] text-white">Save</Button>
 ```
 
 Create a wrapper component only when the variant is reused across multiple files.

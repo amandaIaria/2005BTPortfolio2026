@@ -16,7 +16,11 @@ export function ImageHeader({
   ...props
 }: ImageHeaderProps) {
   return (
-    <div data-component="image-header" className={cn('relative', className)} {...props}>
+    <div
+      data-component="image-header"
+      className={cn('relative', className)}
+      {...props}
+    >
       <h1 className="sr-only">
         {pageName} — {siteName}
       </h1>

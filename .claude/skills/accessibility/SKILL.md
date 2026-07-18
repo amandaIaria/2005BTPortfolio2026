@@ -9,16 +9,16 @@ description: 'Use when building UI components, adding interactive elements, hand
 
 Always use the correct HTML element for the job:
 
-| Element | When to use |
-|---------|-------------|
-| `<main>` | Primary page content (one per page) |
-| `<nav>` | Navigation blocks |
-| `<header>` | Page or section header |
-| `<footer>` | Page or section footer |
-| `<section>` | Thematic grouping with a heading |
-| `<article>` | Self-contained content (cards, posts) |
-| `<button>` | Interactive actions — **never** `<div onClick>` |
-| `<a>` | Navigation to a URL — **never** `<button>` for links |
+| Element     | When to use                                          |
+| ----------- | ---------------------------------------------------- |
+| `<main>`    | Primary page content (one per page)                  |
+| `<nav>`     | Navigation blocks                                    |
+| `<header>`  | Page or section header                               |
+| `<footer>`  | Page or section footer                               |
+| `<section>` | Thematic grouping with a heading                     |
+| `<article>` | Self-contained content (cards, posts)                |
+| `<button>`  | Interactive actions — **never** `<div onClick>`      |
+| `<a>`       | Navigation to a URL — **never** `<button>` for links |
 
 ## Radix/shadcn Components
 
@@ -68,6 +68,7 @@ The project tokens have been designed with contrast in mind:
 - `--lagoon-deep` — sufficient contrast for link text on light backgrounds
 
 When adding new colours:
+
 - Body text: minimum 4.5:1 contrast ratio (WCAG AA)
 - Large text (18px+ bold or 24px+): minimum 3:1
 - Interactive elements: minimum 3:1 against adjacent colours

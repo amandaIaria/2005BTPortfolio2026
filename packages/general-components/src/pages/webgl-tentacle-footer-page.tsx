@@ -30,10 +30,7 @@ export default function WebGLTentacleFooterPage() {
       {/* Default */}
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Default (8 tentacles)</h2>
-        <WebGLTentacleFooter
-          text="© 2026 Portfolio"
-          className="rounded-lg"
-        />
+        <WebGLTentacleFooter text="© 2026 Portfolio" className="rounded-lg" />
       </section>
 
       {/* Dense */}

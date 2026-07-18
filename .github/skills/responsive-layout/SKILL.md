@@ -17,14 +17,14 @@ Write base styles for mobile, then layer on larger breakpoints:
 
 ## Tailwind Breakpoints
 
-| Prefix | Min Width | Typical Use |
-|--------|-----------|-------------|
-| *(none)* | 0px | Mobile base |
-| `sm:` | 640px | Large phones / small tablets |
-| `md:` | 768px | Tablets |
-| `lg:` | 1024px | Laptops |
-| `xl:` | 1280px | Desktops |
-| `2xl:` | 1536px | Large screens |
+| Prefix   | Min Width | Typical Use                  |
+| -------- | --------- | ---------------------------- |
+| _(none)_ | 0px       | Mobile base                  |
+| `sm:`    | 640px     | Large phones / small tablets |
+| `md:`    | 768px     | Tablets                      |
+| `lg:`    | 1024px    | Laptops                      |
+| `xl:`    | 1280px    | Desktops                     |
+| `2xl:`   | 1536px    | Large screens                |
 
 The project primarily uses `sm:` and `lg:` breakpoints.
 
@@ -33,9 +33,7 @@ The project primarily uses `sm:` and `lg:` breakpoints.
 Use `.page-wrap` for all page-level content — it handles max-width and centering:
 
 ```tsx
-<main className="page-wrap px-4 pb-8 pt-14">
-  {/* page content */}
-</main>
+<main className="page-wrap px-4 pb-8 pt-14">{/* page content */}</main>
 ```
 
 Don't set your own `max-width` or `mx-auto` when inside `.page-wrap`.
@@ -43,6 +41,7 @@ Don't set your own `max-width` or `mx-auto` when inside `.page-wrap`.
 ## Common Layout Patterns
 
 ### Hero Section
+
 ```tsx
 <section className="island-shell rounded-[2rem] px-6 py-10 sm:px-10 sm:py-14">
   <h1 className="text-4xl sm:text-6xl">Headline</h1>
@@ -51,18 +50,19 @@ Don't set your own `max-width` or `mx-auto` when inside `.page-wrap`.
 ```
 
 ### Feature Cards Grid
+
 ```tsx
 <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
   {items.map((item) => (
-    <article className="island-shell feature-card rounded-2xl p-5">
-      ...
-    </article>
+    <article className="island-shell feature-card rounded-2xl p-5">...</article>
   ))}
 </section>
 ```
 
 ### Navigation (Header Pattern)
+
 Mobile: full-width nav wraps below logo. Desktop: inline.
+
 ```tsx
 <nav className="flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:py-4">
   {/* Logo */}
@@ -72,13 +72,12 @@ Mobile: full-width nav wraps below logo. Desktop: inline.
   <div className="ml-auto sm:ml-0">...</div>
 
   {/* Nav links — full width on mobile, inline on desktop */}
-  <div className="order-3 w-full sm:order-2 sm:w-auto">
-    ...
-  </div>
+  <div className="order-3 w-full sm:order-2 sm:w-auto">...</div>
 </nav>
 ```
 
 ### Hide/Show by Breakpoint
+
 ```tsx
 // Hidden on mobile, visible on sm+
 <a className="hidden sm:block">Desktop only link</a>
@@ -91,13 +90,13 @@ Mobile: full-width nav wraps below logo. Desktop: inline.
 
 Follow the project's existing spacing patterns:
 
-| Context | Mobile | Desktop |
-|---------|--------|---------|
-| Page horizontal padding | `px-4` | `px-6` or `px-10` |
-| Section vertical padding | `py-10` | `py-14` |
-| Card padding | `p-5` | `p-5` to `p-6` |
-| Section gap | `mt-8` | `mt-8` |
-| Grid gap | `gap-4` | `gap-4` |
+| Context                  | Mobile  | Desktop           |
+| ------------------------ | ------- | ----------------- |
+| Page horizontal padding  | `px-4`  | `px-6` or `px-10` |
+| Section vertical padding | `py-10` | `py-14`           |
+| Card padding             | `p-5`   | `p-5` to `p-6`    |
+| Section gap              | `mt-8`  | `mt-8`            |
+| Grid gap                 | `gap-4` | `gap-4`           |
 
 ## Flex vs Grid
 

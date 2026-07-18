@@ -113,9 +113,7 @@ function CassetteCarousel({
             <DialogTitle>
               {activeSlide?.modalTitle ?? activeSlide?.label}
             </DialogTitle>
-            <DialogDescription>
-              {activeSlide?.sublabel}
-            </DialogDescription>
+            <DialogDescription>{activeSlide?.sublabel}</DialogDescription>
           </DialogHeader>
           <div className="py-4">
             {activeSlide?.modalContent ?? (

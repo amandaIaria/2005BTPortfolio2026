@@ -175,9 +175,7 @@ function Playlist({ videos, className, ...props }: PlaylistProps) {
           )}
         </button>
         <span className="truncate text-sm font-medium text-[var(--sea-ink)]">
-          {currentIndex >= 0
-            ? videos[currentIndex].title
-            : 'Select a track'}
+          {currentIndex >= 0 ? videos[currentIndex].title : 'Select a track'}
         </span>
       </div>
 

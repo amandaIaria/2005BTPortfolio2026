@@ -32,7 +32,12 @@ function useAvoidOverlap(
   targetRefs: React.RefObject<HTMLElement | null>[],
   options: UseAvoidOverlapOptions = {},
 ) {
-  const { side = 'right', gap = 12, enabled = true, mode = 'clip-path' } = options;
+  const {
+    side = 'right',
+    gap = 12,
+    enabled = true,
+    mode = 'clip-path',
+  } = options;
 
   React.useEffect(() => {
     if (!enabled) return;
@@ -40,8 +45,7 @@ function useAvoidOverlap(
     const obstacle = obstacleRef.current;
     if (!obstacle) return;
 
-    const paddingProp =
-      side === 'right' ? 'paddingRight' : 'paddingLeft';
+    const paddingProp = side === 'right' ? 'paddingRight' : 'paddingLeft';
 
     const spacers: HTMLElement[] = [];
     const displayOverrides: HTMLElement[] = [];
@@ -71,9 +75,7 @@ function useAvoidOverlap(
 
     function getOrCreateSpacer(el: HTMLElement): HTMLElement {
       const container = findContentContainer(el);
-      let spacer = container.querySelector<HTMLElement>(
-        `[${SPACER_ATTR}]`,
-      );
+      let spacer = container.querySelector<HTMLElement>(`[${SPACER_ATTR}]`);
       if (!spacer) {
         spacer = document.createElement('div');
         spacer.setAttribute(SPACER_ATTR, '');
@@ -106,9 +108,7 @@ function useAvoidOverlap(
         if (!overlapsVertically) {
           el.style.clipPath = '';
           el.style[paddingProp] = '';
-          const spacer = el.querySelector<HTMLElement>(
-            `[${SPACER_ATTR}]`,
-          );
+          const spacer = el.querySelector<HTMLElement>(`[${SPACER_ATTR}]`);
           if (spacer) spacer.style.display = 'none';
           continue;
         }

@@ -16,7 +16,10 @@ export const Route = createFileRoute('/about')({
   head: () => ({
     meta: [
       { title: 'About — Amanda Iaria' },
-      { name: 'description', content: 'Learn about my background, skills, and experience.' },
+      {
+        name: 'description',
+        content: 'Learn about my background, skills, and experience.',
+      },
     ],
   }),
   component: AboutPage,

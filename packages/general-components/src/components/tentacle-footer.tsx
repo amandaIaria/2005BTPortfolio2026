@@ -6,13 +6,7 @@ interface TentacleFooterProps extends React.ComponentProps<'footer'> {
   tentacleCount?: number;
 }
 
-function Tentacle({
-  index,
-  total,
-}: {
-  index: number;
-  total: number;
-}) {
+function Tentacle({ index, total }: { index: number; total: number }) {
   const baseX = (index / total) * 100;
   const offset = (index % 2 === 0 ? -1 : 1) * 3;
   const height = 80 + Math.sin(index * 1.5) * 40;
@@ -42,7 +36,7 @@ function Tentacle({
             className="animated-tentacle-sucker"
             cx={cx}
             cy={cy}
-            r={1.5 + (i * 0.3)}
+            r={1.5 + i * 0.3}
             fill="none"
             stroke="white"
             strokeWidth="0.8"

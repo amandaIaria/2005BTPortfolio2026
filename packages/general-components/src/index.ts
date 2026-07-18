@@ -71,6 +71,8 @@ export type {
   SliderProps,
   SliderSlide,
   SliderSlides,
+  SliderSlideImage,
+  SliderSlideLink,
 } from './components/slider';
 export {
   Tooltip,

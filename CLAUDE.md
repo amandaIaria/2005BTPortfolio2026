@@ -4,7 +4,7 @@ This file is automatically loaded by Claude Code. Reference `.github/copilot-ins
 
 ## Quick Setup
 
-- **Node version**: See `.nvmrc` 
+- **Node version**: See `.nvmrc`
 - **Dev server**: `npm run dev` (port 3000)
 - **Build**: `npm run build`
 - **Test**: `npm run test`
@@ -19,6 +19,7 @@ This file is automatically loaded by Claude Code. Reference `.github/copilot-ins
 - **Phosphor Icons** (`@phosphor-icons/react`)
 
 ### Code Style
+
 - No semicolons, single quotes, trailing commas (Prettier enforced)
 - Functional components using `function` declarations (not arrows)
 - Path alias `@/` for all `src/` imports
@@ -26,6 +27,7 @@ This file is automatically loaded by Claude Code. Reference `.github/copilot-ins
 - Every component requires `data-component` attribute
 
 ### Design Tokens (`.src/styles.css`)
+
 - Text: `--sea-ink`, `--sea-ink-soft`
 - Accent: `--lagoon`, `--lagoon-deep`, `--palm`
 - Backgrounds: `--sand`, `--foam`, `--bg-base`
@@ -36,15 +38,15 @@ This file is automatically loaded by Claude Code. Reference `.github/copilot-ins
 
 Invoke with `/` in Claude Code:
 
-| Skill | Purpose |
-|-------|---------|
+| Skill                           | Purpose                                  |
+| ------------------------------- | ---------------------------------------- |
 | `react-tanstack-best-practices` | Type-safe routing, layouts, data loading |
-| `tailwind-design-tokens` | Color tokens, dark mode, utilities |
-| `component-testing` | Vitest + Testing Library patterns |
-| `accessibility` | Semantic HTML, ARIA, a11y best practices |
-| `seo-and-meta` | Meta tags, Open Graph, structured data |
-| `responsive-layout` | Mobile-first, breakpoints, spacing |
-| `shade-extension` | Extend shadcn/ui without modifying |
+| `tailwind-design-tokens`        | Color tokens, dark mode, utilities       |
+| `component-testing`             | Vitest + Testing Library patterns        |
+| `accessibility`                 | Semantic HTML, ARIA, a11y best practices |
+| `seo-and-meta`                  | Meta tags, Open Graph, structured data   |
+| `responsive-layout`             | Mobile-first, breakpoints, spacing       |
+| `shade-extension`               | Extend shadcn/ui without modifying       |
 
 ## Monorepo Structure
 

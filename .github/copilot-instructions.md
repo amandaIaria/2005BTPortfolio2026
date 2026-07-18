@@ -73,12 +73,13 @@ export const <featureName>Route = createRoute({
 Create `packages/<feature-name>/src/index.ts`:
 
 ```typescript
-export * from "./routes/<feature-name>";
+export * from './routes/<feature-name>';
 ```
 
 ### Step 5: Link Package to Main App
 
 1. Add to `apps/admin-portal/package.json` dependencies:
+
    ```json
    "@admin-portal/<feature-name>": "*"
    ```
@@ -106,6 +107,7 @@ export const Route = createFileRoute("/<feature-name>")({
 ### Claude Code
 
 `CLAUDE.md` in the repo root is automatically loaded into Claude Code's context. Use Claude Code with:
+
 - `/react-tanstack-best-practices` — routing, preloading, layouts, data loading
 - `/tailwind-design-tokens` — tokens, dark mode, custom utilities
 - `/component-testing` — Vitest + Testing Library patterns
@@ -119,7 +121,6 @@ export const Route = createFileRoute("/<feature-name>")({
 This file (`.github/copilot-instructions.md`) is automatically loaded into Copilot's context for every chat request. Custom prompts and agents can be added in `.github/prompts/` and `.github/agents/`.
 
 Custom prompts and agents can be added in `.github/prompts/` and `.github/agents/`.
-
 
 ## Components
 
@@ -139,6 +140,7 @@ function ImageHeader({ ... }: ImageHeaderProps) {
   );
 }
 ```
+
 - When creating a new general component, add a live example to the UI Kit page at `packages/general-components/src/pages/ui-kit-page.tsx` using the `<Section title="ComponentName">` wrapper
 
 ## Styling
