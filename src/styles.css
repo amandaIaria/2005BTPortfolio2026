@@ -8,10 +8,11 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
 }
 
 :root {
+  --color-flat-black: #333333;
   --sea-ink: #173a40;
   --sea-ink-soft: #416166;
   --lagoon: #4fb8b2;
@@ -63,6 +64,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Text";
+  --text-body: var(--color-flat-black);
 }
 
 :root[data-theme='dark'] {
@@ -85,6 +89,7 @@
   --link-bg-hover: rgba(24, 44, 49, 0.8);
   --hero-a: rgba(96, 215, 207, 0.18);
   --hero-b: rgba(110, 200, 154, 0.12);
+  --text-body: var(--color-white);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -229,6 +234,8 @@
   /* Font Families */
   --font-heading: var(--font-mono);
   --font-mono: 'JetBrains Mono Variable', monospace;
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'DM Serif Text', serif;
 }
 
 .dark {
@@ -277,7 +284,7 @@
   }
   body {
     margin: 0;
-    color: var(--sea-ink);
+    color: var(--text-body);
     font-family: var(--font-sans);
     background-color: var(--bg-base);
     overflow-x: hidden;
@@ -302,5 +309,14 @@
 @layer components {
   .page-wrap {
     @apply max-w-4xl mx-auto;
+  }
+
+
+  .slider-content {
+    @apply font-sans text-body text-sm @lg:text-base;
+  }
+
+  .slider-heading {
+    @apply text-4xl @lg:text-5xl font-bold font-serif;
   }
 }
