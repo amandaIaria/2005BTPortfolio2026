@@ -8,15 +8,10 @@ interface SlideContentProps {
 export function SlideContent({ slide }: SlideContentProps) {
   return (
     <div className="slider-content">
-      <h2
-        className="slider-heading text-4xl @lg:text-5xl font-bold dark:text-white mb-2"
-        style={{ fontFamily: "'Fraunces', serif" }}
-      >
-        {slide.right.title}
-      </h2>
+      <h2 className="slider-heading mb-2">{slide.right.title}</h2>
       <div className="w-full max-w-[90%] h-0.5 mx-auto mb-4" />
       <div className="max-w-xl flex-1 flex flex-col">
-        <p className="text-sm @lg:text-base dark:text-white/80 mb-6 max-h-48 overflow-hidden">
+        <p className="mb-6 max-h-48 overflow-hidden">
           {slide.right.description}
         </p>
         <div className="w-8 h-px mx-auto mb-4" />
@@ -27,11 +22,7 @@ export function SlideContent({ slide }: SlideContentProps) {
         </ul>
       </div>
       <div className="mt-auto">
-        <Button
-          asChild
-          size="lg"
-          className="bg-[var(--lagoon)] text-white hover:bg-[var(--lagoon-deep)]"
-        >
+        <Button asChild size="lg" className="slider-button">
           <a
             href={slide.right.link.url}
             target="_blank"
