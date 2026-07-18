@@ -20,9 +20,6 @@ const buttonVariants = cva(
         destructive:
           'bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40',
         link: 'text-primary underline-offset-4 hover:underline',
-        teal: 'bg-[var(--lagoon)] text-white hover:bg-[var(--lagoon-deep)] dark:bg-[var(--lagoon)] dark:hover:bg-[var(--lagoon-deep)]',
-        'teal-outline':
-          'border border-[var(--lagoon)] text-[var(--lagoon)] hover:bg-[var(--lagoon)]/10 dark:border-[var(--lagoon)] dark:text-[var(--lagoon)]',
       },
       size: {
         default:
