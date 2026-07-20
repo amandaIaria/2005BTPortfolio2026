@@ -28,7 +28,7 @@ export function SliderPagination({
   dotsInnerRef,
 }: SliderPaginationProps) {
   return (
-    <div className="rounded-full p-2 bg-[rgba(255,255,255,0.5)] absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 z-10">
+    <div className="rounded-full p-2 bg-[rgba(255,255,255,0.5)] backdrop-blur-sm border border-white absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 z-10">
       <Button
         variant="ghost"
         size="lg"
