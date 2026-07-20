@@ -236,7 +236,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
             }
           }
         `}</style>
-        {/* 
+        
         {previous !== null && outgoingSlide && (
           <>
             <SlidePaneImage
@@ -257,7 +257,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
               isTransitioning={isTransitioning}
             />
           </>
-        )} */}
+        )}
 
         <SlidePaneImage
           slide={currentSlide}

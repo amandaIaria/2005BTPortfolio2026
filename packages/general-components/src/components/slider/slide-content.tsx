@@ -1,4 +1,4 @@
-import { Button } from '../ui/button';
+import { PortfolioButton } from '../portfolio-button';
 import type { SliderSlide } from './types';
 
 interface SlideContentProps {
@@ -8,30 +8,25 @@ interface SlideContentProps {
 export function SlideContent({ slide }: SlideContentProps) {
   return (
     <div className="slider-content">
-      <h2
-        className="slider-heading text-4xl @lg:text-5xl font-bold dark:text-white mb-2"
-        style={{ fontFamily: "'Fraunces', serif" }}
-      >
+      <h2 className="slider-heading text-4xl @lg:text-5xl font-bold dark:text-white mb-2">
         {slide.right.title}
       </h2>
-      <div className="w-full max-w-[90%] h-0.5 mx-auto mb-4" />
+      <div className="w-full h-1 mx-auto my-6 bg-accent" />
       <div className="max-w-xl flex-1 flex flex-col">
-        <p className="text-sm @lg:text-base dark:text-white/80 mb-6 max-h-48 overflow-hidden">
+        <p className="text-sm @lg:text-base dark:text-white/80 max-h-48 overflow-hidden">
           {slide.right.description}
         </p>
-        <div className="w-8 h-px mx-auto mb-4" />
-        <ul className="list-disc list-inside mb-8 space-y-1 text-sm @lg:text-base  dark:text-white">
+        <div className="w-full max-w-[8%] h-[2px] mx-auto my-10 bg-accent" />
+        <ul className="mb-8 space-y-4 text-sm @lg:text-base">
           {slide.right.list.map((item, i) => (
-            <li key={i}>{item}</li>
+            <li key={i} className="list-item-chevron">
+              {item}
+            </li>
           ))}
         </ul>
       </div>
-      <div className="mt-auto">
-        <Button
-          asChild
-          size="lg"
-          className="bg-[var(--lagoon)] text-white hover:bg-[var(--lagoon-deep)]"
-        >
+      <div className="mt-auto flex justify-end">
+        <PortfolioButton asChild size="lg" className="slider-button">
           <a
             href={slide.right.link.url}
             target="_blank"
@@ -39,7 +34,7 @@ export function SlideContent({ slide }: SlideContentProps) {
           >
             {slide.right.link.copy ?? 'Go to site'}
           </a>
-        </Button>
+        </PortfolioButton>
       </div>
     </div>
   );

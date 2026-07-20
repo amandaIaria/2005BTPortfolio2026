@@ -2,8 +2,11 @@
 export { AspectRatio } from './components/ui/aspect-ratio';
 export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
-export { CustomButton, customButtonVariants } from './components/custom-button';
-export type { CustomButtonProps } from './components/custom-button';
+export {
+  PortfolioButton,
+  portfolioButtonVariants,
+} from './components/portfolio-button';
+export type { PortfolioButtonProps } from './components/portfolio-button';
 export { Container } from './components/ui/container';
 export { Switch } from './components/ui/switch';
 export {
