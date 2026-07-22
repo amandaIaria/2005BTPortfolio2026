@@ -1,19 +1,12 @@
-import {
-  forwardRef,
-  useRef,
-  useLayoutEffect,
-  useEffect,
-  useState,
-  useCallback,
-} from 'react';
+import { forwardRef, useRef, useEffect, useCallback } from 'react';
+import { AnimatePresence, useReducedMotion, cubicBezier } from 'motion/react';
+import type { Variants, Transition } from 'motion/react';
 import { cn } from '@general/lib/utils';
 import { useSlider } from '../../hooks/use-slider';
 import { SlidePaneImage, SlidePaneRight, SlideMobileImage } from './slide-pane';
 import { SliderPagination } from './slider-pagination';
-import type { SliderProps, SliderSlides } from './types';
+import type { SliderProps } from './types';
 import { SliderMiddle } from './slide-middle';
-
-const TRANSITION_MS = 500;
 
 const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
   (
@@ -45,40 +38,40 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
       onChange: onSlideChange,
     });
 
-    const [previous, setPrevious] = useState<number | null>(null);
-    const outgoingPaneRef = useRef<HTMLDivElement>(null);
-    const dotsTrackRef = useRef<HTMLDivElement>(null);
-    const dotsInnerRef = useRef<HTMLDivElement>(null);
+    const dotsTrackRef = useRef<HTMLDivElement | null>(null);
+    const dotsInnerRef = useRef<HTMLDivElement | null>(null);
     const swipeStartRef = useRef({ x: 0, y: 0 });
-    const settleTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    useLayoutEffect(() => {
-      if (isTransitioning && previous === null) {
-        setPrevious(index);
-      }
-    }, [isTransitioning, index, previous]);
+    const shouldReduceMotion = useReducedMotion();
 
-    useLayoutEffect(() => {
-      if (isTransitioning && previous !== null && outgoingPaneRef.current) {
-        const handleTransitionEnd = () => {
-          if (settleTimeoutRef.current) clearTimeout(settleTimeoutRef.current);
-          setPrevious(null);
-          onTransitionSettled();
+    const PANE_EASE = cubicBezier(0.4, 0, 0.2, 1);
+    const paneTransition: Transition = shouldReduceMotion
+      ? { duration: 0.15, ease: 'easeInOut' }
+      : { duration: 0.5, ease: PANE_EASE };
+
+    const leftPaneVariants: Variants = shouldReduceMotion
+      ? { enter: { opacity: 0 }, center: { opacity: 1 }, exit: { opacity: 0 } }
+      : {
+          enter: (dir: 1 | -1) => ({
+            y: dir > 0 ? '100%' : '-100%',
+          }),
+          center: { y: '0%' },
+          exit: (dir: 1 | -1) => ({
+            y: dir > 0 ? '-100%' : '100%',
+          }),
         };
 
-        const pane = outgoingPaneRef.current;
-        pane.addEventListener('transitionend', handleTransitionEnd);
-
-        settleTimeoutRef.current = setTimeout(() => {
-          setPrevious(null);
-          onTransitionSettled();
-        }, TRANSITION_MS + 50);
-
-        return () => {
-          pane.removeEventListener('transitionend', handleTransitionEnd);
+    const rightPaneVariants: Variants = shouldReduceMotion
+      ? { enter: { opacity: 0 }, center: { opacity: 1 }, exit: { opacity: 0 } }
+      : {
+          enter: (dir: 1 | -1) => ({
+            y: dir > 0 ? '-100%' : '100%',
+          }),
+          center: { y: '0%' },
+          exit: (dir: 1 | -1) => ({
+            y: dir > 0 ? '100%' : '-100%',
+          }),
         };
-      }
-    }, [isTransitioning, previous, onTransitionSettled]);
 
     const handleKeyDown = useCallback(
       (e: React.KeyboardEvent) => {
@@ -157,7 +150,6 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
     };
 
     const currentSlide = slides[index];
-    const outgoingSlide = previous !== null ? slides[previous] : null;
 
     return (
       <section
@@ -180,104 +172,49 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
         {...props}
       >
         <style>{`
-          @media (prefers-reduced-motion: no-preference) {
-            [data-component="slider"][data-direction="next"] [data-pane="left"][data-phase="outgoing"] {
-              transform: translateY(-100%);
-            }
-            [data-component="slider"][data-direction="next"] [data-pane="left"][data-phase="incoming"] {
-              transform: translateY(100%);
-            }
-            [data-component="slider"][data-direction="next"] [data-pane="right"][data-phase="outgoing"] {
-              transform: translateY(100%);
-            }
-            [data-component="slider"][data-direction="next"] [data-pane="right"][data-phase="incoming"] {
-              transform: translateY(-100%);
-            }
-
-            [data-component="slider"][data-direction="prev"] [data-pane="left"][data-phase="outgoing"] {
-              transform: translateY(100%);
-            }
-            [data-component="slider"][data-direction="prev"] [data-pane="left"][data-phase="incoming"] {
-              transform: translateY(-100%);
-            }
-            [data-component="slider"][data-direction="prev"] [data-pane="right"][data-phase="outgoing"] {
-              transform: translateY(-100%);
-            }
-            [data-component="slider"][data-direction="prev"] [data-pane="right"][data-phase="incoming"] {
-              transform: translateY(100%);
-            }
-
-            [data-component="slider"] [data-pane] {
-              transition: transform ${TRANSITION_MS}ms cubic-bezier(0.4, 0, 0.2, 1);
-            }
-
-            [data-component="slider"] [role="tablist"] {
-              transition: transform 350ms ease;
-            }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            [data-component="slider"] [data-phase="outgoing"] {
-              opacity: 1;
-              animation: sliderFadeOut ${150}ms ease-out forwards;
-            }
-            [data-component="slider"] [data-phase="incoming"] {
-              opacity: 0;
-              animation: sliderFadeIn ${150}ms ease-in forwards;
-              animation-delay: 75ms;
-            }
-
-            @keyframes sliderFadeOut {
-              to { opacity: 0; }
-            }
-            @keyframes sliderFadeIn {
-              from { opacity: 0; }
-              to { opacity: 1; }
-            }
+          [data-component="slider"] [role="tablist"] {
+            transition: transform 350ms ease;
           }
         `}</style>
-        
-        {previous !== null && outgoingSlide && (
-          <>
-            <SlidePaneImage
-              slide={outgoingSlide}
-              isOutgoing
-              isTransitioning={isTransitioning}
-              outgoingRef={outgoingPaneRef}
-            />
-            <SlidePaneRight
-              slide={outgoingSlide}
-              isOutgoing
-              isTransitioning={isTransitioning}
-              outgoingRef={outgoingPaneRef}
-            />
-            <SlideMobileImage
-              slide={outgoingSlide}
-              isOutgoing
-              isTransitioning={isTransitioning}
-            />
-          </>
-        )}
 
-        <SlidePaneImage
-          slide={currentSlide}
-          isOutgoing={false}
-          isTransitioning={isTransitioning}
-        />
+        <AnimatePresence custom={direction} mode="sync">
+          <SlidePaneImage
+            key={index}
+            slide={currentSlide}
+            isTransitioning={isTransitioning}
+            direction={direction}
+            variants={leftPaneVariants}
+            transition={paneTransition}
+          />
+        </AnimatePresence>
 
         <SliderMiddle />
 
-        <SlidePaneRight
-          slide={currentSlide}
-          isOutgoing={false}
-          isTransitioning={isTransitioning}
-        />
+        <AnimatePresence
+          custom={direction}
+          mode="sync"
+          onExitComplete={onTransitionSettled}
+        >
+          <SlidePaneRight
+            key={index}
+            slide={currentSlide}
+            isTransitioning={isTransitioning}
+            direction={direction}
+            variants={rightPaneVariants}
+            transition={paneTransition}
+          />
+        </AnimatePresence>
 
-        <SlideMobileImage
-          slide={currentSlide}
-          isOutgoing={false}
-          isTransitioning={isTransitioning}
-        />
+        <AnimatePresence custom={direction} mode="sync">
+          <SlideMobileImage
+            key={index}
+            slide={currentSlide}
+            isTransitioning={isTransitioning}
+            direction={direction}
+            variants={leftPaneVariants}
+            transition={paneTransition}
+          />
+        </AnimatePresence>
 
         <div aria-live="polite" aria-atomic="true" className="sr-only">
           {`Slide ${index + 1} of ${slides.length}: ${currentSlide.right.title}`}
@@ -296,7 +233,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
           dotsInnerRef={dotsInnerRef}
         />
 
-        {slides.map((slide, i) => (
+        {slides.map((_, i) => (
           <div
             key={i}
             id={`slider-slide-${i}`}

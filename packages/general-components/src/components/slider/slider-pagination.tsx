@@ -11,8 +11,8 @@ export interface SliderPaginationProps {
   isFirst: boolean;
   isLast: boolean;
   loop: boolean;
-  dotsTrackRef: React.RefObject<HTMLDivElement>;
-  dotsInnerRef: React.RefObject<HTMLDivElement>;
+  dotsTrackRef: React.RefObject<HTMLDivElement | null>;
+  dotsInnerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export function SliderPagination({

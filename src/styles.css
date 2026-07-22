@@ -319,11 +319,11 @@
   }
 
   .list-item-chevron {
-    @apply list-none pl-5 relative ;
+    @apply list-none pl-5 relative;
   }
 
   .list-item-chevron::before {
     content: '›';
-    @apply absolute left-0 text-[24px] leading-[24px] text-accent ;
+    @apply absolute left-0 text-[24px] leading-[24px] text-accent;
   }
 }

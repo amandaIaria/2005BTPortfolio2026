@@ -1,91 +1,91 @@
-import React from 'react';
+import { motion } from 'motion/react';
+import type { Variants, Transition } from 'motion/react';
 import type { SliderSlide } from './types';
 import { SlideContent } from './slide-content';
 
 export interface SlidePaneProps {
-  side: 'left' | 'right';
   slide: SliderSlide;
-  isOutgoing?: boolean;
   isTransitioning?: boolean;
-  outgoingRef?: React.RefObject<HTMLDivElement>;
+  direction: 1 | -1;
+  variants: Variants;
+  transition: Transition;
 }
 
 export function SlidePaneImage({
   slide,
-  isOutgoing,
   isTransitioning,
-  outgoingRef,
-}: Pick<
-  SlidePaneProps,
-  'slide' | 'isOutgoing' | 'isTransitioning' | 'outgoingRef'
->) {
+  direction,
+  variants,
+  transition,
+}: SlidePaneProps) {
   return (
-    <div
-      ref={isOutgoing ? outgoingRef : undefined}
+    <motion.div
+      custom={direction}
+      variants={variants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      transition={transition}
       data-pane="left"
       className="absolute inset-0 w-1/2 h-full @lg:w-1/2 hidden @lg:block"
-      aria-hidden={!isOutgoing}
+      inert={isTransitioning}
     >
-      <div
-        data-phase={isOutgoing ? 'outgoing' : 'incoming'}
-        className="absolute inset-0 overflow-hidden"
-        inert={isTransitioning}
-      >
-        <img
-          src={slide.left.image.src}
-          alt={slide.left.image.alt}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </div>
-    </div>
+      <img
+        src={slide.left.image.src}
+        alt={slide.left.image.alt}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    </motion.div>
   );
 }
 
 export function SlidePaneRight({
   slide,
-  isOutgoing,
   isTransitioning,
-  outgoingRef,
-}: Pick<
-  SlidePaneProps,
-  'slide' | 'isOutgoing' | 'isTransitioning' | 'outgoingRef'
->) {
+  direction,
+  variants,
+  transition,
+}: SlidePaneProps) {
   return (
-    <div
-      ref={isOutgoing ? outgoingRef : undefined}
+    <motion.div
+      custom={direction}
+      variants={variants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      transition={transition}
       data-pane="right"
-      className="absolute inset-0 w-full h-full @lg:w-1/2 @lg:left-1/2 bg-white dark:bg-[var(--sand)] flex flex-col p-6 @lg:p-8"
-      aria-hidden={isOutgoing}
+      className="absolute inset-0 w-full h-full @lg:w-1/2 @lg:left-1/2 justify-center items-center bg-white dark:bg-(--sand) flex flex-col p-6 @lg:p-8"
+      inert={isTransitioning}
     >
-      <div
-        data-phase={isOutgoing ? 'outgoing' : 'incoming'}
-        className="absolute inset-0 w-full h-full p-6 @lg:p-8 grid items-center justify-center"
-        inert={isTransitioning}
-      >
-        <SlideContent slide={slide} />
-      </div>
-    </div>
+      <SlideContent slide={slide} />
+    </motion.div>
   );
 }
 
 export function SlideMobileImage({
   slide,
-  isOutgoing,
   isTransitioning,
-}: Pick<SlidePaneProps, 'slide' | 'isOutgoing' | 'isTransitioning'>) {
+  direction,
+  variants,
+  transition,
+}: SlidePaneProps) {
   return (
-    <div className="w-full @lg:hidden aspect-video overflow-hidden">
-      <div
-        data-phase={isOutgoing ? 'outgoing' : 'incoming'}
-        className="absolute inset-0 w-full h-full"
-        inert={isTransitioning}
-      >
-        <img
-          src={slide.left.image.src}
-          alt={slide.left.image.alt}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
+    <motion.div
+      custom={direction}
+      variants={variants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      transition={transition}
+      className="absolute inset-0 w-full h-full @lg:hidden"
+      inert={isTransitioning}
+    >
+      <img
+        src={slide.left.image.src}
+        alt={slide.left.image.alt}
+        className="w-full h-full object-cover"
+      />
+    </motion.div>
   );
 }

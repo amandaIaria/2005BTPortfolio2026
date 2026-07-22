@@ -8,14 +8,8 @@
     "format": "npm run format",
     "check": "npm run check"
   },
-  "permissions": [
-    {
-      "commands": ["npm", "node", "git"],
-      "scope": "global"
-    },
-    {
-      "commands": ["bash"],
-      "scope": "project"
-    }
-  ]
+  "permissions": {
+    "commands": ["npm", "node", "git", "bash"],
+    "scope": ["global", "project"]
+  }
 }
