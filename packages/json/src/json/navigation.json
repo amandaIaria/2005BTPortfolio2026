@@ -1,0 +1,39 @@
+[
+  {
+    "href": "/about",
+    "text": "About"
+  },
+  {
+    "href": "/projects",
+    "text": "Projects"
+  },
+  {
+    "href": "/art",
+    "text": "Art"
+  },
+  {
+    "href": "",
+    "text": "blah 1"
+  },
+   {
+    "href": "",
+    "text": "This should not show"
+  },
+  {
+    "href": "/shrines",
+    "text": "Shrines"
+  },
+  {
+    "href": "",
+    "text": "blah 2"
+  },
+ 
+  {
+    "href": "/ui-kit",
+    "text": "UI Kit"
+  },
+  {
+    "href": "/contact",
+    "text": "Contact"
+  }
+]

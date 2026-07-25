@@ -85,6 +85,9 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from './components/ui/tooltip';
+export { PageTransitionProvider } from './components/page-transition/page-transition-provider';
+export { usePageTransition } from './components/page-transition/page-transition-context';
+export type { StartTransitionOptions } from './components/page-transition/page-transition-context';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';

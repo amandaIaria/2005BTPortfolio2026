@@ -1,7 +1,7 @@
 import { Outlet, createRootRoute, useNavigate } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { AppHeader, TooltipProvider } from '@general/components';
+import { AppHeader, PageTransitionProvider, TooltipProvider } from '@general/components';
 
 import '../styles.css';
 
@@ -15,7 +15,9 @@ function RootComponent() {
   return (
     <TooltipProvider>
       <AppHeader navigate={(path) => nav({ to: path })} />
-      <Outlet />
+      <PageTransitionProvider>
+        <Outlet />
+      </PageTransitionProvider>
       <TanStackDevtools
         config={{
           position: 'bottom-right',
