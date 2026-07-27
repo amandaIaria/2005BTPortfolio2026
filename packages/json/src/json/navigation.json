@@ -4,7 +4,7 @@
     "text": "About"
   },
   {
-    "href": "/projects",
+    "href": "/modern/projects",
     "text": "Projects"
   },
   {
@@ -13,11 +13,11 @@
   },
   {
     "href": "",
-    "text": "blah 1"
+    "text": ""
   },
-   {
+  {
     "href": "",
-    "text": "This should not show"
+    "text": ""
   },
   {
     "href": "/shrines",
@@ -25,9 +25,9 @@
   },
   {
     "href": "",
-    "text": "blah 2"
+    "text": ""
   },
- 
+
   {
     "href": "/ui-kit",
     "text": "UI Kit"

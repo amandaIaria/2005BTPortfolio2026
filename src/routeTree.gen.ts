@@ -9,6 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ShrinesRouteImport } from './routes/shrines'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ArtRouteImport } from './routes/art'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as UiKitRouteRouteImport } from './routes/ui-kit/route'
 import { Route as ModernRouteRouteImport } from './routes/modern/route'
 import { Route as IndexRouteImport } from './routes/index'
@@ -16,7 +21,37 @@ import { Route as UiKitIndexRouteImport } from './routes/ui-kit/index'
 import { Route as ModernIndexRouteImport } from './routes/modern/index'
 import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/webgl-tentacle-footer'
 import { Route as UiKitSliderRouteImport } from './routes/ui-kit/slider'
+import { Route as ModernShrinesRouteImport } from './routes/modern/shrines'
+import { Route as ModernProjectsRouteImport } from './routes/modern/projects'
+import { Route as ModernContactRouteImport } from './routes/modern/contact'
+import { Route as ModernArtRouteImport } from './routes/modern/art'
+import { Route as ModernAboutRouteImport } from './routes/modern/about'
 
+const ShrinesRoute = ShrinesRouteImport.update({
+  id: '/shrines',
+  path: '/shrines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtRoute = ArtRouteImport.update({
+  id: '/art',
+  path: '/art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UiKitRouteRoute = UiKitRouteRouteImport.update({
   id: '/ui-kit',
   path: '/ui-kit',
@@ -53,11 +88,46 @@ const UiKitSliderRoute = UiKitSliderRouteImport.update({
   path: '/slider',
   getParentRoute: () => UiKitRouteRoute,
 } as any)
+const ModernShrinesRoute = ModernShrinesRouteImport.update({
+  id: '/shrines',
+  path: '/shrines',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
+const ModernProjectsRoute = ModernProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
+const ModernContactRoute = ModernContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
+const ModernArtRoute = ModernArtRouteImport.update({
+  id: '/art',
+  path: '/art',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
+const ModernAboutRoute = ModernAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/modern': typeof ModernRouteRouteWithChildren
   '/ui-kit': typeof UiKitRouteRouteWithChildren
+  '/about': typeof AboutRoute
+  '/art': typeof ArtRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/shrines': typeof ShrinesRoute
+  '/modern/about': typeof ModernAboutRoute
+  '/modern/art': typeof ModernArtRoute
+  '/modern/contact': typeof ModernContactRoute
+  '/modern/projects': typeof ModernProjectsRoute
+  '/modern/shrines': typeof ModernShrinesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
@@ -65,6 +135,16 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/art': typeof ArtRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/shrines': typeof ShrinesRoute
+  '/modern/about': typeof ModernAboutRoute
+  '/modern/art': typeof ModernArtRoute
+  '/modern/contact': typeof ModernContactRoute
+  '/modern/projects': typeof ModernProjectsRoute
+  '/modern/shrines': typeof ModernShrinesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern': typeof ModernIndexRoute
@@ -75,6 +155,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/modern': typeof ModernRouteRouteWithChildren
   '/ui-kit': typeof UiKitRouteRouteWithChildren
+  '/about': typeof AboutRoute
+  '/art': typeof ArtRoute
+  '/contact': typeof ContactRoute
+  '/projects': typeof ProjectsRoute
+  '/shrines': typeof ShrinesRoute
+  '/modern/about': typeof ModernAboutRoute
+  '/modern/art': typeof ModernArtRoute
+  '/modern/contact': typeof ModernContactRoute
+  '/modern/projects': typeof ModernProjectsRoute
+  '/modern/shrines': typeof ModernShrinesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
@@ -86,6 +176,16 @@ export interface FileRouteTypes {
     | '/'
     | '/modern'
     | '/ui-kit'
+    | '/about'
+    | '/art'
+    | '/contact'
+    | '/projects'
+    | '/shrines'
+    | '/modern/about'
+    | '/modern/art'
+    | '/modern/contact'
+    | '/modern/projects'
+    | '/modern/shrines'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern/'
@@ -93,6 +193,16 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/art'
+    | '/contact'
+    | '/projects'
+    | '/shrines'
+    | '/modern/about'
+    | '/modern/art'
+    | '/modern/contact'
+    | '/modern/projects'
+    | '/modern/shrines'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern'
@@ -102,6 +212,16 @@ export interface FileRouteTypes {
     | '/'
     | '/modern'
     | '/ui-kit'
+    | '/about'
+    | '/art'
+    | '/contact'
+    | '/projects'
+    | '/shrines'
+    | '/modern/about'
+    | '/modern/art'
+    | '/modern/contact'
+    | '/modern/projects'
+    | '/modern/shrines'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern/'
@@ -112,10 +232,50 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ModernRouteRoute: typeof ModernRouteRouteWithChildren
   UiKitRouteRoute: typeof UiKitRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  ArtRoute: typeof ArtRoute
+  ContactRoute: typeof ContactRoute
+  ProjectsRoute: typeof ProjectsRoute
+  ShrinesRoute: typeof ShrinesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/shrines': {
+      id: '/shrines'
+      path: '/shrines'
+      fullPath: '/shrines'
+      preLoaderRoute: typeof ShrinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/art': {
+      id: '/art'
+      path: '/art'
+      fullPath: '/art'
+      preLoaderRoute: typeof ArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ui-kit': {
       id: '/ui-kit'
       path: '/ui-kit'
@@ -165,14 +325,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitSliderRouteImport
       parentRoute: typeof UiKitRouteRoute
     }
+    '/modern/shrines': {
+      id: '/modern/shrines'
+      path: '/shrines'
+      fullPath: '/modern/shrines'
+      preLoaderRoute: typeof ModernShrinesRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
+    '/modern/projects': {
+      id: '/modern/projects'
+      path: '/projects'
+      fullPath: '/modern/projects'
+      preLoaderRoute: typeof ModernProjectsRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
+    '/modern/contact': {
+      id: '/modern/contact'
+      path: '/contact'
+      fullPath: '/modern/contact'
+      preLoaderRoute: typeof ModernContactRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
+    '/modern/art': {
+      id: '/modern/art'
+      path: '/art'
+      fullPath: '/modern/art'
+      preLoaderRoute: typeof ModernArtRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
+    '/modern/about': {
+      id: '/modern/about'
+      path: '/about'
+      fullPath: '/modern/about'
+      preLoaderRoute: typeof ModernAboutRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
   }
 }
 
 interface ModernRouteRouteChildren {
+  ModernAboutRoute: typeof ModernAboutRoute
+  ModernArtRoute: typeof ModernArtRoute
+  ModernContactRoute: typeof ModernContactRoute
+  ModernProjectsRoute: typeof ModernProjectsRoute
+  ModernShrinesRoute: typeof ModernShrinesRoute
   ModernIndexRoute: typeof ModernIndexRoute
 }
 
 const ModernRouteRouteChildren: ModernRouteRouteChildren = {
+  ModernAboutRoute: ModernAboutRoute,
+  ModernArtRoute: ModernArtRoute,
+  ModernContactRoute: ModernContactRoute,
+  ModernProjectsRoute: ModernProjectsRoute,
+  ModernShrinesRoute: ModernShrinesRoute,
   ModernIndexRoute: ModernIndexRoute,
 }
 
@@ -200,6 +405,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ModernRouteRoute: ModernRouteRouteWithChildren,
   UiKitRouteRoute: UiKitRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
+  ArtRoute: ArtRoute,
+  ContactRoute: ContactRoute,
+  ProjectsRoute: ProjectsRoute,
+  ShrinesRoute: ShrinesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

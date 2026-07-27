@@ -4,7 +4,11 @@ import LoadInCard from './load-in-card';
 
 export const boxScale = { scale: 1.4 };
 
-export default function LoadIn({ json }: { json: { href: string; text: string }[] }) {
+export default function LoadIn({
+  json,
+}: {
+  json: { href: string; text: string }[];
+}) {
   const rotate = useMotionValue(0);
   const rotateOpposite = useMotionValue(0);
   const isPaused = useRef(false);
@@ -45,7 +49,11 @@ export default function LoadIn({ json }: { json: { href: string; text: string }[
       ...general,
     },
 
-    {},
+    {
+      rest: { x: 0, y: 0 },
+      hover: { x: 0, y: 0 },
+      ...general,
+    },
 
     {
       rest: { x: -124, y: 0 },
@@ -95,7 +103,7 @@ export default function LoadIn({ json }: { json: { href: string; text: string }[
               setGroupHovered(false);
             }}
           >
-            {json.map((item: {href: string; text: string}, index: number) => (
+            {json.map((item: { href: string; text: string }, index: number) =>
               index !== 4 ? (
                 <motion.li
                   key={index}
@@ -105,7 +113,7 @@ export default function LoadIn({ json }: { json: { href: string; text: string }[
                   variants={circle[index]}
                   animate={groupHovered ? 'hover' : 'rest'}
                 >
-                  {item.text !== "" &&
+                  {item.text !== '' && (
                     <div className="1 bg-pink-500 h-24 w-24">
                       <LoadInCard className="h-full w-full">
                         <a
@@ -116,18 +124,22 @@ export default function LoadIn({ json }: { json: { href: string; text: string }[
                         </a>
                       </LoadInCard>
                     </div>
-                  }
+                  )}
                 </motion.li>
               ) : (
-                <motion.li className="z-10" style={{ rotate: rotateOpposite }} key={index}>
+                <motion.li
+                  className="z-10"
+                  style={{ rotate: rotateOpposite }}
+                  key={index}
+                >
                   <div className="rounded-full bg-accent h-40 w-40">
                     <div className="h-full w-full grid place-items-center text-white text-2xl font-bold">
                       Picture
                     </div>
                   </div>
                 </motion.li>
-              )  
-            ))}
+              ),
+            )}
           </motion.ul>
         </nav>
       </div>

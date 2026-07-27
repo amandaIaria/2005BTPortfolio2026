@@ -260,5 +260,6 @@ Data attributes scope CSS to slider context:
 Prevents style leakage. Attribute set only during transitions.
 
 ## To Dos
+
 - still need to do the automation/auto next slide animation
   - loading bar, middle fills up with teal color, hits the circle and fills up with black on the circle

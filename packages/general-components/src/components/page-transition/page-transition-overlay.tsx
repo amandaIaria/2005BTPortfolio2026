@@ -1,4 +1,5 @@
-import { motion, type MotionValue } from 'motion/react';
+import { motion  } from 'motion/react';
+import type {MotionValue} from 'motion/react';
 
 interface PageTransitionOverlayProps {
   top: MotionValue<number>;

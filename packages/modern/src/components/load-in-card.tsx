@@ -1,15 +1,15 @@
 import { motion } from 'motion/react';
-import { useId, useRef, useState } from "react";
-import type { MouseEvent, ReactNode } from "react";
+import { useId, useRef, useState } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import { usePageTransition } from '@general/components';
-import {boxScale} from './load-in';
+import { boxScale } from './load-in';
 
 interface LoadInCardProps {
   children?: ReactNode;
   className?: string;
 }
 
-const TENTACLE_VIEWBOX = "0 0 423 513"
+const TENTACLE_VIEWBOX = '0 0 423 513';
 
 // Traced from the reference sketch: bottom-left tail, up through a loop, down into
 // an S-curl, ending pointed rightward. Drives a mask stroke that reveals the
@@ -27,11 +27,11 @@ const REVEAL_PATH_D = `
   C 250 398 255 420 275 410
   C 300 398 320 375 345 355
   C 365 338 390 330 405 320
-`
+`;
 
 function TentacleGraphic() {
   return (
-    <g style={{ color: "var(--lagoon-deep)" }}>
+    <g style={{ color: 'var(--lagoon-deep)' }}>
       <path
         fill="#3E8CEC"
         stroke="none"
@@ -156,7 +156,7 @@ C303.616180,412.468597 308.647705,410.584808 313.928955,408.432617
 z"
       />
     </g>
-  )
+  );
 }
 
 interface RevealingTentacleProps {
@@ -166,8 +166,8 @@ interface RevealingTentacleProps {
 
 const reveal = {
   hidden: { pathLength: 0, opacity: 0 },
-  visible: { pathLength: 1, opacity: 1 }
-}
+  visible: { pathLength: 1, opacity: 1 },
+};
 
 function RevealingTentacle({ maskId, hovered }: RevealingTentacleProps) {
   return (
@@ -175,12 +175,19 @@ function RevealingTentacle({ maskId, hovered }: RevealingTentacleProps) {
       className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
       viewBox={TENTACLE_VIEWBOX}
       style={{
-        top: "8px",
-        ...boxScale
+        top: '8px',
+        ...boxScale,
       }}
     >
       <defs>
-        <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="423" height="513">
+        <mask
+          id={maskId}
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="423"
+          height="513"
+        >
           <motion.path
             d={REVEAL_PATH_D}
             fill="none"
@@ -190,10 +197,10 @@ function RevealingTentacle({ maskId, hovered }: RevealingTentacleProps) {
             strokeLinejoin="round"
             variants={reveal}
             initial="visible"
-            animate={hovered ? "visible" : "hidden"}
+            animate={hovered ? 'visible' : 'hidden'}
             transition={{
-              pathLength: { duration: 1, ease: "easeInOut" },
-              opacity: hovered ? { duration: 0 } : { duration: 0, delay: 1 }
+              pathLength: { duration: 1, ease: 'easeInOut' },
+              opacity: hovered ? { duration: 0 } : { duration: 0, delay: 1 },
             }}
           />
         </mask>
@@ -202,7 +209,7 @@ function RevealingTentacle({ maskId, hovered }: RevealingTentacleProps) {
         <TentacleGraphic />
       </g>
     </svg>
-  )
+  );
 }
 
 export default function LoadInCard({ children, className }: LoadInCardProps) {
@@ -212,12 +219,16 @@ export default function LoadInCard({ children, className }: LoadInCardProps) {
   const { startTransition } = usePageTransition();
 
   function handleClick(e: MouseEvent<HTMLDivElement>) {
-    const anchor = (e.target as HTMLElement).closest('a[href]') as HTMLAnchorElement | null;
+    const anchor = (e.target as HTMLElement).closest(
+      'a[href]',
+    );
     if (!anchor) return;
     e.preventDefault();
     setGroupHovered(false);
     const bubble = cardRef.current?.parentElement;
-    const backgroundColor = bubble ? getComputedStyle(bubble).backgroundColor : 'var(--surface, #000)';
+    const backgroundColor = bubble
+      ? getComputedStyle(bubble).backgroundColor
+      : 'var(--surface, #000)';
     startTransition({
       rect: anchor.getBoundingClientRect(),
       href: anchor.getAttribute('href') ?? '/',
@@ -236,5 +247,5 @@ export default function LoadInCard({ children, className }: LoadInCardProps) {
       {children}
       <RevealingTentacle maskId={maskId} hovered={groupHovered} />
     </motion.div>
-  )
+  );
 }

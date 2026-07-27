@@ -1,6 +1,6 @@
 import { Container, WebGLTentacleWall } from '@general/components';
-import LoadIn from  '@modern/feature/components/load-in';
-import json from '@json/data/json/navigation.json'
+import LoadIn from '@modern/feature/components/load-in';
+import json from '@json/data/json/navigation.json';
 
 function ModernHomePage() {
   return (

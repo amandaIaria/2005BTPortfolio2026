@@ -129,7 +129,8 @@ const FRAG = `
 
     float wallEdge = w * 0.48;
 
-    vec3 col = vec3(1.0);
+    vec3 col = vec3(0.0);
+    float alpha = 1.0;
     if (pos.x < wallEdge) {
       col = vec3(0.0);
     }
@@ -153,9 +154,10 @@ const FRAG = `
       }
 
       col = mix(col, vec3(0.0), totalBody);
+      alpha = totalBody;
     }
 
-    gl_FragColor = vec4(col, 1.0);
+    gl_FragColor = vec4(col, alpha);
   }
 `;
 
@@ -167,7 +169,7 @@ function initWebGL(
   canvas: HTMLCanvasElement,
   tentacleCount: number,
 ): (() => void) | null {
-  const gl = canvas.getContext('webgl', { alpha: false, antialias: true });
+  const gl = canvas.getContext('webgl', { alpha: true, antialias: true });
   if (!gl) return null;
 
   function compileShader(type: number, source: string) {
@@ -257,9 +259,14 @@ function WebGLTentacleWall({
       className={cn('relative h-dvh w-dvw', className)}
       {...props}
     >
+      <div
+        data-component="webgl-tentacle-wall-backdrop"
+        className="absolute inset-y-0 left-[48%] right-0 bg-white opacity-50 blur-xl"
+        aria-hidden="true"
+      />
       <canvas
         ref={canvasRef}
-        className="block h-full w-full"
+        className="relative block h-full w-full"
         aria-hidden="true"
       />
       {children && (

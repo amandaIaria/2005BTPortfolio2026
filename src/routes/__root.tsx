@@ -1,7 +1,11 @@
 import { Outlet, createRootRoute, useNavigate } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { AppHeader, PageTransitionProvider, TooltipProvider } from '@general/components';
+import {
+  AppHeader,
+  PageTransitionProvider,
+  TooltipProvider,
+} from '@general/components';
 
 import '../styles.css';
 

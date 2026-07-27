@@ -15,6 +15,8 @@ export interface SliderSlide {
     description: string;
     list: string[];
     link: SliderSlideLink;
+    company: string;
+    tags: string[];
   };
 }
 

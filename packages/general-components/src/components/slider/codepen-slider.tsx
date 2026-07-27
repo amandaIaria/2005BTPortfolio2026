@@ -1,5 +1,10 @@
 import React, { forwardRef, useRef, useEffect, useCallback } from 'react';
-import { AnimatePresence, useReducedMotion, cubicBezier, motion  } from 'motion/react';
+import {
+  AnimatePresence,
+  useReducedMotion,
+  cubicBezier,
+  motion,
+} from 'motion/react';
 import type { Variants, Transition } from 'motion/react';
 
 interface SliderSlideImage {

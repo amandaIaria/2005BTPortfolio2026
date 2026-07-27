@@ -18,7 +18,7 @@ export function usePageTransition(): PageTransitionContextValue {
   const ctx = useContext(PageTransitionContext);
   if (!ctx) {
     throw new Error(
-      'usePageTransition must be used within a PageTransitionProvider'
+      'usePageTransition must be used within a PageTransitionProvider',
     );
   }
   return ctx;
