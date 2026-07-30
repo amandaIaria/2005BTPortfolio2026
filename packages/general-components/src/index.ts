@@ -66,6 +66,19 @@ export type {
   ExperienceListProps,
   ExperienceItem,
 } from './components/experience-list';
+export { CaseStudyList } from './components/case-study-list';
+export type {
+  CaseStudyListProps,
+  CaseStudyItem,
+} from './components/case-study-list';
+export { CaseStudyDetail } from './components/case-study-detail';
+export type {
+  CaseStudyDetailProps,
+  CaseStudyDetailItem,
+  CaseStudyContributor,
+  CaseStudyOverview,
+  CaseStudySection,
+} from './components/case-study-detail';
 export { SpriteAnimation } from './components/sprite-animation';
 export type { SpriteAnimationProps } from './components/sprite-animation';
 export { AppHeader } from './components/app-header';

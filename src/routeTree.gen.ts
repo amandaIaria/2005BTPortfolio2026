@@ -30,6 +30,8 @@ import { Route as ModernContactRouteImport } from './routes/modern/contact'
 import { Route as ModernCaseStudiesRouteImport } from './routes/modern/case-studies'
 import { Route as ModernArtRouteImport } from './routes/modern/art'
 import { Route as ModernAboutRouteImport } from './routes/modern/about'
+import { Route as ModernCaseStudiesIndexRouteImport } from './routes/modern/case-studies.index'
+import { Route as ModernCaseStudiesSlugRouteImport } from './routes/modern/case-studies.$slug'
 
 const ShrinesRoute = ShrinesRouteImport.update({
   id: '/shrines',
@@ -137,6 +139,16 @@ const ModernAboutRoute = ModernAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => ModernRouteRoute,
 } as any)
+const ModernCaseStudiesIndexRoute = ModernCaseStudiesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ModernCaseStudiesRoute,
+} as any)
+const ModernCaseStudiesSlugRoute = ModernCaseStudiesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ModernCaseStudiesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -151,7 +163,7 @@ export interface FileRoutesByFullPath {
   '/shrines': typeof ShrinesRoute
   '/modern/about': typeof ModernAboutRoute
   '/modern/art': typeof ModernArtRoute
-  '/modern/case-studies': typeof ModernCaseStudiesRoute
+  '/modern/case-studies': typeof ModernCaseStudiesRouteWithChildren
   '/modern/contact': typeof ModernContactRoute
   '/modern/experience': typeof ModernExperienceRoute
   '/modern/projects': typeof ModernProjectsRoute
@@ -160,6 +172,8 @@ export interface FileRoutesByFullPath {
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
   '/ui-kit/': typeof UiKitIndexRoute
+  '/modern/case-studies/$slug': typeof ModernCaseStudiesSlugRoute
+  '/modern/case-studies/': typeof ModernCaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -172,7 +186,6 @@ export interface FileRoutesByTo {
   '/shrines': typeof ShrinesRoute
   '/modern/about': typeof ModernAboutRoute
   '/modern/art': typeof ModernArtRoute
-  '/modern/case-studies': typeof ModernCaseStudiesRoute
   '/modern/contact': typeof ModernContactRoute
   '/modern/experience': typeof ModernExperienceRoute
   '/modern/projects': typeof ModernProjectsRoute
@@ -181,6 +194,8 @@ export interface FileRoutesByTo {
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern': typeof ModernIndexRoute
   '/ui-kit': typeof UiKitIndexRoute
+  '/modern/case-studies/$slug': typeof ModernCaseStudiesSlugRoute
+  '/modern/case-studies': typeof ModernCaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -196,7 +211,7 @@ export interface FileRoutesById {
   '/shrines': typeof ShrinesRoute
   '/modern/about': typeof ModernAboutRoute
   '/modern/art': typeof ModernArtRoute
-  '/modern/case-studies': typeof ModernCaseStudiesRoute
+  '/modern/case-studies': typeof ModernCaseStudiesRouteWithChildren
   '/modern/contact': typeof ModernContactRoute
   '/modern/experience': typeof ModernExperienceRoute
   '/modern/projects': typeof ModernProjectsRoute
@@ -205,6 +220,8 @@ export interface FileRoutesById {
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/modern/': typeof ModernIndexRoute
   '/ui-kit/': typeof UiKitIndexRoute
+  '/modern/case-studies/$slug': typeof ModernCaseStudiesSlugRoute
+  '/modern/case-studies/': typeof ModernCaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -230,6 +247,8 @@ export interface FileRouteTypes {
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern/'
     | '/ui-kit/'
+    | '/modern/case-studies/$slug'
+    | '/modern/case-studies/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -242,7 +261,6 @@ export interface FileRouteTypes {
     | '/shrines'
     | '/modern/about'
     | '/modern/art'
-    | '/modern/case-studies'
     | '/modern/contact'
     | '/modern/experience'
     | '/modern/projects'
@@ -251,6 +269,8 @@ export interface FileRouteTypes {
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern'
     | '/ui-kit'
+    | '/modern/case-studies/$slug'
+    | '/modern/case-studies'
   id:
     | '__root__'
     | '/'
@@ -274,6 +294,8 @@ export interface FileRouteTypes {
     | '/ui-kit/webgl-tentacle-footer'
     | '/modern/'
     | '/ui-kit/'
+    | '/modern/case-studies/$slug'
+    | '/modern/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -438,13 +460,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ModernAboutRouteImport
       parentRoute: typeof ModernRouteRoute
     }
+    '/modern/case-studies/': {
+      id: '/modern/case-studies/'
+      path: '/'
+      fullPath: '/modern/case-studies/'
+      preLoaderRoute: typeof ModernCaseStudiesIndexRouteImport
+      parentRoute: typeof ModernCaseStudiesRoute
+    }
+    '/modern/case-studies/$slug': {
+      id: '/modern/case-studies/$slug'
+      path: '/$slug'
+      fullPath: '/modern/case-studies/$slug'
+      preLoaderRoute: typeof ModernCaseStudiesSlugRouteImport
+      parentRoute: typeof ModernCaseStudiesRoute
+    }
   }
 }
+
+interface ModernCaseStudiesRouteChildren {
+  ModernCaseStudiesSlugRoute: typeof ModernCaseStudiesSlugRoute
+  ModernCaseStudiesIndexRoute: typeof ModernCaseStudiesIndexRoute
+}
+
+const ModernCaseStudiesRouteChildren: ModernCaseStudiesRouteChildren = {
+  ModernCaseStudiesSlugRoute: ModernCaseStudiesSlugRoute,
+  ModernCaseStudiesIndexRoute: ModernCaseStudiesIndexRoute,
+}
+
+const ModernCaseStudiesRouteWithChildren =
+  ModernCaseStudiesRoute._addFileChildren(ModernCaseStudiesRouteChildren)
 
 interface ModernRouteRouteChildren {
   ModernAboutRoute: typeof ModernAboutRoute
   ModernArtRoute: typeof ModernArtRoute
-  ModernCaseStudiesRoute: typeof ModernCaseStudiesRoute
+  ModernCaseStudiesRoute: typeof ModernCaseStudiesRouteWithChildren
   ModernContactRoute: typeof ModernContactRoute
   ModernExperienceRoute: typeof ModernExperienceRoute
   ModernProjectsRoute: typeof ModernProjectsRoute
@@ -455,7 +504,7 @@ interface ModernRouteRouteChildren {
 const ModernRouteRouteChildren: ModernRouteRouteChildren = {
   ModernAboutRoute: ModernAboutRoute,
   ModernArtRoute: ModernArtRoute,
-  ModernCaseStudiesRoute: ModernCaseStudiesRoute,
+  ModernCaseStudiesRoute: ModernCaseStudiesRouteWithChildren,
   ModernContactRoute: ModernContactRoute,
   ModernExperienceRoute: ModernExperienceRoute,
   ModernProjectsRoute: ModernProjectsRoute,
