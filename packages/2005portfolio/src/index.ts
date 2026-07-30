@@ -1,5 +1,7 @@
 export { default as HomePage } from './pages/home-page';
 export { default as AboutPage } from './pages/about-page';
+export { default as ExperiencePage } from './pages/experience-page';
+export { default as CaseStudiesPage } from './pages/case-studies-page';
 export { default as ProjectsPage } from './pages/projects-page';
 export { default as ArtPage } from './pages/art-page';
 export { default as ShrinesPage } from './pages/shrines-page';

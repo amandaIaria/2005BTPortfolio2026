@@ -219,9 +219,7 @@ export default function LoadInCard({ children, className }: LoadInCardProps) {
   const { startTransition } = usePageTransition();
 
   function handleClick(e: MouseEvent<HTMLDivElement>) {
-    const anchor = (e.target as HTMLElement).closest(
-      'a[href]',
-    );
+    const anchor = (e.target as HTMLElement).closest('a[href]');
     if (!anchor) return;
     e.preventDefault();
     setGroupHovered(false);

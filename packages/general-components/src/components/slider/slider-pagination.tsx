@@ -35,7 +35,7 @@ export function SliderPagination({
         aria-label="Previous slide"
         onClick={onPrev}
         disabled={!loop && isFirst}
-        className="bg-white pointer dark:bg-[var(--sand)] text-[var(--sea-ink)] hover:bg-[#333] hover:text-[#fff] transition-all dark:hover:bg-[var(--sand)]/90 rounded-full shadow-md"
+        className="bg-background pointer dark:bg-[var(--sand)] text-[var(--accent)] hover:bg-[#333] hover:text-[#fff] transition-all dark:hover:bg-[var(--sand)]/90 rounded-full shadow-md"
       >
         <CaretLeftIcon size={28} aria-hidden="true" />
       </Button>
@@ -58,8 +58,8 @@ export function SliderPagination({
               className={cn(
                 'rounded-full pointer transition-all flex-shrink-0',
                 i === current
-                  ? 'w-3 h-3 bg-[var(--lagoon)]'
-                  : 'mt-1 w-1.5 h-1.5 bg-[var(--sea-ink)]/30 dark:bg-white/30 hover:bg-[var(--sea-ink)]/50 dark:hover:bg-white/50',
+                  ? 'w-3 h-3 bg-accent'
+                  : 'mt-1 w-1.5 h-1.5 bg-black/30 dark:bg-white/30',
               )}
             />
           ))}

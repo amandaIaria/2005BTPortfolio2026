@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShrinesRouteImport } from './routes/shrines'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as ArtRouteImport } from './routes/art'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as UiKitRouteRouteImport } from './routes/ui-kit/route'
@@ -23,7 +25,9 @@ import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/we
 import { Route as UiKitSliderRouteImport } from './routes/ui-kit/slider'
 import { Route as ModernShrinesRouteImport } from './routes/modern/shrines'
 import { Route as ModernProjectsRouteImport } from './routes/modern/projects'
+import { Route as ModernExperienceRouteImport } from './routes/modern/experience'
 import { Route as ModernContactRouteImport } from './routes/modern/contact'
+import { Route as ModernCaseStudiesRouteImport } from './routes/modern/case-studies'
 import { Route as ModernArtRouteImport } from './routes/modern/art'
 import { Route as ModernAboutRouteImport } from './routes/modern/about'
 
@@ -37,9 +41,19 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArtRoute = ArtRouteImport.update({
@@ -98,9 +112,19 @@ const ModernProjectsRoute = ModernProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => ModernRouteRoute,
 } as any)
+const ModernExperienceRoute = ModernExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
 const ModernContactRoute = ModernContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => ModernRouteRoute,
+} as any)
+const ModernCaseStudiesRoute = ModernCaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
   getParentRoute: () => ModernRouteRoute,
 } as any)
 const ModernArtRoute = ModernArtRouteImport.update({
@@ -120,12 +144,16 @@ export interface FileRoutesByFullPath {
   '/ui-kit': typeof UiKitRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/art': typeof ArtRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
   '/projects': typeof ProjectsRoute
   '/shrines': typeof ShrinesRoute
   '/modern/about': typeof ModernAboutRoute
   '/modern/art': typeof ModernArtRoute
+  '/modern/case-studies': typeof ModernCaseStudiesRoute
   '/modern/contact': typeof ModernContactRoute
+  '/modern/experience': typeof ModernExperienceRoute
   '/modern/projects': typeof ModernProjectsRoute
   '/modern/shrines': typeof ModernShrinesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
@@ -137,12 +165,16 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/art': typeof ArtRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
   '/projects': typeof ProjectsRoute
   '/shrines': typeof ShrinesRoute
   '/modern/about': typeof ModernAboutRoute
   '/modern/art': typeof ModernArtRoute
+  '/modern/case-studies': typeof ModernCaseStudiesRoute
   '/modern/contact': typeof ModernContactRoute
+  '/modern/experience': typeof ModernExperienceRoute
   '/modern/projects': typeof ModernProjectsRoute
   '/modern/shrines': typeof ModernShrinesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
@@ -157,12 +189,16 @@ export interface FileRoutesById {
   '/ui-kit': typeof UiKitRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/art': typeof ArtRoute
+  '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
   '/projects': typeof ProjectsRoute
   '/shrines': typeof ShrinesRoute
   '/modern/about': typeof ModernAboutRoute
   '/modern/art': typeof ModernArtRoute
+  '/modern/case-studies': typeof ModernCaseStudiesRoute
   '/modern/contact': typeof ModernContactRoute
+  '/modern/experience': typeof ModernExperienceRoute
   '/modern/projects': typeof ModernProjectsRoute
   '/modern/shrines': typeof ModernShrinesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
@@ -178,12 +214,16 @@ export interface FileRouteTypes {
     | '/ui-kit'
     | '/about'
     | '/art'
+    | '/case-studies'
     | '/contact'
+    | '/experience'
     | '/projects'
     | '/shrines'
     | '/modern/about'
     | '/modern/art'
+    | '/modern/case-studies'
     | '/modern/contact'
+    | '/modern/experience'
     | '/modern/projects'
     | '/modern/shrines'
     | '/ui-kit/slider'
@@ -195,12 +235,16 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/art'
+    | '/case-studies'
     | '/contact'
+    | '/experience'
     | '/projects'
     | '/shrines'
     | '/modern/about'
     | '/modern/art'
+    | '/modern/case-studies'
     | '/modern/contact'
+    | '/modern/experience'
     | '/modern/projects'
     | '/modern/shrines'
     | '/ui-kit/slider'
@@ -214,12 +258,16 @@ export interface FileRouteTypes {
     | '/ui-kit'
     | '/about'
     | '/art'
+    | '/case-studies'
     | '/contact'
+    | '/experience'
     | '/projects'
     | '/shrines'
     | '/modern/about'
     | '/modern/art'
+    | '/modern/case-studies'
     | '/modern/contact'
+    | '/modern/experience'
     | '/modern/projects'
     | '/modern/shrines'
     | '/ui-kit/slider'
@@ -234,7 +282,9 @@ export interface RootRouteChildren {
   UiKitRouteRoute: typeof UiKitRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   ArtRoute: typeof ArtRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
+  ExperienceRoute: typeof ExperienceRoute
   ProjectsRoute: typeof ProjectsRoute
   ShrinesRoute: typeof ShrinesRoute
 }
@@ -255,11 +305,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/art': {
@@ -339,11 +403,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ModernProjectsRouteImport
       parentRoute: typeof ModernRouteRoute
     }
+    '/modern/experience': {
+      id: '/modern/experience'
+      path: '/experience'
+      fullPath: '/modern/experience'
+      preLoaderRoute: typeof ModernExperienceRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
     '/modern/contact': {
       id: '/modern/contact'
       path: '/contact'
       fullPath: '/modern/contact'
       preLoaderRoute: typeof ModernContactRouteImport
+      parentRoute: typeof ModernRouteRoute
+    }
+    '/modern/case-studies': {
+      id: '/modern/case-studies'
+      path: '/case-studies'
+      fullPath: '/modern/case-studies'
+      preLoaderRoute: typeof ModernCaseStudiesRouteImport
       parentRoute: typeof ModernRouteRoute
     }
     '/modern/art': {
@@ -366,7 +444,9 @@ declare module '@tanstack/react-router' {
 interface ModernRouteRouteChildren {
   ModernAboutRoute: typeof ModernAboutRoute
   ModernArtRoute: typeof ModernArtRoute
+  ModernCaseStudiesRoute: typeof ModernCaseStudiesRoute
   ModernContactRoute: typeof ModernContactRoute
+  ModernExperienceRoute: typeof ModernExperienceRoute
   ModernProjectsRoute: typeof ModernProjectsRoute
   ModernShrinesRoute: typeof ModernShrinesRoute
   ModernIndexRoute: typeof ModernIndexRoute
@@ -375,7 +455,9 @@ interface ModernRouteRouteChildren {
 const ModernRouteRouteChildren: ModernRouteRouteChildren = {
   ModernAboutRoute: ModernAboutRoute,
   ModernArtRoute: ModernArtRoute,
+  ModernCaseStudiesRoute: ModernCaseStudiesRoute,
   ModernContactRoute: ModernContactRoute,
+  ModernExperienceRoute: ModernExperienceRoute,
   ModernProjectsRoute: ModernProjectsRoute,
   ModernShrinesRoute: ModernShrinesRoute,
   ModernIndexRoute: ModernIndexRoute,
@@ -407,7 +489,9 @@ const rootRouteChildren: RootRouteChildren = {
   UiKitRouteRoute: UiKitRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   ArtRoute: ArtRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
+  ExperienceRoute: ExperienceRoute,
   ProjectsRoute: ProjectsRoute,
   ShrinesRoute: ShrinesRoute,
 }

@@ -3,6 +3,7 @@ import { cn } from '../lib/utils';
 
 interface WebGLTentacleWallProps extends React.ComponentProps<'div'> {
   tentacleCount?: number;
+  rotate?: number;
 }
 
 /* ------------------------------------------------------------------ */
@@ -143,7 +144,7 @@ const FRAG = `
       float totalBody = 0.0;
 
       for (int i = 0; i < 16; i++) {
-        if (i >= count) continue;
+        if (i >= count) break;
         float seed = float(i);
 
         float baseY = (float(i) + 0.5) / u_tentacleCount * h;
@@ -214,10 +215,11 @@ function initWebGL(
 
   let raf = 0;
   const start = performance.now();
+  const dpr = Math.min(devicePixelRatio, 1.5);
 
   function frame() {
-    const w = canvas.clientWidth * devicePixelRatio;
-    const h = canvas.clientHeight * devicePixelRatio;
+    const w = canvas.clientWidth * dpr;
+    const h = canvas.clientHeight * dpr;
     if (canvas.width !== w || canvas.height !== h) {
       canvas.width = w;
       canvas.height = h;
@@ -229,9 +231,28 @@ function initWebGL(
     raf = requestAnimationFrame(frame);
   }
 
-  raf = requestAnimationFrame(frame);
+  function start_() {
+    if (!raf) raf = requestAnimationFrame(frame);
+  }
 
-  return () => cancelAnimationFrame(raf);
+  function stop_() {
+    cancelAnimationFrame(raf);
+    raf = 0;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) start_();
+      else stop_();
+    },
+    { threshold: 0 },
+  );
+  observer.observe(canvas);
+
+  return () => {
+    observer.disconnect();
+    stop_();
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -240,6 +261,7 @@ function initWebGL(
 
 function WebGLTentacleWall({
   tentacleCount = 6,
+  rotate = 0,
   className,
   children,
   ...props
@@ -253,22 +275,35 @@ function WebGLTentacleWall({
     return () => cleanup?.();
   }, [tentacleCount]);
 
+  // 90/270 (either direction) swaps which axis is "wide" — size the
+  // pre-rotation box on the opposite axis so it still fills the
+  // viewport once rotated, instead of leaving gaps or overflowing.
+  const isSideways = Math.abs(((rotate % 180) + 180) % 180) === 90;
+
   return (
     <div
       data-component="webgl-tentacle-wall"
-      className={cn('relative h-dvh w-dvw', className)}
+      className={cn('relative h-dvh w-dvw overflow-hidden', className)}
       {...props}
     >
       <div
-        data-component="webgl-tentacle-wall-backdrop"
-        className="absolute inset-y-0 left-[48%] right-0 bg-white opacity-50 blur-xl"
-        aria-hidden="true"
-      />
-      <canvas
-        ref={canvasRef}
-        className="relative block h-full w-full"
-        aria-hidden="true"
-      />
+        className={cn(
+          'absolute left-1/2 top-1/2',
+          isSideways ? 'h-dvw w-dvh' : 'h-dvh w-dvw',
+        )}
+        style={{ transform: `translate(-50%, -50%) rotate(${rotate}deg)` }}
+      >
+        <div
+          data-component="webgl-tentacle-wall-backdrop"
+          className="absolute inset-y-0 left-[48%] right-0 bg-white opacity-50 blur-xl"
+          aria-hidden="true"
+        />
+        <canvas
+          ref={canvasRef}
+          className="relative block h-full w-full"
+          aria-hidden="true"
+        />
+      </div>
       {children && (
         <div className="absolute inset-0 flex items-center justify-center">
           {children}

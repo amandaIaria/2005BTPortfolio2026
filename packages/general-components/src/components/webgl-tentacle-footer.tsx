@@ -55,8 +55,33 @@ const FRAG = `
     return base * (1.0 - 0.8 * t);
   }
 
+  // Precompute bounding box for a tentacle to skip pixels far away
+  vec4 tentacleBounds(float baseX, float seed, float time, float h) {
+    vec2 p0 = tentaclePoint(baseX, 0.0, seed, time, h);
+    vec2 p1 = tentaclePoint(baseX, 0.25, seed, time, h);
+    vec2 p2 = tentaclePoint(baseX, 0.5, seed, time, h);
+    vec2 p3 = tentaclePoint(baseX, 0.75, seed, time, h);
+    vec2 p4 = tentaclePoint(baseX, 1.0, seed, time, h);
+
+    float maxThick = 6.0 + 3.0 * hash(seed * 7.0);
+    float pad = maxThick + 6.0;
+
+    float minX = min(min(min(p0.x, p1.x), min(p2.x, p3.x)), p4.x) - pad;
+    float maxX = max(max(max(p0.x, p1.x), max(p2.x, p3.x)), p4.x) + pad;
+    float minY = min(min(min(p0.y, p1.y), min(p2.y, p3.y)), p4.y) - pad;
+    float maxY = max(max(max(p0.y, p1.y), max(p2.y, p3.y)), p4.y) + pad;
+
+    return vec4(minX, minY, maxX, maxY);
+  }
+
   // Draw one tentacle — returns (body, sucker glow)
   vec2 drawTentacle(vec2 pos, float baseX, float seed, float time, float h) {
+    vec4 bounds = tentacleBounds(baseX, seed, time, h);
+    if (pos.x < bounds.x || pos.x > bounds.z ||
+        pos.y < bounds.y || pos.y > bounds.w) {
+      return vec2(0.0);
+    }
+
     float minDist = 9999.0;
     float suckerGlow = 0.0;
 
@@ -122,7 +147,7 @@ const FRAG = `
     float totalSucker = 0.0;
 
     for (int i = 0; i < 16; i++) {
-      if (i >= count) continue;
+      if (i >= count) break;
       float seed = float(i);
       float baseX = (float(i) + 0.5) / u_tentacleCount * w;
       baseX += (hash(seed * 3.3) - 0.5) * w * 0.06;
@@ -220,9 +245,28 @@ function initWebGL(
     raf = requestAnimationFrame(frame);
   }
 
-  raf = requestAnimationFrame(frame);
+  function start_() {
+    if (!raf) raf = requestAnimationFrame(frame);
+  }
 
-  return () => cancelAnimationFrame(raf);
+  function stop_() {
+    cancelAnimationFrame(raf);
+    raf = 0;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) start_();
+      else stop_();
+    },
+    { threshold: 0 },
+  );
+  observer.observe(canvas);
+
+  return () => {
+    observer.disconnect();
+    stop_();
+  };
 }
 
 /* ------------------------------------------------------------------ */

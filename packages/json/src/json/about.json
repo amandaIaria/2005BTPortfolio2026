@@ -1,0 +1,73 @@
+{
+  "about": {
+    "title": "About",
+    "name": "Alex",
+    "image": {
+      "src": "https://picsum.photos/id/1005/600/800?grayscale",
+      "alt": "Hey it's not me just a placeholder",
+      "height": "800",
+      "width": "600"
+    },
+    "summary": "Create Cutting-Edge Apps with a Focus on Componets, Accessibility, and UX",
+    "full": "Amanda has created gone from a LAMP stack developer to someone who focuses on UX/UI while growing brand awareness. They've gone from small to large codebases and from legacy to new codebases. They can identify and resolve issues with persistence and dedication and is an exceptional communicator excited about learning software while collaborating with others. They can be resourceful, reliable, and professional. Amanda is known for their strong work ethic and working well in the fast-paced environment. Some of they're skills include ES6 Javascript, HTML, SCSS, and Webpack.",
+    "social": ["https://bluesky.com", "http://linkedin.com", "github.com"]
+  },
+  "experience": [
+    {
+      "title": "Senior Front-End Engineer",
+      "company": "Velir",
+      "years": "2022 — Present",
+      "type": "Full-time",
+      "tags": ["React", "TypeScript", "Sitecore", "Accessibility"],
+      "summary": "Lead front-end development on enterprise Sitecore builds, driving component architecture, accessibility standards, and design system adoption across client teams."
+    },
+    {
+      "title": "Front-End Developer",
+      "company": "HMC Ad",
+      "years": "2019 — 2022",
+      "type": "Full-time",
+      "tags": ["JavaScript", "SCSS", "Webpack", "UX/UI"],
+      "summary": "Owned front-end delivery for marketing and charity clients, moving legacy LAMP-stack builds toward component-driven, accessible front ends."
+    },
+    {
+      "title": "Web Designer & Developer",
+      "company": "Freelance",
+      "years": "2017 — 2019",
+      "type": "Contract",
+      "tags": ["HTML", "CSS", "ES6", "WordPress"],
+      "summary": "Designed and built custom websites for small business clients, handling everything from UX wireframes to deployment."
+    },
+     {
+      "title": "Web Designer & Developer",
+      "company": "Freelance",
+      "years": "2017 — 2019",
+      "type": "Contract",
+      "tags": ["HTML", "CSS", "ES6", "WordPress"],
+      "summary": "Designed and built custom websites for small business clients, handling everything from UX wireframes to deployment."
+    },
+     {
+      "title": "Web Designer & Developer",
+      "company": "Freelance",
+      "years": "2017 — 2019",
+      "type": "Contract",
+      "tags": ["HTML", "CSS", "ES6", "WordPress"],
+      "summary": "Designed and built custom websites for small business clients, handling everything from UX wireframes to deployment."
+    },
+     {
+      "title": "Web Designer & Developer",
+      "company": "Freelance",
+      "years": "2017 — 2019",
+      "type": "Contract",
+      "tags": ["HTML", "CSS", "ES6", "WordPress"],
+      "summary": "Designed and built custom websites for small business clients, handling everything from UX wireframes to deployment."
+    },
+     {
+      "title": "Web Designer & Developer",
+      "company": "Freelance",
+      "years": "2017 — 2019",
+      "type": "Contract",
+      "tags": ["HTML", "CSS", "ES6", "WordPress"],
+      "summary": "Designed and built custom websites for small business clients, handling everything from UX wireframes to deployment."
+    }
+  ]
+}

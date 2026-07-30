@@ -88,6 +88,7 @@
   --hero-a: rgba(96, 215, 207, 0.18);
   --hero-b: rgba(110, 200, 154, 0.12);
   --body: var(--color-white);
+  --accent: #ff0000;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -326,4 +327,17 @@
     content: '›';
     @apply absolute left-0 text-[24px] leading-[24px] text-accent;
   }
+}
+
+@utility text-solid {
+  color: currentColor;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: currentColor;
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+  text-stroke: 1px #ffffff;
 }

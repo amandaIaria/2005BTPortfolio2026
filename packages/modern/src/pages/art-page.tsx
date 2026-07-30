@@ -1,9 +1,10 @@
 import { Container } from '@general/components';
+import { ArtGallery } from '@modern/feature/components/art-gallery';
 
 function ModernArtPage() {
   return (
     <Container data-component="modern-art-page">
-      <h1 className="text-2xl font-bold">Art</h1>
+      <ArtGallery />
     </Container>
   );
 }

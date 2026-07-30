@@ -1,12 +1,9 @@
 import { animate, useMotionValue, useReducedMotion } from 'motion/react';
-import { useCallback, useRef, useState  } from 'react';
-import type {ReactNode} from 'react';
+import { useCallback, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 import { useNavigate } from '@tanstack/react-router';
-import {
-  PageTransitionContext
-  
-} from './page-transition-context';
-import type {StartTransitionOptions} from './page-transition-context';
+import { PageTransitionContext } from './page-transition-context';
+import type { StartTransitionOptions } from './page-transition-context';
 import { PageTransitionOverlay } from './page-transition-overlay';
 
 const GROW_TRANSITION = { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const };

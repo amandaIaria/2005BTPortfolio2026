@@ -61,6 +61,11 @@ export { WebGLTentacleFooter } from './components/webgl-tentacle-footer';
 export type { WebGLTentacleFooterProps } from './components/webgl-tentacle-footer';
 export { WebGLTentacleWall } from './components/webgl-tentacle-wall';
 export type { WebGLTentacleWallProps } from './components/webgl-tentacle-wall';
+export { ExperienceList } from './components/experience-list';
+export type {
+  ExperienceListProps,
+  ExperienceItem,
+} from './components/experience-list';
 export { SpriteAnimation } from './components/sprite-animation';
 export type { SpriteAnimationProps } from './components/sprite-animation';
 export { AppHeader } from './components/app-header';
