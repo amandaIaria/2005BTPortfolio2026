@@ -79,6 +79,8 @@ export type {
   CaseStudyOverview,
   CaseStudySection,
 } from './components/case-study-detail';
+export { Hero } from './components/hero';
+export type { HeroProps } from './components/hero';
 export { SpriteAnimation } from './components/sprite-animation';
 export type { SpriteAnimationProps } from './components/sprite-animation';
 export { AppHeader } from './components/app-header';

@@ -32,7 +32,7 @@ export default function LoadIn({
     },
 
     {
-      rest: { x: 0, y: 73 },
+      rest: { x: 0, y: -100 },
       hover: { x: 0, y: -73 },
       ...general,
     },
@@ -68,7 +68,7 @@ export default function LoadIn({
     },
 
     {
-      rest: { x: 0, y: -73 },
+      rest: { x: 0, y: 100 },
       hover: { x: 0, y: 73 },
       ...general,
     },
@@ -107,18 +107,18 @@ export default function LoadIn({
               index !== 4 ? (
                 <motion.li
                   key={index}
-                  className="pointer"
+                  className={`pointer link__${index}`}
                   style={{ rotate: rotateOpposite }}
                   whileHover={circle[index].whileHover}
                   variants={circle[index]}
                   animate={groupHovered ? 'hover' : 'rest'}
                 >
                   {item.text !== '' && (
-                    <div className="1 bg-pink-500 h-24 w-24">
-                      <LoadInCard className="h-full w-full">
+                    <div className=" bg-white h-24 w-24">
+                      <LoadInCard className="h-full w-full rounded-2xl">
                         <a
                           href={item.href}
-                          className="h-full w-full text-white grid items-center justify-center text-center"
+                          className="h-full w-full text-black grid items-center justify-center text-center"
                         >
                           <span>{item.text}</span>
                         </a>
@@ -132,9 +132,9 @@ export default function LoadIn({
                   style={{ rotate: rotateOpposite }}
                   key={index}
                 >
-                  <div className="rounded-full bg-accent h-40 w-40">
-                    <div className="h-full w-full grid place-items-center text-white text-2xl font-bold">
-                      Picture
+                  <div className="rounded-full bg-transparent h-100 w-100">
+                    <div className="h-full w-full grid place-items-center ">
+                      <img src="Object.png" alt="Self Portrait" className="relative -mt-[88px] -ml-[20px]" />
                     </div>
                   </div>
                 </motion.li>
