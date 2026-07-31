@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useId, useRef, useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
-import { usePageTransition } from '@general/components';
+import { cn, usePageTransition } from '@general/components';
 import { boxScale } from './load-in';
 
 interface LoadInCardProps {
@@ -31,9 +31,9 @@ const REVEAL_PATH_D = `
 
 function TentacleGraphic() {
   return (
-    <g style={{ color: 'var(--lagoon-deep)' }}>
+    <g>
       <path
-        fill="#3E8CEC"
+        fill="currentColor"
         stroke="none"
         d="M188.000000,1.000000
 C194.021149,1.000000 200.042297,1.000000 206.724213,1.355742
@@ -77,7 +77,7 @@ C183.383896,2.080364 185.683807,1.488377 188.000000,1.000000
 z"
       />
       <path
-        fill="#3E8CEC"
+        fill="currentColor"
         stroke="none"
         d="M334.001862,394.166595
 C342.700806,387.310974 341.585236,378.300598 339.561646,369.055511
@@ -162,6 +162,7 @@ z"
 interface RevealingTentacleProps {
   maskId: string;
   hovered: boolean;
+  className?: string;
 }
 
 const reveal = {
@@ -169,10 +170,10 @@ const reveal = {
   visible: { pathLength: 1, opacity: 1 },
 };
 
-function RevealingTentacle({ maskId, hovered }: RevealingTentacleProps) {
+function RevealingTentacle({ maskId, hovered, className }: RevealingTentacleProps) {
   return (
     <svg
-      className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
+      className={cn("absolute inset-0 w-full h-full pointer-events-none overflow-visible", className)}
       viewBox={TENTACLE_VIEWBOX}
       style={{
         top: '8px',
@@ -243,7 +244,7 @@ export default function LoadInCard({ children, className }: LoadInCardProps) {
       onHoverEnd={() => setGroupHovered(false)}
     >
       {children}
-      <RevealingTentacle maskId={maskId} hovered={groupHovered} />
+      <RevealingTentacle maskId={maskId} hovered={groupHovered} className="text-accent" />
     </motion.div>
   );
 }

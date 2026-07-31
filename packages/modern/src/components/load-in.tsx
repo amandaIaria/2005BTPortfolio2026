@@ -134,7 +134,11 @@ export default function LoadIn({
                 >
                   <div className="rounded-full bg-transparent h-100 w-100">
                     <div className="h-full w-full grid place-items-center ">
-                      <img src="Object.png" alt="Self Portrait" className="relative -mt-[88px] -ml-[20px]" />
+                      <img
+                        src="Object.png"
+                        alt="Self Portrait"
+                        className="relative -mt-[88px] -ml-[20px]"
+                      />
                     </div>
                   </div>
                 </motion.li>

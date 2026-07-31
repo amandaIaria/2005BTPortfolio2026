@@ -26,6 +26,7 @@ const FRAG = `
   uniform float u_time;
   uniform vec2  u_resolution;
   uniform float u_tentacleCount;
+  uniform float u_invert;
 
   float hash(float n) {
     return fract(sin(n) * 43758.5453);
@@ -129,11 +130,12 @@ const FRAG = `
     pos.y = h - pos.y;
 
     float wallEdge = w * 0.48;
+    vec3 baseColor = mix(vec3(0.0), vec3(1.0), u_invert);
 
-    vec3 col = vec3(0.0);
+    vec3 col = baseColor;
     float alpha = 1.0;
     if (pos.x < wallEdge) {
-      col = vec3(0.0);
+      col = baseColor;
     }
 
     // Tentacles relative to wall edge
@@ -154,7 +156,7 @@ const FRAG = `
         totalBody = max(totalBody, body);
       }
 
-      col = mix(col, vec3(0.0), totalBody);
+      col = mix(col, baseColor, totalBody);
       alpha = totalBody;
     }
 
@@ -169,6 +171,7 @@ const FRAG = `
 function initWebGL(
   canvas: HTMLCanvasElement,
   tentacleCount: number,
+  isDarkRef: React.RefObject<boolean>,
 ): (() => void) | null {
   const gl = canvas.getContext('webgl', { alpha: true, antialias: true });
   if (!gl) return null;
@@ -210,6 +213,7 @@ function initWebGL(
   const uTime = gl.getUniformLocation(prog, 'u_time');
   const uRes = gl.getUniformLocation(prog, 'u_resolution');
   const uCount = gl.getUniformLocation(prog, 'u_tentacleCount');
+  const uInvert = gl.getUniformLocation(prog, 'u_invert');
 
   gl.uniform1f(uCount, tentacleCount);
 
@@ -227,6 +231,7 @@ function initWebGL(
     gl!.viewport(0, 0, canvas.width, canvas.height);
     gl!.uniform1f(uTime, (performance.now() - start) / 1000);
     gl!.uniform2f(uRes, canvas.width, canvas.height);
+    gl!.uniform1f(uInvert, isDarkRef.current ? 1 : 0);
     gl!.drawArrays(gl!.TRIANGLES, 0, 6);
     raf = requestAnimationFrame(frame);
   }
@@ -267,13 +272,26 @@ function WebGLTentacleWall({
   ...props
 }: WebGLTentacleWallProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const isDarkRef = React.useRef(
+    typeof document !== 'undefined' &&
+      document.documentElement.classList.contains('dark'),
+  );
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const cleanup = initWebGL(canvas, tentacleCount);
+    const cleanup = initWebGL(canvas, tentacleCount, isDarkRef);
     return () => cleanup?.();
   }, [tentacleCount]);
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    const observer = new MutationObserver(() => {
+      isDarkRef.current = root.classList.contains('dark');
+    });
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
 
   // 90/270 (either direction) swaps which axis is "wide" — size the
   // pre-rotation box on the opposite axis so it still fills the
@@ -295,7 +313,7 @@ function WebGLTentacleWall({
       >
         <div
           data-component="webgl-tentacle-wall-backdrop"
-          className="absolute inset-y-0 left-[48%] right-0 bg-white opacity-50 blur-xl"
+          className="absolute inset-y-0 left-[48%] right-0 bg-white opacity-50 blur-xl dark:bg-black"
           aria-hidden="true"
         />
         <canvas

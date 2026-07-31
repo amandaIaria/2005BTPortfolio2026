@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { cn, Container, WebGLTentacleWall } from '@general/components';
+import { Link } from '@tanstack/react-router';
+import json from '@json/data/json/navigation.json';
 
 const TICKER_SPEED_PX_PER_SECOND = 120;
 
@@ -57,7 +59,7 @@ function NavItem({ link, onNavigate }: NavItemProps) {
 
   return (
     <li className="group relative">
-      <a
+      <Link
         ref={itemRef}
         href={link.href}
         onClick={onNavigate}
@@ -93,23 +95,12 @@ function NavItem({ link, onNavigate }: NavItemProps) {
             </motion.div>
           </div>
         )}
-      </a>
+      </Link>
     </li>
   );
 }
 
 function Navigation({ onNavigate }: NavigationProps) {
-  const navLinks: NavLink[] = [
-    { href: '/modern', label: 'Home' },
-    { href: '/modern/about', label: 'About' },
-    { href: '/modern/projects', label: 'Projects' },
-    { href: '/modern/art', label: 'Art' },
-    { href: '/modern/shrines', label: 'Shrines' },
-    { href: '/modern/contact', label: 'Contact' },
-    { href: '/modern/experience', label: 'Experience' },
-    { href: '/modern/case-studies', label: 'Case Studies' },
-  ];
-
   return (
     <>
       {/* <div className="absolute inset-0 -z-10">
@@ -118,7 +109,7 @@ function Navigation({ onNavigate }: NavigationProps) {
       <Container data-component="modern-navigation">
         <nav className="grid h-screen place-content-center">
           <ul className="font-mono grid gap-[clamp(0.5rem,6vh,2rem)] text-[clamp(1.5rem,6vh,6rem)] font-bold uppercase text-white mix-blend-difference">
-            {navLinks.map((link) => (
+            {json.map((link: NavLink) => (
               <NavItem key={link.href} link={link} onNavigate={onNavigate} />
             ))}
           </ul>

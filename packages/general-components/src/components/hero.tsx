@@ -11,7 +11,14 @@ interface HeroProps extends React.ComponentProps<'div'> {
   caption: string;
 }
 
-function Hero({ image, topText, bottomText, caption, className, ...props }: HeroProps) {
+function Hero({
+  image,
+  topText,
+  bottomText,
+  caption,
+  className,
+  ...props
+}: HeroProps) {
   return (
     <div
       data-component="hero"
