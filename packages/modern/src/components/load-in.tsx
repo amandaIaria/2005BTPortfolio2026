@@ -17,7 +17,7 @@ const CORNER_RADIUS = 18; // matches --radius-2xl override, src/styles.css:175
 const EDGE = HALF_SIZE - CORNER_RADIUS; // 30 — half-length of each straight edge
 const ARC_LEN = (Math.PI / 2) * CORNER_RADIUS;
 const PERIMETER = 4 * (2 * EDGE) + 4 * ARC_LEN; // ~353.1
-const LOOP_MS = 19000; // duration of one full lap around a card's perimeter
+const LOOP_MS = 20000; // duration of one full lap around a card's perimeter
 
 // Walks the rounded-rect outline clockwise starting at the top edge's left end.
 // Returns the point (relative to card center) and the OUTWARD normal angle in
@@ -131,7 +131,7 @@ function OrbitIcon({
       className="pointer-events-none absolute top-1/2 left-1/2"
       style={{ transform }}
     >
-      <PlayIcon weight="fill" className="text-[#ff0000]" />
+      <PlayIcon weight="fill" className="text-white" />
     </motion.div>
   );
 }
@@ -145,7 +145,7 @@ export default function LoadIn({
   const rotate = useMotionValue(0);
   const rotateOpposite = useMotionValue(0);
   const progress = useMotionValue(0);
-  const isPaused = useRef(true); // starts paused so caretStartingPosition is actually visible until hover
+  const isPaused = useRef(false); // starts moving immediately on load
   const [groupHovered, setGroupHovered] = useState(false);
   const ulRef = useRef<HTMLUListElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
