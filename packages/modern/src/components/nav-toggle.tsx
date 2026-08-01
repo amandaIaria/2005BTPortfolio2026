@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'motion/react';
 import type { Variants } from 'motion/react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MenuToggleIcon } from './menu-toggle-icon';
 import { Navigation } from './navigation';
 
@@ -12,6 +13,7 @@ const panelVariants: Variants = {
 function NavToggle() {
   const [isOpen, setIsOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useTranslation();
 
   function toggle() {
     setIsOpen((prev) => !prev);
@@ -23,7 +25,9 @@ function NavToggle() {
         type="button"
         onClick={toggle}
         aria-expanded={isOpen}
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        aria-label={
+          isOpen ? t('navToggle.closeMenuLabel') : t('navToggle.openMenuLabel')
+        }
         data-component="nav-toggle-button"
         className="fixed top-12 left-4 z-[80] flex items-center justify-center rounded bg-black p-2 text-white"
       >

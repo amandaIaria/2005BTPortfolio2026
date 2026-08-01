@@ -1,7 +1,9 @@
 import { Container, WebGLTentacleWall } from '@general/components';
 import { Button } from '@general/components/button';
+import { useTranslation } from 'react-i18next';
 
 function ModernContactPage() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="fixed -z-10 -bottom-[50vh]">
@@ -13,11 +15,9 @@ function ModernContactPage() {
       >
         <div className="grid gap-20 grid-cols-[200px_1fr]">
           <div className="flex flex-col gap-10">
-            <h1 className="text-6xl">Contact Me</h1>
+            <h1 className="text-6xl">{t('contact.heading')}</h1>
             <p className="text-lg font-medium text-accent">
-              I&apos;m always open to new opportunities and collaborations. Feel
-              free to reach out to me through the contact form or connect with
-              me on social media.
+              {t('contact.intro')}
             </p>
           </div>
           <div className="flex flex-col gap-10">
@@ -29,20 +29,20 @@ function ModernContactPage() {
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder={t('contact.namePlaceholder')}
                 required
                 className="w-full rounded-lg border border-gray-300 p-4 text-lg focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50"
               />
               <input
                 type="email"
                 name="email   "
-                placeholder="Your Email"
+                placeholder={t('contact.emailPlaceholder')}
                 required
                 className="w-full rounded-lg border border-gray-300 p-4 text-lg focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50"
               />
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder={t('contact.messagePlaceholder')}
                 required
                 className="w-full rounded-lg border border-gray-300 p-4 text-lg focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50"
               ></textarea>
@@ -51,7 +51,7 @@ function ModernContactPage() {
                 size="lg"
                 className="rounded-lg bg-accent py-4 px-6 text-lg font-semibold text-white transition-colors duration-300 hover:bg-accent-dark"
               >
-                Send Message
+                {t('contact.submitLabel')}
               </Button>
             </form>
           </div>

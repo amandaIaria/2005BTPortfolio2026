@@ -1,7 +1,9 @@
 import { Container, Slider } from '@general/components';
 import json from '@json/data/json/projects.json';
+import { useTranslation } from 'react-i18next';
 
 function ModernProjectsPage() {
+  const { t } = useTranslation();
   return (
     <Container
       className="w-screen h-screen overflow-hidden"
@@ -9,7 +11,7 @@ function ModernProjectsPage() {
     >
       <Slider
         slides={json}
-        ariaLabel="Featured projects carousel"
+        ariaLabel={t('projects.carouselAriaLabel')}
         className="w-full h-full"
       />
     </Container>

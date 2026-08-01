@@ -119,3 +119,4 @@ export { cn } from './lib/utils';
 export { useAvoidOverlap } from './hooks/use-avoid-overlap';
 export type { UseAvoidOverlapOptions } from './hooks/use-avoid-overlap';
 export { useSlider } from './hooks/use-slider';
+export { useActiveSection } from './hooks/use-active-section';

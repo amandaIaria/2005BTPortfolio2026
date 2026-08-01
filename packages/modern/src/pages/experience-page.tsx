@@ -1,9 +1,11 @@
 import { Button, Container, ExperienceList } from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
 
 function ModernExperiencePage() {
   const { experience } = json;
+  const { t } = useTranslation();
   return (
     <Container
       data-component="modern-experience-page"
@@ -11,10 +13,9 @@ function ModernExperiencePage() {
     >
       <div className="grid grid-cols-1 items-start gap-20 md:grid-cols-[300px_1fr]">
         <div className="sticky top-10 flex flex-col gap-10">
-          <h1 className="text-6xl">Experience</h1>
+          <h1 className="text-6xl">{t('experience.heading')}</h1>
           <p className="text-2xl font-medium text-accent">
-            A look at where I&apos;ve worked and what I&apos;ve built along the
-            way.
+            {t('experience.subtitle')}
           </p>
           <div>
             <Button
@@ -23,7 +24,7 @@ function ModernExperiencePage() {
               className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
             >
               <a href="/modern/contact">
-                Contact
+                {t('experience.ctaLabel')}
                 <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
               </a>
             </Button>

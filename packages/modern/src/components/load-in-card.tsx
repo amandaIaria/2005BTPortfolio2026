@@ -170,10 +170,17 @@ const reveal = {
   visible: { pathLength: 1, opacity: 1 },
 };
 
-function RevealingTentacle({ maskId, hovered, className }: RevealingTentacleProps) {
+function RevealingTentacle({
+  maskId,
+  hovered,
+  className,
+}: RevealingTentacleProps) {
   return (
     <svg
-      className={cn("absolute inset-0 w-full h-full pointer-events-none overflow-visible", className)}
+      className={cn(
+        'absolute inset-0 w-full h-full pointer-events-none overflow-visible',
+        className,
+      )}
       viewBox={TENTACLE_VIEWBOX}
       style={{
         top: '8px',
@@ -244,7 +251,11 @@ export default function LoadInCard({ children, className }: LoadInCardProps) {
       onHoverEnd={() => setGroupHovered(false)}
     >
       {children}
-      <RevealingTentacle maskId={maskId} hovered={groupHovered} className="text-accent" />
+      <RevealingTentacle
+        maskId={maskId}
+        hovered={groupHovered}
+        className="text-accent"
+      />
     </motion.div>
   );
 }

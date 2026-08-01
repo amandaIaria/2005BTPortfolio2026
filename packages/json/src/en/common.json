@@ -2,6 +2,45 @@
   "home": {
     "kicker": "2005 Portfolio",
     "title": "Welcome to my portfolio.",
-    "subtitle": "A throwback-inspired portfolio built with modern tooling."
+    "subtitle": "A throwback-inspired portfolio built with modern tooling.",
+    "heroTopText": "Beautiful",
+    "heroBottomText": "Tragedy",
+    "heroCaption": "Lets build something beautiful together.",
+    "heroImageAlt": "Portrait in shadow against a black background",
+    "heading": "I'm a <span class='text-accent'>FrontEnd</span> Developer",
+    "subheading": "Let's Build something <span class='text-accent'>Beautifu</span> together",
+    "hiddenH1": "The Portfolio of Alex Iaria"
+  },
+  "about": {
+    "ctaLabel": "Contact Me"
+  },
+  "contact": {
+    "heading": "Contact Me",
+    "intro": "I'm always open to new opportunities and collaborations. Feel free to reach out to me through the contact form or connect with me on social media.",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message",
+    "submitLabel": "Send Message"
+  },
+  "experience": {
+    "heading": "Experience",
+    "subtitle": "A look at where I've worked and what I've built along the way.",
+    "ctaLabel": "Contact"
+  },
+  "caseStudies": {
+    "heading": "Case Studies"
+  },
+  "shrines": {
+    "heading": "Shrines"
+  },
+  "projects": {
+    "carouselAriaLabel": "Featured projects carousel"
+  },
+  "navToggle": {
+    "openMenuLabel": "Open menu",
+    "closeMenuLabel": "Close menu"
+  },
+  "loadIn": {
+    "selfPortraitAlt": "Self Portrait"
   }
 }

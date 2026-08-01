@@ -14,6 +14,8 @@ export const sliderSamples: SliderSlides = [
         'A beautiful portfolio project built with React and modern web technologies. This slide demonstrates the layout and styling of the component.',
       list: ['React 19', 'TypeScript', 'Tailwind CSS'],
       link: { url: '#', copy: 'View Project' },
+      company: 'Velir',
+      tags: ['demo', 'poc'],
     },
   },
   {
@@ -29,6 +31,8 @@ export const sliderSamples: SliderSlides = [
         'Another exemplary project showcasing the versatility and responsiveness of the Slider component across different screen sizes and interaction modes.',
       list: ['Vite', 'TanStack Router', 'Container Queries'],
       link: { url: '#', copy: 'Explore' },
+      company: 'Velir',
+      tags: ['demo', 'poc'],
     },
   },
 ];
@@ -53,6 +57,8 @@ export const sliderFeatured: SliderSlides = [
         'Container Queries',
       ],
       link: { url: '#', copy: 'View Project' },
+      company: 'HMC Ad',
+      tags: ['charity', 'poc'],
     },
   },
   {
@@ -68,6 +74,8 @@ export const sliderFeatured: SliderSlides = [
         'A full-stack solution demonstrating modern web development practices. Features include real-time updates, advanced state management, and a polished user interface designed with attention to detail.',
       list: ['Vite', 'shadcn/ui', 'Radix UI', 'CVA', 'Phosphor Icons'],
       link: { url: '#', copy: 'Explore' },
+      company: 'HMC Ad',
+      tags: ['charity', 'poc'],
     },
   },
   {
@@ -89,6 +97,8 @@ export const sliderFeatured: SliderSlides = [
         'Performance Optimized',
       ],
       link: { url: '#', copy: 'Learn More' },
+      company: 'HMC Ad',
+      tags: ['charity', 'poc'],
     },
   },
 ];

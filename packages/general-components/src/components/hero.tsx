@@ -9,6 +9,8 @@ interface HeroProps extends React.ComponentProps<'div'> {
   topText: string;
   bottomText: string;
   caption: string;
+  heading: string;
+  hiddenH1: string;
 }
 
 function Hero({
@@ -16,6 +18,8 @@ function Hero({
   topText,
   bottomText,
   caption,
+  heading,
+  hiddenH1,
   className,
   ...props
 }: HeroProps) {
@@ -25,22 +29,28 @@ function Hero({
       className={cn('relative h-dvh w-dvw overflow-hidden bg-black', className)}
       {...props}
     >
+      <h1 className="sr-only">{hiddenH1}</h1>
       <img
         src={image.src}
         alt={image.alt}
         className="absolute inset-0 h-full w-full object-cover top-[25%]"
       />
-      <div className="absolute inset-x-0 -top-[82px] px-6 py-10 text-center">
+      <div className="absolute inset-x-0 -top-20.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
           {topText}
         </p>
       </div>
-      <div className="absolute inset-1/2 ml-[100px]  p-4 text-center h-fit w-fit block">
-        <p className="text-xl leading-none tracking-tight text-accent capitalize">
-          {caption}
-        </p>
+      <div className="absolute inset-1/2 ml-25 -mt-20  p-4 text-center h-fit w-fit block">
+        <p
+          className="text-5xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference"
+          dangerouslySetInnerHTML={{ __html: heading }}
+        />
+        <p
+          className="text-xl leading-none tracking-tight text-accent capitalize"
+          dangerouslySetInnerHTML={{ __html: caption }}
+        />
       </div>
-      <div className="absolute inset-x-0 -bottom-[50px] px-6 py-10 text-center">
+      <div className="absolute inset-x-0 -bottom-12.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
           {bottomText}
         </p>

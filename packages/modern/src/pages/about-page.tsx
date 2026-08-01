@@ -1,6 +1,7 @@
 import { Button, Container, WebGLTentacleWall } from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
 
 interface ModernAboutPageProps {
   about: {
@@ -20,6 +21,7 @@ interface ModernAboutPageProps {
 
 function ModernAboutPage() {
   const { about }: ModernAboutPageProps = json;
+  const { t } = useTranslation();
   return (
     <Container
       data-component="modern-about-page"
@@ -46,7 +48,7 @@ function ModernAboutPage() {
               className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
             >
               <a href="/modern/contact">
-                Contact Me
+                {t('about.ctaLabel')}
                 <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
               </a>
             </Button>
