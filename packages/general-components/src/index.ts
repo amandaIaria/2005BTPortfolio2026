@@ -91,6 +91,8 @@ export type {
 } from './components/app-header';
 export { AnimatedTitle } from './components/animated-title';
 export type { AnimatedTitleProps } from './components/animated-title';
+export { GlitchEffect } from './components/glitch-effect';
+export type { GlitchEffectProps } from './components/glitch-effect';
 export { Slider } from './components/slider';
 export type {
   SliderProps,
