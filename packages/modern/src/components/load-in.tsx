@@ -17,7 +17,7 @@ const CORNER_RADIUS = 18; // matches --radius-2xl override, src/styles.css:175
 const EDGE = HALF_SIZE - CORNER_RADIUS; // 30 — half-length of each straight edge
 const ARC_LEN = (Math.PI / 2) * CORNER_RADIUS;
 const PERIMETER = 4 * (2 * EDGE) + 4 * ARC_LEN; // ~353.1
-const LOOP_MS = 20000; // duration of one full lap — matches the group orbit's 360deg/20000ms period, opposite direction
+const LOOP_MS = 19000; // duration of one full lap around a card's perimeter
 
 // Walks the rounded-rect outline clockwise starting at the top edge's left end.
 // Returns the point (relative to card center) and the OUTWARD normal angle in
@@ -65,28 +65,50 @@ function pointOnCardPerimeter(t: number) {
   return { x: -EDGE, y: -HALF_SIZE, outward: -90 };
 }
 
+// Finds the perimeter parameter `t` whose point is closest to (x, y) — used
+// to convert a hand-tuned caretStartingPosition into a starting phase. If
+// (x, y) already lies on the path, this returns essentially that same point.
+const PERIMETER_SAMPLE_STEP = 1;
+function nearestTOnPerimeter(x: number, y: number) {
+  let bestT = 0;
+  let bestDist = Infinity;
+  for (let t = 0; t < PERIMETER; t += PERIMETER_SAMPLE_STEP) {
+    const p = pointOnCardPerimeter(t);
+    const dist = (p.x - x) ** 2 + (p.y - y) ** 2;
+    if (dist < bestDist) {
+      bestDist = dist;
+      bestT = t;
+    }
+  }
+  return bestT;
+}
+
 function OrbitIcon({
   progress,
   rotate,
   effectiveRestRef,
   index,
   startingPosition,
+  startPhase,
 }: {
   progress: MotionValue<number>;
   rotate: MotionValue<number>;
   effectiveRestRef: React.RefObject<{ x: number; y: number }[]>;
   index: number;
   startingPosition: { x: number; y: number; rotate: number };
+  startPhase: number;
 }) {
   const transform = useTransform([progress, rotate], (latest) => {
     const [p, r] = latest as [number, number];
     // Holds the hand-tuned starting pose until the loop has actually moved,
-    // then hands off to the perimeter march.
+    // then hands off to the perimeter march, picking up from this card's own
+    // starting position (its nearest point on the perimeter) rather than a
+    // shared t=0 — avoids a visible jump when the orbit kicks off on hover.
     if (p === 0) {
       const { x, y, rotate: startRotate } = startingPosition;
       return `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${startRotate}deg)`;
     }
-    const t = ((p % PERIMETER) + PERIMETER) % PERIMETER;
+    const t = ((p + startPhase) % PERIMETER + PERIMETER) % PERIMETER;
     const { x, y } = pointOnCardPerimeter(t);
     // Aim at the shared ORBIT center (the portrait). `effectiveRest` is this
     // card's rest offset PLUS its own CSS-grid cell base position (measured
@@ -137,7 +159,7 @@ export default function LoadIn({
       // 0
       rest: { x: 124, y: 73 },
       hover: { x: 0, y: 0 },
-      caretStartingPosition: { x: 96, y: 0, rotate: 30 },
+      caretStartingPosition: { x: 43.85, y: 46.5, rotate: 287.49 },
       ...general,
     },
 
@@ -145,7 +167,7 @@ export default function LoadIn({
       // 1
       rest: { x: 0, y: -100 },
       hover: { x: 0, y: -73 },
-      caretStartingPosition: { x: 44, y: 0, rotate: 210 },
+      caretStartingPosition: { x: 3, y: 52.03, rotate: 211 },
       ...general,
     },
 
@@ -153,7 +175,7 @@ export default function LoadIn({
       // 2
       rest: { x: -124, y: 73 },
       hover: { x: 0, y: 0 },
-      caretStartingPosition: { x: 0, y: 0, rotate: 0 },
+      caretStartingPosition: { x: -48, y: 43, rotate: 22 },
       ...general,
     },
 
@@ -161,7 +183,7 @@ export default function LoadIn({
       // 3
       rest: { x: 124, y: 0 },
       hover: { x: -73, y: 0 },
-      caretStartingPosition: { x: 96, y: -44, rotate: 0 },
+      caretStartingPosition: { x: 52, y: 0, rotate: 0 },
       ...general,
     },
 
@@ -177,7 +199,7 @@ export default function LoadIn({
       // 5
       rest: { x: -124, y: 0 },
       hover: { x: 73, y: 0 },
-      caretStartingPosition: { x: -16, y: -43, rotate: 180 },
+      caretStartingPosition: { x: -52, y: 0, rotate: 180 },
       ...general,
     },
 
@@ -185,7 +207,7 @@ export default function LoadIn({
       // 6
       rest: { x: 124, y: -73 },
       hover: { x: 0, y: 0 },
-      caretStartingPosition: { x: 96, y: -103, rotate: 323 },
+      caretStartingPosition: { x: 49, y: -41, rotate: 212 },
       ...general,
     },
 
@@ -193,7 +215,7 @@ export default function LoadIn({
       // 7
       rest: { x: 0, y: 100 },
       hover: { x: 0, y: 73 },
-      caretStartingPosition: { x: 44, y: -114, rotate: 145 },
+      caretStartingPosition: { x: 0, y: -52, rotate: 270 },
       ...general,
     },
 
@@ -201,10 +223,16 @@ export default function LoadIn({
       // 8
       rest: { x: -124, y: -73 },
       hover: { x: 0, y: 0 },
-      caretStartingPosition: { x: -16, y: -96, rotate: 90 },
+      caretStartingPosition: { x: -43, y: -46, rotate: -4 },
       ...general,
     },
   ];
+
+  const startPhases = useRef(
+    circle.map((c) =>
+      nearestTOnPerimeter(c.caretStartingPosition.x, c.caretStartingPosition.y),
+    ),
+  ).current;
 
   // `rest` alone doesn't capture a card's full offset from the true rotation
   // pivot — these sit in an actual CSS grid, so each cell also has its own
@@ -309,6 +337,7 @@ export default function LoadIn({
                         effectiveRestRef={effectiveRestRef}
                         index={index}
                         startingPosition={circle[index].caretStartingPosition}
+                        startPhase={startPhases[index]}
                       />
                     </div>
                   )}
