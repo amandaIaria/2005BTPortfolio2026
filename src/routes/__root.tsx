@@ -26,12 +26,15 @@ function NotFoundComponent() {
       data-component="not-found-page"
       className="min-h-screen flex flex-col items-center justify-center gap-6 text-center px-6"
     >
-      <GlitchEffect className="text-[8rem] sm:text-[12rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)] dark:text-white">
+      <GlitchEffect
+        className="text-[8rem] sm:text-[12rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)] dark:text-white"
+        accessibleLabel="404 error"
+      >
         404
       </GlitchEffect>
-      <p className="text-lg text-[var(--sea-ink)]/70 dark:text-white/70">
+      <h1 className="text-lg text-[var(--sea-ink)]/70 dark:text-white/70">
         Page not found.
-      </p>
+      </h1>
       <Link
         to="/"
         className="text-[var(--lagoon)] font-bold underline underline-offset-4"
