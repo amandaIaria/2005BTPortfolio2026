@@ -1,4 +1,4 @@
-import { cn } from '@general/components';
+import { cn } from '../../lib/utils';
 
 interface ImageHeaderProps extends React.ComponentProps<'div'> {
   pageName: string;

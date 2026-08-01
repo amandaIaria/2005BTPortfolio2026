@@ -1,5 +1,4 @@
-import { Container } from '@general/components';
-import { ArtGallery } from '@modern/feature/components/art-gallery';
+import { Container, ArtGallery } from '@general/components';
 
 function ModernArtPage() {
   return (

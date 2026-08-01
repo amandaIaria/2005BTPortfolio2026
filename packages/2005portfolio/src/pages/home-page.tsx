@@ -4,9 +4,9 @@ import {
   ScrollArea,
   TempNav,
   useAvoidOverlap,
+  ImageHeader,
+  SidebarOld,
 } from '@general/components';
-import { ImageHeader } from '../components/image-header';
-import { SidebarOld } from '../components/sidebar-old';
 
 export default function HomePage() {
   const obstacleRef = useRef<HTMLDivElement>(null);

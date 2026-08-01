@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { useId, useRef, useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
-import { cn, usePageTransition } from '@general/components';
+import { cn } from '../../lib/utils';
+import { usePageTransition } from '../page-transition/page-transition-context';
 import { boxScale } from './load-in';
 
 interface LoadInCardProps {

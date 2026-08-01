@@ -4,6 +4,13 @@ import { cn } from '../lib/utils';
 interface WebGLTentacleWallProps extends React.ComponentProps<'div'> {
   tentacleCount?: number;
   rotate?: number;
+  /**
+   * Overrides the rendered tentacle color — a hex code (e.g. '#ff0000') or a
+   * CSS variable (e.g. 'var(--lagoon)'). When set, this replaces the default
+   * light/dark black-white toggle in the shader itself. Omit to keep the
+   * default behavior.
+   */
+  colorValue?: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -27,6 +34,8 @@ const FRAG = `
   uniform vec2  u_resolution;
   uniform float u_tentacleCount;
   uniform float u_invert;
+  uniform vec3  u_customColor;
+  uniform float u_useCustomColor;
 
   float hash(float n) {
     return fract(sin(n) * 43758.5453);
@@ -130,7 +139,8 @@ const FRAG = `
     pos.y = h - pos.y;
 
     float wallEdge = w * 0.48;
-    vec3 baseColor = mix(vec3(0.0), vec3(1.0), u_invert);
+    vec3 invertColor = mix(vec3(0.0), vec3(1.0), u_invert);
+    vec3 baseColor = mix(invertColor, u_customColor, u_useCustomColor);
 
     vec3 col = baseColor;
     float alpha = 1.0;
@@ -165,11 +175,54 @@ const FRAG = `
 `;
 
 /* ------------------------------------------------------------------ */
+/*  Color resolution                                                   */
+/* ------------------------------------------------------------------ */
+
+// Resolves a hex code or CSS variable (e.g. 'var(--lagoon)') into normalized
+// [0,1] RGB floats for the shader uniform. Rasterizes onto a detached 1x1
+// canvas and reads back the sRGB bytes rather than parsing the fillStyle
+// string — modern browsers serialize wide-gamut colors (e.g. Tailwind's
+// oklch()-based palette vars) back out as oklch(), not hex/rgb, so string
+// matching alone misses them.
+function resolveColorToRGB(value: string): [number, number, number] | null {
+  if (typeof document === 'undefined') return null;
+
+  let cssColor = value.trim().replace(/;+\s*$/, '');
+  const varMatch = cssColor.match(/^var\((--[^,)]+)(?:,\s*(.+))?\)$/);
+  if (varMatch) {
+    const [, varName, fallback] = varMatch;
+    const resolved = getComputedStyle(document.documentElement)
+      .getPropertyValue(varName)
+      .trim();
+    cssColor = resolved || (fallback || '').trim();
+    if (!cssColor) return null;
+  }
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 1;
+  canvas.height = 1;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return null;
+
+  const sentinel = '#123456';
+  ctx.fillStyle = sentinel;
+  ctx.fillStyle = cssColor;
+  if (ctx.fillStyle === sentinel && cssColor.toLowerCase() !== sentinel) {
+    return null;
+  }
+
+  ctx.fillRect(0, 0, 1, 1);
+  const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+  return [r / 255, g / 255, b / 255];
+}
+
+/* ------------------------------------------------------------------ */
 /*  WebGL bootstrap                                                    */
 /* ------------------------------------------------------------------ */
 
 function initWebGL(
   canvas: HTMLCanvasElement,
+  colorValue: string | undefined,
   tentacleCount: number,
   isDarkRef: React.RefObject<boolean>,
 ): (() => void) | null {
@@ -214,8 +267,16 @@ function initWebGL(
   const uRes = gl.getUniformLocation(prog, 'u_resolution');
   const uCount = gl.getUniformLocation(prog, 'u_tentacleCount');
   const uInvert = gl.getUniformLocation(prog, 'u_invert');
+  const uCustomColor = gl.getUniformLocation(prog, 'u_customColor');
+  const uUseCustomColor = gl.getUniformLocation(prog, 'u_useCustomColor');
 
   gl.uniform1f(uCount, tentacleCount);
+
+  const customRGB = colorValue ? resolveColorToRGB(colorValue) : null;
+  gl.uniform1f(uUseCustomColor, customRGB ? 1 : 0);
+  if (customRGB) {
+    gl.uniform3f(uCustomColor, customRGB[0], customRGB[1], customRGB[2]);
+  }
 
   let raf = 0;
   const start = performance.now();
@@ -267,6 +328,7 @@ function initWebGL(
 function WebGLTentacleWall({
   tentacleCount = 6,
   rotate = 0,
+  colorValue,
   className,
   children,
   ...props
@@ -280,9 +342,9 @@ function WebGLTentacleWall({
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const cleanup = initWebGL(canvas, tentacleCount, isDarkRef);
+    const cleanup = initWebGL(canvas, colorValue, tentacleCount, isDarkRef);
     return () => cleanup?.();
-  }, [tentacleCount]);
+  }, [tentacleCount, colorValue]);
 
   React.useEffect(() => {
     const root = document.documentElement;
@@ -311,14 +373,17 @@ function WebGLTentacleWall({
         )}
         style={{ transform: `translate(-50%, -50%) rotate(${rotate}deg)` }}
       >
-        <div
+        {!isSideways && <div
           data-component="webgl-tentacle-wall-backdrop"
           className="absolute inset-y-0 left-[48%] right-0 bg-white opacity-50 blur-xl dark:bg-black"
           aria-hidden="true"
-        />
+        />}
         <canvas
           ref={canvasRef}
-          className="relative block h-full w-full"
+          className={cn("relative block h-full w-full", {
+            "bg-black/80": isSideways,
+            "bg-white dark:bg-black": !isSideways,
+          })}
           aria-hidden="true"
         />
       </div>

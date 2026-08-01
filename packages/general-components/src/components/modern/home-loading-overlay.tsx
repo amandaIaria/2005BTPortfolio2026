@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { WebGLTentacleWall } from '@general/components';
+import { WebGLTentacleWall } from '../webgl-tentacle-wall';
 
 const MIN_DISPLAY_MS = 1200;
 
@@ -40,7 +40,7 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
   return (
     <motion.div
       data-component="home-loading-overlay"
-      className="fixed inset-0 z-100 bg-black"
+      className="fixed inset-0 z-100"
       initial={{ y: 0 }}
       animate={{ y: exiting ? '100%' : 0 }}
       transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}
@@ -48,7 +48,11 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
         if (exiting) onDone();
       }}
     >
-      <WebGLTentacleWall rotate={-90} tentacleCount={6} />
+      <WebGLTentacleWall
+        rotate={-90}
+        tentacleCount={6}
+        colorValue="var(--color-cyan-500)"
+      />
     </motion.div>
   );
 }

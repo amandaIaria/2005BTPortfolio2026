@@ -52,7 +52,7 @@ function RootComponent() {
 
   return (
     <TooltipProvider>
-      <AppHeader navigate={(path) => nav({ to: path })} />
+      {/* <AppHeader navigate={(path) => nav({ to: path })} /> */}
       <PageTransitionProvider>
         <Outlet />
       </PageTransitionProvider>

@@ -1,10 +1,8 @@
-import { Container, Hero } from '@general/components';
-import LoadIn from '@modern/feature/components/load-in';
+import { Container, Hero, LoadIn, HomeLoadingOverlay } from '@general/components';
 import json from '@json/data/json/navigation.json';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { initialPathname } from '../lib/initial-pathname';
-import { HomeLoadingOverlay } from '../components/home-loading-overlay';
 
 function ModernHomePage() {
   const { t } = useTranslation();

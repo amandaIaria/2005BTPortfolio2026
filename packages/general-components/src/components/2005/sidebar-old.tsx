@@ -1,10 +1,6 @@
-import {
-  cn,
-  ScrollArea,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@general/components';
+import { cn } from '../../lib/utils';
+import { ScrollArea } from '../ui/scroll-area';
+import { Tooltip, TooltipTrigger, TooltipContent } from '../ui/tooltip';
 import {
   GithubLogo,
   LinkedinLogo,

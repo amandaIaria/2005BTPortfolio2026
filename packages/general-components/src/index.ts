@@ -111,6 +111,19 @@ export { PageTransitionProvider } from './components/page-transition/page-transi
 export { usePageTransition } from './components/page-transition/page-transition-context';
 export type { StartTransitionOptions } from './components/page-transition/page-transition-context';
 
+// 2005 theme components
+export { ImageHeader } from './components/2005/image-header';
+export { SidebarOld } from './components/2005/sidebar-old';
+
+// Modern theme components
+export { ArtGallery } from './components/modern/art-gallery';
+export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
+export type { HomeLoadingOverlayProps } from './components/modern/home-loading-overlay';
+export { default as LoadIn } from './components/modern/load-in';
+export { default as LoadInCard } from './components/modern/load-in-card';
+export { Navigation } from './components/modern/navigation';
+export { NavToggle } from './components/modern/nav-toggle';
+
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';
 

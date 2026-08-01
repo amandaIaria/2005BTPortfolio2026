@@ -9,5 +9,3 @@ export { ModernArtPage } from './pages/art-page';
 export { ModernShrinesPage } from './pages/shrines-page';
 export { ModernContactPage } from './pages/contact-page';
 export { ModernNotFoundPage } from './pages/not-found-page';
-export { Navigation } from './components/navigation';
-export { NavToggle } from './components/nav-toggle';

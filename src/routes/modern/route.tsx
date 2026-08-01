@@ -1,5 +1,5 @@
 import { Outlet, createFileRoute, useMatches } from '@tanstack/react-router';
-import { NavToggle } from '@modern/feature/components/nav-toggle';
+import { NavToggle } from '@general/components';
 import { ModernNotFoundPage } from '@modern/feature';
 
 export const Route = createFileRoute('/modern')({
