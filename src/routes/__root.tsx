@@ -28,12 +28,12 @@ function NotFoundComponent() {
     >
       <div className="border-2 border-[var(--sea-ink)] bg-[var(--foam)] px-8 py-10 max-w-md w-full">
         <GlitchEffect
-          className="text-[6rem] sm:text-[8rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)] dark:text-white"
+          className="text-[6rem] sm:text-[8rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)]"
           accessibleLabel="404 error"
         >
           404
         </GlitchEffect>
-        <h1 className="text-lg text-[var(--sea-ink)]/70 dark:text-white/70 mt-4">
+        <h1 className="text-lg text-[var(--sea-ink)]/70 mt-4">
           &gt; Page not found.
         </h1>
         <Link
