@@ -117,12 +117,18 @@ export { SidebarOld } from './components/2005/sidebar-old';
 
 // Modern theme components
 export { ArtGallery } from './components/modern/art-gallery';
+export { ShrineGallery } from './components/modern/shrine-gallery';
+export type {
+  ShrineGalleryProps,
+  ShrineItem,
+} from './components/modern/shrine-gallery';
 export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
 export type { HomeLoadingOverlayProps } from './components/modern/home-loading-overlay';
 export { default as LoadIn } from './components/modern/load-in';
 export { default as LoadInCard } from './components/modern/load-in-card';
 export { Navigation } from './components/modern/navigation';
 export { NavToggle } from './components/modern/nav-toggle';
+export { ThemeToggle } from './components/modern/theme-toggle';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';

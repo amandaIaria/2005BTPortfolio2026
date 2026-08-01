@@ -40,7 +40,7 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
   return (
     <motion.div
       data-component="home-loading-overlay"
-      className="fixed inset-0 z-100"
+      className="fixed inset-0 z-100 backdrop-blur-2xl"
       initial={{ y: 0 }}
       animate={{ y: exiting ? '100%' : 0 }}
       transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}

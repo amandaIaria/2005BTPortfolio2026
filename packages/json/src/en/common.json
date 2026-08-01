@@ -31,7 +31,9 @@
     "heading": "Case Studies"
   },
   "shrines": {
-    "heading": "Shrines"
+    "kicker": "The Archive",
+    "heading": "Shrines",
+    "intro": "Small monuments to the code that shaped me — some sacred, some cursed."
   },
   "projects": {
     "carouselAriaLabel": "Featured projects carousel"
@@ -39,6 +41,10 @@
   "navToggle": {
     "openMenuLabel": "Open menu",
     "closeMenuLabel": "Close menu"
+  },
+  "themeToggle": {
+    "lightModeLabel": "Switch to light mode",
+    "darkModeLabel": "Switch to dark mode"
   },
   "loadIn": {
     "selfPortraitAlt": "Self Portrait"

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Shrine of the Stargate",
+    "description": "Chevron seven, locked. A gate address dialed a thousand times in my head.",
+    "image": {
+      "src": "https://picsum.photos/id/48/800/800",
+      "alt": "A dark stone ring set against a starry backdrop"
+    }
+  },
+  {
+    "title": "Altar of the Jaffa",
+    "description": "Staff weapon primed. Indeed.",
+    "image": {
+      "src": "https://picsum.photos/id/28/800/800",
+      "alt": "Desert ruins at dusk"
+    }
+  },
+  {
+    "title": "Shrine of Babylon 5",
+    "description": "The last of the Babylon stations. Five years in the making.",
+    "image": {
+      "src": "https://picsum.photos/id/163/800/800",
+      "alt": "A vast space station lit against the dark"
+    }
+  },
+  {
+    "title": "The Vorlon-Shadow War Memorial",
+    "description": "Ambassador Kosh said it best: understanding is a three-edged sword.",
+    "image": {
+      "src": "https://picsum.photos/id/225/800/800",
+      "alt": "Deep space nebula in shadowed purples"
+    }
+  },
+  {
+    "title": "Nick Knight's Confessional",
+    "description": "Eight hundred years of guilt, one homicide detective at a time.",
+    "image": {
+      "src": "https://picsum.photos/id/96/800/800",
+      "alt": "A rain-slicked city street at night"
+    }
+  },
+  {
+    "title": "Shrine of the Raven",
+    "description": "LaCroix's nightclub, where every regret in Toronto eventually shows up.",
+    "image": {
+      "src": "https://picsum.photos/id/119/800/800",
+      "alt": "A dim nightclub interior lit in blue"
+    }
+  }
+]

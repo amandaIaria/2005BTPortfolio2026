@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import LoadInCard from './load-in-card';
 import { PlayIcon } from '@phosphor-icons/react';
+import { cn } from '@general/components/lib/utils.ts';
 
 export const boxScale = { scale: 1.4 };
 
@@ -90,6 +91,7 @@ function OrbitIcon({
   index,
   startingPosition,
   startPhase,
+  zIndex
 }: {
   progress: MotionValue<number>;
   rotate: MotionValue<number>;
@@ -97,6 +99,8 @@ function OrbitIcon({
   index: number;
   startingPosition: { x: number; y: number; rotate: number };
   startPhase: number;
+  zIndex: string;
+
 }) {
   const transform = useTransform([progress, rotate], (latest) => {
     const [p, r] = latest as [number, number];
@@ -131,7 +135,7 @@ function OrbitIcon({
       className="pointer-events-none absolute top-1/2 left-1/2"
       style={{ transform }}
     >
-      <PlayIcon weight="fill" className="text-white" />
+      <PlayIcon weight="fill" className={cn("text-white", zIndex)} />
     </motion.div>
   );
 }
@@ -323,13 +327,12 @@ export default function LoadIn({
                       }}
                       className="h-24 w-24 relative"
                     >
-                      <LoadInCard className="h-full w-full rounded-2xl bg-white">
-                        <a
-                          href={item.href}
+                      <LoadInCard className="h-full w-full rounded-2xl bg-white z-9" href={item.href}>
+                        <div
                           className="h-full w-full text-black grid items-center justify-center text-center"
                         >
                           <span>{item.label} {index}</span>
-                        </a>
+                        </div>
                       </LoadInCard>
                       <OrbitIcon
                         progress={progress}
@@ -338,6 +341,7 @@ export default function LoadIn({
                         index={index}
                         startingPosition={circle[index].caretStartingPosition}
                         startPhase={startPhases[index]}
+                        zIndex="z-8"
                       />
                     </div>
                   )}

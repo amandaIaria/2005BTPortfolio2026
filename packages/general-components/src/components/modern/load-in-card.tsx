@@ -1,11 +1,12 @@
 import { motion } from 'motion/react';
 import { useId, useRef, useState } from 'react';
-import type { MouseEvent, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { cn } from '../../lib/utils';
 import { usePageTransition } from '../page-transition/page-transition-context';
 import { boxScale } from './load-in';
 
 interface LoadInCardProps {
+  href: string;
   children?: ReactNode;
   className?: string;
 }
@@ -221,42 +222,40 @@ function RevealingTentacle({
   );
 }
 
-export default function LoadInCard({ children, className }: LoadInCardProps) {
+export default function LoadInCard({ children, className, href }: LoadInCardProps) {
   const [groupHovered, setGroupHovered] = useState(false);
   const maskId = useId();
   const cardRef = useRef<HTMLDivElement>(null);
   const { startTransition } = usePageTransition();
 
-  function handleClick(e: MouseEvent<HTMLDivElement>) {
-    const anchor = (e.target as HTMLElement).closest('a[href]');
-    if (!anchor) return;
-    e.preventDefault();
+  function handleClick() {
+    if (!href || !cardRef.current) return;
     setGroupHovered(false);
-    const bubble = cardRef.current?.parentElement;
-    const backgroundColor = bubble
-      ? getComputedStyle(bubble).backgroundColor
-      : 'var(--surface, #000)';
     startTransition({
-      rect: anchor.getBoundingClientRect(),
-      href: anchor.getAttribute('href') ?? '/',
-      backgroundColor,
+      rect: cardRef.current.getBoundingClientRect(),
+      href,
+      backgroundColor: getComputedStyle(cardRef.current).backgroundColor,
     });
   }
 
   return (
     <motion.div
       ref={cardRef}
-      className={`relative w-full h-full ${className}`}
-      onClick={handleClick}
+      className={`relative w-full h-full cursor-pointer ${className}`}
       onHoverStart={() => setGroupHovered(true)}
       onHoverEnd={() => setGroupHovered(false)}
+      onClick={handleClick}
     >
-      {children}
-      <RevealingTentacle
-        maskId={maskId}
-        hovered={groupHovered}
-        className="text-accent"
-      />
+      <div
+        className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+      >
+        {children}
+        <RevealingTentacle
+          maskId={maskId}
+          hovered={groupHovered}
+          className="text-accent"
+        />
+      </div>
     </motion.div>
   );
 }
