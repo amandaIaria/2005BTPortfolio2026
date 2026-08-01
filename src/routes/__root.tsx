@@ -8,6 +8,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 import {
   AppHeader,
+  GlitchEffect,
   PageTransitionProvider,
   TooltipProvider,
 } from '@general/components';
@@ -21,9 +22,20 @@ export const Route = createRootRoute({
 
 function NotFoundComponent() {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 py-40 text-center">
-      <h1 className="text-4xl font-bold">Page not found</h1>
-      <Link to="/" className="text-accent font-bold">
+    <div
+      data-component="not-found-page"
+      className="min-h-screen flex flex-col items-center justify-center gap-6 text-center px-6"
+    >
+      <GlitchEffect className="text-[8rem] sm:text-[12rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)] dark:text-white">
+        404
+      </GlitchEffect>
+      <p className="text-lg text-[var(--sea-ink)]/70 dark:text-white/70">
+        Page not found.
+      </p>
+      <Link
+        to="/"
+        className="text-[var(--lagoon)] font-bold underline underline-offset-4"
+      >
         &larr; Back home
       </Link>
     </div>
