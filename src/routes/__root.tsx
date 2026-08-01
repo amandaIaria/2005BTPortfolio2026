@@ -24,23 +24,25 @@ function NotFoundComponent() {
   return (
     <div
       data-component="not-found-page"
-      className="min-h-screen flex flex-col items-center justify-center gap-6 text-center px-6"
+      className="min-h-screen flex flex-col items-center justify-center gap-6 text-center px-6 font-mono bg-[var(--sand)]"
     >
-      <GlitchEffect
-        className="text-[8rem] sm:text-[12rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)] dark:text-white"
-        accessibleLabel="404 error"
-      >
-        404
-      </GlitchEffect>
-      <h1 className="text-lg text-[var(--sea-ink)]/70 dark:text-white/70">
-        Page not found.
-      </h1>
-      <Link
-        to="/"
-        className="text-[var(--lagoon)] font-bold underline underline-offset-4"
-      >
-        &larr; Back home
-      </Link>
+      <div className="border-2 border-[var(--sea-ink)] bg-[var(--foam)] px-8 py-10 max-w-md w-full">
+        <GlitchEffect
+          className="text-[6rem] sm:text-[8rem] leading-none font-bold tracking-tighter text-[var(--sea-ink)] dark:text-white"
+          accessibleLabel="404 error"
+        >
+          404
+        </GlitchEffect>
+        <h1 className="text-lg text-[var(--sea-ink)]/70 dark:text-white/70 mt-4">
+          &gt; Page not found.
+        </h1>
+        <Link
+          to="/"
+          className="inline-block mt-6 text-[var(--lagoon)] font-bold underline underline-offset-4"
+        >
+          &larr; Back home
+        </Link>
+      </div>
     </div>
   );
 }
