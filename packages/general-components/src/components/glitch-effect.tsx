@@ -1,6 +1,7 @@
 import { useGlitch } from 'react-powerglitch';
 import { cn } from '@general/lib/utils';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useReducedMotion } from 'motion/react';
 import type { ReactNode } from 'react';
 
 export interface GlitchEffectProps {
@@ -18,7 +19,7 @@ export interface GlitchEffectProps {
   playMode?: 'always' | 'hover' | 'click';
   /** Duration of one glitch loop in ms. Default 2000 for 'always'; library default (250ms) for 'hover'/'click' unless explicitly set. */
   duration?: number;
-  /** Restricts the glitch to a fraction (0-1) of the loop, peaking at the midpoint. Default { start: 0.5, end: 0.7 }. Pass false to glitch uniformly across the whole loop. */
+  /** Restricts the glitch to a fraction (0-1) of the loop, peaking at the midpoint. Default { start: 0.5, end: 0.7 } for 'always', { start: 0, end: 1 } for 'hover'/'click'. Pass false to glitch uniformly across the whole loop. */
   glitchTimeSpan?: { start: number; end: number } | false;
   /** Jitter animation. Pass false to disable. Omit to use the library default. */
   shake?:
@@ -42,37 +43,20 @@ export interface GlitchEffectProps {
   hideOverflow?: boolean;
 }
 
-function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  });
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  return prefersReducedMotion;
-}
-
 function GlitchEffect({
   children,
   className,
   accessibleLabel,
   playMode = 'always',
   duration,
-  glitchTimeSpan = { start: 0.5, end: 0.7 },
+  glitchTimeSpan = playMode === 'always'
+    ? { start: 0.5, end: 0.7 }
+    : { start: 0, end: 1 },
   shake,
   slice,
   hideOverflow = false,
 }: GlitchEffectProps) {
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const prefersReducedMotion = useReducedMotion();
 
   const glitch = useGlitch({
     playMode,
@@ -88,13 +72,13 @@ function GlitchEffect({
     slice,
   });
 
-  if (prefersReducedMotion) {
-    return (
-      <div data-component="glitch-effect" className={cn(className)}>
-        {children}
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      glitch.stopGlitch();
+    } else {
+      glitch.startGlitch();
+    }
+  }, [prefersReducedMotion, glitch]);
 
   return (
     <>
