@@ -19,16 +19,14 @@ export interface GlitchEffectProps {
         amplitudeY?: number;
       }
     | false;
-  /** Horizontal slice-clip distortion. Pass false to disable. Omit to use the library default. */
-  slice?:
-    | {
-        count?: number;
-        velocity?: number;
-        minHeight?: number;
-        maxHeight?: number;
-        hueRotate?: boolean;
-      }
-    | false;
+  /** Horizontal slice-clip distortion. Omit to use the library default. */
+  slice?: {
+    count?: number;
+    velocity?: number;
+    minHeight?: number;
+    maxHeight?: number;
+    hueRotate?: boolean;
+  };
   /** Clips the glitch animation to this element's bounds. Default false. */
   hideOverflow?: boolean;
 }
