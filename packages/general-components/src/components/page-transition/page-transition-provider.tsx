@@ -34,13 +34,22 @@ export function PageTransitionProvider({
   const isRunningRef = useRef(false);
 
   const startTransition = useCallback(
-    async ({ rect, href, backgroundColor: bg }: StartTransitionOptions) => {
+    async ({
+      rect,
+      href,
+      backgroundColor: bg,
+      external,
+    }: StartTransitionOptions) => {
       if (isRunningRef.current) return;
       isRunningRef.current = true;
       setBackgroundColor(bg);
 
       if (shouldReduceMotion) {
-        navigate({ to: href });
+        if (external) {
+          window.location.href = href;
+        } else {
+          navigate({ to: href });
+        }
         isRunningRef.current = false;
         return;
       }
@@ -58,6 +67,11 @@ export function PageTransitionProvider({
         animate(width, window.innerWidth, GROW_TRANSITION),
         animate(height, window.innerHeight, GROW_TRANSITION),
       ]);
+
+      if (external) {
+        window.location.href = href;
+        return;
+      }
 
       navigate({ to: href });
 

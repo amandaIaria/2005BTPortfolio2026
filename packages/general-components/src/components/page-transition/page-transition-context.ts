@@ -4,6 +4,7 @@ export interface StartTransitionOptions {
   rect: DOMRect;
   href: string;
   backgroundColor: string;
+  external?: boolean;
 }
 
 export interface PageTransitionContextValue {

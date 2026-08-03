@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { ModernHomePage } from '@modern/feature';
 
-export const Route = createFileRoute('/modern/')({
+export const Route = createFileRoute('/_app/')({
   component: ModernHomePage,
 });

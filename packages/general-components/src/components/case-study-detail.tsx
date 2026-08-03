@@ -61,7 +61,7 @@ function CaseStudyDetail({
       <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
         <div className="flex flex-col gap-6">
           <Link
-            to="/modern/case-studies"
+            to="/case-studies"
             className="pointer w-fit text-sm text-muted-foreground"
           >
             Case Studies

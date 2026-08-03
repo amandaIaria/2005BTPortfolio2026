@@ -57,7 +57,7 @@ function ThemeToggle() {
           : t('themeToggle.darkModeLabel')
       }
       data-component="theme-toggle-button"
-      className="fixed top-12 right-4 z-[80] flex size-9 items-center justify-center rounded-full border border-[var(--sea-ink)]/15 bg-[var(--surface)] text-[var(--sea-ink)] shadow-sm backdrop-blur transition-colors"
+      className="fixed cursor-pointer top-12 right-4 z-[80] flex size-9 items-center justify-center rounded-full border border-[var(--sea-ink)]/15 bg-[var(--surface)] text-[var(--sea-ink)] shadow-sm backdrop-blur transition-colors"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

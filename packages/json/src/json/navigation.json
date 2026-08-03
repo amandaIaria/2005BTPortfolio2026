@@ -1,18 +1,18 @@
 [
   {
-    "href": "/modern/about",
+    "href": "/about",
     "label": "About"
   },
   {
-    "href": "/modern/projects",
+    "href": "/projects",
     "label": "Projects"
   },
   {
-    "href": "/modern/art",
+    "href": "/art",
     "label": "Art"
   },
   {
-    "href": "/modern/experience",
+    "href": "/experience",
     "label": "Experience"
   },
   {
@@ -20,11 +20,11 @@
     "label": ""
   },
   {
-    "href": "/modern/shrines",
+    "href": "/shrines",
     "label": "Shrines"
   },
   {
-    "href": "/modern/case-studies",
+    "href": "/case-studies",
     "label": "Case Studies"
   },
 
@@ -33,7 +33,7 @@
     "label": "UI Kit"
   },
   {
-    "href": "/modern/contact",
+    "href": "/contact",
     "label": "Contact"
   }
 ]

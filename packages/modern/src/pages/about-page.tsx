@@ -2,6 +2,7 @@ import { Button, Container, WebGLTentacleWall } from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
 
 interface ModernAboutPageProps {
   about: {
@@ -47,7 +48,7 @@ function ModernAboutPage() {
               variant="link"
               className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
             >
-              <a href="/modern/contact">
+              <a href="/contact">
                 {t('about.ctaLabel')}
                 <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
               </a>
@@ -65,9 +66,11 @@ function ModernAboutPage() {
             <div className="text-2xl font-medium text-accent">
               <p>{about.summary}</p>
             </div>
-            <div>
-              <p>{about.full}</p>
-            </div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(about.full),
+              }}
+            />
           </div>
         </div>
       </div>

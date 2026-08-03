@@ -373,16 +373,20 @@ function WebGLTentacleWall({
         )}
         style={{ transform: `translate(-50%, -50%) rotate(${rotate}deg)` }}
       >
-         <div
-          data-component="webgl-tentacle-wall-backdrop"
-          className="absolute inset-0 w-[200vw] h-[200vh] top-[-50vw] bg-white opacity-50 backdrop-blur-lg dark:bg-black"
-          aria-hidden="true"
-        >&nbsp;</div>
+        {!isSideways && (
+          <div
+            data-component="webgl-tentacle-wall-backdrop"
+            className="absolute inset-0 w-[200vw] h-[200vh] top-[-50vw] bg-white opacity-50 backdrop-blur-lg dark:bg-black"
+            aria-hidden="true"
+          >
+            &nbsp;
+          </div>
+        )}
         <canvas
           ref={canvasRef}
-          className={cn("relative block h-full w-full", {
-            "bg-black/90": isSideways,
-            "bg-white dark:bg-black": !isSideways,
+          className={cn('relative block h-full w-full', {
+            'backdrop-blur-lg': isSideways,
+            'bg-white dark:bg-black': !isSideways,
           })}
           aria-hidden="true"
         />

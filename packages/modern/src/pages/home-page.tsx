@@ -1,14 +1,17 @@
-import { Container, Hero, LoadIn, HomeLoadingOverlay } from '@general/components';
+import {
+  Container,
+  Hero,
+  LoadIn,
+  HomeLoadingOverlay,
+} from '@general/components';
 import json from '@json/data/json/navigation.json';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { initialPathname } from '../lib/initial-pathname';
 
 function ModernHomePage() {
   const { t } = useTranslation();
-  const [showIntro, setShowIntro] = useState(
-    () => initialPathname === '/modern' || initialPathname === '/modern/',
-  );
+  const [showIntro, setShowIntro] = useState(() => initialPathname === '/');
   return (
     <div className="relative">
       {showIntro && <HomeLoadingOverlay onDone={() => setShowIntro(false)} />}
@@ -19,8 +22,18 @@ function ModernHomePage() {
         }}
         topText={t('home.heroTopText')}
         bottomText={t('home.heroBottomText')}
-        caption={t('home.subheading')}
-        heading={t('home.heading')}
+        caption={
+          <Trans
+            i18nKey="home.subheading"
+            components={{ accent: <span className="text-accent" /> }}
+          />
+        }
+        heading={
+          <Trans
+            i18nKey="home.heading"
+            components={{ accent: <span className="text-accent" /> }}
+          />
+        }
         hiddenH1={t('home.hiddenH1')}
       />
       <Container

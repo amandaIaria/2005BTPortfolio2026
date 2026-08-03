@@ -9,6 +9,7 @@ import json from '@json/data/json/navigation.json';
 const TICKER_SPEED_PX_PER_SECOND = 120;
 
 interface NavigationProps {
+  isOpen: boolean;
   onNavigate?: () => void;
 }
 
@@ -63,7 +64,7 @@ function NavItem({ link, onNavigate }: NavItemProps) {
     <li className="group relative">
       <Link
         ref={itemRef}
-        href={link.href}
+        to={link.href}
         onClick={onNavigate}
         className={cn('relative z-10 text-white')}
       >
@@ -102,12 +103,14 @@ function NavItem({ link, onNavigate }: NavItemProps) {
   );
 }
 
-function Navigation({ onNavigate }: NavigationProps) {
+function Navigation({ isOpen, onNavigate }: NavigationProps) {
   return (
     <>
-      {/* <div className="absolute inset-0 -z-10">
-        <WebGLTentacleWall tentacleCount={6} />
-      </div> */}
+      {isOpen && (
+        <div className="absolute inset-0 -z-10">
+          <WebGLTentacleWall tentacleCount={6} />
+        </div>
+      )}
       <Container data-component="modern-navigation">
         <nav className="grid h-screen place-content-center">
           <ul className="font-mono grid gap-[clamp(0.5rem,6vh,2rem)] text-[clamp(1.5rem,6vh,6rem)] font-bold uppercase text-white mix-blend-difference">

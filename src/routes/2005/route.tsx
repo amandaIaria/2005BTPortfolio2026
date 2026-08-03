@@ -1,5 +1,5 @@
 import { Outlet, createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/modern/case-studies')({
+export const Route = createFileRoute('/2005')({
   component: () => <Outlet />,
 });

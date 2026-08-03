@@ -9,63 +9,35 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ShrinesRouteImport } from './routes/shrines'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as ExperienceRouteImport } from './routes/experience'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CaseStudiesRouteImport } from './routes/case-studies'
-import { Route as ArtRouteImport } from './routes/art'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as UiKitRouteRouteImport } from './routes/ui-kit/route'
-import { Route as ModernRouteRouteImport } from './routes/modern/route'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as R2005RouteRouteImport } from './routes/2005/route'
 import { Route as UiKitIndexRouteImport } from './routes/ui-kit/index'
-import { Route as ModernIndexRouteImport } from './routes/modern/index'
+import { Route as AppIndexRouteImport } from './routes/_app.index'
+import { Route as R2005IndexRouteImport } from './routes/2005/index'
 import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/webgl-tentacle-footer'
 import { Route as UiKitSliderRouteImport } from './routes/ui-kit/slider'
-import { Route as ModernShrinesRouteImport } from './routes/modern/shrines'
-import { Route as ModernProjectsRouteImport } from './routes/modern/projects'
-import { Route as ModernExperienceRouteImport } from './routes/modern/experience'
-import { Route as ModernContactRouteImport } from './routes/modern/contact'
-import { Route as ModernCaseStudiesRouteImport } from './routes/modern/case-studies'
-import { Route as ModernArtRouteImport } from './routes/modern/art'
-import { Route as ModernAboutRouteImport } from './routes/modern/about'
-import { Route as ModernCaseStudiesIndexRouteImport } from './routes/modern/case-studies.index'
-import { Route as ModernCaseStudiesSlugRouteImport } from './routes/modern/case-studies.$slug'
+import { Route as AppShrinesRouteImport } from './routes/_app.shrines'
+import { Route as AppProjectsRouteImport } from './routes/_app.projects'
+import { Route as AppExperienceRouteImport } from './routes/_app.experience'
+import { Route as AppContactRouteImport } from './routes/_app.contact'
+import { Route as AppCaseStudiesRouteImport } from './routes/_app.case-studies'
+import { Route as AppArtRouteImport } from './routes/_app.art'
+import { Route as AppAboutRouteImport } from './routes/_app.about'
+import { Route as R2005ShrinesRouteImport } from './routes/2005/shrines'
+import { Route as R2005ProjectsRouteImport } from './routes/2005/projects'
+import { Route as R2005ExperienceRouteImport } from './routes/2005/experience'
+import { Route as R2005ContactRouteImport } from './routes/2005/contact'
+import { Route as R2005CaseStudiesRouteImport } from './routes/2005/case-studies'
+import { Route as R2005ArtRouteImport } from './routes/2005/art'
+import { Route as R2005AboutRouteImport } from './routes/2005/about'
+import { Route as AppShrinesIndexRouteImport } from './routes/_app.shrines.index'
+import { Route as AppCaseStudiesIndexRouteImport } from './routes/_app.case-studies.index'
+import { Route as AppShrinesSlugRouteImport } from './routes/_app.shrines.$slug'
+import { Route as AppCaseStudiesSlugRouteImport } from './routes/_app.case-studies.$slug'
 
-const ShrinesRoute = ShrinesRouteImport.update({
-  id: '/shrines',
-  path: '/shrines',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExperienceRoute = ExperienceRouteImport.update({
-  id: '/experience',
-  path: '/experience',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CaseStudiesRoute = CaseStudiesRouteImport.update({
-  id: '/case-studies',
-  path: '/case-studies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArtRoute = ArtRouteImport.update({
-  id: '/art',
-  path: '/art',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UiKitRouteRoute = UiKitRouteRouteImport.update({
@@ -73,14 +45,9 @@ const UiKitRouteRoute = UiKitRouteRouteImport.update({
   path: '/ui-kit',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ModernRouteRoute = ModernRouteRouteImport.update({
-  id: '/modern',
-  path: '/modern',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const R2005RouteRoute = R2005RouteRouteImport.update({
+  id: '/2005',
+  path: '/2005',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UiKitIndexRoute = UiKitIndexRouteImport.update({
@@ -88,10 +55,15 @@ const UiKitIndexRoute = UiKitIndexRouteImport.update({
   path: '/',
   getParentRoute: () => UiKitRouteRoute,
 } as any)
-const ModernIndexRoute = ModernIndexRouteImport.update({
+const AppIndexRoute = AppIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
+} as any)
+const R2005IndexRoute = R2005IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => R2005RouteRoute,
 } as any)
 const UiKitWebglTentacleFooterRoute =
   UiKitWebglTentacleFooterRouteImport.update({
@@ -104,131 +76,189 @@ const UiKitSliderRoute = UiKitSliderRouteImport.update({
   path: '/slider',
   getParentRoute: () => UiKitRouteRoute,
 } as any)
-const ModernShrinesRoute = ModernShrinesRouteImport.update({
+const AppShrinesRoute = AppShrinesRouteImport.update({
   id: '/shrines',
   path: '/shrines',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernProjectsRoute = ModernProjectsRouteImport.update({
+const AppProjectsRoute = AppProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernExperienceRoute = ModernExperienceRouteImport.update({
+const AppExperienceRoute = AppExperienceRouteImport.update({
   id: '/experience',
   path: '/experience',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernContactRoute = ModernContactRouteImport.update({
+const AppContactRoute = AppContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernCaseStudiesRoute = ModernCaseStudiesRouteImport.update({
+const AppCaseStudiesRoute = AppCaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernArtRoute = ModernArtRouteImport.update({
+const AppArtRoute = AppArtRouteImport.update({
   id: '/art',
   path: '/art',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernAboutRoute = ModernAboutRouteImport.update({
+const AppAboutRoute = AppAboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => ModernRouteRoute,
+  getParentRoute: () => AppRoute,
 } as any)
-const ModernCaseStudiesIndexRoute = ModernCaseStudiesIndexRouteImport.update({
+const R2005ShrinesRoute = R2005ShrinesRouteImport.update({
+  id: '/shrines',
+  path: '/shrines',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const R2005ProjectsRoute = R2005ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const R2005ExperienceRoute = R2005ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const R2005ContactRoute = R2005ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const R2005CaseStudiesRoute = R2005CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const R2005ArtRoute = R2005ArtRouteImport.update({
+  id: '/art',
+  path: '/art',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const R2005AboutRoute = R2005AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => R2005RouteRoute,
+} as any)
+const AppShrinesIndexRoute = AppShrinesIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => ModernCaseStudiesRoute,
+  getParentRoute: () => AppShrinesRoute,
 } as any)
-const ModernCaseStudiesSlugRoute = ModernCaseStudiesSlugRouteImport.update({
+const AppCaseStudiesIndexRoute = AppCaseStudiesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppCaseStudiesRoute,
+} as any)
+const AppShrinesSlugRoute = AppShrinesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => ModernCaseStudiesRoute,
+  getParentRoute: () => AppShrinesRoute,
+} as any)
+const AppCaseStudiesSlugRoute = AppCaseStudiesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AppCaseStudiesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/modern': typeof ModernRouteRouteWithChildren
+  '/2005': typeof R2005RouteRouteWithChildren
   '/ui-kit': typeof UiKitRouteRouteWithChildren
-  '/about': typeof AboutRoute
-  '/art': typeof ArtRoute
-  '/case-studies': typeof CaseStudiesRoute
-  '/contact': typeof ContactRoute
-  '/experience': typeof ExperienceRoute
-  '/projects': typeof ProjectsRoute
-  '/shrines': typeof ShrinesRoute
-  '/modern/about': typeof ModernAboutRoute
-  '/modern/art': typeof ModernArtRoute
-  '/modern/case-studies': typeof ModernCaseStudiesRouteWithChildren
-  '/modern/contact': typeof ModernContactRoute
-  '/modern/experience': typeof ModernExperienceRoute
-  '/modern/projects': typeof ModernProjectsRoute
-  '/modern/shrines': typeof ModernShrinesRoute
+  '/': typeof AppIndexRoute
+  '/2005/about': typeof R2005AboutRoute
+  '/2005/art': typeof R2005ArtRoute
+  '/2005/case-studies': typeof R2005CaseStudiesRoute
+  '/2005/contact': typeof R2005ContactRoute
+  '/2005/experience': typeof R2005ExperienceRoute
+  '/2005/projects': typeof R2005ProjectsRoute
+  '/2005/shrines': typeof R2005ShrinesRoute
+  '/about': typeof AppAboutRoute
+  '/art': typeof AppArtRoute
+  '/case-studies': typeof AppCaseStudiesRouteWithChildren
+  '/contact': typeof AppContactRoute
+  '/experience': typeof AppExperienceRoute
+  '/projects': typeof AppProjectsRoute
+  '/shrines': typeof AppShrinesRouteWithChildren
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
-  '/modern/': typeof ModernIndexRoute
+  '/2005/': typeof R2005IndexRoute
   '/ui-kit/': typeof UiKitIndexRoute
-  '/modern/case-studies/$slug': typeof ModernCaseStudiesSlugRoute
-  '/modern/case-studies/': typeof ModernCaseStudiesIndexRoute
+  '/case-studies/$slug': typeof AppCaseStudiesSlugRoute
+  '/shrines/$slug': typeof AppShrinesSlugRoute
+  '/case-studies/': typeof AppCaseStudiesIndexRoute
+  '/shrines/': typeof AppShrinesIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/art': typeof ArtRoute
-  '/case-studies': typeof CaseStudiesRoute
-  '/contact': typeof ContactRoute
-  '/experience': typeof ExperienceRoute
-  '/projects': typeof ProjectsRoute
-  '/shrines': typeof ShrinesRoute
-  '/modern/about': typeof ModernAboutRoute
-  '/modern/art': typeof ModernArtRoute
-  '/modern/contact': typeof ModernContactRoute
-  '/modern/experience': typeof ModernExperienceRoute
-  '/modern/projects': typeof ModernProjectsRoute
-  '/modern/shrines': typeof ModernShrinesRoute
+  '/2005/about': typeof R2005AboutRoute
+  '/2005/art': typeof R2005ArtRoute
+  '/2005/case-studies': typeof R2005CaseStudiesRoute
+  '/2005/contact': typeof R2005ContactRoute
+  '/2005/experience': typeof R2005ExperienceRoute
+  '/2005/projects': typeof R2005ProjectsRoute
+  '/2005/shrines': typeof R2005ShrinesRoute
+  '/about': typeof AppAboutRoute
+  '/art': typeof AppArtRoute
+  '/contact': typeof AppContactRoute
+  '/experience': typeof AppExperienceRoute
+  '/projects': typeof AppProjectsRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
-  '/modern': typeof ModernIndexRoute
+  '/2005': typeof R2005IndexRoute
+  '/': typeof AppIndexRoute
   '/ui-kit': typeof UiKitIndexRoute
-  '/modern/case-studies/$slug': typeof ModernCaseStudiesSlugRoute
-  '/modern/case-studies': typeof ModernCaseStudiesIndexRoute
+  '/case-studies/$slug': typeof AppCaseStudiesSlugRoute
+  '/shrines/$slug': typeof AppShrinesSlugRoute
+  '/case-studies': typeof AppCaseStudiesIndexRoute
+  '/shrines': typeof AppShrinesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/modern': typeof ModernRouteRouteWithChildren
+  '/2005': typeof R2005RouteRouteWithChildren
   '/ui-kit': typeof UiKitRouteRouteWithChildren
-  '/about': typeof AboutRoute
-  '/art': typeof ArtRoute
-  '/case-studies': typeof CaseStudiesRoute
-  '/contact': typeof ContactRoute
-  '/experience': typeof ExperienceRoute
-  '/projects': typeof ProjectsRoute
-  '/shrines': typeof ShrinesRoute
-  '/modern/about': typeof ModernAboutRoute
-  '/modern/art': typeof ModernArtRoute
-  '/modern/case-studies': typeof ModernCaseStudiesRouteWithChildren
-  '/modern/contact': typeof ModernContactRoute
-  '/modern/experience': typeof ModernExperienceRoute
-  '/modern/projects': typeof ModernProjectsRoute
-  '/modern/shrines': typeof ModernShrinesRoute
+  '/_app': typeof AppRouteWithChildren
+  '/2005/about': typeof R2005AboutRoute
+  '/2005/art': typeof R2005ArtRoute
+  '/2005/case-studies': typeof R2005CaseStudiesRoute
+  '/2005/contact': typeof R2005ContactRoute
+  '/2005/experience': typeof R2005ExperienceRoute
+  '/2005/projects': typeof R2005ProjectsRoute
+  '/2005/shrines': typeof R2005ShrinesRoute
+  '/_app/about': typeof AppAboutRoute
+  '/_app/art': typeof AppArtRoute
+  '/_app/case-studies': typeof AppCaseStudiesRouteWithChildren
+  '/_app/contact': typeof AppContactRoute
+  '/_app/experience': typeof AppExperienceRoute
+  '/_app/projects': typeof AppProjectsRoute
+  '/_app/shrines': typeof AppShrinesRouteWithChildren
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
-  '/modern/': typeof ModernIndexRoute
+  '/2005/': typeof R2005IndexRoute
+  '/_app/': typeof AppIndexRoute
   '/ui-kit/': typeof UiKitIndexRoute
-  '/modern/case-studies/$slug': typeof ModernCaseStudiesSlugRoute
-  '/modern/case-studies/': typeof ModernCaseStudiesIndexRoute
+  '/_app/case-studies/$slug': typeof AppCaseStudiesSlugRoute
+  '/_app/shrines/$slug': typeof AppShrinesSlugRoute
+  '/_app/case-studies/': typeof AppCaseStudiesIndexRoute
+  '/_app/shrines/': typeof AppShrinesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/modern'
+    | '/2005'
     | '/ui-kit'
+    | '/'
+    | '/2005/about'
+    | '/2005/art'
+    | '/2005/case-studies'
+    | '/2005/contact'
+    | '/2005/experience'
+    | '/2005/projects'
+    | '/2005/shrines'
     | '/about'
     | '/art'
     | '/case-studies'
@@ -236,130 +266,80 @@ export interface FileRouteTypes {
     | '/experience'
     | '/projects'
     | '/shrines'
-    | '/modern/about'
-    | '/modern/art'
-    | '/modern/case-studies'
-    | '/modern/contact'
-    | '/modern/experience'
-    | '/modern/projects'
-    | '/modern/shrines'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
-    | '/modern/'
+    | '/2005/'
     | '/ui-kit/'
-    | '/modern/case-studies/$slug'
-    | '/modern/case-studies/'
+    | '/case-studies/$slug'
+    | '/shrines/$slug'
+    | '/case-studies/'
+    | '/shrines/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
+    | '/2005/about'
+    | '/2005/art'
+    | '/2005/case-studies'
+    | '/2005/contact'
+    | '/2005/experience'
+    | '/2005/projects'
+    | '/2005/shrines'
     | '/about'
     | '/art'
-    | '/case-studies'
     | '/contact'
     | '/experience'
     | '/projects'
-    | '/shrines'
-    | '/modern/about'
-    | '/modern/art'
-    | '/modern/contact'
-    | '/modern/experience'
-    | '/modern/projects'
-    | '/modern/shrines'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
-    | '/modern'
+    | '/2005'
+    | '/'
     | '/ui-kit'
-    | '/modern/case-studies/$slug'
-    | '/modern/case-studies'
+    | '/case-studies/$slug'
+    | '/shrines/$slug'
+    | '/case-studies'
+    | '/shrines'
   id:
     | '__root__'
-    | '/'
-    | '/modern'
+    | '/2005'
     | '/ui-kit'
-    | '/about'
-    | '/art'
-    | '/case-studies'
-    | '/contact'
-    | '/experience'
-    | '/projects'
-    | '/shrines'
-    | '/modern/about'
-    | '/modern/art'
-    | '/modern/case-studies'
-    | '/modern/contact'
-    | '/modern/experience'
-    | '/modern/projects'
-    | '/modern/shrines'
+    | '/_app'
+    | '/2005/about'
+    | '/2005/art'
+    | '/2005/case-studies'
+    | '/2005/contact'
+    | '/2005/experience'
+    | '/2005/projects'
+    | '/2005/shrines'
+    | '/_app/about'
+    | '/_app/art'
+    | '/_app/case-studies'
+    | '/_app/contact'
+    | '/_app/experience'
+    | '/_app/projects'
+    | '/_app/shrines'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
-    | '/modern/'
+    | '/2005/'
+    | '/_app/'
     | '/ui-kit/'
-    | '/modern/case-studies/$slug'
-    | '/modern/case-studies/'
+    | '/_app/case-studies/$slug'
+    | '/_app/shrines/$slug'
+    | '/_app/case-studies/'
+    | '/_app/shrines/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  ModernRouteRoute: typeof ModernRouteRouteWithChildren
+  R2005RouteRoute: typeof R2005RouteRouteWithChildren
   UiKitRouteRoute: typeof UiKitRouteRouteWithChildren
-  AboutRoute: typeof AboutRoute
-  ArtRoute: typeof ArtRoute
-  CaseStudiesRoute: typeof CaseStudiesRoute
-  ContactRoute: typeof ContactRoute
-  ExperienceRoute: typeof ExperienceRoute
-  ProjectsRoute: typeof ProjectsRoute
-  ShrinesRoute: typeof ShrinesRoute
+  AppRoute: typeof AppRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/shrines': {
-      id: '/shrines'
-      path: '/shrines'
-      fullPath: '/shrines'
-      preLoaderRoute: typeof ShrinesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/experience': {
-      id: '/experience'
-      path: '/experience'
-      fullPath: '/experience'
-      preLoaderRoute: typeof ExperienceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/case-studies': {
-      id: '/case-studies'
-      path: '/case-studies'
-      fullPath: '/case-studies'
-      preLoaderRoute: typeof CaseStudiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/art': {
-      id: '/art'
-      path: '/art'
-      fullPath: '/art'
-      preLoaderRoute: typeof ArtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ui-kit': {
@@ -369,18 +349,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/modern': {
-      id: '/modern'
-      path: '/modern'
-      fullPath: '/modern'
-      preLoaderRoute: typeof ModernRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/2005': {
+      id: '/2005'
+      path: '/2005'
+      fullPath: '/2005'
+      preLoaderRoute: typeof R2005RouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ui-kit/': {
@@ -390,12 +363,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitIndexRouteImport
       parentRoute: typeof UiKitRouteRoute
     }
-    '/modern/': {
-      id: '/modern/'
+    '/_app/': {
+      id: '/_app/'
       path: '/'
-      fullPath: '/modern/'
-      preLoaderRoute: typeof ModernIndexRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/2005/': {
+      id: '/2005/'
+      path: '/'
+      fullPath: '/2005/'
+      preLoaderRoute: typeof R2005IndexRouteImport
+      parentRoute: typeof R2005RouteRoute
     }
     '/ui-kit/webgl-tentacle-footer': {
       id: '/ui-kit/webgl-tentacle-footer'
@@ -411,109 +391,159 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitSliderRouteImport
       parentRoute: typeof UiKitRouteRoute
     }
-    '/modern/shrines': {
-      id: '/modern/shrines'
+    '/_app/shrines': {
+      id: '/_app/shrines'
       path: '/shrines'
-      fullPath: '/modern/shrines'
-      preLoaderRoute: typeof ModernShrinesRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/shrines'
+      preLoaderRoute: typeof AppShrinesRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/projects': {
-      id: '/modern/projects'
+    '/_app/projects': {
+      id: '/_app/projects'
       path: '/projects'
-      fullPath: '/modern/projects'
-      preLoaderRoute: typeof ModernProjectsRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/projects'
+      preLoaderRoute: typeof AppProjectsRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/experience': {
-      id: '/modern/experience'
+    '/_app/experience': {
+      id: '/_app/experience'
       path: '/experience'
-      fullPath: '/modern/experience'
-      preLoaderRoute: typeof ModernExperienceRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/experience'
+      preLoaderRoute: typeof AppExperienceRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/contact': {
-      id: '/modern/contact'
+    '/_app/contact': {
+      id: '/_app/contact'
       path: '/contact'
-      fullPath: '/modern/contact'
-      preLoaderRoute: typeof ModernContactRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/contact'
+      preLoaderRoute: typeof AppContactRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/case-studies': {
-      id: '/modern/case-studies'
+    '/_app/case-studies': {
+      id: '/_app/case-studies'
       path: '/case-studies'
-      fullPath: '/modern/case-studies'
-      preLoaderRoute: typeof ModernCaseStudiesRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof AppCaseStudiesRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/art': {
-      id: '/modern/art'
+    '/_app/art': {
+      id: '/_app/art'
       path: '/art'
-      fullPath: '/modern/art'
-      preLoaderRoute: typeof ModernArtRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/art'
+      preLoaderRoute: typeof AppArtRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/about': {
-      id: '/modern/about'
+    '/_app/about': {
+      id: '/_app/about'
       path: '/about'
-      fullPath: '/modern/about'
-      preLoaderRoute: typeof ModernAboutRouteImport
-      parentRoute: typeof ModernRouteRoute
+      fullPath: '/about'
+      preLoaderRoute: typeof AppAboutRouteImport
+      parentRoute: typeof AppRoute
     }
-    '/modern/case-studies/': {
-      id: '/modern/case-studies/'
+    '/2005/shrines': {
+      id: '/2005/shrines'
+      path: '/shrines'
+      fullPath: '/2005/shrines'
+      preLoaderRoute: typeof R2005ShrinesRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/2005/projects': {
+      id: '/2005/projects'
+      path: '/projects'
+      fullPath: '/2005/projects'
+      preLoaderRoute: typeof R2005ProjectsRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/2005/experience': {
+      id: '/2005/experience'
+      path: '/experience'
+      fullPath: '/2005/experience'
+      preLoaderRoute: typeof R2005ExperienceRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/2005/contact': {
+      id: '/2005/contact'
+      path: '/contact'
+      fullPath: '/2005/contact'
+      preLoaderRoute: typeof R2005ContactRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/2005/case-studies': {
+      id: '/2005/case-studies'
+      path: '/case-studies'
+      fullPath: '/2005/case-studies'
+      preLoaderRoute: typeof R2005CaseStudiesRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/2005/art': {
+      id: '/2005/art'
+      path: '/art'
+      fullPath: '/2005/art'
+      preLoaderRoute: typeof R2005ArtRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/2005/about': {
+      id: '/2005/about'
+      path: '/about'
+      fullPath: '/2005/about'
+      preLoaderRoute: typeof R2005AboutRouteImport
+      parentRoute: typeof R2005RouteRoute
+    }
+    '/_app/shrines/': {
+      id: '/_app/shrines/'
       path: '/'
-      fullPath: '/modern/case-studies/'
-      preLoaderRoute: typeof ModernCaseStudiesIndexRouteImport
-      parentRoute: typeof ModernCaseStudiesRoute
+      fullPath: '/shrines/'
+      preLoaderRoute: typeof AppShrinesIndexRouteImport
+      parentRoute: typeof AppShrinesRoute
     }
-    '/modern/case-studies/$slug': {
-      id: '/modern/case-studies/$slug'
+    '/_app/case-studies/': {
+      id: '/_app/case-studies/'
+      path: '/'
+      fullPath: '/case-studies/'
+      preLoaderRoute: typeof AppCaseStudiesIndexRouteImport
+      parentRoute: typeof AppCaseStudiesRoute
+    }
+    '/_app/shrines/$slug': {
+      id: '/_app/shrines/$slug'
       path: '/$slug'
-      fullPath: '/modern/case-studies/$slug'
-      preLoaderRoute: typeof ModernCaseStudiesSlugRouteImport
-      parentRoute: typeof ModernCaseStudiesRoute
+      fullPath: '/shrines/$slug'
+      preLoaderRoute: typeof AppShrinesSlugRouteImport
+      parentRoute: typeof AppShrinesRoute
+    }
+    '/_app/case-studies/$slug': {
+      id: '/_app/case-studies/$slug'
+      path: '/$slug'
+      fullPath: '/case-studies/$slug'
+      preLoaderRoute: typeof AppCaseStudiesSlugRouteImport
+      parentRoute: typeof AppCaseStudiesRoute
     }
   }
 }
 
-interface ModernCaseStudiesRouteChildren {
-  ModernCaseStudiesSlugRoute: typeof ModernCaseStudiesSlugRoute
-  ModernCaseStudiesIndexRoute: typeof ModernCaseStudiesIndexRoute
+interface R2005RouteRouteChildren {
+  R2005AboutRoute: typeof R2005AboutRoute
+  R2005ArtRoute: typeof R2005ArtRoute
+  R2005CaseStudiesRoute: typeof R2005CaseStudiesRoute
+  R2005ContactRoute: typeof R2005ContactRoute
+  R2005ExperienceRoute: typeof R2005ExperienceRoute
+  R2005ProjectsRoute: typeof R2005ProjectsRoute
+  R2005ShrinesRoute: typeof R2005ShrinesRoute
+  R2005IndexRoute: typeof R2005IndexRoute
 }
 
-const ModernCaseStudiesRouteChildren: ModernCaseStudiesRouteChildren = {
-  ModernCaseStudiesSlugRoute: ModernCaseStudiesSlugRoute,
-  ModernCaseStudiesIndexRoute: ModernCaseStudiesIndexRoute,
+const R2005RouteRouteChildren: R2005RouteRouteChildren = {
+  R2005AboutRoute: R2005AboutRoute,
+  R2005ArtRoute: R2005ArtRoute,
+  R2005CaseStudiesRoute: R2005CaseStudiesRoute,
+  R2005ContactRoute: R2005ContactRoute,
+  R2005ExperienceRoute: R2005ExperienceRoute,
+  R2005ProjectsRoute: R2005ProjectsRoute,
+  R2005ShrinesRoute: R2005ShrinesRoute,
+  R2005IndexRoute: R2005IndexRoute,
 }
 
-const ModernCaseStudiesRouteWithChildren =
-  ModernCaseStudiesRoute._addFileChildren(ModernCaseStudiesRouteChildren)
-
-interface ModernRouteRouteChildren {
-  ModernAboutRoute: typeof ModernAboutRoute
-  ModernArtRoute: typeof ModernArtRoute
-  ModernCaseStudiesRoute: typeof ModernCaseStudiesRouteWithChildren
-  ModernContactRoute: typeof ModernContactRoute
-  ModernExperienceRoute: typeof ModernExperienceRoute
-  ModernProjectsRoute: typeof ModernProjectsRoute
-  ModernShrinesRoute: typeof ModernShrinesRoute
-  ModernIndexRoute: typeof ModernIndexRoute
-}
-
-const ModernRouteRouteChildren: ModernRouteRouteChildren = {
-  ModernAboutRoute: ModernAboutRoute,
-  ModernArtRoute: ModernArtRoute,
-  ModernCaseStudiesRoute: ModernCaseStudiesRouteWithChildren,
-  ModernContactRoute: ModernContactRoute,
-  ModernExperienceRoute: ModernExperienceRoute,
-  ModernProjectsRoute: ModernProjectsRoute,
-  ModernShrinesRoute: ModernShrinesRoute,
-  ModernIndexRoute: ModernIndexRoute,
-}
-
-const ModernRouteRouteWithChildren = ModernRouteRoute._addFileChildren(
-  ModernRouteRouteChildren,
+const R2005RouteRouteWithChildren = R2005RouteRoute._addFileChildren(
+  R2005RouteRouteChildren,
 )
 
 interface UiKitRouteRouteChildren {
@@ -532,17 +562,62 @@ const UiKitRouteRouteWithChildren = UiKitRouteRoute._addFileChildren(
   UiKitRouteRouteChildren,
 )
 
+interface AppCaseStudiesRouteChildren {
+  AppCaseStudiesSlugRoute: typeof AppCaseStudiesSlugRoute
+  AppCaseStudiesIndexRoute: typeof AppCaseStudiesIndexRoute
+}
+
+const AppCaseStudiesRouteChildren: AppCaseStudiesRouteChildren = {
+  AppCaseStudiesSlugRoute: AppCaseStudiesSlugRoute,
+  AppCaseStudiesIndexRoute: AppCaseStudiesIndexRoute,
+}
+
+const AppCaseStudiesRouteWithChildren = AppCaseStudiesRoute._addFileChildren(
+  AppCaseStudiesRouteChildren,
+)
+
+interface AppShrinesRouteChildren {
+  AppShrinesSlugRoute: typeof AppShrinesSlugRoute
+  AppShrinesIndexRoute: typeof AppShrinesIndexRoute
+}
+
+const AppShrinesRouteChildren: AppShrinesRouteChildren = {
+  AppShrinesSlugRoute: AppShrinesSlugRoute,
+  AppShrinesIndexRoute: AppShrinesIndexRoute,
+}
+
+const AppShrinesRouteWithChildren = AppShrinesRoute._addFileChildren(
+  AppShrinesRouteChildren,
+)
+
+interface AppRouteChildren {
+  AppAboutRoute: typeof AppAboutRoute
+  AppArtRoute: typeof AppArtRoute
+  AppCaseStudiesRoute: typeof AppCaseStudiesRouteWithChildren
+  AppContactRoute: typeof AppContactRoute
+  AppExperienceRoute: typeof AppExperienceRoute
+  AppProjectsRoute: typeof AppProjectsRoute
+  AppShrinesRoute: typeof AppShrinesRouteWithChildren
+  AppIndexRoute: typeof AppIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAboutRoute: AppAboutRoute,
+  AppArtRoute: AppArtRoute,
+  AppCaseStudiesRoute: AppCaseStudiesRouteWithChildren,
+  AppContactRoute: AppContactRoute,
+  AppExperienceRoute: AppExperienceRoute,
+  AppProjectsRoute: AppProjectsRoute,
+  AppShrinesRoute: AppShrinesRouteWithChildren,
+  AppIndexRoute: AppIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  ModernRouteRoute: ModernRouteRouteWithChildren,
+  R2005RouteRoute: R2005RouteRouteWithChildren,
   UiKitRouteRoute: UiKitRouteRouteWithChildren,
-  AboutRoute: AboutRoute,
-  ArtRoute: ArtRoute,
-  CaseStudiesRoute: CaseStudiesRoute,
-  ContactRoute: ContactRoute,
-  ExperienceRoute: ExperienceRoute,
-  ProjectsRoute: ProjectsRoute,
-  ShrinesRoute: ShrinesRoute,
+  AppRoute: AppRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

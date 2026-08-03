@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link } from '@tanstack/react-router';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { cn } from '../lib/utils';
+import { InternalTransitionLink } from './page-transition/internal-transition-link';
 import { Button } from './ui/button';
 
 interface CaseStudyItem {
@@ -54,13 +54,10 @@ function CaseStudyList({
             variant="link"
             className="pointer w-fit p-0 text-lg font-bold transition-all duration-500 decoration-accent"
           >
-            <Link
-              to="/modern/case-studies/$slug"
-              params={{ slug: caseStudy.slug }}
-            >
+            <InternalTransitionLink href={`/case-studies/${caseStudy.slug}`}>
               {caseStudy.link.copy}
               <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
-            </Link>
+            </InternalTransitionLink>
           </Button>
         </div>
       ))}

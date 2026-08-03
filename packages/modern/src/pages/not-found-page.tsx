@@ -15,7 +15,7 @@ function ModernNotFoundPage() {
       </GlitchEffect>
       <h1 className="text-lg text-white/70">This page doesn&apos;t exist.</h1>
       <Link
-        to="/modern"
+        to="/"
         className="text-[var(--lagoon)] font-bold underline underline-offset-4"
       >
         &larr; Back to home

@@ -12,11 +12,16 @@ const panelVariants: Variants = {
 
 function NavToggle() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showWebGL, setShowWebGL] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const { t } = useTranslation();
 
   function toggle() {
-    setIsOpen((prev) => !prev);
+    setIsOpen((prev) => {
+      const next = !prev;
+      if (next) setShowWebGL(true);
+      return next;
+    });
   }
 
   return (
@@ -29,7 +34,7 @@ function NavToggle() {
           isOpen ? t('navToggle.closeMenuLabel') : t('navToggle.openMenuLabel')
         }
         data-component="nav-toggle-button"
-        className="fixed top-12 left-4 z-[80] flex items-center justify-center rounded bg-black p-2 text-white"
+        className="fixed cursor-pointer top-12 left-4 z-[80] flex items-center justify-center rounded bg-black p-2 text-white"
       >
         <MenuToggleIcon
           isOpen={isOpen}
@@ -47,8 +52,11 @@ function NavToggle() {
           ease: 'easeInOut',
         }}
         style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
+        onAnimationComplete={(definition) => {
+          if (definition === 'closed') setShowWebGL(false);
+        }}
       >
-        <Navigation onNavigate={() => setIsOpen(false)} />
+        <Navigation isOpen={showWebGL} onNavigate={() => setIsOpen(false)} />
       </motion.div>
     </>
   );

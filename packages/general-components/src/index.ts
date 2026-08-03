@@ -110,6 +110,8 @@ export {
 export { PageTransitionProvider } from './components/page-transition/page-transition-provider';
 export { usePageTransition } from './components/page-transition/page-transition-context';
 export type { StartTransitionOptions } from './components/page-transition/page-transition-context';
+export { ExternalTransitionLink } from './components/page-transition/external-transition-link';
+export { InternalTransitionLink } from './components/page-transition/internal-transition-link';
 
 // 2005 theme components
 export { ImageHeader } from './components/2005/image-header';
@@ -122,6 +124,8 @@ export type {
   ShrineGalleryProps,
   ShrineItem,
 } from './components/modern/shrine-gallery';
+export { ShrineDetail } from './components/modern/shrine-detail';
+export type { ShrineDetailProps } from './components/modern/shrine-detail';
 export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
 export type { HomeLoadingOverlayProps } from './components/modern/home-loading-overlay';
 export { default as LoadIn } from './components/modern/load-in';

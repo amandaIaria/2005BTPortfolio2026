@@ -1,3 +1,4 @@
+import { ExternalTransitionLink } from '../page-transition/external-transition-link';
 import { PortfolioButton } from '../portfolio-button';
 import SliderTags from './slider-tags';
 import type { SliderSlide } from './types';
@@ -35,13 +36,9 @@ export function SlideContent({ slide }: SlideContentProps) {
       <div className="mt-auto flex justify-between items-center">
         <SliderTags tags={slide.right.tags} />
         <PortfolioButton asChild size="lg" className="slider-button">
-          <a
-            href={slide.right.link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <ExternalTransitionLink href={slide.right.link.url}>
             {slide.right.link.copy ?? 'Go to site'}
-          </a>
+          </ExternalTransitionLink>
         </PortfolioButton>
       </div>
     </div>

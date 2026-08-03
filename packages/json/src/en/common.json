@@ -7,8 +7,8 @@
     "heroBottomText": "Tragedy",
     "heroCaption": "Lets build something beautiful together.",
     "heroImageAlt": "Portrait in shadow against a black background",
-    "heading": "I'm a <span class='text-accent'>FrontEnd</span> Developer",
-    "subheading": "Let's Build something <span class='text-accent'>Beautifu</span> together",
+    "heading": "I'm a <accent>FrontEnd</accent> Developer",
+    "subheading": "Let's Build something <accent>Beautifu</accent> together",
     "hiddenH1": "The Portfolio of Alex Iaria"
   },
   "about": {

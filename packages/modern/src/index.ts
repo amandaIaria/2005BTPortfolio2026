@@ -7,5 +7,6 @@ export { ModernCaseStudyDetailPage } from './pages/case-study-detail-page';
 export { ModernProjectsPage } from './pages/projects-page';
 export { ModernArtPage } from './pages/art-page';
 export { ModernShrinesPage } from './pages/shrines-page';
+export { ModernShrineDetailPage } from './pages/shrine-detail-page';
 export { ModernContactPage } from './pages/contact-page';
 export { ModernNotFoundPage } from './pages/not-found-page';

@@ -44,7 +44,7 @@ function AppHeader({
     const next = checked ? 'modern' : '2005';
     setInternalVariant(next);
     onThemeVariantChange?.(next);
-    navigate?.(next === 'modern' ? '/modern' : '/');
+    navigate?.(next === 'modern' ? '/' : '/2005');
   };
 
   const handleModeToggle = (checked: boolean) => {

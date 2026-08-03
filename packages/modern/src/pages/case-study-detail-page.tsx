@@ -3,7 +3,7 @@ import json from '@json/data/json/case-studies.json';
 import { notFound, useParams } from '@tanstack/react-router';
 
 function ModernCaseStudyDetailPage() {
-  const { slug } = useParams({ from: '/modern/case-studies/$slug' });
+  const { slug } = useParams({ from: '/_app/case-studies/$slug' });
   const caseStudy = json.find((item) => item.slug === slug);
 
   if (!caseStudy) {

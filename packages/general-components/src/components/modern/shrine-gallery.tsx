@@ -1,9 +1,17 @@
 import json from '@json/data/json/shrines.json';
+import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+
+interface ShrineGalleryImage {
+  src: string;
+  alt: string;
+}
 
 interface ShrineItem {
+  slug: string;
   title: string;
   description?: string;
-  image: { src: string; alt: string };
+  image: ShrineGalleryImage;
+  gallery?: ShrineGalleryImage[];
 }
 
 interface ShrineGalleryProps {
@@ -31,30 +39,33 @@ function ShrineGallery({ kicker, heading, intro }: ShrineGalleryProps) {
         </h1>
         {intro && <p className="text-(--sea-ink-soft)">{intro}</p>}
       </div>
-      {items.map((item, index) => (
-        <figure
-          key={index}
+      {items.map((item) => (
+        <InternalTransitionLink
+          key={item.slug}
+          href={`/shrines/${item.slug}`}
           className="group relative aspect-square overflow-hidden bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg"
         >
-          <img
-            src={item.image.src}
-            alt={item.image.alt}
-            loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          />
-          <figcaption className="absolute inset-0 flex items-end bg-black/0 p-4 opacity-0 transition-all duration-300 group-hover:bg-black/85 group-hover:opacity-100">
-            <div className="translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
-              <h3 className="text-lg font-semibold text-white">
-                {item.title}
-              </h3>
-              {item.description && (
-                <p className="mt-1 text-sm text-white/80">
-                  {item.description}
-                </p>
-              )}
-            </div>
-          </figcaption>
-        </figure>
+          <figure className="h-full w-full">
+            <img
+              src={item.image.src}
+              alt={item.image.alt}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+            <figcaption className="absolute inset-0 flex items-end bg-black/0 p-4 opacity-0 transition-all duration-300 group-hover:bg-black/85 group-hover:opacity-100">
+              <div className="translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
+                <h3 className="text-lg font-semibold text-white">
+                  {item.title}
+                </h3>
+                {item.description && (
+                  <p className="mt-1 text-sm text-white/80">
+                    {item.description}
+                  </p>
+                )}
+              </div>
+            </figcaption>
+          </figure>
+        </InternalTransitionLink>
       ))}
     </div>
   );

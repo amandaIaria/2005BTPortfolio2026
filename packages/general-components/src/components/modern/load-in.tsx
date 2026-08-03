@@ -91,7 +91,7 @@ function OrbitIcon({
   index,
   startingPosition,
   startPhase,
-  zIndex
+  zIndex,
 }: {
   progress: MotionValue<number>;
   rotate: MotionValue<number>;
@@ -100,7 +100,6 @@ function OrbitIcon({
   startingPosition: { x: number; y: number; rotate: number };
   startPhase: number;
   zIndex: string;
-
 }) {
   const transform = useTransform([progress, rotate], (latest) => {
     const [p, r] = latest as [number, number];
@@ -112,7 +111,7 @@ function OrbitIcon({
       const { x, y, rotate: startRotate } = startingPosition;
       return `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${startRotate}deg)`;
     }
-    const t = ((p + startPhase) % PERIMETER + PERIMETER) % PERIMETER;
+    const t = (((p + startPhase) % PERIMETER) + PERIMETER) % PERIMETER;
     const { x, y } = pointOnCardPerimeter(t);
     // Aim at the shared ORBIT center (the portrait). `effectiveRest` is this
     // card's rest offset PLUS its own CSS-grid cell base position (measured
@@ -125,8 +124,7 @@ function OrbitIcon({
     const sinT = Math.sin(theta);
     const cardX = rest.x * cosT - rest.y * sinT;
     const cardY = rest.x * sinT + rest.y * cosT;
-    const rotateDeg =
-      Math.atan2(-(y + cardY), -(x + cardX)) * (180 / Math.PI);
+    const rotateDeg = Math.atan2(-(y + cardY), -(x + cardX)) * (180 / Math.PI);
     return `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${rotateDeg}deg)`;
   });
 
@@ -135,7 +133,7 @@ function OrbitIcon({
       className="pointer-events-none absolute top-1/2 left-1/2"
       style={{ transform }}
     >
-      <PlayIcon weight="fill" className={cn("text-white", zIndex)} />
+      <PlayIcon weight="fill" className={cn('text-white', zIndex)} />
     </motion.div>
   );
 }
@@ -327,11 +325,14 @@ export default function LoadIn({
                       }}
                       className="h-24 w-24 relative"
                     >
-                      <LoadInCard className="h-full w-full rounded-2xl bg-white z-9" href={item.href}>
-                        <div
-                          className="h-full w-full text-black grid items-center justify-center text-center"
-                        >
-                          <span>{item.label} {index}</span>
+                      <LoadInCard
+                        className="h-full w-full rounded-2xl bg-white z-9"
+                        href={item.href}
+                      >
+                        <div className="h-full w-full text-black grid items-center justify-center text-center">
+                          <span>
+                            {item.label} {index}
+                          </span>
                         </div>
                       </LoadInCard>
                       <OrbitIcon

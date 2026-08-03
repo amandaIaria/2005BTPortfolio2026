@@ -222,7 +222,11 @@ function RevealingTentacle({
   );
 }
 
-export default function LoadInCard({ children, className, href }: LoadInCardProps) {
+export default function LoadInCard({
+  children,
+  className,
+  href,
+}: LoadInCardProps) {
   const [groupHovered, setGroupHovered] = useState(false);
   const maskId = useId();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -246,9 +250,7 @@ export default function LoadInCard({ children, className, href }: LoadInCardProp
       onHoverEnd={() => setGroupHovered(false)}
       onClick={handleClick}
     >
-      <div
-        className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-      >
+      <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
         {children}
         <RevealingTentacle
           maskId={maskId}

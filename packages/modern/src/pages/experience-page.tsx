@@ -23,7 +23,7 @@ function ModernExperiencePage() {
               variant="link"
               className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
             >
-              <a href="/modern/contact">
+              <a href="/contact">
                 {t('experience.ctaLabel')}
                 <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
               </a>

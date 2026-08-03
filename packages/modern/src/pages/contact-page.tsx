@@ -1,5 +1,10 @@
-import { Container, WebGLTentacleWall } from '@general/components';
+import {
+  Container,
+  ExternalTransitionLink,
+  WebGLTentacleWall,
+} from '@general/components';
 import { Button } from '@general/components/button';
+import { GithubLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 
 function ModernContactPage() {
@@ -13,12 +18,30 @@ function ModernContactPage() {
         data-component="modern-contact-page"
         className="max-w-5xl h-screen mx-auto grid items-center"
       >
-        <div className="grid gap-20 grid-cols-[200px_1fr]">
+        <div className="grid gap-20 grid-cols-[400px_1fr]">
           <div className="flex flex-col gap-10">
             <h1 className="text-6xl">{t('contact.heading')}</h1>
-            <p className="text-lg font-medium text-accent">
+            <p className="text-md font-medium text-accent">
               {t('contact.intro')}
             </p>
+            <ul className="flex gap-6">
+              <li className="">
+                <ExternalTransitionLink
+                  className="cursor-pointer block"
+                  href="https://www.linkedin.com/in/amanda-iaria/"
+                >
+                  <LinkedinLogoIcon size={32} />
+                </ExternalTransitionLink>
+              </li>
+              <li className="">
+                <ExternalTransitionLink
+                  className="cursor-pointer block"
+                  href="#"
+                >
+                  <GithubLogoIcon size={32} />
+                </ExternalTransitionLink>
+              </li>
+            </ul>
           </div>
           <div className="flex flex-col gap-10">
             <form
@@ -46,13 +69,15 @@ function ModernContactPage() {
                 required
                 className="w-full rounded-lg border border-gray-300 p-4 text-lg focus:border-accent focus:ring focus:ring-accent focus:ring-opacity-50"
               ></textarea>
-              <Button
-                type="submit"
-                size="lg"
-                className="rounded-lg bg-accent py-4 px-6 text-lg font-semibold text-white transition-colors duration-300 hover:bg-accent-dark"
-              >
-                {t('contact.submitLabel')}
-              </Button>
+              <div className="flex justify-end">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="cursor-pointer rounded-lg bg-accent p-6 text-lg font-semibold text-white transition-colors duration-300 hover:bg-accent-dark"
+                >
+                  {t('contact.submitLabel')}
+                </Button>
+              </div>
             </form>
           </div>
         </div>

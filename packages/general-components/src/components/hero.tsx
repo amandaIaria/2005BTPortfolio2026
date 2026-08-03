@@ -8,8 +8,8 @@ interface HeroProps extends React.ComponentProps<'div'> {
   };
   topText: string;
   bottomText: string;
-  caption: string;
-  heading: string;
+  caption: React.ReactNode;
+  heading: React.ReactNode;
   hiddenH1: string;
 }
 
@@ -41,14 +41,12 @@ function Hero({
         </p>
       </div>
       <div className="absolute inset-1/2 ml-25 -mt-20  p-4 text-center h-fit w-fit block">
-        <p
-          className="text-5xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference"
-          dangerouslySetInnerHTML={{ __html: heading }}
-        />
-        <p
-          className="text-xl leading-none tracking-tight text-accent capitalize"
-          dangerouslySetInnerHTML={{ __html: caption }}
-        />
+        <p className="text-5xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference">
+          {heading}
+        </p>
+        <p className="text-xl leading-none tracking-tight text-accent capitalize">
+          {caption}
+        </p>
       </div>
       <div className="absolute inset-x-0 -bottom-12.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
