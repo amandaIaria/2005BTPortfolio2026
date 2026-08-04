@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/Projects.md",
+                "file": "Experience.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Projects"
+              "title": "Experience"
             }
           }
         ]
@@ -101,8 +101,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "e7b27eef15d45b00",
@@ -118,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Projects/Projects.md",
+                "file": "Experience.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Projects/Projects.md",
+                "file": "Experience.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -180,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Projects/Projects.md",
+                "file": "Experience.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -209,8 +208,8 @@
   },
   "active": "027f048278d06538",
   "lastOpenFiles": [
-    "Projects/Projects.md",
     "About.md",
+    "Projects/Projects.md",
     "Experience.md",
     "Welcome.md",
     "Shrines/Twin Peaks.md",

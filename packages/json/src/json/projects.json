@@ -3,60 +3,407 @@
     "left": {
       "image": {
         "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
-        "alt": "Project showcase image 1"
+        "alt": "User Site project placeholder image"
       }
     },
     "right": {
-      "title": "Project Alpha",
-      "description": "An innovative web application built with cutting-edge technologies. This project showcases responsive design, accessibility best practices, and smooth interactions across all devices.",
+      "title": "User Site",
+      "description": "This site was a complete redesign, not just of what you see but of how we wanted users to react. It went from a very outdated system to something more modern that put the user first — including the ability to download your insurance card and call for a tow directly through the app.",
+      "list": ["Angular", "TypeScript", "Material", "Custom Design System"],
+      "link": { "url": "#", "copy": "View Project" },
+      "tags": ["profile", "insurance", "ma"],
+      "company": "Mapfre"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
+        "alt": "BreakPoint design system placeholder image"
+      }
+    },
+    "right": {
+      "title": "BreakPoint",
+      "description": "The custom design system we created, based on Google's Material system at the time.",
       "list": [
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "TanStack Router",
-        "Container Queries"
+        "SVGs ready to use",
+        "Components that could be easily translated to your stack",
+        "Vanilla JS"
       ],
       "link": { "url": "#", "copy": "View Project" },
-      "tags": ["charity", "poc"],
-      "company": "HMC Ad"
+      "tags": ["design system"],
+      "company": "Mapfre"
     }
   },
   {
     "left": {
       "image": {
-        "src": "https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=800&h=600&fit=crop",
-        "alt": "Project showcase image 2"
+        "src": "/project-images/pocleadgen.png",
+        "alt": "Property Lead Generator chat bot interface"
       }
     },
     "right": {
-      "title": "Project Beta",
-      "description": "A full-stack solution demonstrating modern web development practices. Features include real-time updates, advanced state management, and a polished user interface designed with attention to detail.",
-      "list": ["Vite", "shadcn/ui", "Radix UI", "CVA", "Phosphor Icons"],
-      "link": { "url": "#", "copy": "Explore" },
-      "tags": ["charity", "poc"],
-      "company": "HMC Ad"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-        "alt": "Project showcase image 3"
-      }
-    },
-    "right": {
-      "title": "Project Gamma",
-      "description": "A comprehensive portfolio application showcasing design systems and component architecture. Built to fill its container while maintaining beautiful aesthetics across all screen sizes and interaction modes.",
+      "title": "Property Lead Generator",
+      "description": "A new direction for Mapfre — this was a POC. We wanted to try something new and gain a market, since we didn't previously have a property quote tool. It doesn't give you a quote, but it becomes a lead generator.",
       "list": [
-        "Web Components",
-        "Accessible",
-        "Mobile-first",
-        "Dark Mode Support",
-        "Performance Optimized"
+        "Intuitive chat bot to guide you through your choices",
+        "Not AI",
+        "BreakPoint"
       ],
-      "link": { "url": "#", "copy": "Learn More" },
-      "tags": ["charity", "poc"],
+      "link": { "url": "#", "copy": "View Project" },
+      "tags": ["poc", "property", "insurance"],
+      "company": "Mapfre"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/snap.png",
+        "alt": "Healthy in a Snap website screenshot"
+      }
+    },
+    "right": {
+      "title": "Snap",
+      "description": "Worked with the Vermont Department of Health to create a site focused on eating healthy for low-income Vermonters. There was a lot of information to work with, and the challenge was organizing it in a way that was easy to navigate and appealing.",
+      "list": ["SPA", "ES6 JS"],
+      "link": { "url": "http://www.healthyinasnapvt.org/", "copy": "View Project" },
+      "tags": ["vermont state", "health"],
       "company": "HMC Ad"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/parentup.png",
+        "alt": "Parent Up website screenshot"
+      }
+    },
+    "right": {
+      "title": "Parent Up",
+      "description": "Worked with the Vermont Department of Health to create a site focused on multiple issues for parents and teenagers, including drug and alcohol abuse, depression, and suicide. With the help of HMC's designers and writers, built a full WordPress theme and a plugin for the Set the Foundation page, which held a large amount of information that had to be easily digestible with a good UX experience.",
+      "list": ["WordPress", "SCSS"],
+      "link": { "url": "http://parentupvt.org/", "copy": "View Project" },
+      "tags": ["vermont state", "parenting"],
+      "company": "HMC Ad"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/healthyVT.png",
+        "alt": "My Healthy VT website screenshot"
+      }
+    },
+    "right": {
+      "title": "My Healthy VT",
+      "description": "Helping Yourself to Health is a site worked on while at HMC Advertising, in partnership with the Vermont Department of Health, focused on multiple health topics. With the help of HMC's designers and writers, built a full WordPress theme and a video plugin that allowed for easy viewing of the program's stories in shortcode format.",
+      "list": ["WordPress", "SCSS"],
+      "link": { "url": "http://myhealthyvt.org/", "copy": "View Project" },
+      "tags": ["vermont state", "health"],
+      "company": "HMC Ad"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/foodtruck.png",
+        "alt": "Good Food Truck website screenshot"
+      }
+    },
+    "right": {
+      "title": "Good Food Truck",
+      "description": "Worked with the Chittenden Emergency Food Shelf (CEFs) on the Good Food Truck project, which included the site, branding, shirts, printables, and the food truck design itself. With the help of HMC's designers, built the site, a child theme, and two plugins — a Twitter map and feed, and an Instagram feed.",
+      "list": ["WordPress", "SCSS", "Social API"],
+      "link": { "url": "http://goodfoodtruckvt.org/", "copy": "View Project" },
+      "tags": ["food truck", "charity"],
+      "company": "HMC Ad"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-web-archive-org-web-20170919013051-http-802quits-org-2026-08-04-13_30_44.png",
+        "alt": "802Quits campaign website screenshot"
+      }
+    },
+    "right": {
+      "title": "802Quits",
+      "description": "The stop-smoking campaign for the state of Vermont. They wanted something easy to use with modern design sensibilities.",
+      "list": [],
+      "link": {
+        "url": "https://web.archive.org/web/2/http://802quits.org/",
+        "copy": "View Project"
+      },
+      "tags": ["smoking", "health", "vermont state"],
+      "company": "HMC Ad"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/360Widget.png",
+        "alt": "Subaru 360 Widget on dealership site"
+      }
+    },
+    "right": {
+      "title": "360 Widget",
+      "description": "The Subaru marketing team wanted a 360 widget for their dealership sites to match closer to Subaru.com. The team was asked to create it while still using the resources they had available.",
+      "list": [],
+      "link": {
+        "url": "http://www.cannonsubaru.com/showroom/2018/Subaru/Outback/SUV.htm",
+        "copy": "View Project"
+      },
+      "tags": ["dealership", "layout"],
+      "company": "Dealer.com"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/weatherPrep.png",
+        "alt": "Weather & Vehicle Preparation page screenshot"
+      }
+    },
+    "right": {
+      "title": "Weather Prep",
+      "description": "Weather & Vehicle Preparation is a page built to try something different. With the help of teammates at Dealer.com, was able to persuade the Subaru marketing team to take a different approach to the page.",
+      "list": [],
+      "link": {
+        "url": "http://www.cannonsubaru.com/subaru-service-weather-vehicle-prep.htm",
+        "copy": "View Project"
+      },
+      "tags": ["dealership", "layout"],
+      "company": "Dealer.com"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/DarkLayout.png",
+        "alt": "Dark Layout vehicle page screenshot"
+      }
+    },
+    "right": {
+      "title": "Dark Layout",
+      "description": "The second layout option Subaru dealerships could use for their vehicle pages. One of the first projects worked on at Dealer.com, adding new functionality to an information-dense page to lessen the anxiety of information overload.",
+      "list": [],
+      "link": {
+        "url": "http://www.cannonsubaru.com/new/Subaru/2018-Subaru-Outback-lakeland-florida-80cd87e30a0e0a17779c935ff57e4e91.htm?searchDepth=1:42",
+        "copy": "View Project"
+      },
+      "tags": ["dealership", "layout"],
+      "company": "Dealer.com"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/inputs-ds.png",
+        "alt": "BT Design System component library screenshot"
+      }
+    },
+    "right": {
+      "title": "BT Design System",
+      "description": "A design system and component library created for my personal brand.",
+      "list": ["React", "Componentized"],
+      "link": { "url": "#", "copy": "View Project" },
+      "tags": ["design system", "brand"],
+      "company": "Personal"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-steris-healthcare-products-devicematrix-vpro-2026-08-04-14_29_59.png",
+        "alt": "Steris Devices Matrix search tool screenshot"
+      }
+    },
+    "right": {
+      "title": "Devices Matrix",
+      "description": "My team created an updated app for finding compatible devices and their paperwork. It gives you links to where you can buy the device or who to contact.",
+      "list": ["Sitecore", "React", "SCSS"],
+      "link": {
+        "url": "https://www.steris.com/healthcare/products/devicematrix",
+        "copy": "View Project"
+      },
+      "tags": ["health", "app"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-sterislifesciences-2026-08-04-14_25_54.png",
+        "alt": "Steris Life Sciences website screenshot"
+      }
+    },
+    "right": {
+      "title": "Life Sciences",
+      "description": "Created a new site on Sitecore XM Cloud (now Sitecore AI), using a new accelerator that Sitecore gave its seal of approval.",
+      "list": ["Sitecore AI", "React", "TypeScript", "Tailwind"],
+      "link": { "url": "https://www.sterislifesciences.com/", "copy": "View Project" },
+      "tags": ["products", "hospital supplies"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-dev-steris-velir-net-healthcare-test-amish-test-2026-08-04-14_25_29.png",
+        "alt": "Steris Health/US Corporate site screenshot"
+      }
+    },
+    "right": {
+      "title": "Health/US Corporate",
+      "description": "Before starting the long work of redesigning and moving to an updated platform, Steris wanted us to update their most-used components to freshen things up before the real challenge began.",
+      "list": ["Sitecore", "React", "SCSS"],
+      "link": { "url": "https://www.steris.com/", "copy": "View Project" },
+      "tags": ["corporate", "design update"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-driscolls-2026-08-04-14_37_54%20(1).png",
+        "alt": "Driscoll's website screenshot"
+      }
+    },
+    "right": {
+      "title": "Driscoll",
+      "description": "Created a new site with an updated platform, including an accelerator that Sitecore gave its blessing to. This was also some of the first AI work done for the agency.",
+      "list": ["Sitecore AI", "React", "Tailwind", "TypeScript", "Multiple APIs"],
+      "link": { "url": "https://www.driscolls.com/", "copy": "View Project" },
+      "tags": ["food", "marketing"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-nera-2026-08-04-14_46_10.png",
+        "alt": "NERA website screenshot"
+      }
+    },
+    "right": {
+      "title": "Nera",
+      "description": "The first site worked on after starting at Velir.",
+      "list": ["Adobe CMS", "SCSS", "Handlebars", "Storybook in React"],
+      "link": { "url": "https://www.nera.com/", "copy": "View Project" },
+      "tags": ["financial", "international"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-ahrinet-org-2026-08-04-16_03_01.png",
+        "alt": "AHRI website screenshot"
+      }
+    },
+    "right": {
+      "title": "AHRI",
+      "description": "Tasked with updating and fixing the accessibility level of the site. There were a lot of large issues, and the goal was to make it more usable for those who may have trouble.",
+      "list": ["Drupal", "SCSS"],
+      "link": { "url": "https://www.ahrinet.org/", "copy": "View Project" },
+      "tags": ["hvac", "advocacy"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-hematology-org-2026-08-04-15_30_39.png",
+        "alt": "ASH (American Society of Hematology) website screenshot"
+      }
+    },
+    "right": {
+      "title": "ASH",
+      "description": "Tasked with doing a component refresh for the site.",
+      "list": ["Sitecore", "SCSS"],
+      "link": { "url": "https://www.hematology.org/", "copy": "View Project" },
+      "tags": ["medical", "research"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-oerproject-2026-08-04-16_03_49.png",
+        "alt": "OER Project website screenshot"
+      }
+    },
+    "right": {
+      "title": "OER",
+      "description": "This education site needed a redesign. They wanted something young users could work with and enjoy while learning.",
+      "list": ["Sitecore XM Cloud", "Tailwind", "React"],
+      "link": { "url": "https://www.oerproject.com/", "copy": "View Project" },
+      "tags": ["education", "gates"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-localhost-3001-faculty-daniel-bilbao-cortes-phd-mba-2026-08-04-16_11_55.png",
+        "alt": "UMiami Health faculty page screenshot"
+      }
+    },
+    "right": {
+      "title": "UMAIAMI",
+      "description": "Support work — updates and fixes after a major redesign or build. Not something usually included here, but this work was especially enjoyable, particularly making it more accessible.",
+      "list": ["Sitecore", "SCSS", "React"],
+      "link": { "url": "https://umiamihealth.org/en/", "copy": "View Project" },
+      "tags": ["university", "education", "medical"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-educationtoworkforce-org-2026-08-04-15_42_17.png",
+        "alt": "Education to Workforce Framework website screenshot"
+      }
+    },
+    "right": {
+      "title": "Math",
+      "description": "The Mathematica group asked us to create a new site to house their education framework.",
+      "list": ["Drupal", "SCSS", "Layout Builder"],
+      "link": { "url": "https://educationtoworkforce.org/", "copy": "View Project" },
+      "tags": ["education", "workforce", "gates"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
+        "alt": "OAT internal app placeholder image"
+      }
+    },
+    "right": {
+      "title": "OAT",
+      "description": "A new internal app.",
+      "list": ["TanStack", "React", "Tailwind"],
+      "link": { "url": "#", "copy": "View Project" },
+      "tags": ["travel"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/project-images/screencapture-ukg-2026-08-04-15_45_47.png",
+        "alt": "UKG website screenshot"
+      }
+    },
+    "right": {
+      "title": "UKG",
+      "description": "My team created a fresh, modern website for the company.",
+      "list": ["Drupal"],
+      "link": { "url": "https://www.ukg.com/", "copy": "View Project" },
+      "tags": ["pr", "work"],
+      "company": "Velir"
     }
   }
 ]
