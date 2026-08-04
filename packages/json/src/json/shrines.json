@@ -4,7 +4,7 @@
     "title": "Shrine of the Stargate",
     "description": "Chevron seven, locked. A gate address dialed a thousand times in my head.",
     "image": {
-      "src": "https://picsum.photos/id/48/800/800",
+      "src": "https://cordcuttersnews.com/wp-content/uploads/2019/11/Stargate-SG1-Large.jpg",
       "alt": "A dark stone ring set against a starry backdrop"
     },
     "gallery": [
@@ -27,38 +27,11 @@
     ]
   },
   {
-    "slug": "altar-of-the-jaffa",
-    "title": "Altar of the Jaffa",
-    "description": "Staff weapon primed. Indeed.",
-    "image": {
-      "src": "https://picsum.photos/id/28/800/800",
-      "alt": "Desert ruins at dusk"
-    },
-    "gallery": [
-      {
-        "src": "https://picsum.photos/seed/altar-of-the-jaffa-1/600/600",
-        "alt": "Still from the show: Jaffa warriors in formation"
-      },
-      {
-        "src": "https://picsum.photos/seed/altar-of-the-jaffa-2/600/600",
-        "alt": "Still from the show: staff weapon fire"
-      },
-      {
-        "src": "https://picsum.photos/seed/altar-of-the-jaffa-3/600/600",
-        "alt": "Still from the show: temple ruins"
-      },
-      {
-        "src": "https://picsum.photos/seed/altar-of-the-jaffa-4/600/600",
-        "alt": "Still from the show: desert stronghold"
-      }
-    ]
-  },
-  {
     "slug": "shrine-of-babylon-5",
     "title": "Shrine of Babylon 5",
     "description": "The last of the Babylon stations. Five years in the making.",
     "image": {
-      "src": "https://picsum.photos/id/163/800/800",
+      "src": "https://www.activecontext.net/wp-content/uploads/2019/01/Babylon-5-Cast-babylon-5-37408446-1920-1080.jpg",
       "alt": "A vast space station lit against the dark"
     },
     "gallery": [
@@ -81,38 +54,11 @@
     ]
   },
   {
-    "slug": "the-vorlon-shadow-war-memorial",
-    "title": "The Vorlon-Shadow War Memorial",
-    "description": "Ambassador Kosh said it best: understanding is a three-edged sword.",
-    "image": {
-      "src": "https://picsum.photos/id/225/800/800",
-      "alt": "Deep space nebula in shadowed purples"
-    },
-    "gallery": [
-      {
-        "src": "https://picsum.photos/seed/the-vorlon-shadow-war-memorial-1/600/600",
-        "alt": "Still from the show: Vorlon encounter suit"
-      },
-      {
-        "src": "https://picsum.photos/seed/the-vorlon-shadow-war-memorial-2/600/600",
-        "alt": "Still from the show: Shadow vessel silhouette"
-      },
-      {
-        "src": "https://picsum.photos/seed/the-vorlon-shadow-war-memorial-3/600/600",
-        "alt": "Still from the show: fleet in formation"
-      },
-      {
-        "src": "https://picsum.photos/seed/the-vorlon-shadow-war-memorial-4/600/600",
-        "alt": "Still from the show: council chamber"
-      }
-    ]
-  },
-  {
     "slug": "nick-knights-confessional",
     "title": "Nick Knight's Confessional",
     "description": "Eight hundred years of guilt, one homicide detective at a time.",
     "image": {
-      "src": "https://picsum.photos/id/96/800/800",
+      "src": "https://www.avenuepotter.com/~kristin/Forever_Knight/Wallpapers/fkcastwallkh.jpg",
       "alt": "A rain-slicked city street at night"
     },
     "gallery": [
@@ -135,12 +81,12 @@
     ]
   },
   {
-    "slug": "shrine-of-the-raven",
-    "title": "Shrine of the Raven",
-    "description": "LaCroix's nightclub, where every regret in Toronto eventually shows up.",
+    "slug": "shrine-of-twin-peaks",
+    "title": "Shrine of Twin Peaks",
+    "description": "Where nightmares come true.",
     "image": {
-      "src": "https://picsum.photos/id/119/800/800",
-      "alt": "A dim nightclub interior lit in blue"
+      "src": "https://pics.filmaffinity.com/Twin_Peaks_TV_Series-629735365-large.jpg",
+      "alt": "The feeling that Twin Peaks gives off"
     },
     "gallery": [
       {
