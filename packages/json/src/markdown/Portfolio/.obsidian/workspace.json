@@ -101,7 +101,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "e7b27eef15d45b00",
@@ -208,6 +209,7 @@
   },
   "active": "027f048278d06538",
   "lastOpenFiles": [
+    "Projects/Projects.md",
     "About.md",
     "Experience.md",
     "Welcome.md",
@@ -217,7 +219,6 @@
     "Shrines/Forever Knight.md",
     "Shrines/Babylon 5.md",
     "Shrines",
-    "Projects/Projects.md",
     "Projects",
     "CaseStudies/Digging into Game Development.md",
     "CaseStudies/Creating a personal Brand and Design system.md",
