@@ -9,8 +9,8 @@
 "summary": "Front-end development on enterprise Sitecore builds, driving component architecture, accessibility standards, and design system adoption across client teams."
 },
 
-
 ## Thankful
+
 {
 "title": "UX Engineer",
 "company": "Thankful",
@@ -21,6 +21,7 @@
 },
 
 ## Mapfre
+
 {
 "title": "UX Engineer",
 "company": "Mapfre",
@@ -31,6 +32,7 @@
 },
 
 ## Dealer.com
+
 {
 "title": "Frontend Developer",
 "company": "Dealer.com",
@@ -50,7 +52,9 @@
 "tags": ["agency", "state", "LAMP", "wordpress", "drupal"],
 "summary": "A Junior web developer working with "
 },
+
 ## Freelance
+
 {
 "title": "Web Developer",
 "company": "Freelance",
@@ -61,7 +65,9 @@
 },
 
 ## Schools
+
 ### Champlain College
+
 {
 "title": "Majored in Web Development and Administration",
 "company": "Champlain College",
@@ -72,6 +78,7 @@
 },
 
 ### CCV - Community College of Vermont
+
 {
 "title": "Majored in Liberal Arts",
 "company": "Community College of Vermont",
@@ -80,4 +87,3 @@
 "tags": [ "college", "Associates Degree" ],
 "summary": ""
 },
-

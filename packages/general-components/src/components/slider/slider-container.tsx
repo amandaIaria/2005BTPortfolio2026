@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useEffect, useCallback } from 'react';
 import { AnimatePresence, useReducedMotion, cubicBezier } from 'motion/react';
 import type { Variants, Transition } from 'motion/react';
-import { cn } from '@general/lib/utils';
+import { cn } from '../../lib/utils';
 import { useSlider } from '../../hooks/use-slider';
 import { SlidePaneImage, SlidePaneRight, SlideMobileImage } from './slide-pane';
 import { SliderPagination } from './slider-pagination';

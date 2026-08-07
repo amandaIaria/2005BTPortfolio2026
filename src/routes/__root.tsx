@@ -7,7 +7,6 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 import {
-  AppHeader,
   GlitchEffect,
   PageTransitionProvider,
   TooltipProvider,
@@ -52,7 +51,6 @@ function RootComponent() {
 
   return (
     <TooltipProvider>
-      {/* <AppHeader navigate={(path) => nav({ to: path })} /> */}
       <PageTransitionProvider>
         <Outlet />
       </PageTransitionProvider>

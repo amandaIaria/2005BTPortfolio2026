@@ -1,4 +1,9 @@
-import { Button, Container, ExperienceList } from '@general/components';
+import {
+  Button,
+  Container,
+  ExperienceList,
+  InternalTransitionLink,
+} from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
@@ -24,10 +29,10 @@ function ModernExperiencePage() {
                 variant="link"
                 className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
               >
-                <a href="/contact">
+                <InternalTransitionLink href="/contact">
                   {t('experience.ctaLabel')}
                   <ArrowUpRightIcon className="inline-block h-4 w-4 text-accent" />
-                </a>
+                </InternalTransitionLink>
               </Button>
             </div>
           </div>

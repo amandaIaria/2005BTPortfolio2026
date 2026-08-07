@@ -66,7 +66,10 @@
       "title": "Snap",
       "description": "Worked with the Vermont Department of Health to create a site focused on eating healthy for low-income Vermonters. There was a lot of information to work with, and the challenge was organizing it in a way that was easy to navigate and appealing.",
       "list": ["SPA", "ES6 JS"],
-      "link": { "url": "http://www.healthyinasnapvt.org/", "copy": "View Project" },
+      "link": {
+        "url": "http://www.healthyinasnapvt.org/",
+        "copy": "View Project"
+      },
       "tags": ["vermont state", "health"],
       "company": "HMC Ad"
     }
@@ -241,7 +244,10 @@
       "title": "Life Sciences",
       "description": "Created a new site on Sitecore XM Cloud (now Sitecore AI), using a new accelerator that Sitecore gave its seal of approval.",
       "list": ["Sitecore AI", "React", "TypeScript", "Tailwind"],
-      "link": { "url": "https://www.sterislifesciences.com/", "copy": "View Project" },
+      "link": {
+        "url": "https://www.sterislifesciences.com/",
+        "copy": "View Project"
+      },
       "tags": ["products", "hospital supplies"],
       "company": "Velir"
     }
@@ -272,7 +278,13 @@
     "right": {
       "title": "Driscoll",
       "description": "Created a new site with an updated platform, including an accelerator that Sitecore gave its blessing to. This was also some of the first AI work done for the agency.",
-      "list": ["Sitecore AI", "React", "Tailwind", "TypeScript", "Multiple APIs"],
+      "list": [
+        "Sitecore AI",
+        "React",
+        "Tailwind",
+        "TypeScript",
+        "Multiple APIs"
+      ],
       "link": { "url": "https://www.driscolls.com/", "copy": "View Project" },
       "tags": ["food", "marketing"],
       "company": "Velir"
@@ -369,7 +381,10 @@
       "title": "Math",
       "description": "The Mathematica group asked us to create a new site to house their education framework.",
       "list": ["Drupal", "SCSS", "Layout Builder"],
-      "link": { "url": "https://educationtoworkforce.org/", "copy": "View Project" },
+      "link": {
+        "url": "https://educationtoworkforce.org/",
+        "copy": "View Project"
+      },
       "tags": ["education", "workforce", "gates"],
       "company": "Velir"
     }

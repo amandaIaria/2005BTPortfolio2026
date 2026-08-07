@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link } from '@tanstack/react-router';
 import { CheckCircleIcon } from '@phosphor-icons/react';
 import { cn } from '../lib/utils';
+import { InternalTransitionLink } from './page-transition/internal-transition-link';
 import { Separator } from './ui/separator';
 
 interface CaseStudyContributor {
@@ -60,12 +60,12 @@ function CaseStudyDetail({
     >
       <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
         <div className="flex flex-col gap-6">
-          <Link
-            to="/case-studies"
+          <InternalTransitionLink
+            href="/case-studies"
             className="pointer w-fit text-sm text-muted-foreground"
           >
             Case Studies
-          </Link>
+          </InternalTransitionLink>
           <h1 className="text-5xl font-bold">{caseStudy.title}</h1>
           <div className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">

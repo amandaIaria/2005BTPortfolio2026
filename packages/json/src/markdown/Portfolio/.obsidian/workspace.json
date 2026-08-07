@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Experience.md",
+                "file": "Shrines/Babylon 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Experience"
+              "title": "Babylon 5"
             }
           }
         ]
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Experience.md",
+                "file": "Shrines/_Shrines.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Experience.md",
+                "file": "Shrines/_Shrines.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -179,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Experience.md",
+                "file": "Shrines/_Shrines.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -208,15 +208,15 @@
   },
   "active": "027f048278d06538",
   "lastOpenFiles": [
+    "Shrines/_Shrines.md",
+    "Shrines/Babylon 5.md",
+    "Shrines/Forever Knight.md",
+    "Shrines/Stargate.md",
+    "Shrines/Twin Peaks.md",
+    "Experience.md",
     "About.md",
     "Projects/Projects.md",
-    "Experience.md",
     "Welcome.md",
-    "Shrines/Twin Peaks.md",
-    "Shrines/Stargate.md",
-    "Shrines/Shrines.md",
-    "Shrines/Forever Knight.md",
-    "Shrines/Babylon 5.md",
     "Shrines",
     "Projects",
     "CaseStudies/Digging into Game Development.md",

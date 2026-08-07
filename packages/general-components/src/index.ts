@@ -8,6 +8,7 @@ export {
 } from './components/portfolio-button';
 export type { PortfolioButtonProps } from './components/portfolio-button';
 export { Container } from './components/ui/container';
+export { Modal, type ModalProps } from './components/modal';
 export { Switch } from './components/ui/switch';
 export {
   Card,

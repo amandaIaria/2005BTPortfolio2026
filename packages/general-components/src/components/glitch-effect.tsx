@@ -1,5 +1,5 @@
 import { useGlitch } from 'react-powerglitch';
-import { cn } from '@general/lib/utils';
+import { cn } from '../lib/utils';
 import { useEffect } from 'react';
 import { useReducedMotion } from 'motion/react';
 import type { ReactNode } from 'react';

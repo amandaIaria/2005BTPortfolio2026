@@ -15,6 +15,9 @@ const config = defineConfig({
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
     viteReact(),
   ],
+  test: {
+    environment: 'jsdom',
+  },
 });
 
 export default config;

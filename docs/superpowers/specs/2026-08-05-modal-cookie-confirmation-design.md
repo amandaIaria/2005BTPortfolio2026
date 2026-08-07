@@ -15,13 +15,13 @@ A reusable `Modal` component (title + description) with two types: `info` (alway
 
 ```ts
 type ModalProps = {
-  id: string // cookie key becomes `modal-dismissed-${id}`
-  title: string
-  description: string
-  type?: 'confirmation' | 'info' // default 'info'
-  open: boolean
-  onOpenChange: (open: boolean) => void
-}
+  id: string; // cookie key becomes `modal-dismissed-${id}`
+  title: string;
+  description: string;
+  type?: 'confirmation' | 'info'; // default 'info'
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+};
 ```
 
 Parent owns `open`/`onOpenChange`, same controlled pattern as the base `Dialog`.

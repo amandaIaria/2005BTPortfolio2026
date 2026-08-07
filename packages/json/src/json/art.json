@@ -1,272 +1,110 @@
 [
   {
-    "title": "Untitled Study I",
+    "title": "On the Balcony",
     "image": {
-      "src": "https://picsum.photos/id/10/800/600",
-      "alt": "Abstract landscape study in muted tones",
-      "height": 600,
-      "width": 800
+      "src": "/art/3_ON_THE_BALCONY-ip.png",
+      "alt": "Line art sketch of three punk characters leaning against a balcony railing",
+      "height": 10000,
+      "width": 10000
     }
   },
   {
-    "title": "Fragmented Light",
+    "title": "Alex",
     "image": {
-      "src": "https://picsum.photos/id/1015/600/800",
-      "alt": "Portrait composition of fractured light across water",
-      "height": 800,
-      "width": 600
+      "src": "/art/alex%202.png",
+      "alt": "Tattooed punk figure sitting on a bed surrounded by candles and open spellbooks, city skyline through the window",
+      "height": 5000,
+      "width": 5000
     }
   },
   {
-    "title": "Quiet Interior",
+    "title": "Evil Sam",
     "image": {
-      "src": "https://picsum.photos/id/1025/700/700",
-      "alt": "Square still life of a quiet interior scene",
-      "height": 700,
-      "width": 700
+      "src": "/art/evil%20sam%20v2.png",
+      "alt": "Vampire woman with blood on her mouth gripping a man by the throat",
+      "height": 10000,
+      "width": 10000
     }
   },
   {
-    "title": "Vertical Horizon",
+    "title": "Character Reference Sheet",
     "image": {
-      "src": "https://picsum.photos/id/1039/500/900",
-      "alt": "Tall vertical composition of a distant horizon",
-      "height": 900,
-      "width": 500
+      "src": "/art/jamiegreenv1.png",
+      "alt": "Character reference sheet of three figures with handwritten notes on hair color, eye color, and species or alignment",
+      "height": 5000,
+      "width": 5000
     }
   },
   {
-    "title": "Wide Field",
+    "title": "Pencil Finish Evil Sam",
     "image": {
-      "src": "https://picsum.photos/id/1043/900/500",
-      "alt": "Wide panoramic field study",
-      "height": 500,
-      "width": 900
+      "src": "/art/pencilfinishevilsam.png",
+      "alt": "Pencil drawing of a figure with a bloody clawed hand raised near their mouth, wearing tactical clothing",
+      "height": 5000,
+      "width": 2000
     }
   },
   {
-    "title": "Ochre Wall",
+    "title": "Jack Update",
     "image": {
-      "src": "https://picsum.photos/id/1050/800/600",
-      "alt": "Textured ochre wall study",
-      "height": 600,
-      "width": 800
+      "src": "/art/jackupdate.png",
+      "alt": "Blood-covered figure standing arms outstretched between hieroglyph-patterned doors, wearing a bloodied bandana and knife",
+      "height": 10000,
+      "width": 10000
     }
   },
   {
-    "title": "Blue Hour Sketch",
+    "title": "Self Portrait",
     "image": {
-      "src": "https://picsum.photos/id/1059/600/800",
-      "alt": "Sketch of a scene during blue hour",
-      "height": 800,
-      "width": 600
+      "src": "/art/self.png",
+      "alt": "Sepia-toned self-portrait with deer antlers, glasses, a plaid shirt, and a tattoo sleeve",
+      "height": 7528,
+      "width": 3785
     }
   },
   {
-    "title": "Grain and Shadow",
+    "title": "Jamie Update",
     "image": {
-      "src": "https://picsum.photos/id/1062/700/700",
-      "alt": "Grainy study of shadow and texture",
-      "height": 700,
-      "width": 700
+      "src": "/art/jamieupdate.png",
+      "alt": "Tattooed punk figure sitting on a windowsill at night stitching their own skin, neon sign and candle in the background",
+      "height": 10000,
+      "width": 10000
     }
   },
   {
-    "title": "Tall Grasses",
+    "title": "Two Vampires",
     "image": {
-      "src": "https://picsum.photos/id/1074/500/900",
-      "alt": "Vertical study of tall grasses",
-      "height": 900,
-      "width": 500
+      "src": "/art/twovamps2v2.png",
+      "alt": "Magenta-toned illustration of two figures embracing, reflected in a mirror",
+      "height": 5000,
+      "width": 5000
     }
   },
   {
-    "title": "Open Sky",
+    "title": "Jack",
     "image": {
-      "src": "https://picsum.photos/id/1080/900/500",
-      "alt": "Wide study of an open sky",
-      "height": 500,
-      "width": 900
+      "src": "/art/jack11-finished.png",
+      "alt": "Blood-splattered figure standing arms outstretched in a doorway with floral wallpaper, bodies visible on the floor",
+      "height": 5000,
+      "width": 5000
     }
   },
   {
-    "title": "Rust and Stone",
+    "title": "Three Sitting",
     "image": {
-      "src": "https://picsum.photos/id/103/800/600",
-      "alt": "Study of rust and stone textures",
-      "height": 600,
-      "width": 800
+      "src": "/art/threesitting.png",
+      "alt": "Pink-toned illustration of three characters gathered on and around an armchair",
+      "height": 5000,
+      "width": 5000
     }
   },
   {
-    "title": "Folded Paper",
+    "title": "Portrait of Evil Jamie",
     "image": {
-      "src": "https://picsum.photos/id/110/600/800",
-      "alt": "Portrait study of folded paper forms",
-      "height": 800,
-      "width": 600
-    }
-  },
-  {
-    "title": "Still Water",
-    "image": {
-      "src": "https://picsum.photos/id/128/700/700",
-      "alt": "Square study of still water",
-      "height": 700,
-      "width": 700
-    }
-  },
-  {
-    "title": "Narrow Passage",
-    "image": {
-      "src": "https://picsum.photos/id/133/500/900",
-      "alt": "Vertical study of a narrow passage",
-      "height": 900,
-      "width": 500
-    }
-  },
-  {
-    "title": "Long Shore",
-    "image": {
-      "src": "https://picsum.photos/id/145/900/500",
-      "alt": "Wide study of a long shoreline",
-      "height": 500,
-      "width": 900
-    }
-  },
-  {
-    "title": "Faded Signage",
-    "image": {
-      "src": "https://picsum.photos/id/160/800/600",
-      "alt": "Study of faded painted signage",
-      "height": 600,
-      "width": 800
-    }
-  },
-  {
-    "title": "Bare Branches",
-    "image": {
-      "src": "https://picsum.photos/id/177/600/800",
-      "alt": "Portrait study of bare tree branches",
-      "height": 800,
-      "width": 600
-    }
-  },
-  {
-    "title": "Concrete Study",
-    "image": {
-      "src": "https://picsum.photos/id/180/700/700",
-      "alt": "Square study of concrete texture",
-      "height": 700,
-      "width": 700
-    }
-  },
-  {
-    "title": "Stacked Forms",
-    "image": {
-      "src": "https://picsum.photos/id/193/500/900",
-      "alt": "Vertical study of stacked geometric forms",
-      "height": 900,
-      "width": 500
-    }
-  },
-  {
-    "title": "Distant Range",
-    "image": {
-      "src": "https://picsum.photos/id/201/900/500",
-      "alt": "Wide study of a distant mountain range",
-      "height": 500,
-      "width": 900
-    }
-  },
-  {
-    "title": "Weathered Door",
-    "image": {
-      "src": "https://picsum.photos/id/212/800/600",
-      "alt": "Study of a weathered painted door",
-      "height": 600,
-      "width": 800
-    }
-  },
-  {
-    "title": "Reeds at Dusk",
-    "image": {
-      "src": "https://picsum.photos/id/225/600/800",
-      "alt": "Portrait study of reeds at dusk",
-      "height": 800,
-      "width": 600
-    }
-  },
-  {
-    "title": "Cracked Glaze",
-    "image": {
-      "src": "https://picsum.photos/id/237/700/700",
-      "alt": "Square study of a cracked ceramic glaze",
-      "height": 700,
-      "width": 700
-    }
-  },
-  {
-    "title": "Rising Smoke",
-    "image": {
-      "src": "https://picsum.photos/id/244/500/900",
-      "alt": "Vertical study of rising smoke",
-      "height": 900,
-      "width": 500
-    }
-  },
-  {
-    "title": "Salt Flats",
-    "image": {
-      "src": "https://picsum.photos/id/250/900/500",
-      "alt": "Wide study of salt flats",
-      "height": 500,
-      "width": 900
-    }
-  },
-  {
-    "title": "Peeling Paint",
-    "image": {
-      "src": "https://picsum.photos/id/259/800/600",
-      "alt": "Study of peeling painted texture",
-      "height": 600,
-      "width": 800
-    }
-  },
-  {
-    "title": "Threaded Light",
-    "image": {
-      "src": "https://picsum.photos/id/268/600/800",
-      "alt": "Portrait study of threaded light through fabric",
-      "height": 800,
-      "width": 600
-    }
-  },
-  {
-    "title": "Moss and Stone",
-    "image": {
-      "src": "https://picsum.photos/id/279/700/700",
-      "alt": "Square study of moss growing on stone",
-      "height": 700,
-      "width": 700
-    }
-  },
-  {
-    "title": "Falling Water",
-    "image": {
-      "src": "https://picsum.photos/id/292/500/900",
-      "alt": "Vertical study of falling water",
-      "height": 900,
-      "width": 500
-    }
-  },
-  {
-    "title": "Amber Field",
-    "image": {
-      "src": "https://picsum.photos/id/305/900/500",
-      "alt": "Wide study of an amber-lit field",
-      "height": 500,
-      "width": 900
+      "src": "/art/portraite_evil_jamie.png",
+      "alt": "Line art close-up portrait of a bandage-wrapped figure with clawed hands forming horns above their head",
+      "height": 10000,
+      "width": 10000
     }
   }
 ]

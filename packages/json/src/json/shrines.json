@@ -1,110 +1,200 @@
-[
-  {
-    "slug": "shrine-of-the-stargate",
-    "title": "Shrine of the Stargate",
-    "description": "Chevron seven, locked. A gate address dialed a thousand times in my head.",
-    "image": {
-      "src": "https://cordcuttersnews.com/wp-content/uploads/2019/11/Stargate-SG1-Large.jpg",
-      "alt": "A dark stone ring set against a starry backdrop"
-    },
-    "gallery": [
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-stargate-1/600/600",
-        "alt": "Still from the show: gate room, chevrons lit"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-stargate-2/600/600",
-        "alt": "Still from the show: team gearing up"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-stargate-3/600/600",
-        "alt": "Still from the show: desert planet vista"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-stargate-4/600/600",
-        "alt": "Still from the show: control room monitors"
+{
+  "listing": [
+    {
+      "slug": "shrine-of-the-stargate",
+      "title": "Shrine of the Stargate",
+      "description": "Chevron seven, locked. A gate address dialed a thousand times in my head.",
+      "image": {
+        "src": "https://cordcuttersnews.com/wp-content/uploads/2019/11/Stargate-SG1-Large.jpg",
+        "alt": "A dark stone ring set against a starry backdrop"
       }
-    ]
-  },
-  {
-    "slug": "shrine-of-babylon-5",
-    "title": "Shrine of Babylon 5",
-    "description": "The last of the Babylon stations. Five years in the making.",
-    "image": {
-      "src": "https://www.activecontext.net/wp-content/uploads/2019/01/Babylon-5-Cast-babylon-5-37408446-1920-1080.jpg",
-      "alt": "A vast space station lit against the dark"
     },
-    "gallery": [
-      {
-        "src": "https://picsum.photos/seed/shrine-of-babylon-5-1/600/600",
-        "alt": "Still from the show: station promenade"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-babylon-5-2/600/600",
-        "alt": "Still from the show: command and control"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-babylon-5-3/600/600",
-        "alt": "Still from the show: starfuries launching"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-babylon-5-4/600/600",
-        "alt": "Still from the show: ambassadorial wing"
+    {
+      "slug": "shrine-of-babylon-5",
+      "title": "Shrine of Babylon 5",
+      "description": "The last of the Babylon stations. Five years in the making.",
+      "image": {
+        "src": "https://www.activecontext.net/wp-content/uploads/2019/01/Babylon-5-Cast-babylon-5-37408446-1920-1080.jpg",
+        "alt": "A vast space station lit against the dark"
       }
-    ]
-  },
-  {
-    "slug": "nick-knights-confessional",
-    "title": "Nick Knight's Confessional",
-    "description": "Eight hundred years of guilt, one homicide detective at a time.",
-    "image": {
-      "src": "https://www.avenuepotter.com/~kristin/Forever_Knight/Wallpapers/fkcastwallkh.jpg",
-      "alt": "A rain-slicked city street at night"
     },
-    "gallery": [
-      {
-        "src": "https://picsum.photos/seed/nick-knights-confessional-1/600/600",
-        "alt": "Still from the show: precinct at night"
-      },
-      {
-        "src": "https://picsum.photos/seed/nick-knights-confessional-2/600/600",
-        "alt": "Still from the show: rooftop chase"
-      },
-      {
-        "src": "https://picsum.photos/seed/nick-knights-confessional-3/600/600",
-        "alt": "Still from the show: forensics lab"
-      },
-      {
-        "src": "https://picsum.photos/seed/nick-knights-confessional-4/600/600",
-        "alt": "Still from the show: fog over the harbor"
+    {
+      "slug": "nick-knights-confessional",
+      "title": "Nick Knight's Confessional",
+      "description": "Eight hundred years of guilt, one homicide detective at a time.",
+      "image": {
+        "src": "https://www.avenuepotter.com/~kristin/Forever_Knight/Wallpapers/fkcastwallkh.jpg",
+        "alt": "A rain-slicked city street at night"
       }
-    ]
-  },
-  {
-    "slug": "shrine-of-twin-peaks",
-    "title": "Shrine of Twin Peaks",
-    "description": "Where nightmares come true.",
-    "image": {
-      "src": "https://pics.filmaffinity.com/Twin_Peaks_TV_Series-629735365-large.jpg",
-      "alt": "The feeling that Twin Peaks gives off"
     },
-    "gallery": [
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-raven-1/600/600",
-        "alt": "Still from the show: nightclub dance floor"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-raven-2/600/600",
-        "alt": "Still from the show: back office negotiation"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-raven-3/600/600",
-        "alt": "Still from the show: neon sign at the entrance"
-      },
-      {
-        "src": "https://picsum.photos/seed/shrine-of-the-raven-4/600/600",
-        "alt": "Still from the show: quiet booth in the back"
+    {
+      "slug": "shrine-of-twin-peaks",
+      "title": "Shrine of Twin Peaks",
+      "description": "Where nightmares come true.",
+      "image": {
+        "src": "https://pics.filmaffinity.com/Twin_Peaks_TV_Series-629735365-large.jpg",
+        "alt": "The feeling that Twin Peaks gives off"
       }
-    ]
+    }
+  ],
+  "shrine-pages": {
+    "stargate": {
+      "slug": "shrine-of-the-stargate",
+      "title": "Shrine of the Stargate",
+      "description": "Chevron seven, locked. A gate address dialed a thousand times in my head.",
+      "image": {
+        "src": "https://cordcuttersnews.com/wp-content/uploads/2019/11/Stargate-SG1-Large.jpg",
+        "alt": "A dark stone ring set against a starry backdrop"
+      },
+      "gallery": [
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-stargate-1/600/600",
+          "alt": "Still from the show: gate room, chevrons lit"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-stargate-2/600/600",
+          "alt": "Still from the show: team gearing up"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-stargate-3/600/600",
+          "alt": "Still from the show: desert planet vista"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-stargate-4/600/600",
+          "alt": "Still from the show: control room monitors"
+        }
+      ]
+    },
+    "babylon5": {
+      "slug": "shrine-of-babylon-5",
+      "title": "Shrine of Babylon 5",
+      "description": "The last of the Babylon stations. Five years in the making.",
+      "image": {
+        "src": "https://www.activecontext.net/wp-content/uploads/2019/01/Babylon-5-Cast-babylon-5-37408446-1920-1080.jpg",
+        "alt": "A vast space station lit against the dark"
+      },
+      "color-scheme": {
+        "primary": "dark blue",
+        "secondary": "green",
+        "accent": "silver"
+      },
+      "content": [
+        {
+        "copy": [
+          {
+            "value":"blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", 
+            "title": "BLAH BLAH 1",
+            "slug": "blah-blah-1"
+          },
+          {
+            "value":"blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah ", 
+            "title": "BLAH BLAH 2",
+            "slug": "blah-blah-2"
+          },
+          {
+            "value":"blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", 
+            "title": "BLAH BLAH 3",
+            "slug": "blah-blah-3"
+          },
+          {
+            "value":"blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", 
+            "title": "BLAH BLAH 4",
+            "slug": "blah-blah-4"
+          },
+          {
+            "value":"blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah", 
+            "title": "BLAH BLAH 5",
+            "slug": "blah-blah-5"
+          }
+        ],
+        "image": [
+          {
+            "src": "https://picsum.photos/seed/shrine-of-babylon-5-1/600/600",
+            "alt": "Still from the show: station promenade"
+          },
+          {
+            "src": "",
+            "alt": ""
+          },
+          {
+            "src": "https://picsum.photos/seed/shrine-of-babylon-5-1/600/600",
+            "alt": "Still from the show: station promenade"
+          }
+        ]
+      }],
+      "gallery": [
+        {
+          "src": "https://picsum.photos/seed/shrine-of-babylon-5-1/600/600",
+          "alt": "Still from the show: station promenade"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-babylon-5-2/600/600",
+          "alt": "Still from the show: command and control"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-babylon-5-3/600/600",
+          "alt": "Still from the show: starfuries launching"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-babylon-5-4/600/600",
+          "alt": "Still from the show: ambassadorial wing"
+        }
+      ]
+    },
+    "foreverknight": {
+      "slug": "nick-knights-confessional",
+      "title": "Nick Knight's Confessional",
+      "description": "Eight hundred years of guilt, one homicide detective at a time.",
+      "image": {
+        "src": "https://www.avenuepotter.com/~kristin/Forever_Knight/Wallpapers/fkcastwallkh.jpg",
+        "alt": "A rain-slicked city street at night"
+      },
+      "gallery": [
+        {
+          "src": "https://picsum.photos/seed/nick-knights-confessional-1/600/600",
+          "alt": "Still from the show: precinct at night"
+        },
+        {
+          "src": "https://picsum.photos/seed/nick-knights-confessional-2/600/600",
+          "alt": "Still from the show: rooftop chase"
+        },
+        {
+          "src": "https://picsum.photos/seed/nick-knights-confessional-3/600/600",
+          "alt": "Still from the show: forensics lab"
+        },
+        {
+          "src": "https://picsum.photos/seed/nick-knights-confessional-4/600/600",
+          "alt": "Still from the show: fog over the harbor"
+        }
+      ]
+    },
+    "twinpeaks": {
+      "slug": "shrine-of-twin-peaks",
+      "title": "Shrine of Twin Peaks",
+      "description": "Where nightmares come true.",
+      "image": {
+        "src": "https://pics.filmaffinity.com/Twin_Peaks_TV_Series-629735365-large.jpg",
+        "alt": "The feeling that Twin Peaks gives off"
+      },
+      "gallery": [
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-raven-1/600/600",
+          "alt": "Still from the show: nightclub dance floor"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-raven-2/600/600",
+          "alt": "Still from the show: back office negotiation"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-raven-3/600/600",
+          "alt": "Still from the show: neon sign at the entrance"
+        },
+        {
+          "src": "https://picsum.photos/seed/shrine-of-the-raven-4/600/600",
+          "alt": "Still from the show: quiet booth in the back"
+        }
+      ]
+    }
   }
-]
+}
+

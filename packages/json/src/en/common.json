@@ -14,6 +14,12 @@
   "about": {
     "ctaLabel": "Contact Me"
   },
+  "art": {
+    "modal": {
+      "title": "NSFW Warning",
+      "description": "Some of these maybe considered NSFW."
+    }
+  },
   "contact": {
     "heading": "Contact Me",
     "intro": "I'm always open to new opportunities and collaborations. Feel free to reach out to me through the contact form or connect with me on social media.",
@@ -33,7 +39,11 @@
   "shrines": {
     "kicker": "The Archive",
     "heading": "Shrines",
-    "intro": "Small monuments to the code that shaped me — some sacred, some cursed."
+    "intro": "Small monuments to the code that shaped me — some sacred, some cursed.",
+    "detail": {
+      "backLink": "Shrines",
+      "galleryHeading": "Gallery"
+    }
   },
   "projects": {
     "carouselAriaLabel": "Featured projects carousel"

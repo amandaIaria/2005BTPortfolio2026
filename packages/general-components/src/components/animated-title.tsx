@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { cn } from '@general/lib/utils';
+import { cn } from '../lib/utils';
 
 export interface AnimatedTitleProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

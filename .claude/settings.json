@@ -11,5 +11,17 @@
   "permissions": {
     "commands": ["npm", "node", "git", "bash"],
     "scope": ["global", "project"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/session-start-conventions.sh"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -2,6 +2,10 @@
 
 This file is automatically loaded by Claude Code. Reference `.github/copilot-instructions.md` for detailed conventions.
 
+## Tone
+
+Always short and concise. If the caveman skill/agent isn't available, act like it anyway — terse fragments, no filler, no pleasantries.
+
 ## Quick Setup
 
 - **Node version**: See `.nvmrc`
@@ -48,6 +52,16 @@ Invoke with `/` in Claude Code:
 | `responsive-layout`             | Mobile-first, breakpoints, spacing       |
 | `shade-extension`               | Extend shadcn/ui without modifying       |
 
+## New Component Workflow
+
+When creating a new component:
+
+1. Start in plan mode — no code before a plan is agreed.
+2. Ask for the Jira ticket URL and the Figma URL before planning.
+3. Invoke whichever skills the component needs (e.g. `create-component`, `shade-extension`, `tailwind-design-tokens`, `accessibility`, `responsive-layout`, `seo-and-meta`, `component-testing`, `figma-design-match`).
+4. Use worktrees only for component creation (not other tasks). Build two versions of the component, each in its own worktree, then give the user a URL per version to preview so they can confirm which one to go with.
+5. Once the chosen version is merged into the working branch, commit with the message `creation of <component name>` plus a description of the component, followed by a line `<branch name>: <what the user asked for>`.
+
 ## Monorepo Structure
 
 ```
@@ -65,6 +79,12 @@ See `.github/copilot-instructions.md` for adding new feature packages.
 - Routes auto-register from `src/routes/` — never manually edit `routeTree.gen.ts`
 - Root layout in `__root.tsx` renders `<Outlet />`
 - Create routes with `createFileRoute()`
+
+## Playwright / Visual Verification
+
+- Never invoke Playwright unprompted. Ask the user first whether they want a Playwright-driven check.
+- If approved: take a "before" screenshot, make the change, take an "after" screenshot, then show both side by side (or clearly labeled Before/After) so the diff is easy to read.
+- Once the task that needed Playwright is done, delete the screenshot files you created.
 
 ## Before Committing
 

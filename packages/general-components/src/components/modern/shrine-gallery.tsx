@@ -12,6 +12,14 @@ interface ShrineItem {
   description?: string;
   image: ShrineGalleryImage;
   gallery?: ShrineGalleryImage[];
+  content?: {
+    copy: {
+      value: string;
+      title: string;
+      slug: string;
+    }[];
+    image?: ShrineGalleryImage[];
+  }[];
 }
 
 interface ShrineGalleryProps {
@@ -20,7 +28,7 @@ interface ShrineGalleryProps {
   intro?: string;
 }
 
-const items = json as ShrineItem[];
+const items = json.listing as ShrineItem[];
 
 function ShrineGallery({ kicker, heading, intro }: ShrineGalleryProps) {
   return (
@@ -30,7 +38,7 @@ function ShrineGallery({ kicker, heading, intro }: ShrineGalleryProps) {
     >
       <div className="flex aspect-square flex-col justify-center gap-3 bg-(--surface) p-6 sm:p-8">
         {kicker && (
-          <p className="text-sm font-medium tracking-wide text-(--lagoon) uppercase">
+          <p className="text-sm font-medium tracking-wide text-accent uppercase">
             {kicker}
           </p>
         )}
