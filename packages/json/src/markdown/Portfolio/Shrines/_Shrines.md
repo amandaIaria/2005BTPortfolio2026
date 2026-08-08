@@ -1,7 +1,7 @@
-- Stargate
-- forever knight
-- twin peaks
-- Babylon 5
+- [[Stargate]]
+- [[Forever Knight]]
+- [[twin peaks]]
+- [[Babylon 5]]
 
 I need to make some photoshop headers that would be used in both versions.
 

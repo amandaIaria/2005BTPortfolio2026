@@ -1,0 +1,16 @@
+Navigation
+- [[About]]
+- [[_Shrines]]
+	- [[Babylon 5]]
+	- [[Forever Knight]]
+	- [[Stargate]]
+	- [[Twin Peaks]]
+- [[Experience]]
+- [[Projects]]
+- [[_CaseStudies]]
+	- [[Digging into Game Development]]
+	- [[Creating a personal Brand and Design system]]
+	- [[A hypothetical redesign and audit]]
+- [[_]]
+
+![[Ideas.canvas]]

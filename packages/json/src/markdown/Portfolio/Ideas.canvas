@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"28fb70b06a133e9e","type":"link","url":"https://sdaw.neocities.org/","x":-420,"y":-340,"width":400,"height":500},
+		{"id":"34cbe783523e2d3c","type":"link","url":"https://monsieurdoll.neocities.org/","x":-200,"y":-200,"width":400,"height":400},
+		{"id":"b06371098fe5a5e8","type":"link","url":"https://altalenae.neocities.org/","x":20,"y":-490,"width":400,"height":400},
+		{"id":"dbfdeffa905b225d","type":"link","url":"https://noisecorvid.neocities.org/home","x":120,"y":-40,"width":400,"height":400},
+		{"id":"05283d955bc805b4","x":-527,"y":-611,"width":250,"height":60,"type":"text","text":"https://usprisoner.neocities.org/"},
+		{"id":"0040fcf617cda81f","x":-520,"y":60,"width":400,"height":400,"type":"link","url":"https://beedge.neocities.org/"},
+		{"id":"00afdbb4a75aade6","x":200,"y":-640,"width":400,"height":400,"type":"link","url":"https://fearofmusic.neocities.org/"}
+	],
+	"edges":[]
+}

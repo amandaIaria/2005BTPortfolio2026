@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"id":"88b3a6cea95e5244","x":-400,"y":-540,"width":400,"height":400,"type":"link","url":"https://www.gateworld.net/"},
+		{"id":"9104acb537b8ce23","x":-160,"y":-240,"width":400,"height":400,"type":"link","url":"https://twinpeaksblog.com/"},
+		{"id":"82651ef770752f00","x":-420,"y":80,"width":400,"height":400,"type":"link","url":"https://www.avenuepotter.com/~kristin/Forever_Knight/"}
+	],
+	"edges":[]
+}
