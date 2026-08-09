@@ -2,6 +2,7 @@
 - [[Forever Knight]]
 - [[twin peaks]]
 - [[Babylon 5]]
+- [[Sanctuary]]
 
 I need to make some photoshop headers that would be used in both versions.
 
@@ -14,6 +15,8 @@ I need to make some photoshop headers that would be used in both versions.
     - red, black, silver
   - twin peaks
     - red, green, yellow
+  - sanctuary
+    - teal, bronze, black
 
 ```
 .shrines {

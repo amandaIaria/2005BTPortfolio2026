@@ -45,17 +45,14 @@
             "id": "5d7632f646aeb066",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Shrines/Links.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "Welcome.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Links"
+              "icon": "lucide-file",
+              "title": "Welcome"
             }
           }
         ],
@@ -158,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Shrines/Links.canvas",
+                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -177,7 +174,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Shrines/Links.canvas",
+                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -220,7 +217,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Shrines/Links.canvas",
+                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -258,19 +255,20 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "0f15599129ce9195",
+  "active": "5d7632f646aeb066",
   "lastOpenFiles": [
-    "Shrines/Babylon 5.md",
+    "README.md",
+    "Ideas.canvas",
     "Shrines/Links.canvas",
+    "Shrines/Sanctuary.md",
+    "Shrines/Babylon 5.md",
     "Shrines/Twin Peaks.md",
     "Untitled.base",
-    "README.md",
     "CaseStudies/_CaseStudies.md",
     "CaseStudies/A hypothetical redesign and audit.md",
     "Experience",
     "About",
     "Shrines/Stargate.md",
-    "Ideas.canvas",
     "Welcome.md",
     "Shrines/_Shrines.md",
     "Shrines/Forever Knight.md",
