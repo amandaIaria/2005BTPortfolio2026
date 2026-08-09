@@ -507,4 +507,4 @@ export const legacyHtml = `<main class="aiu-spacing--m32">
       </div>
     </div>
   </article>
-</main>`
+</main>`;
