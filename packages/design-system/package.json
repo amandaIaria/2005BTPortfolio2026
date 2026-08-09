@@ -4,6 +4,17 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./tokens.css": "./src/tokens.css"
+    "./tokens.css": "./src/tokens.css",
+    "./pages/*": "./src/pages/*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@general/components": "*"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
   }
 }
