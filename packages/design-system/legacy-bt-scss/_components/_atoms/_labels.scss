@@ -1,0 +1,106 @@
+// 
+// Labels
+// 
+// Various Labels styles.
+// 
+// Styleguide Components - Atoms - Labels
+// 
+
+.aic-a-label {
+  $self: &;
+  
+  &__container {
+    align-items: center;
+    box-sizing: border-box;
+    color: map-get($colors, 'grey1');
+    cursor: text;
+    display: flex;
+    height: 54px;
+    overflow: hidden;
+    padding:  $margin;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    will-change: transform;
+    @include transition($ai-transition);
+  }
+
+  &__floating {
+    color: map-get($colors, 'flatblack');
+    cursor: text;
+    font-size: 16px;
+    font-weight: 400;
+    left: 16px;
+    top: 16px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    // top: 16px;
+    text-align: left;
+    text-overflow: ellipsis;
+    -webkit-font-smoothing: antialiased;
+    white-space: nowrap;
+    will-change: transform;
+    width: 100%;
+    @include transform-origin(left top);
+    @include transition(color 150ms ease);
+    @include transition(transform 150ms ease);
+
+    &--float-above {
+      // keeping
+    }
+
+    &--shake {
+      // keeping
+    }
+  }
+
+  &__textarea-container {
+    display: block;
+    min-height: 91px;
+    overflow: inherit;
+    position: relative;
+  }
+
+  &--focus-container {
+    .aic-m-input-field__label,
+    .aic-m-select-field__label {
+      font-size: 10px;
+      line-height: $ai-labels-mixincontainer-lh;
+      @include transform(translateY(-6px) translateX(0));
+    }
+  }
+
+  &--bordered {
+    border: 1px solid map-get($colors, 'flatblack');
+    border-radius: 0;
+    @include box-shadow(inset 0px 0px 0px 4px transparent);
+
+    &#{$self}--focused {
+      border-color: $active-color;
+    }
+
+    &:focus-within {
+      border-color: $active-color;
+      @include box-shadow(inset 0px 0px 0px 4px $active-color);
+    }
+
+    &:hover {
+      border-color: $active-color;
+      @include box-shadow(inset 0px 0px 0px 4px $active-color);
+    }
+  }
+}
+
+.aiu-states-error .aic-a-label--bordered {
+  border-color: $error-color !important;
+  @include box-shadow(inset 0px 0px 0px 4px $error-color);
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    border-color: $error-color;;
+    @include box-shadow(inset 0px 0px 0px 4px $error-color);
+  }
+}

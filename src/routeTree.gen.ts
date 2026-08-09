@@ -17,6 +17,7 @@ import { Route as AppIndexRouteImport } from './routes/_app.index'
 import { Route as R2005IndexRouteImport } from './routes/2005/index'
 import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/webgl-tentacle-footer'
 import { Route as UiKitSliderRouteImport } from './routes/ui-kit/slider'
+import { Route as UiKitLegacyStylesRouteImport } from './routes/ui-kit/legacy-styles'
 import { Route as AppShrinesRouteImport } from './routes/_app.shrines'
 import { Route as AppProjectsRouteImport } from './routes/_app.projects'
 import { Route as AppExperienceRouteImport } from './routes/_app.experience'
@@ -74,6 +75,11 @@ const UiKitWebglTentacleFooterRoute =
 const UiKitSliderRoute = UiKitSliderRouteImport.update({
   id: '/slider',
   path: '/slider',
+  getParentRoute: () => UiKitRouteRoute,
+} as any)
+const UiKitLegacyStylesRoute = UiKitLegacyStylesRouteImport.update({
+  id: '/legacy-styles',
+  path: '/legacy-styles',
   getParentRoute: () => UiKitRouteRoute,
 } as any)
 const AppShrinesRoute = AppShrinesRouteImport.update({
@@ -185,6 +191,7 @@ export interface FileRoutesByFullPath {
   '/experience': typeof AppExperienceRoute
   '/projects': typeof AppProjectsRoute
   '/shrines': typeof AppShrinesRouteWithChildren
+  '/ui-kit/legacy-styles': typeof UiKitLegacyStylesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/2005/': typeof R2005IndexRoute
@@ -207,6 +214,7 @@ export interface FileRoutesByTo {
   '/contact': typeof AppContactRoute
   '/experience': typeof AppExperienceRoute
   '/projects': typeof AppProjectsRoute
+  '/ui-kit/legacy-styles': typeof UiKitLegacyStylesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/2005': typeof R2005IndexRoute
@@ -236,6 +244,7 @@ export interface FileRoutesById {
   '/_app/experience': typeof AppExperienceRoute
   '/_app/projects': typeof AppProjectsRoute
   '/_app/shrines': typeof AppShrinesRouteWithChildren
+  '/ui-kit/legacy-styles': typeof UiKitLegacyStylesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
   '/2005/': typeof R2005IndexRoute
@@ -266,6 +275,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/projects'
     | '/shrines'
+    | '/ui-kit/legacy-styles'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/2005/'
@@ -288,6 +298,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/projects'
+    | '/ui-kit/legacy-styles'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/2005'
@@ -316,6 +327,7 @@ export interface FileRouteTypes {
     | '/_app/experience'
     | '/_app/projects'
     | '/_app/shrines'
+    | '/ui-kit/legacy-styles'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
     | '/2005/'
@@ -389,6 +401,13 @@ declare module '@tanstack/react-router' {
       path: '/slider'
       fullPath: '/ui-kit/slider'
       preLoaderRoute: typeof UiKitSliderRouteImport
+      parentRoute: typeof UiKitRouteRoute
+    }
+    '/ui-kit/legacy-styles': {
+      id: '/ui-kit/legacy-styles'
+      path: '/legacy-styles'
+      fullPath: '/ui-kit/legacy-styles'
+      preLoaderRoute: typeof UiKitLegacyStylesRouteImport
       parentRoute: typeof UiKitRouteRoute
     }
     '/_app/shrines': {
@@ -547,12 +566,14 @@ const R2005RouteRouteWithChildren = R2005RouteRoute._addFileChildren(
 )
 
 interface UiKitRouteRouteChildren {
+  UiKitLegacyStylesRoute: typeof UiKitLegacyStylesRoute
   UiKitSliderRoute: typeof UiKitSliderRoute
   UiKitWebglTentacleFooterRoute: typeof UiKitWebglTentacleFooterRoute
   UiKitIndexRoute: typeof UiKitIndexRoute
 }
 
 const UiKitRouteRouteChildren: UiKitRouteRouteChildren = {
+  UiKitLegacyStylesRoute: UiKitLegacyStylesRoute,
   UiKitSliderRoute: UiKitSliderRoute,
   UiKitWebglTentacleFooterRoute: UiKitWebglTentacleFooterRoute,
   UiKitIndexRoute: UiKitIndexRoute,

@@ -1,0 +1,41 @@
+.aiu-display {
+  &--grid {
+    display: grid;
+  }
+
+  &--block {
+    display: block;
+  }
+
+  &--inline {
+    display: inline;
+  }
+
+  &--none {
+    display: none;
+  }
+}
+
+.aiu-position {
+  &--fixed {
+    position: fixed;
+  }
+
+  &--sticky {
+    position: sticky;
+  }
+}
+
+.aiu-float {
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+
+  &--none {
+    float: none;
+  }
+}

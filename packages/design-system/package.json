@@ -1,0 +1,21 @@
+{
+  "name": "@design/system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tokens.css": "./src/tokens.css",
+    "./pages/*": "./src/pages/*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@general/components": "*"
+  },
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.83.0"
+  }
+}
