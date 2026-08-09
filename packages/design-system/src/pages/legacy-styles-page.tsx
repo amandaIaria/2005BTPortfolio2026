@@ -27,7 +27,7 @@ export default function LegacyStylesPage() {
       </div>
       <Separator />
       <ShadowHtml
-        css={legacyBaseStyles + materialIconsImport + legacyCss}
+        css={materialIconsImport + legacyBaseStyles + legacyCss}
         html={legacyHtml}
       />
     </div>

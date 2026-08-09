@@ -17,6 +17,15 @@ export function ShadowHtml({ css, html, className }: ShadowHtmlProps) {
   }, [css, html]);
 
   return (
-    <div data-component="shadow-html" ref={hostRef} className={className} />
+    <div
+      data-component="shadow-html"
+      ref={hostRef}
+      className={className}
+      // Shadow DOM scopes selectors but not layout: position:fixed/absolute
+      // descendants still position against the viewport by default. `contain:
+      // layout` makes this host a containing block, so isolated content can't
+      // escape it - completing the isolation the component is meant to give.
+      style={{ contain: 'layout' }}
+    />
   );
 }
