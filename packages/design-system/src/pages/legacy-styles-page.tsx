@@ -2,16 +2,16 @@ import { TempNav, Separator } from '@general/components';
 
 import { ShadowHtml } from '../components/shadow-html';
 import { legacyHtml } from './legacy-styles-content';
-// @ts-expect-error - Vite's ?inline suffix returns the compiled CSS as a
-// string; no type declaration exists for this virtual module shape.
 import legacyCss from '../../legacy-bt-scss/_bt.scss?inline';
 
 const materialIconsImport =
   "@import url('https://fonts.googleapis.com/icon?family=Material+Icons');";
 
+const legacyBaseStyles = `:host { font-size: 16px; line-height: 24px; font-family: 'Open Sans', sans-serif; color: #333333; }`;
+
 export default function LegacyStylesPage() {
   return (
-    <main className="max-w-[1200px] w-full mx-auto bg-background text-foreground space-y-10 px-4 pb-16 pt-14">
+    <div className="max-w-[1200px] w-full mx-auto bg-background text-foreground space-y-10 px-4 pb-16 pt-14">
       <header>
         <TempNav />
       </header>
@@ -26,7 +26,10 @@ export default function LegacyStylesPage() {
         </p>
       </div>
       <Separator />
-      <ShadowHtml css={materialIconsImport + legacyCss} html={legacyHtml} />
-    </main>
+      <ShadowHtml
+        css={legacyBaseStyles + materialIconsImport + legacyCss}
+        html={legacyHtml}
+      />
+    </div>
   );
 }
