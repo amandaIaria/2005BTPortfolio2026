@@ -1,8 +1,9 @@
-/* Must stay the first rule in this file - CSS drops @import statements that land after other rules have expanded (see docs/superpowers/plans/2026-08-09-design-system-package.md Task 2). */
+/* Must stay the first rule in this file - CSS drops @import statements that land after other rules have expanded (see packages/design-system/README.md "Import order"). */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+/* Must come after tailwindcss/tw-animate-css/shadcn - importing tokens.css earlier puts its @theme block first, which knocks Tailwind's merged theme out of @layer theme (loses tree-shaking, unlayers all theme vars). */
 @import '@design/system/tokens.css';
 
 @custom-variant dark (&:is(.dark *));
