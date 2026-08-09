@@ -9,9 +9,17 @@ const materialIconsImport =
 
 const legacyBaseStyles = `:host { font-size: 16px; line-height: 24px; font-family: 'Open Sans', sans-serif; color: #333333; }`;
 
+// CSS drops any @import that lands after a non-import rule. legacyCss is NOT
+// import-free - Vite hoists its own leading remote @import (the legacy
+// design's Open Sans/Roboto Slab Google Fonts URL) to the very start of the
+// compiled string. Both @imports (materialIconsImport and legacyCss's own)
+// must stay contiguous at the top; legacyBaseStyles (a plain rule, not an
+// @import) must come last. This exact bug has recurred multiple times in
+// this codebase - reorder with care.
+
 export default function LegacyStylesPage() {
   return (
-    <div className="max-w-[1200px] w-full mx-auto bg-background text-foreground space-y-10 px-4 pb-16 pt-14">
+    <main className="max-w-[1200px] w-full mx-auto bg-background text-foreground space-y-10 px-4 pb-16 pt-14">
       <header>
         <TempNav />
       </header>
@@ -27,9 +35,9 @@ export default function LegacyStylesPage() {
       </div>
       <Separator />
       <ShadowHtml
-        css={materialIconsImport + legacyBaseStyles + legacyCss}
+        css={materialIconsImport + legacyCss + legacyBaseStyles}
         html={legacyHtml}
       />
-    </div>
+    </main>
   );
 }

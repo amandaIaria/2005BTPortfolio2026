@@ -1,4 +1,4 @@
-export const legacyHtml = `<main class="aiu-spacing--m32">
+export const legacyHtml = `<div class="aiu-spacing--m32">
   <h2>Inputs</h2>
   <article class="aiu-spacing--m-v58">
     <section class="aic-m-input-field">
@@ -507,4 +507,4 @@ export const legacyHtml = `<main class="aiu-spacing--m32">
       </div>
     </div>
   </article>
-</main>`;
+</div>`;
