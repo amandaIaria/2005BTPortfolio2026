@@ -1,0 +1,121 @@
+// 
+// Grid 
+// 
+// Various Grid styles.
+// 
+// Style Guide Objects - Layout - Grid
+// 
+
+.ail-grid {
+  display: grid;
+ // Full Page
+  &__full-page {
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat($ai-totalCol, minmax(0, 1fr));
+      grid-gap: $margin;
+      justify-content: none;
+
+      @media (max-width: 575px) {
+        grid-gap: #{$margin / 2};
+      }
+    }
+  }
+
+  &__col {
+    @media (max-width: 575px) {
+      flex: 100% !important;
+
+      @supports (display: grid) {
+        grid-column-end: span 12 !important;
+      }
+    }
+
+    @for $i from 1 through $ai-totalCol {
+      $percentage: percentage($i / $ai-totalCol);
+
+      &--#{$i} {
+        // flex: $i;
+        flex: calc(#{$percentage} - #{$margin});
+        padding: 0 $margin;
+        margin: 0 #{$margin / 2};
+
+        @media (max-width: 575px) {
+          flex: calc(#{$percentage} - #{$margin / 2});
+          padding: 0 #{$margin / 4};
+          margin: 0 #{$margin / 4};
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @supports (display: grid) {
+          flex: none;
+          width: auto;
+          grid-column-end: span $i;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+    
+    @each $name, $amount in $breakpoints {
+      @for $i from 1 through $ai-totalCol {
+        $percentage: percentage($i / $ai-totalCol);
+
+        &--#{$i}-#{$name} {
+          // flex: $i;
+          flex: calc(#{$percentage} - #{$margin});
+          padding: 0 $margin;
+          margin: 0 #{$margin / 2};
+
+          @supports (display: grid) {
+            flex: none;
+            width: auto;
+            grid-column-end: span $ai-totalCol;
+            margin: 0;
+            padding: 0;
+          }
+
+          @media (min-width: #{$amount}) {
+            flex: calc(#{$percentage} - #{$margin / 2});
+            padding: 0 #{$margin / 4};
+            margin: 0 #{$margin / 4};
+
+            @supports (display: grid) {
+              flex: none;
+              width: auto;
+              grid-column-end: span $i;
+              margin: 0;
+              padding: 0;
+            }
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+         
+        }
+      }
+    }
+  }
+}
