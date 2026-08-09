@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@2005portfolio/feature": "*",
+    "@design/system": "*",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
     "@general/components": "*",
     "@json/data": "*",
