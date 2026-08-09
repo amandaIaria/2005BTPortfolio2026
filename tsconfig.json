@@ -21,6 +21,7 @@
       ],
       "@general/pages/*": ["./packages/general-components/src/pages/*"],
       "@general/lib/*": ["./packages/general-components/src/lib/*"],
+      "@design/pages/*": ["./packages/design-system/src/pages/*"],
       "@modern/*": ["./packages/modern/src/*"],
       "@2005portfolio/*": ["./packages/2005portfolio/src/*"],
       "@json/*": ["./packages/json/src/*"]
