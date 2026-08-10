@@ -4,6 +4,7 @@ import { ArrowDownIcon, CheckCircleIcon } from '@phosphor-icons/react';
 import { cn } from '../lib/utils';
 import { InternalTransitionLink } from './page-transition/internal-transition-link';
 import { Separator } from './ui/separator';
+import { StickySideNav } from './modern/sticky-side-nav';
 
 interface CaseStudyContributor {
   name: string;
@@ -25,7 +26,7 @@ interface CaseStudyOverview {
 interface CaseStudySection {
   id: string;
   title: string;
-  content: string;
+  copy: string;
   className?: string;
   image?: {
     src: string;
@@ -46,7 +47,7 @@ interface CaseStudyDetailItem {
   problem: string;
   approach: string;
   outcomes: string[];
-  sections: CaseStudySection[];
+  content: CaseStudySection[];
 }
 
 interface CaseStudyDetailProps extends React.ComponentProps<'div'> {
@@ -195,18 +196,18 @@ function CaseStudyDetail({
             <Separator />
 
             <div className="flex flex-col gap-16">
-              {caseStudy.sections.map((section) => (
+              {caseStudy.content.map((section) => (
                 <div
                   key={section.id}
                   id={section.id}
                   className="flex flex-col gap-4 scroll-mt-24"
                 >
 
-                 {section.content && (
+                 {section.copy && (
                     <div>
                       <h3 className="text-2xl font-bold">{section.title}</h3>
                       <p className="max-w-3xl text-lg text-muted-foreground">
-                        {section.content}
+                        {section.copy}
                       </p>
                     </div>
                   )}
@@ -227,20 +228,7 @@ function CaseStudyDetail({
           </div>
 
           <div className="flex flex-col gap-4 relative">
-            <div className="sticky -mt-4 top-0 p-4 bg-background">
-              <h3 className="text-lg font-bold tracking-wide mb-4 text-muted-foreground">
-                {t('caseStudies.detail.onThisPageHeading')}
-              </h3>
-              <ul className="flex flex-col gap-2">
-                {caseStudy.sections.map((section) => section.title !== "" && (
-                  <li key={section.id}>
-                    <a href={`#${section.id}`} className="pointer text-accent leading-0">
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <StickySideNav content={caseStudy} navLabel={t('caseStudies.navSidebarLabel')} />
           </div>
         </div>
       </div>
