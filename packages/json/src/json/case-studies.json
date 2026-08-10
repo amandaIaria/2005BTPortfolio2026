@@ -1,197 +1,111 @@
 [
   {
-    "slug": "scaling-a-sitecore-design-system",
-    "title": "Scaling a Sitecore Design System",
-    "description": "Rebuilt a fragmented component library into a single accessible design system, cutting new-page build time in half across a dozen client sites.",
+    "slug": "creating-a-personal-brand-and-design-system",
+    "title": "Creating a personal Brand and Design System",
+    "description": "Created a personal brand and design system that could be used for other work.",
     "image": {
       "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop",
       "alt": "Design system component grid on a laptop screen"
     },
     "link": { "copy": "Read more" },
     "contributor": {
-      "name": "Priya Anand",
+      "name": "Alex Iaria",
       "role": "Senior Front-End Engineer",
       "avatar": {
         "src": "https://i.pravatar.cc/150?u=scaling-a-sitecore-design-system",
-        "alt": "Portrait of Priya Anand"
+        "alt": "Portrait of Alex Iaria"
       }
     },
     "overview": {
-      "label": "Velir",
-      "description": "A digital agency partner building and maintaining Sitecore experiences for enterprise clients across a dozen active sites.",
+      "label": "Personal",
+      "description": "As I grow in my field I felt that I needed a design language of my own.",
       "sector": "Digital Agency",
-      "teamSize": "8-12",
+      "teamSize": "1",
       "location": "Boston, Massachusetts"
     },
-    "problem": "The client's Sitecore front end had grown organically across a dozen client sites, with each team maintaining its own copy of buttons, cards, and forms. There was no shared source of truth, so accessibility fixes made on one site never made it to the others.",
-    "approach": "We audited every component variant in use, consolidated them into a single accessible component library, and documented usage patterns so new pages could be assembled instead of rebuilt from scratch.",
+    "problem": "Every side project and portfolio piece I built had its own one-off buttons, cards, and color choices. Nothing carried over between projects, so each new build started from zero and looked visibly inconsistent with the last.",
+    "approach": "I defined a small set of design tokens, color, type and spacing, then built an accessible component library on top of them, treating my own work like client work with real documentation and reuse in mind.",
     "outcomes": [
-      "A single component library shared across every client site",
-      "New-page build time cut in half for every team",
-      "Accessibility regressions caught before release, not after"
+      "One token set and component library reused across every personal project",
+      "New pages assembled from existing primitives instead of rebuilt from scratch",
+      "A consistent, accessible brand across my whole portfolio"
     ],
     "sections": [
       {
         "id": "discovery",
         "title": "Discovery",
-        "content": "We started by cataloging every button, card, and form variant already live across the twelve sites, turning up dozens of near-duplicate components with subtly different spacing, color, and focus behavior."
+        "content": "Looking back across old projects, I didn't have a consistant style or I just recreated it again and again. For personal projects that might be fine, but when you are spending more time on items that could be already made. At the time I was working for Mapfre and was in the process of working on one that would be used when every our team had work."
+      },
+
+       {
+        "id": "discovery-5",
+        "title": "",
+        "content": "",
+        "classNames": "",
+        "image": {
+          "src": "/img/case-studies/ds1.png",
+          "alt": ""
+        }
+      },
+
+       {
+        "id": "discovery-2",
+        "title": "",
+        "content": "We read through some of the bigger design system at the time, Atlassian, Material, Shopify, and Apple, to see why they needed a system. It's the same reason all of these companies, including the one I was in, wanted an easy way to share their brand. Not just images and logo, but in the very tone their marketing heads would use. The colors were easy but trying to make sure red isn't the primary color for buttons was an up hill struggle."
+      },
+       {
+        "id": "discovery-3",
+        "title": "",
+        "content": "Unlike many of the modern systems using Storybook or another tool. I went through and just made something that could be hosted on a file system. Not the best solution, but we didn't really have much choice. What does that mean? Nothing fancy, standard html, and es6. I worked with webpack to create a system that allowed me to fake imports, have scss, and then build a standard web page. This was used as a guide for the components that were built in sepereate projects."
+      },
+       {
+        "id": "discovery-4",
+        "title": "",
+        "content": "I wanted something for my own projects that had my own style, like every other developer or designer.",
+        "classNames": "",
+        "image": ""
+      },
+      {
+        "id": "discovery-5",
+        "title": "",
+        "content": "",
+        "classNames": "",
+        "image": {
+          "src": "/img/case-studies/ds1.png",
+          "alt": ""
+        }
       },
       {
         "id": "solution",
         "title": "Building the system",
-        "content": "Each duplicate was consolidated into a single accessible primitive, documented with usage guidance, and rolled out to one site at a time so editors never lost access to a working page mid-migration."
+        "content": "Originally I was trying to do things from the ground up. What does that mean? I wanted to try and make something that was react base, but didn't use a react framework. I still wanted to keep SCSS and I still wanted to learn. Sometimes a headache isn't worth it. Fastforward to now and I've used Next.js and Tanstack but found the later to be the best approach. So, I'm revitalizing that system to something better."
+      },
+      {
+        "id": "solution-2",
+        "title": "",
+        "content": "I set design tokens first, then built accessible primitives on top of them. Documenting each one so future me could assemble new pages instead of reinventing components under deadline. At first I was designing in Adobe xD (and even before in Sketch), but I've found that figma was a good program. Next was working with colors and typography.",
+        "classNames": "",
+        "image": ""
+      },
+      {
+        "id": "solution-3",
+        "title": "",
+        "content": "Now the colors I chose was really just an attempt to keep things clean. A flat black that had a bit of blue, white that had just a drop of grey, and bright robin's egg blue. One thing I found that keeping it clean made it easier to not get confused. The bright blue is a nice break from the monotone black and white. I wanted that same feeling with some of the other colors, so red was a bit neon and green was more of that minty version.",
+        "classNames": "",
+        "image": {
+          "src": "/img/case-studies/ds2.png",
+          "alt": ""
+        }
+      },
+      {
+        "id": "solution-4",
+        "title": "",
+        "content": "I wanted to keep that feeling with the components. I was digging the bold colors, bold borders and solid colors in a lot of designs I was seeing. It made things clear and you could easily differentiate what active componets were. Now I don't have a big need for diferent components. THis system was for small projects and my style. Nothing world shattering."
       },
       {
         "id": "results",
         "title": "Results",
-        "content": "Within two quarters every client site was pulling from the same library. New landing pages that used to take a sprint to build now ship in a day, and accessibility audits come back clean by default."
-      }
-    ]
-  },
-  {
-    "slug": "modernizing-a-legacy-lamp-storefront",
-    "title": "Modernizing a Legacy LAMP Storefront",
-    "description": "Migrated a decade-old PHP storefront to a component-driven React front end, improving Lighthouse performance scores from 42 to 96.",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
-      "alt": "Before and after storefront performance dashboard"
-    },
-    "link": { "copy": "Read more" },
-    "contributor": {
-      "name": "Marcus Webb",
-      "role": "Front-End Developer",
-      "avatar": {
-        "src": "https://i.pravatar.cc/150?u=modernizing-a-legacy-lamp-storefront",
-        "alt": "Portrait of Marcus Webb"
-      }
-    },
-    "overview": {
-      "label": "HMC Ad",
-      "description": "A marketing agency running e-commerce storefronts for mid-size retail clients on a decade-old PHP stack.",
-      "sector": "Retail / E-commerce",
-      "teamSize": "4-6",
-      "location": "Providence, Rhode Island"
-    },
-    "problem": "A decade of incremental PHP changes had left the storefront slow and risky to touch. Every deploy carried a real chance of breaking checkout, and Lighthouse scores had drifted down into the low 40s.",
-    "approach": "We migrated the front end page by page to a component-driven React architecture, replacing server-rendered templates with typed, testable components and trimming a decade of unused CSS along the way.",
-    "outcomes": [
-      "Lighthouse performance scores climbed from 42 to 96",
-      "Checkout deploys went from high-risk to routine",
-      "New landing pages ship in days instead of weeks"
-    ],
-    "sections": [
-      {
-        "id": "discovery",
-        "title": "Discovery",
-        "content": "A full audit of the PHP templates turned up years of dead CSS, inline styles, and duplicated markup — the biggest single drag on both performance and developer confidence."
-      },
-      {
-        "id": "solution",
-        "title": "The migration",
-        "content": "Pages were rebuilt one at a time behind a feature flag, letting the team validate each migrated page against the live storefront before cutting traffic over."
-      },
-      {
-        "id": "results",
-        "title": "Results",
-        "content": "Lighthouse scores rose from 42 to 96 and stayed there, and the team now ships new landing pages in days instead of the weeks it used to take to touch the old templates safely."
-      }
-    ]
-  },
-  {
-    "slug": "accessible-booking-flow-redesign",
-    "title": "Accessible Booking Flow Redesign",
-    "description": "Redesigned a multi-step booking flow to meet WCAG 2.1 AA, reducing support tickets tied to form errors by 60%.",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
-      "alt": "Accessible multi-step form on a tablet"
-    },
-    "link": { "copy": "Read more" },
-    "contributor": {
-      "name": "Dana Ochoa",
-      "role": "Accessibility Lead",
-      "avatar": {
-        "src": "https://i.pravatar.cc/150?u=accessible-booking-flow-redesign",
-        "alt": "Portrait of Dana Ochoa"
-      }
-    },
-    "overview": {
-      "label": "Freelance",
-      "description": "A small business client offering appointment-based services through a multi-step online booking flow.",
-      "sector": "Professional Services",
-      "teamSize": "1-3",
-      "location": "Remote"
-    },
-    "problem": "The existing booking flow failed keyboard navigation and screen reader testing at nearly every step, and support tickets tied to confusing form errors were piling up week over week.",
-    "approach": "We redesigned the flow around clear focus order, inline validation, and accessible error messaging, then retested against WCAG 2.1 AA end to end before launch.",
-    "outcomes": [
-      "Support tickets tied to form errors dropped by 60%",
-      "Full keyboard and screen reader support across every step",
-      "WCAG 2.1 AA conformance verified end to end"
-    ],
-    "sections": [
-      {
-        "id": "discovery",
-        "title": "Discovery",
-        "content": "A screen reader walkthrough of the existing flow surfaced missing labels, an unpredictable focus order, and error messages that were never announced to assistive technology."
-      },
-      {
-        "id": "solution",
-        "title": "The redesign",
-        "content": "Each step was rebuilt around a predictable focus order, associated labels, and inline validation that announces errors as soon as they occur instead of only on submit."
-      },
-      {
-        "id": "results",
-        "title": "Results",
-        "content": "Support tickets tied to form errors dropped by 60% in the first month, and the flow now passes WCAG 2.1 AA testing with both keyboard-only and screen reader users."
-      }
-    ]
-  },
-  {
-    "slug": "charity-microsite-launch",
-    "title": "Charity Microsite Launch",
-    "description": "Shipped a fast, donation-ready microsite for a nonprofit client in three weeks, from wireframes to a fully themed CMS-driven build.",
-    "image": {
-      "src": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop",
-      "alt": "Nonprofit donation page on a mobile device"
-    },
-    "link": { "copy": "Read more" },
-    "contributor": {
-      "name": "Sofia Reyes",
-      "role": "Web Designer & Developer",
-      "avatar": {
-        "src": "https://i.pravatar.cc/150?u=charity-microsite-launch",
-        "alt": "Portrait of Sofia Reyes"
-      }
-    },
-    "overview": {
-      "label": "HMC Ad",
-      "description": "A nonprofit client needing a donation-ready microsite in place before an approaching fundraising deadline.",
-      "sector": "Nonprofit",
-      "teamSize": "2-4",
-      "location": "Providence, Rhode Island"
-    },
-    "problem": "With a fundraising deadline three weeks out, the nonprofit needed a fully themed, donation-ready microsite fast, and had no in-house engineering support to maintain it afterward.",
-    "approach": "We moved straight from wireframes into a CMS-driven build, keeping the component count small and the donation flow simple so content editors could launch and iterate without engineering help.",
-    "outcomes": [
-      "Fully themed microsite shipped in three weeks",
-      "First donations processed within hours of going live",
-      "Content editors manage the site with no engineering support"
-    ],
-    "sections": [
-      {
-        "id": "discovery",
-        "title": "Discovery",
-        "content": "With three weeks to launch, the priority was identifying the smallest set of page templates and components that could support the full donation campaign."
-      },
-      {
-        "id": "solution",
-        "title": "The build",
-        "content": "Wireframes moved straight into a CMS-driven build on a small, reusable component set, so the client's team could assemble new campaign pages without engineering support."
-      },
-      {
-        "id": "results",
-        "title": "Results",
-        "content": "The site launched on schedule and processed its first donations within hours. The nonprofit's own team has since launched two more campaign pages without any developer involvement."
+        "content": "Every new page in the portfolio now pulls from the same library. What used to take a day of one-off styling is now an afternoon of assembly, and accessibility is built in by default instead of patched in after."
       }
     ]
   }

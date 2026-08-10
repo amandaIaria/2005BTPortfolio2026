@@ -34,7 +34,19 @@
     "ctaLabel": "Contact"
   },
   "caseStudies": {
-    "heading": "Case Studies"
+    "heading": "Case Studies",
+    "detail": {
+      "backLink": "Case Studies",
+      "featuringInsightsFrom": "Featuring insights from:",
+      "overviewHeading": "Overview",
+      "sectorLabel": "Sector",
+      "teamSizeLabel": "Team size",
+      "locationLabel": "Location",
+      "problemHeading": "Problem",
+      "approachHeading": "Approach",
+      "onThisPageHeading": "On this page",
+      "outcomesHeading": "Outcomes"
+    }
   },
   "shrines": {
     "kicker": "The Archive",

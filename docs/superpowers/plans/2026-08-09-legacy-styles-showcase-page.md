@@ -23,11 +23,13 @@
 ### Task 1: `ShadowHtml` component
 
 **Files:**
+
 - Modify: `packages/design-system/package.json`
 - Create: `packages/design-system/src/components/shadow-html.tsx`
 - Create: `packages/design-system/__tests__/shadow-html.test.tsx`
 
 **Interfaces:**
+
 - Produces: `ShadowHtml({ css, html, className? }: { css: string; html: string; className?: string })` — a React component exported as a named export `ShadowHtml` from `packages/design-system/src/components/shadow-html.tsx`. Renders a host `<div data-component="shadow-html">`, attaches an open shadow root on mount, and sets the shadow root's `innerHTML` to `` `<style>${css}</style>${html}` ``.
 
 - [ ] **Step 1: Update `packages/design-system/package.json`**
@@ -67,45 +69,45 @@ Expected: exits 0, `package-lock.json` updates to include `sass` and the `@gener
 Create `packages/design-system/__tests__/shadow-html.test.tsx`:
 
 ```tsx
-import { render } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
-import { ShadowHtml } from '../src/components/shadow-html'
+import { ShadowHtml } from '../src/components/shadow-html';
 
 describe('ShadowHtml', () => {
   it('renders a host div with data-component', () => {
-    const { container } = render(<ShadowHtml css="" html="<p>hi</p>" />)
-    const host = container.querySelector('[data-component="shadow-html"]')
-    expect(host).not.toBeNull()
-  })
+    const { container } = render(<ShadowHtml css="" html="<p>hi</p>" />);
+    const host = container.querySelector('[data-component="shadow-html"]');
+    expect(host).not.toBeNull();
+  });
 
   it('attaches a shadow root containing the injected style and html', () => {
     const { container } = render(
       <ShadowHtml css=".foo{color:red}" html={'<p class="foo">hi</p>'} />,
-    )
+    );
     const host = container.querySelector(
       '[data-component="shadow-html"]',
-    ) as HTMLElement
-    expect(host.shadowRoot).not.toBeNull()
+    ) as HTMLElement;
+    expect(host.shadowRoot).not.toBeNull();
     expect(host.shadowRoot?.innerHTML).toContain(
       '<style>.foo{color:red}</style>',
-    )
-    expect(host.shadowRoot?.innerHTML).toContain('<p class="foo">hi</p>')
-  })
+    );
+    expect(host.shadowRoot?.innerHTML).toContain('<p class="foo">hi</p>');
+  });
 
   it('updates shadow root content when props change without throwing', () => {
     const { container, rerender } = render(
       <ShadowHtml css="" html="<p>first</p>" />,
-    )
+    );
     const host = container.querySelector(
       '[data-component="shadow-html"]',
-    ) as HTMLElement
-    expect(host.shadowRoot?.innerHTML).toContain('first')
-    rerender(<ShadowHtml css="" html="<p>second</p>" />)
-    expect(host.shadowRoot?.innerHTML).toContain('second')
-    expect(host.shadowRoot?.innerHTML).not.toContain('first')
-  })
-})
+    ) as HTMLElement;
+    expect(host.shadowRoot?.innerHTML).toContain('first');
+    rerender(<ShadowHtml css="" html="<p>second</p>" />);
+    expect(host.shadowRoot?.innerHTML).toContain('second');
+    expect(host.shadowRoot?.innerHTML).not.toContain('first');
+  });
+});
 ```
 
 - [ ] **Step 4: Run test to verify it fails**
@@ -118,27 +120,27 @@ Expected: FAIL — `Failed to resolve import "../src/components/shadow-html"` (m
 Create `packages/design-system/src/components/shadow-html.tsx`:
 
 ```tsx
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 type ShadowHtmlProps = {
-  css: string
-  html: string
-  className?: string
-}
+  css: string;
+  html: string;
+  className?: string;
+};
 
 export function ShadowHtml({ css, html, className }: ShadowHtmlProps) {
-  const hostRef = useRef<HTMLDivElement>(null)
+  const hostRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const host = hostRef.current
-    if (!host) return
-    const root = host.shadowRoot ?? host.attachShadow({ mode: 'open' })
-    root.innerHTML = `<style>${css}</style>${html}`
-  }, [css, html])
+    const host = hostRef.current;
+    if (!host) return;
+    const root = host.shadowRoot ?? host.attachShadow({ mode: 'open' });
+    root.innerHTML = `<style>${css}</style>${html}`;
+  }, [css, html]);
 
   return (
     <div data-component="shadow-html" ref={hostRef} className={className} />
-  )
+  );
 }
 ```
 
@@ -167,6 +169,7 @@ EOF
 ### Task 2: Legacy styles page
 
 **Files:**
+
 - Modify: `packages/design-system/legacy-bt-scss/_generic/_generic.scss`
 - Modify: `packages/design-system/package.json`
 - Create: `packages/design-system/src/pages/legacy-styles-content.ts`
@@ -174,6 +177,7 @@ EOF
 - Create: `packages/design-system/__tests__/legacy-styles-page.test.tsx`
 
 **Interfaces:**
+
 - Consumes: `ShadowHtml` from `../components/shadow-html` (Task 1), `TempNav` and `Separator` from `@general/components`.
 - Produces: a default-exported React component `LegacyStylesPage` from `packages/design-system/src/pages/legacy-styles-page.tsx`, taking no props, rendering a `<main>` shell containing a `ShadowHtml` host (`data-component="shadow-html"`, per Task 1).
 
@@ -722,7 +726,7 @@ export const legacyHtml = `<main class="aiu-spacing--m32">
       </div>
     </div>
   </article>
-</main>`
+</main>`;
 ```
 
 - [ ] **Step 3: Write the failing test**
@@ -730,12 +734,12 @@ export const legacyHtml = `<main class="aiu-spacing--m32">
 Create `packages/design-system/__tests__/legacy-styles-page.test.tsx`:
 
 ```tsx
-import path from 'node:path'
-import { render } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
-import * as sass from 'sass'
+import path from 'node:path';
+import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import * as sass from 'sass';
 
-import LegacyStylesPage from '../src/pages/legacy-styles-page'
+import LegacyStylesPage from '../src/pages/legacy-styles-page';
 
 describe('LegacyStylesPage', () => {
   it('compiles the legacy SCSS to non-empty CSS containing a known selector', () => {
@@ -746,19 +750,19 @@ describe('LegacyStylesPage', () => {
     // empty string by default (test.css is unset repo-wide, and changing
     // that repo-wide config was ruled out as out of scope for this task) -
     // this test must not depend on that config.
-    const entry = path.resolve(__dirname, '../legacy-bt-scss/_bt.scss')
-    const result = sass.compile(entry, { loadPaths: ['node_modules'] })
-    expect(result.css.length).toBeGreaterThan(1000)
-    expect(result.css).toContain('aic-a-button')
-  })
+    const entry = path.resolve(__dirname, '../legacy-bt-scss/_bt.scss');
+    const result = sass.compile(entry, { loadPaths: ['node_modules'] });
+    expect(result.css.length).toBeGreaterThan(1000);
+    expect(result.css).toContain('aic-a-button');
+  });
 
   it('renders without throwing and includes the shadow host', () => {
-    const { container } = render(<LegacyStylesPage />)
+    const { container } = render(<LegacyStylesPage />);
     expect(
       container.querySelector('[data-component="shadow-html"]'),
-    ).not.toBeNull()
-  })
-})
+    ).not.toBeNull();
+  });
+});
 ```
 
 - [ ] **Step 4: Run test to verify it fails**
@@ -771,16 +775,16 @@ Expected: FAIL — `Failed to resolve import "../src/pages/legacy-styles-page"` 
 Create `packages/design-system/src/pages/legacy-styles-page.tsx`:
 
 ```tsx
-import { TempNav, Separator } from '@general/components'
+import { TempNav, Separator } from '@general/components';
 
-import { ShadowHtml } from '../components/shadow-html'
-import { legacyHtml } from './legacy-styles-content'
+import { ShadowHtml } from '../components/shadow-html';
+import { legacyHtml } from './legacy-styles-content';
 // @ts-expect-error - Vite's ?inline suffix returns the compiled CSS as a
 // string; no type declaration exists for this virtual module shape.
-import legacyCss from '../../legacy-bt-scss/_bt.scss?inline'
+import legacyCss from '../../legacy-bt-scss/_bt.scss?inline';
 
 const materialIconsImport =
-  "@import url('https://fonts.googleapis.com/icon?family=Material+Icons');"
+  "@import url('https://fonts.googleapis.com/icon?family=Material+Icons');";
 
 export default function LegacyStylesPage() {
   return (
@@ -794,15 +798,14 @@ export default function LegacyStylesPage() {
           Legacy Styles
         </h1>
         <p className="mt-3 max-w-xl text-[var(--sea-ink-soft)]">
-          Rendered from the legacy BT-Design-System SCSS, compiled and
-          isolated in a Shadow DOM so its resets can&apos;t affect the rest
-          of this site.
+          Rendered from the legacy BT-Design-System SCSS, compiled and isolated
+          in a Shadow DOM so its resets can&apos;t affect the rest of this site.
         </p>
       </div>
       <Separator />
       <ShadowHtml css={materialIconsImport + legacyCss} html={legacyHtml} />
     </main>
-  )
+  );
 }
 ```
 
@@ -840,10 +843,12 @@ EOF
 ### Task 3: Route wiring
 
 **Files:**
+
 - Modify: `tsconfig.json`
 - Create: `src/routes/ui-kit/legacy-styles.tsx`
 
 **Interfaces:**
+
 - Consumes: `LegacyStylesPage` (default export) from `@design/pages/legacy-styles-page` (Task 2's page, resolved via the new tsconfig alias this task adds).
 - Produces: the route `/ui-kit/legacy-styles`, registered in the auto-generated `src/routeTree.gen.ts`.
 
@@ -862,12 +867,12 @@ In `tsconfig.json`, in `compilerOptions.paths`, add `"@design/pages/*": ["./pack
 Create `src/routes/ui-kit/legacy-styles.tsx`:
 
 ```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import LegacyStylesPage from '@design/pages/legacy-styles-page'
+import { createFileRoute } from '@tanstack/react-router';
+import LegacyStylesPage from '@design/pages/legacy-styles-page';
 
 export const Route = createFileRoute('/ui-kit/legacy-styles')({
   component: LegacyStylesPage,
-})
+});
 ```
 
 - [ ] **Step 3: Build to regenerate the route tree**

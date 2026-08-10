@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { CheckCircleIcon } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
+import { ArrowDownIcon, CheckCircleIcon } from '@phosphor-icons/react';
 import { cn } from '../lib/utils';
 import { InternalTransitionLink } from './page-transition/internal-transition-link';
 import { Separator } from './ui/separator';
@@ -25,6 +26,11 @@ interface CaseStudySection {
   id: string;
   title: string;
   content: string;
+  className?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 interface CaseStudyDetailItem {
@@ -52,137 +58,191 @@ function CaseStudyDetail({
   className,
   ...props
 }: CaseStudyDetailProps) {
+  const { t } = useTranslation();
   return (
     <div
       data-component="case-study-detail"
-      className={cn('flex flex-col gap-16', className)}
+      // className={cn('flex flex-col gap-16', className)}
       {...props}
     >
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
-        <div className="flex flex-col gap-6">
-          <InternalTransitionLink
-            href="/case-studies"
-            className="pointer w-fit text-sm text-muted-foreground"
-          >
-            Case Studies
-          </InternalTransitionLink>
-          <h1 className="text-5xl font-bold">{caseStudy.title}</h1>
-          <div className="flex flex-col gap-3">
-            <p className="text-sm text-muted-foreground">
-              Featuring insights from:
-            </p>
-            <div className="flex items-center gap-3">
-              <img
-                src={caseStudy.contributor.avatar.src}
-                alt={caseStudy.contributor.avatar.alt}
-                className="h-10 w-10 rounded-full object-cover"
-              />
-              <div>
-                <p className="font-bold">{caseStudy.contributor.name}</p>
+      <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground">
+        <div className="max-w-[1200px] mx-auto py-20">
+          <div className="flex items-center gap-4 pb-20">
+            <InternalTransitionLink
+              href="/case-studies"
+              className="flex gap-2 pointer w-fit text-sm group ease-in-out duration-300 "
+            >
+              <span>
+                <ArrowDownIcon
+                  weight="bold"
+                  className="text-accent h-4 w-4 rotate-90 group-hover:-translate-x-2 ease-in-out duration-300"
+                />
+              </span>
+              <span className="text-white dark:text-foreground group-hover:underline">
+                {t('caseStudies.detail.backLink')}
+              </span>
+            </InternalTransitionLink>
+            <div className="flex-1 h-px bg-accent" />
+          </div>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
+            <div className="flex flex-col gap-6">
+              <h1 className="text-5xl font-bold">{caseStudy.title}</h1>
+              <div className="flex flex-col gap-3">
                 <p className="text-sm text-muted-foreground">
-                  {caseStudy.contributor.role}
+                  {t('caseStudies.detail.featuringInsightsFrom')}
                 </p>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={caseStudy.contributor.avatar.src}
+                    alt={caseStudy.contributor.avatar.alt}
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-bold">{caseStudy.contributor.name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {caseStudy.contributor.role}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="aspect-square overflow-hidden bg-muted md:aspect-auto">
-          <img
-            src={caseStudy.image.src}
-            alt={caseStudy.image.alt}
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
-
-      <Separator />
-
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
-        <div className="flex flex-col gap-4">
-          <p className="text-sm font-bold tracking-wide text-accent uppercase">
-            {caseStudy.overview.label}
-          </p>
-          <h3 className="text-lg font-bold">Overview</h3>
-          <p className="text-muted-foreground">
-            {caseStudy.overview.description}
-          </p>
-          <dl className="flex flex-col gap-3 text-sm">
-            <div>
-              <dt className="font-bold">Sector</dt>
-              <dd className="text-muted-foreground">
-                {caseStudy.overview.sector}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-bold">Team size</dt>
-              <dd className="text-muted-foreground">
-                {caseStudy.overview.teamSize}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-bold">Location</dt>
-              <dd className="text-muted-foreground">
-                {caseStudy.overview.location}
-              </dd>
-            </div>
-          </dl>
-        </div>
-        <div className="flex flex-col gap-4">
-          <h3 className="text-lg font-bold">Problem</h3>
-          <p className="text-muted-foreground">{caseStudy.problem}</p>
-        </div>
-        <div className="flex flex-col gap-4">
-          <h3 className="text-lg font-bold">Approach</h3>
-          <p className="text-muted-foreground">{caseStudy.approach}</p>
-        </div>
-        <div className="flex flex-col gap-4">
-          <h3 className="text-sm font-bold tracking-wide text-muted-foreground uppercase">
-            On this page
-          </h3>
-          <ul className="flex flex-col gap-2">
-            {caseStudy.sections.map((section) => (
-              <li key={section.id}>
-                <a href={`#${section.id}`} className="pointer text-accent">
-                  {section.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <Separator />
-
-      <div className="flex flex-col gap-6">
-        <h3 className="text-2xl font-bold">Outcomes</h3>
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {caseStudy.outcomes.map((outcome) => (
-            <li key={outcome} className="flex items-start gap-3">
-              <CheckCircleIcon
-                weight="fill"
-                className="mt-1 h-5 w-5 shrink-0 text-accent"
+            <div className="aspect-square overflow-hidden bg-muted md:aspect-auto">
+              <img
+                src={caseStudy.image.src}
+                alt={caseStudy.image.alt}
+                className="h-full w-full object-cover"
               />
-              <span>{outcome}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <Separator />
-
-      <div className="flex flex-col gap-16">
-        {caseStudy.sections.map((section) => (
-          <div
-            key={section.id}
-            id={section.id}
-            className="flex flex-col gap-4 scroll-mt-24"
-          >
-            <h3 className="text-2xl font-bold">{section.title}</h3>
-            <p className="max-w-3xl text-lg text-muted-foreground">
-              {section.content}
-            </p>
+            </div>
           </div>
-        ))}
+        </div>
+      </header>
+
+      <div className="max-w-[1200px] mx-auto py-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+          <div className="flex flex-col gap-4 stick top-0">
+            <p className="text-sm font-bold tracking-wide text-accent uppercase">
+              {caseStudy.overview.label}
+            </p>
+            <h3 className="text-lg font-bold">
+              {t('caseStudies.detail.overviewHeading')}
+            </h3>
+            <p className="text-muted-foreground">
+              {caseStudy.overview.description}
+            </p>
+            <dl className="flex flex-col gap-3 text-sm">
+              <div>
+                <dt className="font-bold">
+                  {t('caseStudies.detail.sectorLabel')}
+                </dt>
+                <dd className="text-muted-foreground">
+                  {caseStudy.overview.sector}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-bold">
+                  {t('caseStudies.detail.teamSizeLabel')}
+                </dt>
+                <dd className="text-muted-foreground">
+                  {caseStudy.overview.teamSize}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-bold">
+                  {t('caseStudies.detail.locationLabel')}
+                </dt>
+                <dd className="text-muted-foreground">
+                  {caseStudy.overview.location}
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div className="col-span-2 flex flex-col gap-6">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="flex flex-col gap-4">
+                <h3 className="text-lg font-bold">
+                  {t('caseStudies.detail.problemHeading')}
+                </h3>
+                <p className="text-muted-foreground">{caseStudy.problem}</p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <h3 className="text-lg font-bold">
+                  {t('caseStudies.detail.approachHeading')}
+                </h3>
+                <p className="text-muted-foreground">{caseStudy.approach}</p>
+              </div>
+            </div>
+
+            <Separator />
+
+            <div className="flex flex-col gap-6">
+              <h3 className="text-2xl font-bold">
+                {t('caseStudies.detail.outcomesHeading')}
+              </h3>
+              <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {caseStudy.outcomes.map((outcome) => (
+                  <li key={outcome} className="flex items-start gap-3">
+                    <CheckCircleIcon
+                      weight="fill"
+                      className="mt-1 h-5 w-5 shrink-0 text-accent"
+                    />
+                    <span>{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Separator />
+
+            <div className="flex flex-col gap-16">
+              {caseStudy.sections.map((section) => (
+                <div
+                  key={section.id}
+                  id={section.id}
+                  className="flex flex-col gap-4 scroll-mt-24"
+                >
+
+                 {section.content && (
+                    <div>
+                      <h3 className="text-2xl font-bold">{section.title}</h3>
+                      <p className="max-w-3xl text-lg text-muted-foreground">
+                        {section.content}
+                      </p>
+                    </div>
+                  )}
+
+                  {section.image && (
+                    <figure className=" shadow-[5px_5px_5px_#ccc] overflow-hidden bg-muted -mx-[400px] min-h-[200px] ">
+                      <img
+                        src={section.image.src}
+                        alt={section.image.alt}
+                        className="h-full w-full object-cover"
+                      />
+                    </figure>
+                  
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 relative">
+            <div className="sticky -mt-4 top-0 p-4 bg-background">
+              <h3 className="text-lg font-bold tracking-wide mb-4 text-muted-foreground">
+                {t('caseStudies.detail.onThisPageHeading')}
+              </h3>
+              <ul className="flex flex-col gap-2">
+                {caseStudy.sections.map((section) => section.title !== "" && (
+                  <li key={section.id}>
+                    <a href={`#${section.id}`} className="pointer text-accent leading-0">
+                      {section.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

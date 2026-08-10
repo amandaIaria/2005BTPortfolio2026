@@ -13,7 +13,7 @@ function ModernCaseStudyDetailPage() {
   return (
     <Container
       data-component="modern-case-study-detail-page"
-      className="max-w-[1200px] mx-auto py-20"
+      className=""
     >
       <CaseStudyDetail caseStudy={caseStudy} />
     </Container>

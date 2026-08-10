@@ -16,14 +16,9 @@ Where nightmares come true.
 
 Twin Peaks wasn't my introduction to David Lynch, but it was the thing that made me love his style. Suralism and dreams are some things that I find interesting and they are fully present in this searies.
 
-
-
 Who Kill Laura Palmer?
 
-
 ### Cast
-
-
 
 ### Seasons
 

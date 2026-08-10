@@ -47,12 +47,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "CaseStudies/Creating a personal Brand and Design system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
+              "title": "Creating a personal Brand and Design system"
             }
           }
         ],
@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Shrines/Stargate.md",
+                "file": "CaseStudies/Creating a personal Brand and Design system.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Stargate"
+              "title": "Creating a personal Brand and Design system"
             }
           }
         ]
@@ -155,7 +155,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
+                "file": "CaseStudies/Creating a personal Brand and Design system.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "CaseStudies/Creating a personal Brand and Design system.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -217,7 +217,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "CaseStudies/Creating a personal Brand and Design system.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -237,7 +237,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -257,6 +257,11 @@
   },
   "active": "5d7632f646aeb066",
   "lastOpenFiles": [
+    "Pasted image 20260810002934.png",
+    "ds1.png",
+    "Shrines/Stargate.md",
+    "CaseStudies/Creating a personal Brand and Design system.md",
+    "Welcome.md",
     "README.md",
     "Ideas.canvas",
     "Shrines/Links.canvas",
@@ -268,8 +273,6 @@
     "CaseStudies/A hypothetical redesign and audit.md",
     "Experience",
     "About",
-    "Shrines/Stargate.md",
-    "Welcome.md",
     "Shrines/_Shrines.md",
     "Shrines/Forever Knight.md",
     "Projects/Projects.md",
@@ -283,7 +286,6 @@
     "Shrines",
     "Projects",
     "CaseStudies/Digging into Game Development.md",
-    "CaseStudies/Creating a personal Brand and Design system.md",
     "CaseStudies"
   ]
 }

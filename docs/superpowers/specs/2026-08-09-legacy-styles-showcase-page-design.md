@@ -41,25 +41,27 @@ The legacy SCSS ships its own global resets (`_generic/_generic.scss`, `_element
 **New file:** `packages/design-system/src/components/shadow-html.tsx`
 
 ```tsx
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 type ShadowHtmlProps = {
-  css: string
-  html: string
-  className?: string
-}
+  css: string;
+  html: string;
+  className?: string;
+};
 
 export function ShadowHtml({ css, html, className }: ShadowHtmlProps) {
-  const hostRef = useRef<HTMLDivElement>(null)
+  const hostRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const host = hostRef.current
-    if (!host) return
-    const root = host.shadowRoot ?? host.attachShadow({ mode: 'open' })
-    root.innerHTML = `<style>${css}</style>${html}`
-  }, [css, html])
+    const host = hostRef.current;
+    if (!host) return;
+    const root = host.shadowRoot ?? host.attachShadow({ mode: 'open' });
+    root.innerHTML = `<style>${css}</style>${html}`;
+  }, [css, html]);
 
-  return <div data-component="shadow-html" ref={hostRef} className={className} />
+  return (
+    <div data-component="shadow-html" ref={hostRef} className={className} />
+  );
 }
 ```
 
@@ -70,7 +72,7 @@ Generic and reusable — not specific to this one page. `attachShadow` is idempo
 Vite's `?inline` import suffix returns compiled CSS as a string instead of auto-injecting it into `<head>` — exactly what a shadow-root `<style>` tag needs:
 
 ```tsx
-import legacyCss from '../../legacy-bt-scss/_bt.scss?inline'
+import legacyCss from '../../legacy-bt-scss/_bt.scss?inline';
 ```
 
 This is a relative import inside `packages/design-system` itself, so no package.json `exports` entry for `legacy-bt-scss` is needed (only cross-package imports need an exports entry).
@@ -97,12 +99,12 @@ Shell mirrors `UiKitPage`'s header treatment: `TempNav`, kicker label ("Design S
 **New file:** `src/routes/ui-kit/legacy-styles.tsx` (same shape as `src/routes/ui-kit/slider.tsx`):
 
 ```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import LegacyStylesPage from '@design/pages/legacy-styles-page'
+import { createFileRoute } from '@tanstack/react-router';
+import LegacyStylesPage from '@design/pages/legacy-styles-page';
 
 export const Route = createFileRoute('/ui-kit/legacy-styles')({
   component: LegacyStylesPage,
-})
+});
 ```
 
 **Modify** root `tsconfig.json`: add `"@design/pages/*": ["./packages/design-system/src/pages/*"]` to `compilerOptions.paths`, matching the existing `@general/pages/*` entry exactly. This repo resolves package subpath imports via tsconfig `paths` + the `vite-tsconfig-paths` plugin (already a root devDependency), not bare package.json `exports` lookups — the `exports` entry from the Package Additions section above matches sibling-package shape for consistency but isn't what actually resolves the import at build/type-check time.

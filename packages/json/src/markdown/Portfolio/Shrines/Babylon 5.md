@@ -14,26 +14,25 @@ The last of the Babylon stations. Five years in the making.
 
 ## Body
 
-Babylon 5 is a Scifi show that came out in the mid 90s and was create by [JMS]. This was a show that had had strong anti-facist thoughts, some ideas did need to be thought out more, but it added something to my kid brain. 
+Babylon 5 is a Scifi show that came out in the mid 90s and was create by [JMS]. This was a show that had had strong anti-facist thoughts, some ideas did need to be thought out more, but it added something to my kid brain.
 
-Not to long in the future, humanity is among the stars. In their "Last, Best, Hope," a station called Babylon 5 gathers leaders from across the galaxy to stop war and conflict.  ST: DS9 was often thought of as a rip off of B5, maybe the first season was. But by the time DS9 really kicked off with their own stories the two were very different. Both of them dealt with stories about facism, but each took their own spin.
+Not to long in the future, humanity is among the stars. In their "Last, Best, Hope," a station called Babylon 5 gathers leaders from across the galaxy to stop war and conflict. ST: DS9 was often thought of as a rip off of B5, maybe the first season was. But by the time DS9 really kicked off with their own stories the two were very different. Both of them dealt with stories about facism, but each took their own spin.
 
 Babylon 5 will always be relavant. There are some ideas that could use updating but the story is timeless.
 
 ### Cast (some of them)
 
-__Commander Sinclair__ was the first commander and ambassador to the station. He was a survivor at the "battle of the line" in the Mimbari war, which the Mimbari has taken an interest in him. We don't know why, but the answer will change him forever.
+**Commander Sinclair** was the first commander and ambassador to the station. He was a survivor at the "battle of the line" in the Mimbari war, which the Mimbari has taken an interest in him. We don't know why, but the answer will change him forever.
 
-__Captian Sheridian__ The second station commander we will have for the rest of the show. 
+**Captian Sheridian** The second station commander we will have for the rest of the show.
 
-__Lt. Commander Ivonava__ Second of command of the station, and one of my favorite characters. She's queer, tough, and god. IYKYK
+**Lt. Commander Ivonava** Second of command of the station, and one of my favorite characters. She's queer, tough, and god. IYKYK
 
-__Ambasador G'Kar__ The Narn ambasador and spiritual leader. 
+**Ambasador G'Kar** The Narn ambasador and spiritual leader.
 
-__Ambassador Londo__ The Centari ambassador who becomes a key person in the shadow war.
+**Ambassador Londo** The Centari ambassador who becomes a key person in the shadow war.
 
-__Ambassador Delen__ The Mimbari ambassador who also becomes a key person in the shadow war.
-
+**Ambassador Delen** The Mimbari ambassador who also becomes a key person in the shadow war.
 
 ### Seasons
 
@@ -53,14 +52,10 @@ Sheridan and Delenn establish a "conspiracy of light" to fight the influence of 
 
 #### Season 4: No Surrender, No Retreat (1996–1997)
 
-Sheridan is rescued from Z'ha'dum by the mysterious Lorien. With the Shadows in retreat, the Vorlons begin destroying any planet allied with or influenced by the Shadows. Mollari overthrows the mad emperor Cartagia with the aid of G'Kar in exchange for the liberation of the Narn from Centauri rule. Mollari betrays the Shadows in order to save the Centauri homeworld from the Vorlons. Sheridan realizes the Vorlons and Shadows have used the younger races in a [proxy war](https://en.wikipedia.org/wiki/Proxy_war "Proxy war"), and convinces both sides to permanently end their conflict and to leave the younger races alone in peace. Sheridan next refocuses on returning democracy to Earth. He forges a new Interstellar Alliance along with the Minbari, Centauri, and Narn governments. With their help, Sheridan is able to win the Earth civil war and forces President Clark out of office. Sheridan is forced to resign from the Earth military, but is named president of the Interstellar Alliance.
+Sheridan is rescued from Z'ha'dum by the mysterious Lorien. With the Shadows in retreat, the Vorlons begin destroying any planet allied with or influenced by the Shadows. Mollari overthrows the mad emperor Cartagia with the aid of G'Kar in exchange for the liberation of the Narn from Centauri rule. Mollari betrays the Shadows in order to save the Centauri homeworld from the Vorlons. Sheridan realizes the Vorlons and Shadows have used the younger races in a [proxy war](https://en.wikipedia.org/wiki/Proxy_war 'Proxy war'), and convinces both sides to permanently end their conflict and to leave the younger races alone in peace. Sheridan next refocuses on returning democracy to Earth. He forges a new Interstellar Alliance along with the Minbari, Centauri, and Narn governments. With their help, Sheridan is able to win the Earth civil war and forces President Clark out of office. Sheridan is forced to resign from the Earth military, but is named president of the Interstellar Alliance.
 
 #### Season 5: The Wheel of Fire (1998)
 
 An ex-wife of Sheridan's, Elizabeth Lochley, is assigned to command the station. A group of rogue human telepaths take sanctuary on the station, seeking Sheridan's aid to escape the control of Psi Corps, the autocratic Earth agency that oversees telepaths. The Interstellar Alliance refuses to grant them a planet of their own, and they are eventually expelled from the station. Meanwhile, the Drakh, former supporters of the Shadows, seek revenge for the Shadows' defeat. They infiltrate the Centauri government and orchestrate attacks against other Alliance members. Mollari attempts to purge the alien manipulation of his government but is too late. After a devastating attack by Alliance forces on Centauri Prime, Mollari is installed as emperor, but under Drakh control. He then withdraws the Centauri from the Interstellar Alliance. Twenty years later, Sheridan has a last reunion with his friends before leaving to join Lorien and the older races "beyond the rim".
 
 ## Links and other fan sites
-
-
-
-

@@ -25,7 +25,9 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
     });
     return obj;
   }, [shrine.content]);
-  const stickyNavClickHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const stickyNavClickHandler = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
     event.preventDefault();
     const target = event.currentTarget as HTMLElement;
     const id = target.getAttribute('href')?.substring(1);
@@ -33,8 +35,7 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
-    
-  }
+  };
 
   React.useEffect(() => {
     if (linksObj.length === 0) return;
@@ -59,11 +60,7 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   }, [linksObj]);
 
   return (
-    <div
-      data-component="shrine-detail"
-      className={cn( className)}
-      {...props}
-    >
+    <div data-component="shrine-detail" className={cn(className)} {...props}>
       <header className="bg-black  dark:bg-(--surface) pt-20 relative block h-[600px] mb-50">
         <div className="flex flex-col gap-10  absolute inset-x-0 bottom-0 top-[60px]">
           <div className="max-w-300 mx-auto w-full grid gap-10">
@@ -72,8 +69,15 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                 href="/shrines"
                 className="flex gap-2 pointer w-fit text-sm group ease-in-out duration-300 "
               >
-                <span><ArrowDownIcon weight='bold' className="text-accent h-4 w-4 rotate-90 group-hover:-translate-x-2 ease-in-out duration-300" /></span>
-                <span className="text-white dark:text-foreground group-hover:underline">{t('shrines.detail.backLink')}</span>
+                <span>
+                  <ArrowDownIcon
+                    weight="bold"
+                    className="text-accent h-4 w-4 rotate-90 group-hover:-translate-x-2 ease-in-out duration-300"
+                  />
+                </span>
+                <span className="text-white dark:text-foreground group-hover:underline">
+                  {t('shrines.detail.backLink')}
+                </span>
               </InternalTransitionLink>
               <div className="flex-1 h-px bg-accent" />
             </div>
@@ -116,14 +120,19 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                     key={`${copy.slug}__${blockIndex}_${copyIndex}`}
                   >
                     {copy.title && (
-                      <h2 id={copy.slug} className="max-w-200 w-full mx-auto text-foreground">
+                      <h2
+                        id={copy.slug}
+                        className="max-w-200 w-full mx-auto text-foreground"
+                      >
                         {copy.title}
                       </h2>
                     )}
                     {copy.value && (
-                      <p className="max-w-200 w-full mx-auto text-foreground">{copy.value}</p>
+                      <p className="max-w-200 w-full mx-auto text-foreground">
+                        {copy.value}
+                      </p>
                     )}
-                    {image && image.src !== "" && (
+                    {image && image.src !== '' && (
                       <figure className="h-50 w-full overflow-hidden bg-(--surface)">
                         <img
                           src={image.src}
@@ -137,7 +146,10 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
               }),
             )}
           </div>
-          <aside className="flex flex-1 p-8 flex-col gap-6 border-t border-(--surface-strong) pt-0 pr-0" ref={stickyNavRef}>
+          <aside
+            className="flex flex-1 p-8 flex-col gap-6 border-t border-(--surface-strong) pt-0 pr-0"
+            ref={stickyNavRef}
+          >
             <nav className="inner-nav sticky top-20">
               <div className="border-b border-b-accent pb-2 mb-4 w-full">
                 <span className="text-lg font-bold">On this page</span>
@@ -153,8 +165,15 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                       )}
                       onClick={stickyNavClickHandler}
                     >
-                      <span className="text-transparent [.active-id_&]:text-foreground font-bold" aria-hidden="true">|</span>
-                      <span className="text-accent group-hover:underline">{link.title}</span>
+                      <span
+                        className="text-transparent [.active-id_&]:text-foreground font-bold"
+                        aria-hidden="true"
+                      >
+                        |
+                      </span>
+                      <span className="text-accent group-hover:underline">
+                        {link.title}
+                      </span>
                     </a>
                   </li>
                 ))}
