@@ -1,27 +1,28 @@
 [
+
   {
-    "title": "On the Balcony",
+    "title": "Evil Sam",
     "image": {
-      "src": "/art/3_ON_THE_BALCONY-ip.png",
-      "alt": "Line art sketch of three punk characters leaning against a balcony railing",
+      "src": "/img/art/evil%20sam%20v2.png",
+      "alt": "Vampire woman with blood on her mouth gripping a man by the throat",
       "height": 10000,
       "width": 10000
     }
   },
-  {
-    "title": "Alex",
+    {
+    "title": "Portrait of Evil Jamie",
     "image": {
-      "src": "/art/alex%202.png",
-      "alt": "Tattooed punk figure sitting on a bed surrounded by candles and open spellbooks, city skyline through the window",
-      "height": 5000,
-      "width": 5000
+      "src": "/img/art/portraite_evil_jamie.png",
+      "alt": "Line art close-up portrait of a bandage-wrapped figure with clawed hands forming horns above their head",
+      "height": 10000,
+      "width": 10000
     }
   },
-  {
-    "title": "Evil Sam",
+    {
+    "title": "Jack Update",
     "image": {
-      "src": "/art/evil%20sam%20v2.png",
-      "alt": "Vampire woman with blood on her mouth gripping a man by the throat",
+      "src": "/img/art/jackupdate.png",
+      "alt": "Blood-covered figure standing arms outstretched between hieroglyph-patterned doors, wearing a bloodied bandana and knife",
       "height": 10000,
       "width": 10000
     }
@@ -29,34 +30,18 @@
   {
     "title": "Character Reference Sheet",
     "image": {
-      "src": "/art/jamiegreenv1.png",
+      "src": "/img/art/jamiegreenv1.png",
       "alt": "Character reference sheet of three figures with handwritten notes on hair color, eye color, and species or alignment",
       "height": 5000,
       "width": 5000
     }
   },
-  {
-    "title": "Pencil Finish Evil Sam",
-    "image": {
-      "src": "/art/pencilfinishevilsam.png",
-      "alt": "Pencil drawing of a figure with a bloody clawed hand raised near their mouth, wearing tactical clothing",
-      "height": 5000,
-      "width": 2000
-    }
-  },
-  {
-    "title": "Jack Update",
-    "image": {
-      "src": "/art/jackupdate.png",
-      "alt": "Blood-covered figure standing arms outstretched between hieroglyph-patterned doors, wearing a bloodied bandana and knife",
-      "height": 10000,
-      "width": 10000
-    }
-  },
+
+
   {
     "title": "Self Portrait",
     "image": {
-      "src": "/art/self.png",
+      "src": "/img/art/self.png",
       "alt": "Sepia-toned self-portrait with deer antlers, glasses, a plaid shirt, and a tattoo sleeve",
       "height": 7528,
       "width": 3785
@@ -65,7 +50,7 @@
   {
     "title": "Jamie Update",
     "image": {
-      "src": "/art/jamieupdate.png",
+      "src": "/img/art/jamieupdate.png",
       "alt": "Tattooed punk figure sitting on a windowsill at night stitching their own skin, neon sign and candle in the background",
       "height": 10000,
       "width": 10000
@@ -74,7 +59,7 @@
   {
     "title": "Two Vampires",
     "image": {
-      "src": "/art/twovamps2v2.png",
+      "src": "/img/art/twovamps2v2.png",
       "alt": "Magenta-toned illustration of two figures embracing, reflected in a mirror",
       "height": 5000,
       "width": 5000
@@ -83,7 +68,7 @@
   {
     "title": "Jack",
     "image": {
-      "src": "/art/jack11-finished.png",
+      "src": "/img/art/jack11-finished.png",
       "alt": "Blood-splattered figure standing arms outstretched in a doorway with floral wallpaper, bodies visible on the floor",
       "height": 5000,
       "width": 5000
@@ -92,19 +77,38 @@
   {
     "title": "Three Sitting",
     "image": {
-      "src": "/art/threesitting.png",
+      "src": "/img/art/threesitting.png",
       "alt": "Pink-toned illustration of three characters gathered on and around an armchair",
       "height": 5000,
       "width": 5000
     }
   },
-  {
-    "title": "Portrait of Evil Jamie",
+
+    {
+    "title": "On the Balcony",
     "image": {
-      "src": "/art/portraite_evil_jamie.png",
-      "alt": "Line art close-up portrait of a bandage-wrapped figure with clawed hands forming horns above their head",
+      "src": "/img/art/3_ON_THE_BALCONY-ip.png",
+      "alt": "Line art sketch of three punk characters leaning against a balcony railing",
       "height": 10000,
       "width": 10000
+    }
+  },
+    {
+    "title": "Pencil Finish Evil Sam",
+    "image": {
+      "src": "/img/art/pencilfinishevilsam.png",
+      "alt": "Pencil drawing of a figure with a bloody clawed hand raised near their mouth, wearing tactical clothing",
+      "height": 5000,
+      "width": 2000
+    }
+  },
+  {
+    "title": "Jamie",
+    "image": {
+      "src": "/img/art/alex%202.png",
+      "alt": "Tattooed punk figure sitting on a bed surrounded by candles and open spellbooks, city skyline through the window",
+      "height": 5000,
+      "width": 5000
     }
   }
 ]
