@@ -1,14 +1,6 @@
 import { forwardRef } from 'react';
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
 import { useTransitionLinkClick } from './use-transition-link-click';
-
-interface ExternalTransitionLinkProps extends Omit<
-  AnchorHTMLAttributes<HTMLAnchorElement>,
-  'href' | 'target'
-> {
-  href: string;
-  children?: ReactNode;
-}
+import type { ExternalTransitionLinkProps } from '@general-purpose/types';
 
 export const ExternalTransitionLink = forwardRef<
   HTMLAnchorElement,

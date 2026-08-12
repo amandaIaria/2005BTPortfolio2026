@@ -6,76 +6,21 @@ import {
   motion,
 } from 'motion/react';
 import type { Variants, Transition } from 'motion/react';
-
-interface SliderSlideImage {
-  src: string;
-  alt: string;
-}
-
-interface SliderSlideLink {
-  url: string;
-  copy?: string;
-}
-
-interface SliderSlide {
-  left: { image: SliderSlideImage };
-  right: {
-    title: string;
-    description: string;
-    list: string[];
-    link: SliderSlideLink;
-  };
-}
-
-interface SliderProps extends Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  'children'
-> {
-  slides: SliderSlide[];
-  initialIndex?: number;
-  loop?: boolean;
-  ariaLabel?: string;
-  onSlideChange?: (index: number) => void;
-}
-
-type SliderDirection = 1 | -1;
-
-interface UseSliderOptions {
-  count: number;
-  initialIndex?: number;
-  loop?: boolean;
-  onChange?: (index: number) => void;
-}
-
-interface UseSliderResult {
-  index: number;
-  direction: SliderDirection;
-  isTransitioning: boolean;
-  next: () => void;
-  prev: () => void;
-  goTo: (targetIndex: number) => void;
-  onTransitionSettled: () => void;
-  isFirst: boolean;
-  isLast: boolean;
-}
-
-interface State {
-  index: number;
-  direction: SliderDirection;
-  isTransitioning: boolean;
-}
-
-type Action =
-  | { type: 'NEXT' }
-  | { type: 'PREV' }
-  | { type: 'GOTO'; target: number }
-  | { type: 'SETTLE' };
+import type {
+  CodepenSliderSlideProps,
+  CodepenSliderProps,
+  CodepenSliderDirectionProps,
+  CodepenUseSliderOptionsProps,
+  CodepenUseSliderResultProps,
+  CodepenSliderStateProps,
+  CodepenSliderActionProps,
+} from '@general-purpose/types';
 
 function reducer(
-  state: State,
-  action: Action,
-  options: UseSliderOptions,
-): State {
+  state: CodepenSliderStateProps,
+  action: CodepenSliderActionProps,
+  options: CodepenUseSliderOptionsProps,
+): CodepenSliderStateProps {
   switch (action.type) {
     case 'NEXT': {
       const nextIndex = state.index + 1;
@@ -113,14 +58,16 @@ function reducer(
   }
 }
 
-function useSlider(options: UseSliderOptions): UseSliderResult {
+function useSlider(
+  options: CodepenUseSliderOptionsProps,
+): CodepenUseSliderResultProps {
   const { count, initialIndex = 0, loop = true, onChange } = options;
 
   const [state, dispatch] = React.useReducer(
     (prevState, action) => reducer(prevState, action, { count, loop }),
     {
       index: initialIndex,
-      direction: 1 as SliderDirection,
+      direction: 1 as CodepenSliderDirectionProps,
       isTransitioning: false,
     },
   );
@@ -170,7 +117,7 @@ function SlidePaneImage({
   variants,
   transition,
 }: {
-  slide: SliderSlide;
+  slide: CodepenSliderSlideProps;
   isTransitioning?: boolean;
   direction: 1 | -1;
   variants: Variants;
@@ -204,7 +151,7 @@ function SlidePaneRight({
   variants,
   transition,
 }: {
-  slide: SliderSlide;
+  slide: CodepenSliderSlideProps;
   isTransitioning?: boolean;
   direction: 1 | -1;
   variants: Variants;
@@ -260,7 +207,7 @@ function SlideMobileImage({
   variants,
   transition,
 }: {
-  slide: SliderSlide;
+  slide: CodepenSliderSlideProps;
   isTransitioning?: boolean;
   direction: 1 | -1;
   variants: Variants;
@@ -286,7 +233,7 @@ function SlideMobileImage({
   );
 }
 
-const CodepenSlider = forwardRef<HTMLDivElement, SliderProps>(
+const CodepenSlider = forwardRef<HTMLDivElement, CodepenSliderProps>(
   (
     {
       slides,
@@ -559,4 +506,4 @@ const CodepenSlider = forwardRef<HTMLDivElement, SliderProps>(
 CodepenSlider.displayName = 'CodepenSlider';
 
 export { CodepenSlider };
-export type { SliderSlide, SliderProps };
+export type { CodepenSliderSlideProps, CodepenSliderProps };

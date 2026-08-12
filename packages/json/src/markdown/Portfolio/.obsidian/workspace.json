@@ -9,36 +9,15 @@
         "dimension": 65.72052401746726,
         "children": [
           {
-            "id": "3d32bb184370f053",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Ideas.canvas",
-                "viewState": {
-                  "x": 36.5,
-                  "y": -90,
-                  "zoom": -0.05343925896146044
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-layout-dashboard",
-              "title": "Ideas"
-            }
-          },
-          {
             "id": "8aa1c3f928900901",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Shrines/Twin Peaks.md",
-                "mode": "source",
-                "source": false
+                "file": "ds1.png"
               },
-              "icon": "lucide-file",
-              "title": "Twin Peaks"
+              "icon": "lucide-image",
+              "title": "ds1"
             }
           },
           {
@@ -53,8 +32,7 @@
               "title": "ds1"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "eda889cc1ae083a1",
@@ -253,25 +231,27 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "5d7632f646aeb066",
+  "active": "8aa1c3f928900901",
   "lastOpenFiles": [
     "Ideas.canvas",
+    "ds1.png",
+    "Shrines/_Shrines.md",
+    "Pasted image 20260811100420.png",
+    "Shrines/Twin Peaks.md",
+    "Pasted image 20260811100120.png",
     "CaseStudies/Creating a personal Brand and Design system.md",
     "Pasted image 20260810002934.png",
-    "ds1.png",
     "Shrines/Stargate.md",
     "Welcome.md",
     "README.md",
     "Shrines/Links.canvas",
     "Shrines/Sanctuary.md",
     "Shrines/Babylon 5.md",
-    "Shrines/Twin Peaks.md",
     "Untitled.base",
     "CaseStudies/_CaseStudies.md",
     "CaseStudies/A hypothetical redesign and audit.md",
     "Experience",
     "About",
-    "Shrines/_Shrines.md",
     "Shrines/Forever Knight.md",
     "Projects/Projects.md",
     "Blog/_.md",

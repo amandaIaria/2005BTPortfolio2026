@@ -62,43 +62,47 @@
       },
       "content": [
         {
-          "copy": [
-            {
-              "copy": "In 1994 the movie Stargate came out. I was a kid who was still obsessed with anything scifi and Egypt. What a perfect storm! Then in 97 it was announced that a TV show would air, and boi it did. Set as a sequal to the movie a new team is started to retrive Daniel, who stayed behind after the original mission.\n\nThis was a show that I grew up with and still watch to this day. Even though the Egypt and Ancient world inspirations were soon pushed away for the Ancients, it was still a show I devoured.",
-              "title": "Overview",
-              "id": "overview"
-            },
-            {
-              "copy": "Jack O'Neill: Leader of SG1. Specializes in Black ops and explosives.\n\nSam Carter: Second in command. Ph. D. in astrophysics.\n\nTeal'c: A jaffa who was the first Prime of Apophis and now fights with SG1.\n\nDaniel Jackson: An archeologist who traveled with the original team to Abydos. Now he searches for his wife.\n\nHammond: The head of the SGC.\n\nJanet Fraiser: Head surgeon at the SGC.",
-              "title": "Cast",
-              "id": "cast"
-            },
-            {
-              "copy": "The pilot episode (\"Children of the Gods\"), set one year after the events of the original feature film, introduces the Goa'uld System Lord Apophis as the main antagonist when he attacks Earth's mothballed SGC military base through the Stargate and kidnaps an airman. The SGC is brought back into action when the Stargate is revealed to be part of an interplanetary network connecting countless planets. SG teams are created to help defend Earth against the Goa'uld, who have interstellar pyramid warships and vast armies of Jaffa at their disposal. Earth's flagship team SG-1, which includes Apophis's defected First Prime Teal'c, initiates several alliances with other cultures in the galaxy, such as the Tok'ra, the Tollan, the Nox, the Asgard and remnants of the powerful Ancients. Another alien threat arises in the Season 3 finale (\"Nemesis\") in the form of sentient machines called Replicators. Meanwhile, rogue agents of a shadowy intelligence agency on Earth, the NID, repeatedly attempt to take control of the Stargate and other alien technology. Despite Apophis's death in the Season 5 premiere (\"Enemies\"), the Goa'uld Empire remains a major foe in Stargate SG-1 until the end of Season 8.",
-              "title": "Apophis Arc",
-              "id": "apophis-arc"
-            },
-            {
-              "copy": "After Apophis's defeat, the half-Ascended Goa'uld System Lord Anubis assumes the role of the primary antagonist of the show. This new villain possesses much of the knowledge of the Ancients and their technology. While Earth builds its first interstellar spaceship (the Prometheus) in seasons 6 and 7, Anubis creates an army of almost invincible Kull Warriors and wipes out or subordinates most of his adversaries amongst the System Lords. In the Season 7 finale (\"Lost City\"), SG-1 discovers a powerful weapon in an Ancient outpost in Antarctica that annihilates Anubis's entire fleet and also sets the stage for the spin-off series Stargate Atlantis. Ba'al subsumes much of Anubis's power in Season 8, while Anubis, who survived the destruction of his fleet in a disembodied form, quietly begins to re-assert his influence. Human-form Replicators begin to conquer the System Lords, but SG-1 finds and adjusts an Ancient weapon to destroy all Replicators throughout the galaxy. Near the end of Season 8 (\"Threads\"), it is revealed that the benevolent Ascended being Oma Desala is responsible for Anubis's original ascension. When she engages Anubis in an eternal stalemated battle on the Ascended plane, the Replicators and most System Lords have already been annihilated and the Jaffa win their freedom from Goa'uld rule.",
-              "title": "Anubis Arc",
-              "id": "anubis-arc"
-            },
-            {
-              "copy": "The original SG-1 team disbands after the events of Season 8 but slowly reunites under new team leader Lt Col. Cameron Mitchell after the SGC inadvertently draws the attention of the Ori to the existence of sentient life in the Milky Way; the Ori are revealed to be a faction of ascended Ancients residing in another galaxy that are diametrically opposed to the Ancients' belief in strict noninterference in the lower planes of existence, sapping the energy from untold billions of \"lower beings\" by means of their worship in a religion called Origin. While the Ori send enhanced human beings named Priors to the Milky Way to convert the galaxy to Origin, Ba'al and some minor Goa'uld infiltrate Earth through The Trust to rebuild their power. At the end of Season 9 (\"Camelot\"), the Ori begin an evangelistic crusade with their warships and effortlessly wipe out the combined fleet of Earth and its allies. The leader of the Ori, Adria, is introduced in the premiere of Season 10. SG-1 searches for the Sangraal, an Ancient weapon that might defeat the Ori, while Ba'al and his clones attempt to find the weapon for their own purposes. With the help of the powerful Ancient Merlin, SG-1 finds the construction plans of the Sangraal and sends a working version to the Ori galaxy. Shortly thereafter, Adria ascends. The direct-to-DVD film Stargate: The Ark of Truth ends the Ori Arc. The only influential Goa'uld in the last two seasons of Stargate SG-1 is the System Lord Ba'al, who is defeated in the direct-to-DVD film Stargate: Continuum.",
-              "title": "Ori Arc",
-              "id": "ori-arc"
-            }
-          ],
-          "image": [
-            {
-              "src": "/img/shrines/stargate/sg1_202_055.JPG",
-              "alt": "Still from the show: gate room, chevrons lit"
-            },
-            {
-              "src": "/img/shrines/stargate/sg1_202_057.JPG",
-              "alt": "Still from the show: team gearing up"
-            }
-          ]
+          "copy": "In 1994 the movie Stargate came out. I was a kid who was still obsessed with anything scifi and Egypt. What a perfect storm! Then in 97 it was announced that a TV show would air, and boi it did. Set as a sequal to the movie a new team is started to retrive Daniel, who stayed behind after the original mission.\n\nThis was a show that I grew up with and still watch to this day. Even though the Egypt and Ancient world inspirations were soon pushed away for the Ancients, it was still a show I devoured.",
+          "title": "Overview",
+          "id": "overview"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "overview-2",
+          "image": {
+            "src": "/img/shrines/stargate/sg1_202_055.JPG",
+            "alt": "Still from the show: gate room, chevrons lit"
+          }
+        },
+        {
+          "copy": "Jack O'Neill: Leader of SG1. Specializes in Black ops and explosives.\n\nSam Carter: Second in command. Ph. D. in astrophysics.\n\nTeal'c: A jaffa who was the first Prime of Apophis and now fights with SG1.\n\nDaniel Jackson: An archeologist who traveled with the original team to Abydos. Now he searches for his wife.\n\nHammond: The head of the SGC.\n\nJanet Fraiser: Head surgeon at the SGC.",
+          "title": "Cast",
+          "id": "cast"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "cast-2",
+          "image": {
+            "src": "/img/shrines/stargate/sg1_202_057.JPG",
+            "alt": "Still from the show: team gearing up"
+          }
+        },
+        {
+          "copy": "The pilot episode (\"Children of the Gods\"), set one year after the events of the original feature film, introduces the Goa'uld System Lord Apophis as the main antagonist when he attacks Earth's mothballed SGC military base through the Stargate and kidnaps an airman. The SGC is brought back into action when the Stargate is revealed to be part of an interplanetary network connecting countless planets. SG teams are created to help defend Earth against the Goa'uld, who have interstellar pyramid warships and vast armies of Jaffa at their disposal. Earth's flagship team SG-1, which includes Apophis's defected First Prime Teal'c, initiates several alliances with other cultures in the galaxy, such as the Tok'ra, the Tollan, the Nox, the Asgard and remnants of the powerful Ancients. Another alien threat arises in the Season 3 finale (\"Nemesis\") in the form of sentient machines called Replicators. Meanwhile, rogue agents of a shadowy intelligence agency on Earth, the NID, repeatedly attempt to take control of the Stargate and other alien technology. Despite Apophis's death in the Season 5 premiere (\"Enemies\"), the Goa'uld Empire remains a major foe in Stargate SG-1 until the end of Season 8.",
+          "title": "Apophis Arc",
+          "id": "apophis-arc"
+        },
+        {
+          "copy": "After Apophis's defeat, the half-Ascended Goa'uld System Lord Anubis assumes the role of the primary antagonist of the show. This new villain possesses much of the knowledge of the Ancients and their technology. While Earth builds its first interstellar spaceship (the Prometheus) in seasons 6 and 7, Anubis creates an army of almost invincible Kull Warriors and wipes out or subordinates most of his adversaries amongst the System Lords. In the Season 7 finale (\"Lost City\"), SG-1 discovers a powerful weapon in an Ancient outpost in Antarctica that annihilates Anubis's entire fleet and also sets the stage for the spin-off series Stargate Atlantis. Ba'al subsumes much of Anubis's power in Season 8, while Anubis, who survived the destruction of his fleet in a disembodied form, quietly begins to re-assert his influence. Human-form Replicators begin to conquer the System Lords, but SG-1 finds and adjusts an Ancient weapon to destroy all Replicators throughout the galaxy. Near the end of Season 8 (\"Threads\"), it is revealed that the benevolent Ascended being Oma Desala is responsible for Anubis's original ascension. When she engages Anubis in an eternal stalemated battle on the Ascended plane, the Replicators and most System Lords have already been annihilated and the Jaffa win their freedom from Goa'uld rule.",
+          "title": "Anubis Arc",
+          "id": "anubis-arc"
+        },
+        {
+          "copy": "The original SG-1 team disbands after the events of Season 8 but slowly reunites under new team leader Lt Col. Cameron Mitchell after the SGC inadvertently draws the attention of the Ori to the existence of sentient life in the Milky Way; the Ori are revealed to be a faction of ascended Ancients residing in another galaxy that are diametrically opposed to the Ancients' belief in strict noninterference in the lower planes of existence, sapping the energy from untold billions of \"lower beings\" by means of their worship in a religion called Origin. While the Ori send enhanced human beings named Priors to the Milky Way to convert the galaxy to Origin, Ba'al and some minor Goa'uld infiltrate Earth through The Trust to rebuild their power. At the end of Season 9 (\"Camelot\"), the Ori begin an evangelistic crusade with their warships and effortlessly wipe out the combined fleet of Earth and its allies. The leader of the Ori, Adria, is introduced in the premiere of Season 10. SG-1 searches for the Sangraal, an Ancient weapon that might defeat the Ori, while Ba'al and his clones attempt to find the weapon for their own purposes. With the help of the powerful Ancient Merlin, SG-1 finds the construction plans of the Sangraal and sends a working version to the Ori galaxy. Shortly thereafter, Adria ascends. The direct-to-DVD film Stargate: The Ark of Truth ends the Ori Arc. The only influential Goa'uld in the last two seasons of Stargate SG-1 is the System Lord Ba'al, who is defeated in the direct-to-DVD film Stargate: Continuum.",
+          "title": "Ori Arc",
+          "id": "ori-arc"
         }
       ],
       "gallery": [
@@ -135,57 +139,66 @@
       },
       "content": [
         {
-          "copy": [
-            {
-              "copy": "Babylon 5 is a Scifi show that came out in the mid 90s and was create by JMS. This was a show that had had strong anti-facist thoughts, some ideas did need to be thought out more, but it added something to my kid brain.\n\nNot to long in the future, humanity is among the stars. In their \"Last, Best, Hope,\" a station called Babylon 5 gathers leaders from across the galaxy to stop war and conflict. ST: DS9 was often thought of as a rip off of B5, maybe the first season was. But by the time DS9 really kicked off with their own stories the two were very different. Both of them dealt with stories about facism, but each took their own spin.\n\nBabylon 5 will always be relavant. There are some ideas that could use updating but the story is timeless.",
-              "title": "Overview",
-              "id": "overview"
-            },
-            {
-              "copy": "Commander Sinclair was the first commander and ambassador to the station. He was a survivor at the \"battle of the line\" in the Mimbari war, which the Mimbari has taken an interest in him. We don't know why, but the answer will change him forever.\n\nCaptain Sheridan: The second station commander we will have for the rest of the show.\n\nLt. Commander Ivanova: Second of command of the station, and one of my favorite characters. She's queer, tough, and god. IYKYK\n\nAmbassador G'Kar: The Narn ambasador and spiritual leader.\n\nAmbassador Londo: The Centari ambassador who becomes a key person in the shadow war.\n\nAmbassador Delenn: The Mimbari ambassador who also becomes a key person in the shadow war.",
-              "title": "Cast",
-              "id": "cast"
-            },
-            {
-              "copy": "Commander Sinclair, a hero of the Minbari war, is troubled by his inability to remember events of the war's last day. Though supported by Minbari ambassador Delenn, who is secretly a member of the Minbari ruling Grey Council, other Minbari remain distrustful of him. The Narn ambassador G'Kar continually presses for concessions from their former overlords the Centauri Republic. Centauri ambassador Londo Mollari finds a new ally in the enigmatic Mr. Morden to strike back at the Narn. Meanwhile, xenophobic groups on Earth challenge humanity's tolerance of aliens. This tension culminates in the assassination of Earth's President Santiago, who favored such contact.",
-              "title": "Season 1: Signs and Portents (1994)",
-              "id": "season-1"
-            },
-            {
-              "copy": "Sinclair is transferred to be ambassador to Minbar, and General Hague assigns captain John Sheridan command of the station. Hague and Sheridan believe now-president Clark conspired in Santiago's death but have no proof. Clark gradually moves Earth in an isolationist direction and takes steps to install a totalitarian government. When the aging Centauri Emperor Turhan dies, Mollari and his ally Lord Refa install Turhan's unstable nephew Cartagia as emperor and force a war against the Narn. Aided by Mr. Morden's \"associates\" the Shadows, the Centauri decimate the Narn. The war ends with a planetary bombardment of the Narn homeworld, followed by the enslavement of the surviving Narns. Delenn and Vorlon ambassador Kosh request Sheridan's help to fight against their ancient foe, the Shadows.",
-              "title": "Season 2: The Coming of Shadows (1994–1995)",
-              "id": "season-2"
-            },
-            {
-              "copy": "Sheridan and Delenn establish a \"conspiracy of light\" to fight the influence of the Shadows. When Clark declares martial law, Sheridan declares Babylon 5's independence from the Earth government. Mollari realizes his deal with Mr. Morden has become dangerous but is unable to end it. As the Shadows cause conflict and chaos throughout the galaxy, Sheridan confronts Kosh and successfully convinces the Vorlons to provide military assistance against them. In retaliation for Vorlon intervention, the Shadows assassinate Kosh. Sinclair travels back in time a thousand years to aid the Minbari in the previous Shadow War, becoming the legendary Minbari religious leader Valen. Sheridan discovers vulnerabilities in the Shadow vessels and learns to predict their objectives, leading to the first major military defeat of the Shadows. Despite Kosh's warnings, Sheridan confronts the Shadows on their homeworld Z'ha'dum. He crashes a spacecraft packed with nuclear weapons into the planet, seemingly dying in the explosion.",
-              "title": "Season 3: Point of No Return (1995–1996)",
-              "id": "season-3"
-            },
-            {
-              "copy": "Sheridan is rescued from Z'ha'dum by the mysterious Lorien. With the Shadows in retreat, the Vorlons begin destroying any planet allied with or influenced by the Shadows. Mollari overthrows the mad emperor Cartagia with the aid of G'Kar in exchange for the liberation of the Narn from Centauri rule. Mollari betrays the Shadows in order to save the Centauri homeworld from the Vorlons. Sheridan realizes the Vorlons and Shadows have used the younger races in a proxy war, and convinces both sides to permanently end their conflict and to leave the younger races alone in peace. Sheridan next refocuses on returning democracy to Earth. He forges a new Interstellar Alliance along with the Minbari, Centauri, and Narn governments. With their help, Sheridan is able to win the Earth civil war and forces President Clark out of office. Sheridan is forced to resign from the Earth military, but is named president of the Interstellar Alliance.",
-              "title": "Season 4: No Surrender, No Retreat (1996–1997)",
-              "id": "season-4"
-            },
-            {
-              "copy": "An ex-wife of Sheridan's, Elizabeth Lochley, is assigned to command the station. A group of rogue human telepaths take sanctuary on the station, seeking Sheridan's aid to escape the control of Psi Corps, the autocratic Earth agency that oversees telepaths. The Interstellar Alliance refuses to grant them a planet of their own, and they are eventually expelled from the station. Meanwhile, the Drakh, former supporters of the Shadows, seek revenge for the Shadows' defeat. They infiltrate the Centauri government and orchestrate attacks against other Alliance members. Mollari attempts to purge the alien manipulation of his government but is too late. After a devastating attack by Alliance forces on Centauri Prime, Mollari is installed as emperor, but under Drakh control. He then withdraws the Centauri from the Interstellar Alliance. Twenty years later, Sheridan has a last reunion with his friends before leaving to join Lorien and the older races \"beyond the rim\".",
-              "title": "Season 5: The Wheel of Fire (1998)",
-              "id": "season-5"
-            }
-          ],
-          "image": [
-            {
-              "src": "/img/shrines/babylon5/Babylon-5-Season-2-Crew.jpg",
-              "alt": "Still from the show: station promenade"
-            },
-            {
-              "src": "/img/shrines/babylon5/babylon-5-shadow-war-3.jpg",
-              "alt": "Still from the show: the shadow war"
-            },
-            {
-              "src": "/img/shrines/babylon5/babylon-5-ship-of-tears-01.jpg",
-              "alt": "Still from the show: ship of tears"
-            }
-          ]
+          "copy": "Babylon 5 is a Scifi show that came out in the mid 90s and was create by JMS. This was a show that had had strong anti-facist thoughts, some ideas did need to be thought out more, but it added something to my kid brain.\n\nNot to long in the future, humanity is among the stars. In their \"Last, Best, Hope,\" a station called Babylon 5 gathers leaders from across the galaxy to stop war and conflict. ST: DS9 was often thought of as a rip off of B5, maybe the first season was. But by the time DS9 really kicked off with their own stories the two were very different. Both of them dealt with stories about facism, but each took their own spin.\n\nBabylon 5 will always be relavant. There are some ideas that could use updating but the story is timeless.",
+          "title": "Overview",
+          "id": "overview"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "overview-2",
+          "image": {
+            "src": "/img/shrines/babylon5/Babylon-5-Season-2-Crew.jpg",
+            "alt": "Still from the show: station promenade"
+          }
+        },
+        {
+          "copy": "Commander Sinclair was the first commander and ambassador to the station. He was a survivor at the \"battle of the line\" in the Mimbari war, which the Mimbari has taken an interest in him. We don't know why, but the answer will change him forever.\n\nCaptain Sheridan: The second station commander we will have for the rest of the show.\n\nLt. Commander Ivanova: Second of command of the station, and one of my favorite characters. She's queer, tough, and god. IYKYK\n\nAmbassador G'Kar: The Narn ambasador and spiritual leader.\n\nAmbassador Londo: The Centari ambassador who becomes a key person in the shadow war.\n\nAmbassador Delenn: The Mimbari ambassador who also becomes a key person in the shadow war.",
+          "title": "Cast",
+          "id": "cast"
+        },
+        {
+          "copy": "Commander Sinclair, a hero of the Minbari war, is troubled by his inability to remember events of the war's last day. Though supported by Minbari ambassador Delenn, who is secretly a member of the Minbari ruling Grey Council, other Minbari remain distrustful of him. The Narn ambassador G'Kar continually presses for concessions from their former overlords the Centauri Republic. Centauri ambassador Londo Mollari finds a new ally in the enigmatic Mr. Morden to strike back at the Narn. Meanwhile, xenophobic groups on Earth challenge humanity's tolerance of aliens. This tension culminates in the assassination of Earth's President Santiago, who favored such contact.",
+          "title": "Season 1: Signs and Portents (1994)",
+          "id": "season-1"
+        },
+        {
+          "copy": "Sinclair is transferred to be ambassador to Minbar, and General Hague assigns captain John Sheridan command of the station. Hague and Sheridan believe now-president Clark conspired in Santiago's death but have no proof. Clark gradually moves Earth in an isolationist direction and takes steps to install a totalitarian government. When the aging Centauri Emperor Turhan dies, Mollari and his ally Lord Refa install Turhan's unstable nephew Cartagia as emperor and force a war against the Narn. Aided by Mr. Morden's \"associates\" the Shadows, the Centauri decimate the Narn. The war ends with a planetary bombardment of the Narn homeworld, followed by the enslavement of the surviving Narns. Delenn and Vorlon ambassador Kosh request Sheridan's help to fight against their ancient foe, the Shadows.",
+          "title": "Season 2: The Coming of Shadows (1994–1995)",
+          "id": "season-2"
+        },
+        {
+          "copy": "Sheridan and Delenn establish a \"conspiracy of light\" to fight the influence of the Shadows. When Clark declares martial law, Sheridan declares Babylon 5's independence from the Earth government. Mollari realizes his deal with Mr. Morden has become dangerous but is unable to end it. As the Shadows cause conflict and chaos throughout the galaxy, Sheridan confronts Kosh and successfully convinces the Vorlons to provide military assistance against them. In retaliation for Vorlon intervention, the Shadows assassinate Kosh. Sinclair travels back in time a thousand years to aid the Minbari in the previous Shadow War, becoming the legendary Minbari religious leader Valen. Sheridan discovers vulnerabilities in the Shadow vessels and learns to predict their objectives, leading to the first major military defeat of the Shadows. Despite Kosh's warnings, Sheridan confronts the Shadows on their homeworld Z'ha'dum. He crashes a spacecraft packed with nuclear weapons into the planet, seemingly dying in the explosion.",
+          "title": "Season 3: Point of No Return (1995–1996)",
+          "id": "season-3"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "season-3-2",
+          "image": {
+            "src": "/img/shrines/babylon5/babylon-5-shadow-war-3.jpg",
+            "alt": "Still from the show: the shadow war"
+          }
+        },
+        {
+          "copy": "Sheridan is rescued from Z'ha'dum by the mysterious Lorien. With the Shadows in retreat, the Vorlons begin destroying any planet allied with or influenced by the Shadows. Mollari overthrows the mad emperor Cartagia with the aid of G'Kar in exchange for the liberation of the Narn from Centauri rule. Mollari betrays the Shadows in order to save the Centauri homeworld from the Vorlons. Sheridan realizes the Vorlons and Shadows have used the younger races in a proxy war, and convinces both sides to permanently end their conflict and to leave the younger races alone in peace. Sheridan next refocuses on returning democracy to Earth. He forges a new Interstellar Alliance along with the Minbari, Centauri, and Narn governments. With their help, Sheridan is able to win the Earth civil war and forces President Clark out of office. Sheridan is forced to resign from the Earth military, but is named president of the Interstellar Alliance.",
+          "title": "Season 4: No Surrender, No Retreat (1996–1997)",
+          "id": "season-4"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "season-4-2",
+          "image": {
+            "src": "/img/shrines/babylon5/babylon-5-ship-of-tears-01.jpg",
+            "alt": "Still from the show: ship of tears"
+          }
+        },
+        {
+          "copy": "An ex-wife of Sheridan's, Elizabeth Lochley, is assigned to command the station. A group of rogue human telepaths take sanctuary on the station, seeking Sheridan's aid to escape the control of Psi Corps, the autocratic Earth agency that oversees telepaths. The Interstellar Alliance refuses to grant them a planet of their own, and they are eventually expelled from the station. Meanwhile, the Drakh, former supporters of the Shadows, seek revenge for the Shadows' defeat. They infiltrate the Centauri government and orchestrate attacks against other Alliance members. Mollari attempts to purge the alien manipulation of his government but is too late. After a devastating attack by Alliance forces on Centauri Prime, Mollari is installed as emperor, but under Drakh control. He then withdraws the Centauri from the Interstellar Alliance. Twenty years later, Sheridan has a last reunion with his friends before leaving to join Lorien and the older races \"beyond the rim\".",
+          "title": "Season 5: The Wheel of Fire (1998)",
+          "id": "season-5"
         }
       ],
       "gallery": [
@@ -222,48 +235,52 @@
       },
       "content": [
         {
-          "copy": [
-            {
-              "copy": "Forever Knight is supernatural police procedural that was one of the key reasons why I became a vampire media fan. It started as a made for TV movie in the late 80s staring Rick Springfield and was going to be a pilot for a tv series. Well, that didn't happen. When it was finally picked up, the city change, 99% of the caste changed, and well the atmosphere changed.\n\nI caught this show on Scifi (back when it was good) and watched it on monday's not knowing that it was on every weekday. It's 1997 middle school me is still trying to figure out who I am and my favorite show is on reruns on scifi. I kind of wonder what my parents thought at the time, but who cares. It's dark, moody, and set up some wish full fillment for me.\n\nNick is a french 800 year old vampire looking for redemption. He does this by becomeing a cop and \"hunting\" down evil people. Too bad no one told him what cops where. You'd think someone who is on the edge of humanity would have figured it out.\n\nThis show inspired other creative works like Vampire The Masquraide, Angel, Midnight, and a few others that I don't know about. Now that's not to say it's the perfect show; it has it's problems. For instance some of the powers and rules may or may not be consistant.\n\nIt's 1992 where's your 800 year old vampire?",
-              "title": "Overview",
-              "id": "overview"
-            },
-            {
-              "copy": "Nicholas: a french vampire from the times of the crusades. He \"used\" to be evil and being something that you might have found in a Dark Ages Vampire the Masquerade game, but after certain altercations he needed to be saved. He seeks a way to become human again.\n\nJeanette: a 1000 year old french vampire who was saved and empowered by her maker. As an adult she's become my favorite character. She's sudective, pragmatic, and tired of Nick's shit. She becomes the emotional support for Nick, even in 1000 years she's still doing emotional labor for men.\n\nLucian LaCroix: their maker, a vampire from antiquity who was a witness to the eruption of Mount Vesuvius at Pompeii. If it wasn't for his maker he would have died and been another corpse buried by ash. His relationship, to not spoil to much, is the opposite of Lestat and Gabrielle. It was not something he wanted.",
-              "title": "The Vampires",
-              "id": "the-vampires"
-            },
-            {
-              "copy": "Don Schanke is Nick's homicide partner. He's what I would think a vice cop from the 80s would be like. He's annoying, in your face, and can be rather off putting at times. His actor is the only one to originally be from the tv movie.\n\nA change from the TV movie (which I think was the best idea), was to make Nick's bestie and person who is trying to make him human, was to make them a woman. Natalie is a forensic scientist who met Nick one night at the morgue. He was just a body that was served a pipe bomb, but instead of a corpse she met a vampire. She becomes a love interest for Nick, which doesn't end well.\n\nIn the last season Don is killed in a bombing of a air plane. Nick's new partner is Tracy Vetter, a cop from a family of cops who just wants to strike it herself. There's a tale of nepotism that often feels like they could have gone more into, but never really do.",
-              "title": "The Humans",
-              "id": "the-humans"
-            },
-            {
-              "copy": "Where we meet our caste of characters. This season is more supernatural then police procedural and we slowly learn about the vampire world. Some of the best atmospher can be found in this season.",
-              "title": "Season One",
-              "id": "season-one"
-            },
-            {
-              "copy": "This season has some of my favorite episodes in it. There's a fever dream where Nick's guilt is so powerful that he hallucinates a life as a human. Another where Nick has to save Nat from Lacroix or else she will be turned, which it's a bit of the \"save the woman\" troupe of the 90s.",
-              "title": "Season Two",
-              "id": "season-two"
-            },
-            {
-              "copy": "Season three is well a season. It has some \"choices\" from vampire dogs to a fever dream episoide where HIV/AIDS save's vampire kind from their own epidemics. It's a choice is what I can say.",
-              "title": "Season Three",
-              "id": "season-three"
-            }
-          ],
-          "image": [
-            {
-              "src": "/img/shrines/foreverknight/ata014.JPG",
-              "alt": "Still from the show: precinct at night"
-            },
-            {
-              "src": "/img/shrines/foreverknight/bb013.JPG",
-              "alt": "Still from the show: rooftop chase"
-            }
-          ]
+          "copy": "Forever Knight is supernatural police procedural that was one of the key reasons why I became a vampire media fan. It started as a made for TV movie in the late 80s staring Rick Springfield and was going to be a pilot for a tv series. Well, that didn't happen. When it was finally picked up, the city change, 99% of the caste changed, and well the atmosphere changed.\n\nI caught this show on Scifi (back when it was good) and watched it on monday's not knowing that it was on every weekday. It's 1997 middle school me is still trying to figure out who I am and my favorite show is on reruns on scifi. I kind of wonder what my parents thought at the time, but who cares. It's dark, moody, and set up some wish full fillment for me.\n\nNick is a french 800 year old vampire looking for redemption. He does this by becomeing a cop and \"hunting\" down evil people. Too bad no one told him what cops where. You'd think someone who is on the edge of humanity would have figured it out.\n\nThis show inspired other creative works like Vampire The Masquraide, Angel, Midnight, and a few others that I don't know about. Now that's not to say it's the perfect show; it has it's problems. For instance some of the powers and rules may or may not be consistant.\n\nIt's 1992 where's your 800 year old vampire?",
+          "title": "Overview",
+          "id": "overview"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "overview-2",
+          "image": {
+            "src": "/img/shrines/foreverknight/ata014.JPG",
+            "alt": "Still from the show: precinct at night"
+          }
+        },
+        {
+          "copy": "Nicholas: a french vampire from the times of the crusades. He \"used\" to be evil and being something that you might have found in a Dark Ages Vampire the Masquerade game, but after certain altercations he needed to be saved. He seeks a way to become human again.\n\nJeanette: a 1000 year old french vampire who was saved and empowered by her maker. As an adult she's become my favorite character. She's sudective, pragmatic, and tired of Nick's shit. She becomes the emotional support for Nick, even in 1000 years she's still doing emotional labor for men.\n\nLucian LaCroix: their maker, a vampire from antiquity who was a witness to the eruption of Mount Vesuvius at Pompeii. If it wasn't for his maker he would have died and been another corpse buried by ash. His relationship, to not spoil to much, is the opposite of Lestat and Gabrielle. It was not something he wanted.",
+          "title": "The Vampires",
+          "id": "the-vampires"
+        },
+        {
+          "copy": "Don Schanke is Nick's homicide partner. He's what I would think a vice cop from the 80s would be like. He's annoying, in your face, and can be rather off putting at times. His actor is the only one to originally be from the tv movie.\n\nA change from the TV movie (which I think was the best idea), was to make Nick's bestie and person who is trying to make him human, was to make them a woman. Natalie is a forensic scientist who met Nick one night at the morgue. He was just a body that was served a pipe bomb, but instead of a corpse she met a vampire. She becomes a love interest for Nick, which doesn't end well.\n\nIn the last season Don is killed in a bombing of a air plane. Nick's new partner is Tracy Vetter, a cop from a family of cops who just wants to strike it herself. There's a tale of nepotism that often feels like they could have gone more into, but never really do.",
+          "title": "The Humans",
+          "id": "the-humans"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "the-humans-2",
+          "image": {
+            "src": "/img/shrines/foreverknight/bb013.JPG",
+            "alt": "Still from the show: rooftop chase"
+          }
+        },
+        {
+          "copy": "Where we meet our caste of characters. This season is more supernatural then police procedural and we slowly learn about the vampire world. Some of the best atmospher can be found in this season.",
+          "title": "Season One",
+          "id": "season-one"
+        },
+        {
+          "copy": "This season has some of my favorite episodes in it. There's a fever dream where Nick's guilt is so powerful that he hallucinates a life as a human. Another where Nick has to save Nat from Lacroix or else she will be turned, which it's a bit of the \"save the woman\" troupe of the 90s.",
+          "title": "Season Two",
+          "id": "season-two"
+        },
+        {
+          "copy": "Season three is well a season. It has some \"choices\" from vampire dogs to a fever dream episoide where HIV/AIDS save's vampire kind from their own epidemics. It's a choice is what I can say.",
+          "title": "Season Three",
+          "id": "season-three"
         }
       ],
       "gallery": [
@@ -300,19 +317,18 @@
       },
       "content": [
         {
-          "copy": [
-            {
-              "copy": "Twin Peaks wasn't my introduction to David Lynch, but it was the thing that made me love his style. Suralism and dreams are some things that I find interesting and they are fully present in this searies.\n\nWho Kill Laura Palmer?",
-              "title": "Overview",
-              "id": "overview"
-            }
-          ],
-          "image": [
-            {
-              "src": "/img/shrines/twinpeaks/05_ZtoA_Square_RedroomBWCooper.jpg",
-              "alt": "Still from the show: the red room"
-            }
-          ]
+          "copy": "Twin Peaks wasn't my introduction to David Lynch, but it was the thing that made me love his style. Suralism and dreams are some things that I find interesting and they are fully present in this searies.\n\nWho Kill Laura Palmer?",
+          "title": "Overview",
+          "id": "overview"
+        },
+        {
+          "copy": "",
+          "title": "",
+          "id": "overview-2",
+          "image": {
+            "src": "/img/shrines/twinpeaks/05_ZtoA_Square_RedroomBWCooper.jpg",
+            "alt": "Still from the show: the red room"
+          }
         }
       ],
       "gallery": [

@@ -37,7 +37,7 @@
         "copy": "Looking back across old projects, I didn't have a consistant style or I just recreated it again and again. For personal projects that might be fine, but when you are spending more time on items that could be already made. At the time I was working for Mapfre and was in the process of working on one that would be used when every our team had work."
       },
 
-       {
+      {
         "id": "discovery-5",
         "title": "",
         "copy": "",
@@ -48,17 +48,17 @@
         }
       },
 
-       {
+      {
         "id": "discovery-2",
         "title": "",
         "copy": "We read through some of the bigger design system at the time, Atlassian, Material, Shopify, and Apple, to see why they needed a system. It's the same reason all of these companies, including the one I was in, wanted an easy way to share their brand. Not just images and logo, but in the very tone their marketing heads would use. The colors were easy but trying to make sure red isn't the primary color for buttons was an up hill struggle."
       },
-       {
+      {
         "id": "discovery-3",
         "title": "",
         "copy": "Unlike many of the modern systems using Storybook or another tool. I went through and just made something that could be hosted on a file system. Not the best solution, but we didn't really have much choice. What does that mean? Nothing fancy, standard html, and es6. I worked with webpack to create a system that allowed me to fake imports, have scss, and then build a standard web page. This was used as a guide for the components that were built in sepereate projects."
       },
-       {
+      {
         "id": "discovery-4",
         "title": "",
         "copy": "I wanted something for my own projects that had my own style, like every other developer or designer.",

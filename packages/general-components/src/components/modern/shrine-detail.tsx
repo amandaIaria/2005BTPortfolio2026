@@ -2,13 +2,9 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import type { ShrineItem } from './shrine-gallery';
 import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
 import { StickySideNav } from './sticky-side-nav';
-
-interface ShrineDetailProps extends React.ComponentProps<'div'> {
-  shrine: ShrineItem;
-}
+import type { ShrineDetailProps } from '@general-purpose/types';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   const { t } = useTranslation();
@@ -66,43 +62,45 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 
       {shrine.content && shrine.content.length > 0 && (
         <section className="max-w-300 mx-auto w-full flex gap-4">
-          <div className="prose max-w-none flex-3/4" ref={contentNavRef}>
+          <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
             {shrine.content.map((content, blockIndex) => {
               // block.copy.map((copy, copyIndex) => {
               //   const image = block.image?.[copyIndex];
-                return (
-                  <React.Fragment
-                    key={`${content.id}__${blockIndex}_${blockIndex}`}
-                  >
-                    {content.title && (
-                      <h2
-                        id={content.id}
-                        className="max-w-200 w-full mx-auto text-foreground"
-                      >
-                        {content.title}
-                      </h2>
-                    )}
-                    {content.copy && (
-                      <p className="max-w-200 w-full mx-auto text-foreground">
-                        {content.copy}
-                      </p>
-                    )}
-                    {content.image && content.image.src !== '' && (
-                      <figure className="h-50 w-full overflow-hidden bg-(--surface)">
-                        <img
-                          src={content.image.src}
-                          alt={content.image.alt}
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </figure>
-                    )}
-                  </React.Fragment>
-                );
+              return (
+                <React.Fragment
+                  key={`${content.id}__${blockIndex}_${blockIndex}`}
+                >
+                  {content.title && (
+                    <h2
+                      id={content.id}
+                      className="max-w-200 w-full mx-auto text-foreground"
+                    >
+                      {content.title}
+                    </h2>
+                  )}
+                  {content.copy && (
+                    <p className="max-w-200 w-full mx-auto text-foreground">
+                      {content.copy}
+                    </p>
+                  )}
+                  {content.image && content.image.src !== '' && (
+                    <figure className="h-50 w-full overflow-hidden bg-(--surface)">
+                      <img
+                        src={content.image.src}
+                        alt={content.image.alt}
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </figure>
+                  )}
+                </React.Fragment>
+              );
               // }),
-            }
-            )}
+            })}
           </div>
-          <StickySideNav content={shrine} navLabel={t('shrines.navSidebarLabel')} />
+          <StickySideNav
+            content={shrine}
+            navLabel={t('shrines.navSidebarLabel')}
+          />
         </section>
       )}
 
@@ -135,4 +133,3 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 }
 
 export { ShrineDetail };
-export type { ShrineDetailProps };

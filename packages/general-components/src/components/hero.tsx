@@ -1,17 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-
-interface HeroProps extends React.ComponentProps<'div'> {
-  image: {
-    src: string;
-    alt: string;
-  };
-  topText: string;
-  bottomText: string;
-  caption: React.ReactNode;
-  heading: React.ReactNode;
-  hiddenH1: string;
-}
+import type { HeroProps } from '@general-purpose/types';
 
 function Hero({
   image,
@@ -58,4 +47,3 @@ function Hero({
 }
 
 export { Hero };
-export type { HeroProps };

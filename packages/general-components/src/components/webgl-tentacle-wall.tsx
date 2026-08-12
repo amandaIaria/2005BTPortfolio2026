@@ -1,17 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-
-interface WebGLTentacleWallProps extends React.ComponentProps<'div'> {
-  tentacleCount?: number;
-  rotate?: number;
-  /**
-   * Overrides the rendered tentacle color — a hex code (e.g. '#ff0000') or a
-   * CSS variable (e.g. 'var(--lagoon)'). When set, this replaces the default
-   * light/dark black-white toggle in the shader itself. Omit to keep the
-   * default behavior.
-   */
-  colorValue?: string;
-}
+import type { WebGLTentacleWallProps } from '@general-purpose/types';
 
 /* ------------------------------------------------------------------ */
 /*  Shader sources                                                     */
@@ -401,4 +390,3 @@ function WebGLTentacleWall({
 }
 
 export { WebGLTentacleWall };
-export type { WebGLTentacleWallProps };

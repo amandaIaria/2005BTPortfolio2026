@@ -2,11 +2,11 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useLayoutEffect, useState } from 'react';
 import { MoonIcon, SunIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
+import type { ColorModeProps } from '@general-purpose/types';
 
 const STORAGE_KEY = 'theme-mode';
-type ColorMode = 'light' | 'dark';
 
-function applyColorMode(mode: ColorMode) {
+function applyColorMode(mode: ColorModeProps) {
   const root = document.documentElement;
   if (mode === 'dark') {
     root.classList.add('dark');
@@ -17,7 +17,7 @@ function applyColorMode(mode: ColorMode) {
   }
 }
 
-function readStoredColorMode(): ColorMode | null {
+function readStoredColorMode(): ColorModeProps | null {
   const stored = localStorage.getItem(STORAGE_KEY);
   return stored === 'dark' || stored === 'light' ? stored : null;
 }
@@ -25,7 +25,7 @@ function readStoredColorMode(): ColorMode | null {
 function ThemeToggle() {
   const shouldReduceMotion = useReducedMotion();
   const { t } = useTranslation();
-  const [mode, setMode] = useState<ColorMode>('light');
+  const [mode, setMode] = useState<ColorModeProps>('light');
 
   useLayoutEffect(() => {
     const initial =

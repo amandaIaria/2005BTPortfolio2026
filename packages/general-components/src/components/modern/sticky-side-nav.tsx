@@ -1,17 +1,11 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { cn } from '@general/components/lib/utils.ts';
-import type { CaseStudySection } from '../case-study-detail';
-
-export interface stickNavProps {
-  content: CaseStudySection[];
-  navLabel: string;
-}
+import type { StickySideNavProps } from '@general-purpose/types';
 
 // should the memo be in this component or should it be in the parent
 
-export const StickySideNav = (props: stickNavProps) => {
+export const StickySideNav = (props: StickySideNavProps) => {
   const { content, navLabel } = props;
-  console.log(content);
   const stickyNavRef = useRef<HTMLDivElement | null>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
   const linksObj = useMemo(() => {
@@ -60,10 +54,10 @@ export const StickySideNav = (props: stickNavProps) => {
   return (
     <aside
       data-component="stick-side-nav"
-      className="flex flex-1 p-8 flex-col gap-6 border-t border-(--surface-strong) pt-0 pr-0"
+      className="flex flex-1 p-8 flex-col gap-6 border-t border-(--surface-strong) pt-0 pl-0 pr-0"
       ref={stickyNavRef}
     >
-      <nav className="inner-nav sticky top-0 bg-background p-4 -mt-4">
+      <nav className="inner-nav sticky top-4 bg-(--surface)/90 backdrop-blur-md rounded-2xl shadow-lg border border-(--surface-strong) p-4">
         <div className="border-b border-b-accent pb-2 mb-4 w-full">
           <span className="text-lg font-bold">{navLabel}</span>
         </div>

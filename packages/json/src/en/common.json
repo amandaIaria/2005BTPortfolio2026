@@ -35,7 +35,7 @@
   },
   "caseStudies": {
     "heading": "Case Studies",
-    "navSidebarLabel" : "On this page",
+    "navSidebarLabel": "On this page",
     "detail": {
       "backLink": "Case Studies",
       "featuringInsightsFrom": "Featuring insights from:",
@@ -57,7 +57,7 @@
       "backLink": "Shrines",
       "galleryHeading": "Gallery"
     },
-    "navSidebarLabel" : "On this page"
+    "navSidebarLabel": "On this page"
   },
   "projects": {
     "carouselAriaLabel": "Featured projects carousel"

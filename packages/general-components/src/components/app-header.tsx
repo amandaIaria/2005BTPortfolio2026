@@ -1,18 +1,11 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
 import { Switch } from './ui/switch';
-
-type ThemeVariant = '2005' | 'modern';
-type ColorMode = 'light' | 'dark';
-
-interface AppHeaderProps extends React.ComponentProps<'header'> {
-  themeVariant?: ThemeVariant;
-  onThemeVariantChange?: (variant: ThemeVariant) => void;
-  colorMode?: ColorMode;
-  onColorModeChange?: (mode: ColorMode) => void;
-  /** Called when the theme variant changes — use to navigate between routes */
-  navigate?: (path: string) => void;
-}
+import type {
+  AppHeaderProps,
+  ThemeVariantProps,
+  ColorModeProps,
+} from '@general-purpose/types';
 
 function AppHeader({
   themeVariant: controlledVariant,
@@ -25,8 +18,8 @@ function AppHeader({
   ...props
 }: AppHeaderProps) {
   const [internalVariant, setInternalVariant] =
-    React.useState<ThemeVariant>('2005');
-  const [internalMode, setInternalMode] = React.useState<ColorMode>(() => {
+    React.useState<ThemeVariantProps>('2005');
+  const [internalMode, setInternalMode] = React.useState<ColorModeProps>(() => {
     if (typeof window === 'undefined') return 'light';
     return document.documentElement.classList.contains('dark') ||
       document.documentElement.getAttribute('data-theme') === 'dark'
@@ -121,4 +114,3 @@ function AppHeader({
 }
 
 export { AppHeader };
-export type { AppHeaderProps, ThemeVariant, ColorMode };

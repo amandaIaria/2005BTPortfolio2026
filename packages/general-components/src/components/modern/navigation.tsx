@@ -5,23 +5,13 @@ import { Container } from '../ui/container';
 import { WebGLTentacleWall } from '../webgl-tentacle-wall';
 import { Link } from '@tanstack/react-router';
 import json from '@json/data/json/navigation.json';
+import type {
+  NavigationProps,
+  NavLinkProps,
+  NavItemProps,
+} from '@general-purpose/types';
 
 const TICKER_SPEED_PX_PER_SECOND = 120;
-
-interface NavigationProps {
-  isOpen: boolean;
-  onNavigate?: () => void;
-}
-
-interface NavLink {
-  href: string;
-  label: string;
-}
-
-interface NavItemProps {
-  link: NavLink;
-  onNavigate?: () => void;
-}
 
 function NavItem({ link, onNavigate }: NavItemProps) {
   const itemRef = useRef<HTMLAnchorElement>(null);
@@ -114,7 +104,7 @@ function Navigation({ isOpen, onNavigate }: NavigationProps) {
       <Container data-component="modern-navigation">
         <nav className="grid h-screen place-content-center">
           <ul className="font-mono grid gap-[clamp(0.5rem,6vh,2rem)] text-[clamp(1.5rem,6vh,6rem)] font-bold uppercase text-white mix-blend-difference">
-            {json.map((link: NavLink) => (
+            {json.map((link: NavLinkProps) => (
               <NavItem key={link.href} link={link} onNavigate={onNavigate} />
             ))}
           </ul>

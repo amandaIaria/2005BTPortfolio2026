@@ -1,25 +1,9 @@
 import * as React from 'react';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
-import { cn } from '../lib/utils';
-import { InternalTransitionLink } from './page-transition/internal-transition-link';
-import { Button } from './ui/button';
-
-interface CaseStudyItem {
-  slug: string;
-  title: string;
-  description: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  link: {
-    copy: string;
-  };
-}
-
-interface CaseStudyListProps extends React.ComponentProps<'div'> {
-  caseStudies: CaseStudyItem[];
-}
+import { cn } from '../../lib/utils';
+import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+import { Button } from '../ui/button';
+import type { CaseStudyListProps } from '@general-purpose/types';
 
 function CaseStudyList({
   caseStudies,
@@ -66,4 +50,3 @@ function CaseStudyList({
 }
 
 export { CaseStudyList };
-export type { CaseStudyListProps, CaseStudyItem };
