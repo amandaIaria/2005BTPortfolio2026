@@ -1,11 +1,7 @@
 import { ExternalTransitionLink } from '../page-transition/external-transition-link';
 import { PortfolioButton } from '../portfolio-button';
 import SliderTags from './slider-tags';
-import type { SliderSlide } from './types';
-
-interface SlideContentProps {
-  slide: SliderSlide;
-}
+import type { SlideContentProps } from '@general-purpose/types';
 
 export function SlideContent({ slide }: SlideContentProps) {
   return (

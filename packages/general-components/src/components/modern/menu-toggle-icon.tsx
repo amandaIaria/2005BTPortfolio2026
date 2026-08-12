@@ -1,9 +1,5 @@
 import { motion } from 'motion/react';
-
-interface MenuToggleIconProps {
-  isOpen: boolean;
-  shouldReduceMotion: boolean | null;
-}
+import type { MenuToggleIconProps } from '@general-purpose/types';
 
 function MenuToggleIcon({ isOpen, shouldReduceMotion }: MenuToggleIconProps) {
   const transition = {

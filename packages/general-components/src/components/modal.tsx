@@ -10,17 +10,9 @@ import {
   DialogTitle,
 } from './ui/dialog';
 import { getCookie, setCookie } from '../lib/cookies';
+import type { ModalProps } from '@general-purpose/types';
 
 const DISMISS_COOKIE_DAYS = 7;
-
-export interface ModalProps {
-  id: string;
-  title: string;
-  description: string;
-  type?: 'confirmation' | 'info';
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
 
 function Modal({
   id,

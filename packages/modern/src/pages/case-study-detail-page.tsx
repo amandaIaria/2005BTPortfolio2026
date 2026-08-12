@@ -11,10 +11,7 @@ function ModernCaseStudyDetailPage() {
   }
 
   return (
-    <Container
-      data-component="modern-case-study-detail-page"
-      className=""
-    >
+    <Container data-component="modern-case-study-detail-page" className="">
       <CaseStudyDetail caseStudy={caseStudy} />
     </Container>
   );

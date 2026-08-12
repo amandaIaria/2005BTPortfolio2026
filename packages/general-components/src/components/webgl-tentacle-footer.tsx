@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-
-interface WebGLTentacleFooterProps extends React.ComponentProps<'footer'> {
-  text?: string;
-  tentacleCount?: number;
-}
+import type { WebGLTentacleFooterProps } from '@general-purpose/types';
 
 /* ------------------------------------------------------------------ */
 /*  Shader sources                                                     */
@@ -310,4 +306,3 @@ function WebGLTentacleFooter({
 }
 
 export { WebGLTentacleFooter };
-export type { WebGLTentacleFooterProps };

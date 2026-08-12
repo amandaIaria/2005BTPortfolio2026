@@ -1,15 +1,6 @@
 import { motion } from 'motion/react';
-import type { Variants, Transition } from 'motion/react';
-import type { SliderSlide } from './types';
+import type { SlidePaneProps } from '@general-purpose/types';
 import { SlideContent } from './slide-content';
-
-export interface SlidePaneProps {
-  slide: SliderSlide;
-  isTransitioning?: boolean;
-  direction: 1 | -1;
-  variants: Variants;
-  transition: Transition;
-}
 
 export function SlidePaneImage({
   slide,

@@ -1,8 +1,9 @@
+## title
 
-## title 
 Creating a personal Brand and Design System
 
 ## description
+
 Created a personal brand and design system that could be used for other work.
 
 ---
@@ -10,37 +11,47 @@ Created a personal brand and design system that could be used for other work.
 ## overview
 
 ### label
+
 Personal
 
 ### description
+
 As I grow in my field I felt that I needed a design language of my own.
 
 ### sector
+
 Digital Agency
 
 ### team Size
+
 1
 
 ### location
+
 Boston, Massachusetts
 
 ---
 
 ## problem
+
 Every side project and portfolio piece I built had its own one-off buttons, cards, and color choices. Nothing carried over between projects, so each new build started from zero and looked visibly inconsistent with the last.
 
 ## approach
+
 I defined a small set of design tokens, color, type and spacing, then built an accessible component library on top of them, treating my own work like client work with real documentation and reuse in mind.
 
 ---
 
 ## outcomes
+
 - One token set and component library reused across every personal project.
 - New pages assembled from existing primitives instead of rebuilt from scratch
 - A consistent, accessible brand across my whole portfolio
 
 ---
+
 ## Discovery
+
 Looking back across old projects, I didn't have a consistant style or I just recreated it again and again. For personal projects that might be fine, but when you are spending more time on items that could be already made. At the time I was working for Mapfre and was in the process of working on one that would be used when every our team had work.
 
 "src": "/img/case-studies/ds1.png",
@@ -64,7 +75,7 @@ Now the colors I chose was really just an attempt to keep things clean. A flat b
 
 ![[Pasted image 20260810002934.png]]
 
-I wanted to keep that feeling with the components. I was digging the bold colors, bold borders and solid colors in a lot of designs I was seeing.  It made things clear and you could easily differentiate what active componets were. Now I don't have a big need for diferent components. THis system was for small projects and my style. Nothing world shattering.
+I wanted to keep that feeling with the components. I was digging the bold colors, bold borders and solid colors in a lot of designs I was seeing. It made things clear and you could easily differentiate what active componets were. Now I don't have a big need for diferent components. THis system was for small projects and my style. Nothing world shattering.
 
 ## Results
 

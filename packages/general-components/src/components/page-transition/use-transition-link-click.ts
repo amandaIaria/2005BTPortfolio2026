@@ -1,18 +1,13 @@
 import { useRef } from 'react';
 import type { MouseEvent } from 'react';
 import { usePageTransition } from './page-transition-context';
-
-interface UseTransitionLinkClickOptions {
-  href: string;
-  external?: boolean;
-  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
-}
+import type { UseTransitionLinkClickOptionsProps } from '@general-purpose/types';
 
 export function useTransitionLinkClick({
   href,
   external,
   onClick,
-}: UseTransitionLinkClickOptions) {
+}: UseTransitionLinkClickOptionsProps) {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const { startTransition } = usePageTransition();
 

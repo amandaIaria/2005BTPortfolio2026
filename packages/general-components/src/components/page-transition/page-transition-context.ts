@@ -1,21 +1,10 @@
 import { createContext, useContext } from 'react';
-
-export interface StartTransitionOptions {
-  rect: DOMRect;
-  href: string;
-  backgroundColor: string;
-  external?: boolean;
-}
-
-export interface PageTransitionContextValue {
-  startTransition: (options: StartTransitionOptions) => void;
-  isTransitioning: boolean;
-}
+import type { PageTransitionContextValueProps } from '@general-purpose/types';
 
 export const PageTransitionContext =
-  createContext<PageTransitionContextValue | null>(null);
+  createContext<PageTransitionContextValueProps | null>(null);
 
-export function usePageTransition(): PageTransitionContextValue {
+export function usePageTransition(): PageTransitionContextValueProps {
   const ctx = useContext(PageTransitionContext);
   if (!ctx) {
     throw new Error(

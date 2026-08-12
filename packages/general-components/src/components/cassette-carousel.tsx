@@ -8,25 +8,16 @@ import {
   DialogTitle,
   DialogDescription,
 } from './ui/dialog';
-
-interface CassetteSlide {
-  id: string;
-  label: string;
-  sublabel?: string;
-  modalTitle?: string;
-  modalContent?: React.ReactNode;
-}
-
-interface CassetteCarouselProps extends React.ComponentProps<'div'> {
-  slides: CassetteSlide[];
-  orientation?: 'horizontal' | 'vertical';
-}
+import type {
+  CassetteSlideProps,
+  CassetteCarouselProps,
+} from '@general-purpose/types';
 
 function CassetteTape({
   slide,
   onClick,
 }: {
-  slide: CassetteSlide;
+  slide: CassetteSlideProps;
   onClick: () => void;
 }) {
   return (
@@ -79,7 +70,9 @@ function CassetteCarousel({
   className,
   ...props
 }: CassetteCarouselProps) {
-  const [activeSlide, setActiveSlide] = useState<CassetteSlide | null>(null);
+  const [activeSlide, setActiveSlide] = useState<CassetteSlideProps | null>(
+    null,
+  );
 
   return (
     <div
@@ -129,4 +122,3 @@ function CassetteCarousel({
 }
 
 export { CassetteCarousel };
-export type { CassetteSlide, CassetteCarouselProps };

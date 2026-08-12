@@ -1,19 +1,7 @@
 import { Button } from '../ui/button';
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 import { cn } from '../../lib/utils';
-
-export interface SliderPaginationProps {
-  total: number;
-  current: number;
-  onPrev: () => void;
-  onNext: () => void;
-  onGoTo: (index: number) => void;
-  isFirst: boolean;
-  isLast: boolean;
-  loop: boolean;
-  dotsTrackRef: React.RefObject<HTMLDivElement | null>;
-  dotsInnerRef: React.RefObject<HTMLDivElement | null>;
-}
+import type { SliderPaginationProps } from '@general-purpose/types';
 
 export function SliderPagination({
   total,
