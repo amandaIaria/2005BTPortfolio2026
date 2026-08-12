@@ -12,11 +12,12 @@ function Breadcrumb({ href, label, className, ...props }: BreadcrumbProps) {
     >
       <InternalTransitionLink
         href={href}
-        className="flex gap-2 pointer w-fit text-sm group ease-in-out duration-300"
+        className="flex gap-2 cursor w-fit text-sm group ease-in-out duration-300"
       >
         <span className="flex items-center">
           <ArrowDownIcon
             weight="bold"
+            aria-hidden="true"
             className="text-accent h-4 w-4 rotate-90 group-hover:-translate-x-2 ease-in-out duration-300"
           />
         </span>

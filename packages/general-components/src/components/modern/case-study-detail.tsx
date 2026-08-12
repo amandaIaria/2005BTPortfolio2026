@@ -1,10 +1,10 @@
-import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CheckCircleIcon } from '@phosphor-icons/react';
 import { Separator } from '../ui/separator';
 import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
 import type { CaseStudyDetailProps } from '@general-purpose/types';
+import { cn } from '@/lib/utils';
 
 function CaseStudyDetail({
   caseStudy,
@@ -15,7 +15,7 @@ function CaseStudyDetail({
   return (
     <div
       data-component="case-study-detail"
-      // className={cn('flex flex-col gap-16', className)}
+      className={cn(className)}
       {...props}
     >
       <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground">
