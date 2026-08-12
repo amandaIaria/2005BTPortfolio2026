@@ -177,7 +177,7 @@ function resolveColorToRGB(value: string): [number, number, number] | null {
   if (typeof document === 'undefined') return null;
 
   let cssColor = value.trim().replace(/;+\s*$/, '');
-  const varMatch = cssColor.match(/^var\((--[^,)]+)(?:,\s*(.+))?\)$/);
+  const varMatch = cssColor.match(/^var\((--[^,)]+)(?:,(.+))?\)$/);
   if (varMatch) {
     const [, varName, fallback] = varMatch;
     const resolved = getComputedStyle(document.documentElement)
