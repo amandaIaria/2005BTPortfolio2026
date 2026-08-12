@@ -86,6 +86,10 @@ See `.github/copilot-instructions.md` for adding new feature packages.
 - If approved: take a "before" screenshot, make the change, take an "after" screenshot, then show both side by side (or clearly labeled Before/After) so the diff is easy to read.
 - Once the task that needed Playwright is done, delete the screenshot files you created.
 
+## Output Style
+
+`i-have-adhd` skill always on (enabled via `~/.claude/.i-have-adhd-always`, global to this machine, not repo-scoped). Shapes every response: lead with next action, number multi-step work, cap lists at 5. Say "stop adhd mode" to turn off for a session; delete the flag file to turn off for good.
+
 ## Before Committing
 
 1. Run `npm run check` (lint + format + type check)
