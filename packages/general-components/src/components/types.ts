@@ -344,6 +344,7 @@ export interface PageTransitionOverlayProps {
   opacity: MotionValue<number>;
   backgroundColor: string;
   active: boolean;
+  className?: string;
 }
 
 // page-transition/page-transition-provider.tsx
