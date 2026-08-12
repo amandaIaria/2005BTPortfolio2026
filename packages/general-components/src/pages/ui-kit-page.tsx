@@ -28,6 +28,7 @@ import { AspectRatio } from '../components/ui/aspect-ratio';
 import { TempNav } from '../components/temp-nav';
 import { CassetteCarousel } from '../components/cassette-carousel';
 import { Playlist } from '../components/playlist';
+import { Footer } from '../components/modern/footer';
 import { AnimatedFooter } from '../components/animated-footer';
 import { TentacleFooter } from '../components/tentacle-footer';
 import { WebGLTentacleFooter } from '../components/webgl-tentacle-footer';
@@ -434,6 +435,11 @@ export default function UiKitPage() {
           {/* Playlist */}
           <Section title="Playlist">
             <Playlist videos={[{ id: 'vteCosE9qnM', title: 'Track 1' }]} />
+          </Section>
+
+          {/* Footer */}
+          <Section title="Footer">
+            <Footer className="rounded-lg" />
           </Section>
 
           {/* Animated Footer */}

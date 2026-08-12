@@ -87,6 +87,7 @@ export { Navigation } from './components/modern/navigation';
 export { NavToggle } from './components/modern/nav-toggle';
 export { ThemeToggle } from './components/modern/theme-toggle';
 export { Breadcrumb } from './components/modern/breadcrumb';
+export { Footer } from './components/modern/footer';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';
@@ -160,4 +161,5 @@ export type {
   NavItemProps,
   ImageHeaderProps,
   BreadcrumbProps,
+  FooterProps,
 } from '@general-purpose/types';

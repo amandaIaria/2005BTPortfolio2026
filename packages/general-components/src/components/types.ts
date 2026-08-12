@@ -524,3 +524,11 @@ export interface BreadcrumbProps extends React.ComponentProps<'div'> {
   href: string;
   label: string;
 }
+
+// modern/footer.tsx
+export interface FooterProps extends React.ComponentProps<'footer'> {
+  logoText?: string;
+  linkedinHref?: string;
+  githubHref?: string;
+  year?: number;
+}

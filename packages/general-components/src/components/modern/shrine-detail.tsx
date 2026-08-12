@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
 import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
+import { Footer } from './footer';
 import { StickySideNav } from './sticky-side-nav';
 import type { ShrineDetailProps } from '@general-purpose/types';
 
@@ -128,6 +129,8 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
           </div>
         </footer>
       )}
+
+      <Footer />
     </div>
   );
 }

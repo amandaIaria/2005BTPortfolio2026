@@ -2,9 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { CheckCircleIcon } from '@phosphor-icons/react';
 import { Separator } from '../ui/separator';
 import { Breadcrumb } from './breadcrumb';
+import { Footer } from './footer';
 import { StickySideNav } from './sticky-side-nav';
 import type { CaseStudyDetailProps } from '@general-purpose/types';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function CaseStudyDetail({
   caseStudy,
@@ -172,6 +173,8 @@ function CaseStudyDetail({
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
