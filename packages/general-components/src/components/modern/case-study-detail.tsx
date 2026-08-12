@@ -4,7 +4,7 @@ import { Separator } from '../ui/separator';
 import { Breadcrumb } from './breadcrumb';
 import { Footer } from './footer';
 import { StickySideNav } from './sticky-side-nav';
-import type { CaseStudyDetailProps } from '@general-purpose/types';
+import type { CaseStudyDetailProps } from '@packages/general-components/src/components/types.ts';
 import { cn } from '../../lib/utils';
 
 function CaseStudyDetail({

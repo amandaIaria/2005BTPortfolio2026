@@ -16,19 +16,10 @@ describe('Footer', () => {
     expect(screen.queryByText('Custom Name')).not.toBeNull();
   });
 
-  it('links LinkedIn and GitHub to the given hrefs', () => {
-    render(
-      <Footer
-        linkedinHref="https://linkedin.com/in/example"
-        githubHref="https://github.com/example"
-      />,
-    );
-    expect(
-      screen.getByRole('link', { name: 'LinkedIn' }).getAttribute('href'),
-    ).toBe('https://linkedin.com/in/example');
-    expect(
-      screen.getByRole('link', { name: 'GitHub' }).getAttribute('href'),
-    ).toBe('https://github.com/example');
+  it('renders LinkedIn and GitHub links', () => {
+    render(<Footer />);
+    expect(screen.queryByRole('link', { name: 'LinkedIn' })).not.toBeNull();
+    expect(screen.queryByRole('link', { name: 'GitHub' })).not.toBeNull();
   });
 
   it('renders the given year', () => {

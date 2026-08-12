@@ -1,10 +1,9 @@
 import {
   Container,
-  ExternalTransitionLink,
   Button,
   WebGLTentacleWall,
+  SocialBar,
 } from '@general/components';
-import { GithubLogoIcon, LinkedinLogoIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from '@tanstack/react-form';
 
@@ -40,24 +39,7 @@ function ModernContactPage() {
             <p className="text-md font-medium text-accent">
               {t('contact.intro')}
             </p>
-            <ul className="flex gap-6">
-              <li className="">
-                <ExternalTransitionLink
-                  className="cursor-pointer block"
-                  href="https://www.linkedin.com/in/amanda-iaria/"
-                >
-                  <LinkedinLogoIcon size={32} />
-                </ExternalTransitionLink>
-              </li>
-              <li className="">
-                <ExternalTransitionLink
-                  className="cursor-pointer block"
-                  href="#"
-                >
-                  <GithubLogoIcon size={32} />
-                </ExternalTransitionLink>
-              </li>
-            </ul>
+            <SocialBar />
           </div>
           <div className="flex flex-col gap-10">
             <form

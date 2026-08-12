@@ -5,7 +5,7 @@ import { InternalTransitionLink } from '../page-transition/internal-transition-l
 import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
 import { Footer } from './footer';
 import { StickySideNav } from './sticky-side-nav';
-import type { ShrineDetailProps } from '@general-purpose/types';
+import type { ShrineDetailProps } from '@packages/general-components/src/components/types.ts';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   const { t } = useTranslation();
