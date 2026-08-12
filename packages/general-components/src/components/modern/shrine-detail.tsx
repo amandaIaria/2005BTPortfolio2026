@@ -2,62 +2,13 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import type { ShrineItem } from './shrine-gallery';
 import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
-
-interface ShrineDetailProps extends React.ComponentProps<'div'> {
-  shrine: ShrineItem;
-}
+import { StickySideNav } from './sticky-side-nav';
+import type { ShrineDetailProps } from '@general-purpose/types';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   const { t } = useTranslation();
-  const stickyNavRef = React.useRef<HTMLDivElement | null>(null);
   const contentNavRef = React.useRef<HTMLDivElement | null>(null);
-  const [activeId, setActiveId] = React.useState<string | null>(null);
-  const linksObj = React.useMemo(() => {
-    const obj: Array<{ id: string; title: string }> = [];
-    shrine.content?.forEach((block) => {
-      block.copy.forEach((copy) => {
-        if (copy.title && copy.slug) {
-          obj.push({ id: copy.slug, title: copy.title });
-        }
-      });
-    });
-    return obj;
-  }, [shrine.content]);
-  const stickyNavClickHandler = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-  ) => {
-    event.preventDefault();
-    const target = event.currentTarget as HTMLElement;
-    const id = target.getAttribute('href')?.substring(1);
-    const section = document.getElementById(id || '');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  React.useEffect(() => {
-    if (linksObj.length === 0) return;
-
-    const headings = linksObj
-      .map((link) => document.getElementById(link.id))
-      .filter((node): node is HTMLElement => node !== null);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -95% 0px', threshold: 0 },
-    );
-
-    headings.forEach((heading) => observer.observe(heading));
-    return () => observer.disconnect();
-  }, [linksObj]);
 
   return (
     <div data-component="shrine-detail" className={cn(className)} {...props}>
@@ -111,75 +62,45 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 
       {shrine.content && shrine.content.length > 0 && (
         <section className="max-w-300 mx-auto w-full flex gap-4">
-          <div className="prose max-w-none flex-3/4" ref={contentNavRef}>
-            {shrine.content.map((block, blockIndex) =>
-              block.copy.map((copy, copyIndex) => {
-                const image = block.image?.[copyIndex];
-                return (
-                  <React.Fragment
-                    key={`${copy.slug}__${blockIndex}_${copyIndex}`}
-                  >
-                    {copy.title && (
-                      <h2
-                        id={copy.slug}
-                        className="max-w-200 w-full mx-auto text-foreground"
-                      >
-                        {copy.title}
-                      </h2>
-                    )}
-                    {copy.value && (
-                      <p className="max-w-200 w-full mx-auto text-foreground">
-                        {copy.value}
-                      </p>
-                    )}
-                    {image && image.src !== '' && (
-                      <figure className="h-50 w-full overflow-hidden bg-(--surface)">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </figure>
-                    )}
-                  </React.Fragment>
-                );
-              }),
-            )}
-          </div>
-          <aside
-            className="flex flex-1 p-8 flex-col gap-6 border-t border-(--surface-strong) pt-0 pr-0"
-            ref={stickyNavRef}
-          >
-            <nav className="inner-nav sticky top-20">
-              <div className="border-b border-b-accent pb-2 mb-4 w-full">
-                <span className="text-lg font-bold">On this page</span>
-              </div>
-              <ul className="flex flex-col gap-4">
-                {linksObj.map((link, idx) => (
-                  <li key={link.id}>
-                    <a
-                      href={`#${link.id}`}
-                      className={cn(
-                        'text-accent group flex gap-4',
-                        link.id === activeId && 'active-id',
-                      )}
-                      onClick={stickyNavClickHandler}
+          <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
+            {shrine.content.map((content, blockIndex) => {
+              // block.copy.map((copy, copyIndex) => {
+              //   const image = block.image?.[copyIndex];
+              return (
+                <React.Fragment
+                  key={`${content.id}__${blockIndex}_${blockIndex}`}
+                >
+                  {content.title && (
+                    <h2
+                      id={content.id}
+                      className="max-w-200 w-full mx-auto text-foreground"
                     >
-                      <span
-                        className="text-transparent [.active-id_&]:text-foreground font-bold"
-                        aria-hidden="true"
-                      >
-                        |
-                      </span>
-                      <span className="text-accent group-hover:underline">
-                        {link.title}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </aside>
+                      {content.title}
+                    </h2>
+                  )}
+                  {content.copy && (
+                    <p className="max-w-200 w-full mx-auto text-foreground">
+                      {content.copy}
+                    </p>
+                  )}
+                  {content.image && content.image.src !== '' && (
+                    <figure className="h-50 w-full overflow-hidden bg-(--surface)">
+                      <img
+                        src={content.image.src}
+                        alt={content.image.alt}
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </figure>
+                  )}
+                </React.Fragment>
+              );
+              // }),
+            })}
+          </div>
+          <StickySideNav
+            content={shrine}
+            navLabel={t('shrines.navSidebarLabel')}
+          />
         </section>
       )}
 
@@ -212,4 +133,3 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 }
 
 export { ShrineDetail };
-export type { ShrineDetailProps };

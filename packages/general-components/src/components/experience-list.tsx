@@ -1,19 +1,7 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
 import { Badge } from './ui/badge';
-
-interface ExperienceItem {
-  title: string;
-  company: string;
-  years: string;
-  type: string;
-  tags: string[];
-  summary: string;
-}
-
-interface ExperienceListProps extends React.ComponentProps<'div'> {
-  experiences: ExperienceItem[];
-}
+import type { ExperienceListProps } from '@general-purpose/types';
 
 function ExperienceList({
   experiences,
@@ -62,4 +50,3 @@ function ExperienceList({
 }
 
 export { ExperienceList };
-export type { ExperienceListProps, ExperienceItem };

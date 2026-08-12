@@ -1,6 +1,6 @@
 ## Header
 
-Our Last, Best Hope
+The Last, Best Hope
 
 ## Tagline
 
@@ -24,15 +24,15 @@ Babylon 5 will always be relavant. There are some ideas that could use updating 
 
 **Commander Sinclair** was the first commander and ambassador to the station. He was a survivor at the "battle of the line" in the Mimbari war, which the Mimbari has taken an interest in him. We don't know why, but the answer will change him forever.
 
-**Captian Sheridian** The second station commander we will have for the rest of the show.
+**Captain Sheridan** The second station commander we will have for the rest of the show.
 
-**Lt. Commander Ivonava** Second of command of the station, and one of my favorite characters. She's queer, tough, and god. IYKYK
+**Lt. Commander Ivanova** Second of command of the station, and one of my favorite characters. She's queer, tough, and god. IYKYK
 
-**Ambasador G'Kar** The Narn ambasador and spiritual leader.
+**Ambassador G'Kar** The Narn ambasador and spiritual leader.
 
 **Ambassador Londo** The Centari ambassador who becomes a key person in the shadow war.
 
-**Ambassador Delen** The Mimbari ambassador who also becomes a key person in the shadow war.
+**Ambassador Delenn** The Mimbari ambassador who also becomes a key person in the shadow war.
 
 ### Seasons
 

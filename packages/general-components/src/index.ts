@@ -6,9 +6,8 @@ export {
   PortfolioButton,
   portfolioButtonVariants,
 } from './components/portfolio-button';
-export type { PortfolioButtonProps } from './components/portfolio-button';
 export { Container } from './components/ui/container';
-export { Modal, type ModalProps } from './components/modal';
+export { Modal } from './components/modal';
 export { Switch } from './components/ui/switch';
 export {
   Card,
@@ -48,60 +47,20 @@ export { Separator } from './components/ui/separator';
 export { Skeleton } from './components/ui/skeleton';
 export { TempNav } from './components/temp-nav';
 export { CassetteCarousel } from './components/cassette-carousel';
-export type {
-  CassetteSlide,
-  CassetteCarouselProps,
-} from './components/cassette-carousel';
 export { Playlist } from './components/playlist';
-export type { PlaylistVideo, PlaylistProps } from './components/playlist';
 export { AnimatedFooter } from './components/animated-footer';
-export type { AnimatedFooterProps } from './components/animated-footer';
 export { TentacleFooter } from './components/tentacle-footer';
-export type { TentacleFooterProps } from './components/tentacle-footer';
 export { WebGLTentacleFooter } from './components/webgl-tentacle-footer';
-export type { WebGLTentacleFooterProps } from './components/webgl-tentacle-footer';
 export { WebGLTentacleWall } from './components/webgl-tentacle-wall';
-export type { WebGLTentacleWallProps } from './components/webgl-tentacle-wall';
 export { ExperienceList } from './components/experience-list';
-export type {
-  ExperienceListProps,
-  ExperienceItem,
-} from './components/experience-list';
-export { CaseStudyList } from './components/case-study-list';
-export type {
-  CaseStudyListProps,
-  CaseStudyItem,
-} from './components/case-study-list';
-export { CaseStudyDetail } from './components/case-study-detail';
-export type {
-  CaseStudyDetailProps,
-  CaseStudyDetailItem,
-  CaseStudyContributor,
-  CaseStudyOverview,
-  CaseStudySection,
-} from './components/case-study-detail';
+export { CaseStudyList } from './components/modern/case-study-list';
+export { CaseStudyDetail } from './components/modern/case-study-detail';
 export { Hero } from './components/hero';
-export type { HeroProps } from './components/hero';
 export { SpriteAnimation } from './components/sprite-animation';
-export type { SpriteAnimationProps } from './components/sprite-animation';
 export { AppHeader } from './components/app-header';
-export type {
-  AppHeaderProps,
-  ThemeVariant,
-  ColorMode,
-} from './components/app-header';
 export { AnimatedTitle } from './components/animated-title';
-export type { AnimatedTitleProps } from './components/animated-title';
 export { GlitchEffect } from './components/glitch-effect';
-export type { GlitchEffectProps } from './components/glitch-effect';
 export { Slider } from './components/slider';
-export type {
-  SliderProps,
-  SliderSlide,
-  SliderSlides,
-  SliderSlideImage,
-  SliderSlideLink,
-} from './components/slider';
 export {
   Tooltip,
   TooltipContent,
@@ -110,7 +69,6 @@ export {
 } from './components/ui/tooltip';
 export { PageTransitionProvider } from './components/page-transition/page-transition-provider';
 export { usePageTransition } from './components/page-transition/page-transition-context';
-export type { StartTransitionOptions } from './components/page-transition/page-transition-context';
 export { ExternalTransitionLink } from './components/page-transition/external-transition-link';
 export { InternalTransitionLink } from './components/page-transition/internal-transition-link';
 
@@ -120,15 +78,9 @@ export { SidebarOld } from './components/2005/sidebar-old';
 
 // Modern theme components
 export { ArtGallery } from './components/modern/art-gallery';
-export { ShrineGallery } from './components/modern/shrine-gallery';
-export type {
-  ShrineGalleryProps,
-  ShrineItem,
-} from './components/modern/shrine-gallery';
+export { ShrineListing } from './components/modern/shrine-listing';
 export { ShrineDetail } from './components/modern/shrine-detail';
-export type { ShrineDetailProps } from './components/modern/shrine-detail';
 export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
-export type { HomeLoadingOverlayProps } from './components/modern/home-loading-overlay';
 export { default as LoadIn } from './components/modern/load-in';
 export { default as LoadInCard } from './components/modern/load-in-card';
 export { Navigation } from './components/modern/navigation';
@@ -146,3 +98,64 @@ export { useAvoidOverlap } from './hooks/use-avoid-overlap';
 export type { UseAvoidOverlapOptions } from './hooks/use-avoid-overlap';
 export { useSlider } from './hooks/use-slider';
 export { useActiveSection } from './hooks/use-active-section';
+
+// Prop and data types
+export type {
+  ImageProps,
+  HeroProps,
+  PlaylistVideoProps,
+  PlaylistProps,
+  GlitchEffectProps,
+  PortfolioButtonProps,
+  CassetteSlideProps,
+  CassetteCarouselProps,
+  AnimatedFooterProps,
+  WebGLTentacleWallProps,
+  TentacleFooterProps,
+  ThemeVariantProps,
+  ColorModeProps,
+  AppHeaderProps,
+  SpriteAnimationProps,
+  ModalProps,
+  WebGLTentacleFooterProps,
+  AnimatedTitleProps,
+  ExperienceItemProps,
+  ExperienceListProps,
+  SliderSlideLinkProps,
+  SliderSlideProps,
+  SliderSlidesProps,
+  SliderProps,
+  SlidePaneProps,
+  SlideContentProps,
+  SlideTagsProps,
+  SliderPaginationProps,
+  UseTransitionLinkClickOptionsProps,
+  ExternalTransitionLinkProps,
+  InternalTransitionLinkProps,
+  PageTransitionOverlayProps,
+  PageTransitionProviderProps,
+  StartTransitionOptionsProps,
+  PageTransitionContextValueProps,
+  ShrineListItemProps,
+  ShrineContentBlockProps,
+  ShrineItemProps,
+  ShrineListingProps,
+  ShrineDetailProps,
+  ArtItemProps,
+  MenuToggleIconProps,
+  CaseStudyItemProps,
+  CaseStudyListProps,
+  HomeLoadingOverlayProps,
+  CaseStudyContributorProps,
+  CaseStudyOverviewProps,
+  CaseStudySectionProps,
+  CaseStudyDetailItemProps,
+  CaseStudyDetailProps,
+  StickySideNavProps,
+  LoadInCardProps,
+  RevealingTentacleProps,
+  NavigationProps,
+  NavLinkProps,
+  NavItemProps,
+  ImageHeaderProps,
+} from '@general-purpose/types';

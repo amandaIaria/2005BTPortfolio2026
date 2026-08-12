@@ -1,6 +1,6 @@
-import type { SliderSlides } from '@general/components';
+import type { SliderSlidesProps } from '@general/components';
 
-export const sliderSamples: SliderSlides = [
+export const sliderSamples: SliderSlidesProps = [
   {
     left: {
       image: {
@@ -37,7 +37,7 @@ export const sliderSamples: SliderSlides = [
   },
 ];
 
-export const sliderFeatured: SliderSlides = [
+export const sliderFeatured: SliderSlidesProps = [
   {
     left: {
       image: {

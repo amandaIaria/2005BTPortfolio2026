@@ -1,9 +1,6 @@
 import { forwardRef } from 'react';
 import { cn } from '../lib/utils';
-
-export interface AnimatedTitleProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-}
+import type { AnimatedTitleProps } from '@general-purpose/types';
 
 const AnimatedTitle = forwardRef<HTMLDivElement, AnimatedTitleProps>(
   ({ className, children, ...props }, ref) => {

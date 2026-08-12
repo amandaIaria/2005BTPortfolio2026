@@ -1,26 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-
-interface SpriteAnimationProps extends React.ComponentProps<'div'> {
-  /** Path to the sprite sheet image */
-  src: string;
-  /** Number of columns in the sprite sheet */
-  columns: number;
-  /** Number of rows in the sprite sheet */
-  rows: number;
-  /** Total number of frames (defaults to columns * rows) */
-  frameCount?: number;
-  /** Width of each frame in pixels */
-  frameWidth: number;
-  /** Height of each frame in pixels */
-  frameHeight: number;
-  /** Duration of one full animation cycle in milliseconds */
-  duration?: number;
-  /** Whether the animation is playing */
-  playing?: boolean;
-  /** Scale factor for display size (default: 1) */
-  scale?: number;
-}
+import type { SpriteAnimationProps } from '@general-purpose/types';
 
 function SpriteAnimation({
   src,
@@ -97,4 +77,3 @@ function SpriteAnimation({
 }
 
 export { SpriteAnimation };
-export type { SpriteAnimationProps };

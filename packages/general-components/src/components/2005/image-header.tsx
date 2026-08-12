@@ -1,11 +1,5 @@
 import { cn } from '../../lib/utils';
-
-interface ImageHeaderProps extends React.ComponentProps<'div'> {
-  pageName: string;
-  siteName?: string;
-  src: string;
-  alt: string;
-}
+import type { ImageHeaderProps } from '@general-purpose/types';
 
 export function ImageHeader({
   pageName,
