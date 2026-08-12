@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowDownIcon, CheckCircleIcon } from '@phosphor-icons/react';
-import { cn } from '../../lib/utils';
-import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+import { CheckCircleIcon } from '@phosphor-icons/react';
 import { Separator } from '../ui/separator';
+import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
 import type { CaseStudyDetailProps } from '@general-purpose/types';
 
@@ -21,23 +20,10 @@ function CaseStudyDetail({
     >
       <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground">
         <div className="max-w-[1200px] mx-auto py-20">
-          <div className="flex items-center gap-4 pb-20">
-            <InternalTransitionLink
-              href="/case-studies"
-              className="flex gap-2 pointer w-fit text-sm group ease-in-out duration-300 "
-            >
-              <span>
-                <ArrowDownIcon
-                  weight="bold"
-                  className="text-accent h-4 w-4 rotate-90 group-hover:-translate-x-2 ease-in-out duration-300"
-                />
-              </span>
-              <span className="text-white dark:text-foreground group-hover:underline">
-                {t('caseStudies.detail.backLink')}
-              </span>
-            </InternalTransitionLink>
-            <div className="flex-1 h-px bg-accent" />
-          </div>
+          <Breadcrumb
+            href="/case-studies"
+            label={t('caseStudies.detail.backLink')}
+          />
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
             <div className="flex flex-col gap-6">
               <h1 className="text-5xl font-bold">{caseStudy.title}</h1>

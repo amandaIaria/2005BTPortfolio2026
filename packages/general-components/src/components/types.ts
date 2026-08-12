@@ -518,3 +518,9 @@ export interface ImageHeaderProps extends React.ComponentProps<'div'> {
   src: string;
   alt: string;
 }
+
+// modern/breadcrumb.tsx
+export interface BreadcrumbProps extends React.ComponentProps<'div'> {
+  href: string;
+  label: string;
+}
