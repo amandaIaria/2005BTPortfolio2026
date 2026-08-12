@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { WebGLTentacleFooterProps } from '@general-purpose/types';
+import type { WebGLTentacleFooterProps } from '@packages/general-components/src/components/types.ts';
 
 /* ------------------------------------------------------------------ */
 /*  Shader sources                                                     */

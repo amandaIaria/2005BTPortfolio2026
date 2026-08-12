@@ -3,7 +3,7 @@ import { InternalTransitionLink } from '../page-transition/internal-transition-l
 import type {
   ShrineListItemProps,
   ShrineListingProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 const items = json.listing as ShrineListItemProps[];
 

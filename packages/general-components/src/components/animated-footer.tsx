@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { AnimatedFooterProps } from '@general-purpose/types';
+import type { AnimatedFooterProps } from '@packages/general-components/src/components/types.ts';
 
 function Building({
   width,

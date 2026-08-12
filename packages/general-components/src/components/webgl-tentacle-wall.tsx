@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { WebGLTentacleWallProps } from '@general-purpose/types';
+import type { WebGLTentacleWallProps } from '@packages/general-components/src/components/types.ts';
 
 /* ------------------------------------------------------------------ */
 /*  Shader sources                                                     */

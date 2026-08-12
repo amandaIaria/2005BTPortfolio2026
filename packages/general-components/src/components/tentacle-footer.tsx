@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { TentacleFooterProps } from '@general-purpose/types';
+import type { TentacleFooterProps } from '@packages/general-components/src/components/types.ts';
 
 function Tentacle({ index, total }: { index: number; total: number }) {
   const baseX = (index / total) * 100;

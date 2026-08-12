@@ -1,7 +1,7 @@
 import { ArrowDownIcon } from '@phosphor-icons/react';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import type { BreadcrumbProps } from '@general-purpose/types';
+import type { BreadcrumbProps } from '@packages/general-components/src/components/types.ts';
 
 function Breadcrumb({ href, label, className, ...props }: BreadcrumbProps) {
   return (
