@@ -86,6 +86,7 @@ export { default as LoadInCard } from './components/modern/load-in-card';
 export { Navigation } from './components/modern/navigation';
 export { NavToggle } from './components/modern/nav-toggle';
 export { ThemeToggle } from './components/modern/theme-toggle';
+export { Breadcrumb } from './components/modern/breadcrumb';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';
@@ -158,4 +159,5 @@ export type {
   NavLinkProps,
   NavItemProps,
   ImageHeaderProps,
+  BreadcrumbProps,
 } from '@general-purpose/types';
