@@ -1,5 +1,4 @@
 [
-
   {
     "title": "Evil Sam",
     "image": {
@@ -9,7 +8,7 @@
       "width": 10000
     }
   },
-    {
+  {
     "title": "Portrait of Evil Jamie",
     "image": {
       "src": "/img/art/portraite_evil_jamie.png",
@@ -18,7 +17,7 @@
       "width": 10000
     }
   },
-    {
+  {
     "title": "Jack Update",
     "image": {
       "src": "/img/art/jackupdate.png",
@@ -36,7 +35,6 @@
       "width": 5000
     }
   },
-
 
   {
     "title": "Self Portrait",
@@ -84,7 +82,7 @@
     }
   },
 
-    {
+  {
     "title": "On the Balcony",
     "image": {
       "src": "/img/art/3_ON_THE_BALCONY-ip.png",
@@ -93,7 +91,7 @@
       "width": 10000
     }
   },
-    {
+  {
     "title": "Pencil Finish Evil Sam",
     "image": {
       "src": "/img/art/pencilfinishevilsam.png",

@@ -1,36 +1,13 @@
 import json from '@json/data/json/shrines.json';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+import type {
+  ShrineListItemProps,
+  ShrineListingProps,
+} from '@general-purpose/types';
 
-interface ShrineGalleryImage {
-  src: string;
-  alt: string;
-}
+const items = json.listing as ShrineListItemProps[];
 
-interface ShrineItem {
-  slug: string;
-  title: string;
-  description?: string;
-  image: ShrineGalleryImage;
-  gallery?: ShrineGalleryImage[];
-  content?: {
-    copy: {
-      value: string;
-      title: string;
-      slug: string;
-    }[];
-    image?: ShrineGalleryImage[];
-  }[];
-}
-
-interface ShrineGalleryProps {
-  kicker?: string;
-  heading: string;
-  intro?: string;
-}
-
-const items = json.listing as ShrineItem[];
-
-function ShrineGallery({ kicker, heading, intro }: ShrineGalleryProps) {
+function ShrineListing({ kicker, heading, intro }: ShrineListingProps) {
   return (
     <div
       data-component="shrine-gallery"
@@ -79,5 +56,4 @@ function ShrineGallery({ kicker, heading, intro }: ShrineGalleryProps) {
   );
 }
 
-export { ShrineGallery };
-export type { ShrineGalleryProps, ShrineItem };
+export { ShrineListing };

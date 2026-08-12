@@ -1,10 +1,12 @@
 import { animate, useMotionValue, useReducedMotion } from 'motion/react';
 import { useCallback, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { PageTransitionContext } from './page-transition-context';
-import type { StartTransitionOptions } from './page-transition-context';
 import { PageTransitionOverlay } from './page-transition-overlay';
+import type {
+  StartTransitionOptionsProps,
+  PageTransitionProviderProps,
+} from '@general-purpose/types';
 
 const GROW_TRANSITION = { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const };
 const FADE_TRANSITION = { duration: 0.35, ease: 'easeInOut' as const };
@@ -13,10 +15,6 @@ function waitForNextPaint(): Promise<void> {
   return new Promise((resolve) => {
     requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
   });
-}
-
-interface PageTransitionProviderProps {
-  children: ReactNode;
 }
 
 export function PageTransitionProvider({
@@ -39,7 +37,7 @@ export function PageTransitionProvider({
       href,
       backgroundColor: bg,
       external,
-    }: StartTransitionOptions) => {
+    }: StartTransitionOptionsProps) => {
       if (isRunningRef.current) return;
       isRunningRef.current = true;
       setBackgroundColor(bg);

@@ -1,15 +1,5 @@
 import { motion } from 'motion/react';
-import type { MotionValue } from 'motion/react';
-
-interface PageTransitionOverlayProps {
-  top: MotionValue<number>;
-  left: MotionValue<number>;
-  width: MotionValue<number>;
-  height: MotionValue<number>;
-  opacity: MotionValue<number>;
-  backgroundColor: string;
-  active: boolean;
-}
+import type { PageTransitionOverlayProps } from '@general-purpose/types';
 
 export function PageTransitionOverlay({
   top,

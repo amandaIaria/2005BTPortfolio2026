@@ -1,57 +1,11 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowDownIcon, CheckCircleIcon } from '@phosphor-icons/react';
-import { cn } from '../lib/utils';
-import { InternalTransitionLink } from './page-transition/internal-transition-link';
-import { Separator } from './ui/separator';
-
-interface CaseStudyContributor {
-  name: string;
-  role: string;
-  avatar: {
-    src: string;
-    alt: string;
-  };
-}
-
-interface CaseStudyOverview {
-  label: string;
-  description: string;
-  sector: string;
-  teamSize: string;
-  location: string;
-}
-
-interface CaseStudySection {
-  id: string;
-  title: string;
-  content: string;
-  className?: string;
-  image?: {
-    src: string;
-    alt: string;
-  };
-}
-
-interface CaseStudyDetailItem {
-  slug: string;
-  title: string;
-  description: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  contributor: CaseStudyContributor;
-  overview: CaseStudyOverview;
-  problem: string;
-  approach: string;
-  outcomes: string[];
-  sections: CaseStudySection[];
-}
-
-interface CaseStudyDetailProps extends React.ComponentProps<'div'> {
-  caseStudy: CaseStudyDetailItem;
-}
+import { cn } from '../../lib/utils';
+import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+import { Separator } from '../ui/separator';
+import { StickySideNav } from './sticky-side-nav';
+import type { CaseStudyDetailProps } from '@general-purpose/types';
 
 function CaseStudyDetail({
   caseStudy,
@@ -195,18 +149,17 @@ function CaseStudyDetail({
             <Separator />
 
             <div className="flex flex-col gap-16">
-              {caseStudy.sections.map((section) => (
+              {caseStudy.content.map((section) => (
                 <div
                   key={section.id}
                   id={section.id}
                   className="flex flex-col gap-4 scroll-mt-24"
                 >
-
-                 {section.content && (
+                  {section.copy && (
                     <div>
                       <h3 className="text-2xl font-bold">{section.title}</h3>
                       <p className="max-w-3xl text-lg text-muted-foreground">
-                        {section.content}
+                        {section.copy}
                       </p>
                     </div>
                   )}
@@ -219,7 +172,6 @@ function CaseStudyDetail({
                         className="h-full w-full object-cover"
                       />
                     </figure>
-                  
                   )}
                 </div>
               ))}
@@ -227,20 +179,10 @@ function CaseStudyDetail({
           </div>
 
           <div className="flex flex-col gap-4 relative">
-            <div className="sticky -mt-4 top-0 p-4 bg-background">
-              <h3 className="text-lg font-bold tracking-wide mb-4 text-muted-foreground">
-                {t('caseStudies.detail.onThisPageHeading')}
-              </h3>
-              <ul className="flex flex-col gap-2">
-                {caseStudy.sections.map((section) => section.title !== "" && (
-                  <li key={section.id}>
-                    <a href={`#${section.id}`} className="pointer text-accent leading-0">
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <StickySideNav
+              content={caseStudy}
+              navLabel={t('caseStudies.navSidebarLabel')}
+            />
           </div>
         </div>
       </div>
@@ -249,10 +191,3 @@ function CaseStudyDetail({
 }
 
 export { CaseStudyDetail };
-export type {
-  CaseStudyDetailProps,
-  CaseStudyDetailItem,
-  CaseStudyContributor,
-  CaseStudyOverview,
-  CaseStudySection,
-};

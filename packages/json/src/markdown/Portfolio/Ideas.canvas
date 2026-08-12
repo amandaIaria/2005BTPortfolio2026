@@ -4,9 +4,11 @@
 		{"id":"34cbe783523e2d3c","type":"link","url":"https://monsieurdoll.neocities.org/","x":-200,"y":-200,"width":400,"height":400},
 		{"id":"b06371098fe5a5e8","type":"link","url":"https://altalenae.neocities.org/","x":20,"y":-490,"width":400,"height":400},
 		{"id":"dbfdeffa905b225d","type":"link","url":"https://noisecorvid.neocities.org/home","x":120,"y":-40,"width":400,"height":400},
-		{"id":"05283d955bc805b4","x":-527,"y":-611,"width":250,"height":60,"type":"text","text":"https://usprisoner.neocities.org/"},
-		{"id":"0040fcf617cda81f","x":-520,"y":60,"width":400,"height":400,"type":"link","url":"https://beedge.neocities.org/"},
-		{"id":"00afdbb4a75aade6","x":200,"y":-640,"width":400,"height":400,"type":"link","url":"https://fearofmusic.neocities.org/"}
+		{"id":"05283d955bc805b4","type":"text","text":"https://usprisoner.neocities.org/","x":-527,"y":-611,"width":250,"height":60},
+		{"id":"0040fcf617cda81f","type":"link","url":"https://beedge.neocities.org/","x":-520,"y":60,"width":400,"height":400},
+		{"id":"00afdbb4a75aade6","type":"link","url":"https://fearofmusic.neocities.org/","x":200,"y":-640,"width":400,"height":400},
+		{"id":"a6f2351807d30a5c","type":"file","file":"Pasted image 20260811100420.png","x":520,"y":-1304,"width":391,"height":400},
+		{"id":"e442efd9c98ac6a4","type":"file","file":"Pasted image 20260811100120.png","x":0,"y":-1168,"width":400,"height":264}
 	],
 	"edges":[]
 }

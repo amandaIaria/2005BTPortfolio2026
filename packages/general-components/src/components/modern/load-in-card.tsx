@@ -1,15 +1,12 @@
 import { motion } from 'motion/react';
 import { useId, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
 import { cn } from '../../lib/utils';
 import { usePageTransition } from '../page-transition/page-transition-context';
 import { boxScale } from './load-in';
-
-interface LoadInCardProps {
-  href: string;
-  children?: ReactNode;
-  className?: string;
-}
+import type {
+  LoadInCardProps,
+  RevealingTentacleProps,
+} from '@general-purpose/types';
 
 const TENTACLE_VIEWBOX = '0 0 423 513';
 
@@ -159,12 +156,6 @@ z"
       />
     </g>
   );
-}
-
-interface RevealingTentacleProps {
-  maskId: string;
-  hovered: boolean;
-  className?: string;
 }
 
 const reveal = {

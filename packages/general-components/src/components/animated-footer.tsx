@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-
-interface AnimatedFooterProps extends React.ComponentProps<'footer'> {
-  text?: string;
-}
+import type { AnimatedFooterProps } from '@general-purpose/types';
 
 function Building({
   width,
@@ -190,4 +187,3 @@ function AnimatedFooter({
 }
 
 export { AnimatedFooter };
-export type { AnimatedFooterProps };

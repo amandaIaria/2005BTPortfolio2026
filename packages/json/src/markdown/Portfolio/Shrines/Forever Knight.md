@@ -32,7 +32,7 @@ We've got as said before Nicholas, a french vampire from the times of the crusad
 
 Next was Jeanette, a 1000 year old french vampire who was saved and empowered by her maker. As an adult she's become my favorite character. She's sudective, pragmatic, and tired of Nick's shit. She becomes the emotional support for Nick, even in 1000 years she's still doing emotional labor for men.
 
-Their maker was Lucian Lacriox, a vampire from antiquity who was a witness to the eruption of Mount Suvius at Pompii. If it wasn't for his maker he would have died and been another corpse buried by ash. His relationship, to not spoil to much, is the opposite of Lestat and Gabreillie. It was not something he wanted.
+Their maker was Lucian LaCroix, a vampire from antiquity who was a witness to the eruption of Mount Vesuvius at Pompeii. If it wasn't for his maker he would have died and been another corpse buried by ash. His relationship, to not spoil to much, is the opposite of Lestat and Gabrielle. It was not something he wanted.
 
 #### The Humans
 
@@ -50,7 +50,7 @@ Where we meet our caste of characters. This season is more supernatural then pol
 
 #### season two
 
-This season has some of my favorite episodes in it. There's a fever dream where Nick's guilt is so powerful that he hallucinates a life as a human. Another where Nick has to save Nat from Lacroix or else she will be turned, which it's a bit of the "save to woman" troupe of the 90s.
+This season has some of my favorite episodes in it. There's a fever dream where Nick's guilt is so powerful that he hallucinates a life as a human. Another where Nick has to save Nat from Lacroix or else she will be turned, which it's a bit of the "save the woman" troupe of the 90s.
 
 #### season three
 

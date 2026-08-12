@@ -19,6 +19,9 @@
       "@general/components/*": [
         "./packages/general-components/src/components/ui/*"
       ],
+      "@general-purpose/types": [
+        "./packages/general-components/src/components/types.ts"
+      ],
       "@general/pages/*": ["./packages/general-components/src/pages/*"],
       "@general/lib/*": ["./packages/general-components/src/lib/*"],
       "@design/pages/*": ["./packages/design-system/src/pages/*"],

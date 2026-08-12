@@ -1,21 +1,13 @@
 import * as React from 'react';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { cn } from '../lib/utils';
+import type { PlaylistProps } from '@general-purpose/types';
 
 declare global {
   interface Window {
     YT: typeof YT;
     onYouTubeIframeAPIReady: (() => void) | undefined;
   }
-}
-
-interface PlaylistVideo {
-  id: string;
-  title: string;
-}
-
-interface PlaylistProps extends React.ComponentProps<'div'> {
-  videos: PlaylistVideo[];
 }
 
 let apiLoaded = false;
@@ -207,4 +199,3 @@ function Playlist({ videos, className, ...props }: PlaylistProps) {
 }
 
 export { Playlist };
-export type { PlaylistVideo, PlaylistProps };

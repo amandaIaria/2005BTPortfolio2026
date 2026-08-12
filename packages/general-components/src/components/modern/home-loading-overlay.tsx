@@ -1,12 +1,9 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { WebGLTentacleWall } from '../webgl-tentacle-wall';
+import type { HomeLoadingOverlayProps } from '@general-purpose/types';
 
 const MIN_DISPLAY_MS = 1200;
-
-interface HomeLoadingOverlayProps {
-  onDone: () => void;
-}
 
 function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
   const shouldReduceMotion = useReducedMotion();
@@ -58,4 +55,3 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
 }
 
 export { HomeLoadingOverlay };
-export type { HomeLoadingOverlayProps };

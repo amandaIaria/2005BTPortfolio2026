@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-
-interface TentacleFooterProps extends React.ComponentProps<'footer'> {
-  text?: string;
-  tentacleCount?: number;
-}
+import type { TentacleFooterProps } from '@general-purpose/types';
 
 function Tentacle({ index, total }: { index: number; total: number }) {
   const baseX = (index / total) * 100;
@@ -130,4 +126,3 @@ function TentacleFooter({
 }
 
 export { TentacleFooter };
-export type { TentacleFooterProps };

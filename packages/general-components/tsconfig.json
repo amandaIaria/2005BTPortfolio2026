@@ -5,7 +5,8 @@
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@general-purpose/types": ["./src/components/types.ts"]
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "moduleResolution": "bundler",

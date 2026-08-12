@@ -1,15 +1,6 @@
 import { useMemo } from 'react';
 import json from '@json/data/json/art.json';
-
-interface ArtItem {
-  title: string;
-  image: {
-    src: string;
-    alt: string;
-    height: number;
-    width: number;
-  };
-}
+import type { ArtItemProps } from '@general-purpose/types';
 
 // CSS columns fills column-major in DOM order. The source data cycles through
 // aspect ratios every 5 items, which lines up evenly with 3 columns of 10 and
@@ -22,7 +13,10 @@ function interleaveForColumns<T>(items: T[], columnCount: number): T[] {
 }
 
 export function ArtGallery() {
-  const items = useMemo(() => interleaveForColumns(json as ArtItem[], 3), []);
+  const items = useMemo(
+    () => interleaveForColumns(json as ArtItemProps[], 3),
+    [],
+  );
 
   return (
     <div
