@@ -1,5 +1,5 @@
 import { Badge } from '../ui/badge';
-import type { SlideTagsProps } from '@general-purpose/types';
+import type { SlideTagsProps } from '@packages/general-components/src/components/types.ts';
 
 export default function SliderTags({ tags }: SlideTagsProps) {
   return (

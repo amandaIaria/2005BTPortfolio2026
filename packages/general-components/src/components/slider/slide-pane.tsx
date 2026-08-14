@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import type { SlidePaneProps } from '@general-purpose/types';
+import type { SlidePaneProps } from '@packages/general-components/src/components/types.ts';
 import { SlideContent } from './slide-content';
 
 export function SlidePaneImage({

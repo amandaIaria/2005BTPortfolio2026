@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { SpriteAnimationProps } from '@general-purpose/types';
+import type { SpriteAnimationProps } from '@packages/general-components/src/components/types.ts';
 
 function SpriteAnimation({
   src,

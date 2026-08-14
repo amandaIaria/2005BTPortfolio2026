@@ -107,6 +107,17 @@ export interface WebGLTentacleWallProps extends React.ComponentProps<'div'> {
    * default behavior.
    */
   colorValue?: string;
+  /**
+   * Set by parents rendering this inside Footer, so it can apply
+   * footer-specific Tailwind classes instead of its standalone defaults.
+   */
+  inFooter?: boolean;
+  /**
+   * Fraction (0-1) of the canvas given to the solid base wall before the
+   * tentacles start — drawn pre-rotation, so after a -90/270 rotate this is
+   * the band height at the bottom. Defaults to 0.48.
+   */
+  baseSize?: number;
 }
 
 // tentacle-footer.tsx
@@ -384,7 +395,7 @@ export interface ShrineContentBlockProps {
 
 // shrines.json `shrine-pages` entries — full detail page data
 export interface ShrineItemProps {
-  id: string;
+  slug: string;
   title: string;
   description?: string;
   image: ImageProps;
@@ -523,4 +534,16 @@ export interface ImageHeaderProps extends React.ComponentProps<'div'> {
 export interface BreadcrumbProps extends React.ComponentProps<'div'> {
   href: string;
   label: string;
+}
+
+// modern/footer.tsx
+export interface FooterProps extends React.ComponentProps<'footer'> {
+  logoText?: string;
+  year?: number;
+}
+
+// modern/social-bar.tsx
+export interface SocialBarProps extends React.ComponentProps<'div'> {
+  linkedinHref?: string;
+  githubHref?: string;
 }
