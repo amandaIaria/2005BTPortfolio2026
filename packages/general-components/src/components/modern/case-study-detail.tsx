@@ -19,8 +19,8 @@ function CaseStudyDetail({
       className={cn(className)}
       {...props}
     >
-      <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground">
-        <div className="max-w-[1200px] mx-auto py-20">
+      <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground backdrop-blur-lg">
+        <div className="max-w-300 mx-auto py-20">
           <Breadcrumb
             href="/case-studies"
             label={t('caseStudies.detail.backLink')}
@@ -58,7 +58,7 @@ function CaseStudyDetail({
         </div>
       </header>
 
-      <div className="max-w-[1200px] mx-auto py-20">
+      <div className="max-w-300 w-full relative z-10 mx-auto pt-20 backdrop-blur-lg">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="flex flex-col gap-4 stick top-0">
             <p className="text-sm font-bold tracking-wide text-accent uppercase">

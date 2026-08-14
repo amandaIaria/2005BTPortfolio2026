@@ -3,6 +3,7 @@ import {
   Button,
   WebGLTentacleWall,
   SocialBar,
+  Footer,
 } from '@general/components';
 import { useTranslation } from 'react-i18next';
 import { useForm } from '@tanstack/react-form';
@@ -26,14 +27,11 @@ function ModernContactPage() {
 
   return (
     <>
-      <div className="fixed -z-10 -bottom-[50vh]">
-        <WebGLTentacleWall tentacleCount={6} rotate={-90} />
-      </div>
       <Container
         data-component="modern-contact-page"
-        className="max-w-5xl h-screen mx-auto grid items-center"
+        className=" h-screen grid items-center relative z-10"
       >
-        <div className="grid gap-20 grid-cols-[400px_1fr]">
+        <div className="grid gap-20 grid-cols-[400px_1fr] max-w-200 w-full mx-auto relative z-10 backdrop-blur-sm">
           <div className="flex flex-col gap-10">
             <h1 className="text-6xl">{t('contact.heading')}</h1>
             <p className="text-md font-medium text-accent">
@@ -126,6 +124,9 @@ function ModernContactPage() {
               </div>
             </form>
           </div>
+        </div>
+        <div className="absolute bottom-0">
+          <Footer />
         </div>
       </Container>
     </>
