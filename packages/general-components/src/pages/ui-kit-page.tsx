@@ -45,6 +45,7 @@ import {
 } from '../components/ui/tooltip';
 import { AnimatedTitle } from '../components/animated-title';
 import { ImageModal } from '../components/image-modal';
+import { ContactForm } from '../components/contact-form';
 import { sliderSamples } from '@json/data';
 
 function slugify(text: string) {
@@ -300,6 +301,11 @@ export default function UiKitPage() {
                 className="rounded-md"
               />
             </div>
+          </Section>
+
+          {/* Contact Form */}
+          <Section title="Contact Form">
+            <ContactForm className="max-w-lg" />
           </Section>
 
           {/* Tooltip */}

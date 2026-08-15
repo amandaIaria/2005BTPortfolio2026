@@ -15,6 +15,11 @@ export interface ImageModalProps extends ImageProps {
   imageClassName?: string;
 }
 
+// contact-form.tsx
+export interface ContactFormProps {
+  className?: string;
+}
+
 // hero.tsx
 export interface HeroProps extends React.ComponentProps<'div'> {
   image: ImageProps;

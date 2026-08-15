@@ -7,8 +7,12 @@ export {
   portfolioButtonVariants,
 } from './components/portfolio-button';
 export { Container } from './components/ui/container';
+export { Input } from './components/ui/input';
+export { Label } from './components/ui/label';
+export { Textarea } from './components/ui/textarea';
 export { Modal } from './components/modal';
 export { ImageModal } from './components/image-modal';
+export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
 export {
   Card,
@@ -122,6 +126,7 @@ export type {
   SpriteAnimationProps,
   ModalProps,
   ImageModalProps,
+  ContactFormProps,
   WebGLTentacleFooterProps,
   AnimatedTitleProps,
   ExperienceItemProps,
