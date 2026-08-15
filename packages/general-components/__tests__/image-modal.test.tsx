@@ -1,7 +1,18 @@
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import { describe, expect, it, afterEach } from 'vitest';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { resources } from '@json/data';
 
 import { ImageModal } from '../src/components/image-modal';
+
+i18n.use(initReactI18next).init({
+  resources: { en: resources.en },
+  lng: 'en',
+  fallbackLng: 'en',
+  defaultNS: 'common',
+  interpolation: { escapeValue: false },
+});
 
 describe('ImageModal', () => {
   afterEach(cleanup);

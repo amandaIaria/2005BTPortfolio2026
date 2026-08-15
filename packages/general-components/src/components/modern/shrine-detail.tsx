@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
+import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
 import { Footer } from './footer';
 import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
-import type { ShrineDetailProps } from '@general/types';
+import { ImageModal } from '../image-modal';
+import type { ShrineDetailProps } from '@packages/general-components/src/components/types.ts';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   const { t } = useTranslation();
@@ -97,11 +100,10 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                   key={index}
                   className="aspect-square overflow-hidden bg-(--surface)"
                 >
-                  <img
+                  <ImageModal
                     src={image.src}
                     alt={image.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="object-cover"
                   />
                 </div>
               ))}
