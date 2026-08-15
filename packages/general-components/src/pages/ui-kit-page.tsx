@@ -44,6 +44,7 @@ import {
   TooltipContent,
 } from '../components/ui/tooltip';
 import { AnimatedTitle } from '../components/animated-title';
+import { ImageModal } from '../components/image-modal';
 import { sliderSamples } from '@json/data';
 
 function slugify(text: string) {
@@ -288,6 +289,17 @@ export default function UiKitPage() {
                 </DialogFooter>
               </DialogContent>
             </Dialog>
+          </Section>
+
+          {/* Image Modal */}
+          <Section title="Image Modal">
+            <div className="max-w-[200px]">
+              <ImageModal
+                src="/placeholder-man.jpg"
+                alt="Placeholder portrait"
+                className="rounded-md"
+              />
+            </div>
           </Section>
 
           {/* Tooltip */}
