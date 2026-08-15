@@ -8,6 +8,7 @@ export {
 } from './components/portfolio-button';
 export { Container } from './components/ui/container';
 export { Modal } from './components/modal';
+export { ImageModal } from './components/image-modal';
 export { Switch } from './components/ui/switch';
 export {
   Card,
@@ -120,6 +121,7 @@ export type {
   AppHeaderProps,
   SpriteAnimationProps,
   ModalProps,
+  ImageModalProps,
   WebGLTentacleFooterProps,
   AnimatedTitleProps,
   ExperienceItemProps,

@@ -72,5 +72,9 @@
   },
   "loadIn": {
     "selfPortraitAlt": "Self Portrait"
+  },
+  "imageModal": {
+    "viewFullLabel": "View full image: {{alt}}",
+    "description": "Full-size view of the image. Press Escape or click outside to close."
   }
 }

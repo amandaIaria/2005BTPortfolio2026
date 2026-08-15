@@ -9,6 +9,12 @@ export interface ImageProps {
   className?: string;
 }
 
+// image-modal.tsx
+export interface ImageModalProps extends ImageProps {
+  thumbnailSrc?: string;
+  imageClassName?: string;
+}
+
 // hero.tsx
 export interface HeroProps extends React.ComponentProps<'div'> {
   image: ImageProps;

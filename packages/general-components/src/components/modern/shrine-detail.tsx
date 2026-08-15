@@ -6,6 +6,7 @@ import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
 import { Footer } from './footer';
 import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
+import { ImageModal } from '../image-modal';
 import type { ShrineDetailProps } from '@packages/general-components/src/components/types.ts';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
@@ -99,11 +100,10 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                   key={index}
                   className="aspect-square overflow-hidden bg-(--surface)"
                 >
-                  <img
+                  <ImageModal
                     src={image.src}
                     alt={image.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="object-cover"
                   />
                 </div>
               ))}
