@@ -9,6 +9,20 @@ export interface ImageProps {
   className?: string;
 }
 
+// image-modal.tsx
+export interface ImageModalProps extends ImageProps {
+  thumbnailSrc?: string;
+  imageClassName?: string;
+}
+
+// contact-form.tsx
+export interface ContactFormProps {
+  className?: string;
+  onSubmit: (status: 'success' | 'error') => void;
+}
+
+export type SubmitStatus = 'idle' | 'pending' | 'success' | 'error';
+
 // hero.tsx
 export interface HeroProps extends React.ComponentProps<'div'> {
   image: ImageProps;

@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
-import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
 import { Footer } from './footer';
 import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
+import { ImageModal } from '../image-modal';
 import type { ShrineDetailProps } from '@packages/general-components/src/components/types.ts';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
@@ -14,9 +13,9 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 
   return (
     <div data-component="shrine-detail" className={cn(className)} {...props}>
-      <header className="bg-black dark:bg-(--surface) pt-20 relative block h-150 mb-50">
-        <div className="flex flex-col gap-10  absolute inset-x-0 bottom-0 top-[60px]">
-          <div className="max-w-300 mx-auto w-full grid gap-10">
+      <header className="bg-black dark:bg-(--surface) pt-20 relative block h-150 mb-25">
+        <div className="flex flex-col gap-10  absolute inset-x-0 bottom-0 top-15">
+          <div className="max-w-300 mx-auto w-full -mb-17">
             <Breadcrumb href="/shrines" label={t('shrines.detail.backLink')} />
           </div>
 
@@ -99,11 +98,10 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                   key={index}
                   className="aspect-square overflow-hidden bg-(--surface)"
                 >
-                  <img
+                  <ImageModal
                     src={image.src}
                     alt={image.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="object-cover"
                   />
                 </div>
               ))}

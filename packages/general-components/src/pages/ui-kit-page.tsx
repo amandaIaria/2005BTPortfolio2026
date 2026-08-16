@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { cn } from '../lib/utils';
 import { useActiveSection } from '../hooks/use-active-section';
 import { Button } from '../components/ui/button';
+import { Alert, AlertTitle, AlertDescription } from '../components/ui/alert';
 import { Badge } from '../components/ui/badge';
 import {
   Card,
@@ -44,6 +45,8 @@ import {
   TooltipContent,
 } from '../components/ui/tooltip';
 import { AnimatedTitle } from '../components/animated-title';
+import { ImageModal } from '../components/image-modal';
+import { ContactForm } from '../components/contact-form';
 import { sliderSamples } from '@json/data';
 
 function slugify(text: string) {
@@ -211,6 +214,40 @@ export default function UiKitPage() {
             </div>
           </Section>
 
+          {/* Alert */}
+          <Section title="Alert">
+            <div className="flex flex-col gap-4">
+              <Alert>
+                <AlertTitle>Default</AlertTitle>
+                <AlertDescription>
+                  A neutral, informational alert.
+                </AlertDescription>
+              </Alert>
+              <Alert variant="info">
+                <AlertTitle>Info</AlertTitle>
+                <AlertDescription>
+                  Uses the BT active/info blue.
+                </AlertDescription>
+              </Alert>
+              <Alert variant="success">
+                <AlertTitle>Success</AlertTitle>
+                <AlertDescription>Uses the BT success green.</AlertDescription>
+              </Alert>
+              <Alert variant="error">
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>Uses the BT error red.</AlertDescription>
+              </Alert>
+              <Alert variant="success" onDismiss={() => {}}>
+                <AlertTitle>Dismissible success</AlertTitle>
+                <AlertDescription>Click the × to dismiss.</AlertDescription>
+              </Alert>
+              <Alert variant="error" onDismiss={() => {}}>
+                <AlertTitle>Dismissible error</AlertTitle>
+                <AlertDescription>Click the × to dismiss.</AlertDescription>
+              </Alert>
+            </div>
+          </Section>
+
           {/* Card */}
           <Section title="Card">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -288,6 +325,22 @@ export default function UiKitPage() {
                 </DialogFooter>
               </DialogContent>
             </Dialog>
+          </Section>
+
+          {/* Image Modal */}
+          <Section title="Image Modal">
+            <div className="max-w-[200px]">
+              <ImageModal
+                src="/placeholder-man.jpg"
+                alt="Placeholder portrait"
+                className="rounded-md"
+              />
+            </div>
+          </Section>
+
+          {/* Contact Form */}
+          <Section title="Contact Form">
+            <ContactForm className="max-w-lg" onSubmit={() => {}} />
           </Section>
 
           {/* Tooltip */}
