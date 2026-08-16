@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
 import { Badge } from './ui/badge';
-import type { ExperienceListProps } from '@general-purpose/types';
+import type { ExperienceListProps } from '@packages/general-components/src/components/types.ts';
 
 function ExperienceList({
   experiences,

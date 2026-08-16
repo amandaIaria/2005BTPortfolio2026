@@ -26,7 +26,10 @@
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
     "messagePlaceholder": "Your Message",
-    "submitLabel": "Send Message"
+    "submitLabel": "Send Message",
+    "sendingLabel": "Sending…",
+    "successMessage": "Thanks for reaching out — I'll get back to you soon.",
+    "errorMessage": "Something went wrong sending your message. Please try again or email me directly."
   },
   "experience": {
     "heading": "Experience",
@@ -72,5 +75,9 @@
   },
   "loadIn": {
     "selfPortraitAlt": "Self Portrait"
+  },
+  "imageModal": {
+    "viewFullLabel": "View full image: {{alt}}",
+    "description": "Full-size view of the image. Press Escape or click outside to close."
   }
 }

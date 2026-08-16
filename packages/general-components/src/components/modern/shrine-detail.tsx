@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
 import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
+import { Footer } from './footer';
+import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
-import type { ShrineDetailProps } from '@general-purpose/types';
+import { ImageModal } from '../image-modal';
+import type { ShrineDetailProps } from '@packages/general-components/src/components/types.ts';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   const { t } = useTranslation();
@@ -12,29 +15,10 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 
   return (
     <div data-component="shrine-detail" className={cn(className)} {...props}>
-      <header className="bg-black  dark:bg-(--surface) pt-20 relative block h-[600px] mb-50">
+      <header className="bg-black dark:bg-(--surface) pt-20 relative block h-150 mb-50">
         <div className="flex flex-col gap-10  absolute inset-x-0 bottom-0 top-[60px]">
           <div className="max-w-300 mx-auto w-full grid gap-10">
-            <div className="flex items-center gap-4">
-              <InternalTransitionLink
-                href="/shrines"
-                className="flex gap-2 pointer w-fit text-sm group ease-in-out duration-300 "
-              >
-                <span>
-                  <ArrowDownIcon
-                    weight="bold"
-                    className="text-accent h-4 w-4 rotate-90 group-hover:-translate-x-2 ease-in-out duration-300"
-                  />
-                </span>
-                <span className="text-white dark:text-foreground group-hover:underline">
-                  {t('shrines.detail.backLink')}
-                </span>
-              </InternalTransitionLink>
-              <div className="flex-1 h-px bg-accent" />
-            </div>
-            <h1 className="text-4xl  text-gray-50 dark:text-foreground font-bold  sm:text-5xl font-serif">
-              {shrine.title}
-            </h1>
+            <Breadcrumb href="/shrines" label={t('shrines.detail.backLink')} />
           </div>
 
           <div className="">
@@ -61,7 +45,7 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
       </header>
 
       {shrine.content && shrine.content.length > 0 && (
-        <section className="max-w-300 mx-auto w-full flex gap-4">
+        <section className="max-w-300 mx-auto w-full flex gap-4 relative z-10">
           <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
             {shrine.content.map((content, blockIndex) => {
               // block.copy.map((copy, copyIndex) => {
@@ -105,7 +89,7 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
       )}
 
       {shrine.gallery && shrine.gallery.length > 0 && (
-        <footer className="max-w-300 mx-auto w-full">
+        <div className="backdrop-blur-lg max-w-300 w-full relative z-10 mx-auto pt-20">
           <div className="flex flex-col gap-6 border-t border-(--surface-strong) pt-12">
             <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
               {t('shrines.detail.galleryHeading')}
@@ -116,18 +100,19 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                   key={index}
                   className="aspect-square overflow-hidden bg-(--surface)"
                 >
-                  <img
+                  <ImageModal
                     src={image.src}
                     alt={image.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="object-cover"
                   />
                 </div>
               ))}
             </div>
           </div>
-        </footer>
+        </div>
       )}
+
+      <Footer />
     </div>
   );
 }

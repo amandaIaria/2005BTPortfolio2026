@@ -1,5 +1,5 @@
 import { cn } from '../../lib/utils';
-import type { ImageHeaderProps } from '@general-purpose/types';
+import type { ImageHeaderProps } from '@packages/general-components/src/components/types.ts';
 
 export function ImageHeader({
   pageName,

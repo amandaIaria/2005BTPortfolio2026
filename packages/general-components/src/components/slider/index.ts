@@ -4,7 +4,7 @@ export type {
   SliderSlideProps,
   SliderSlidesProps,
   SliderSlideLinkProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 export { SlideContent } from './slide-content';
 export { SlidePaneImage, SlidePaneRight, SlideMobileImage } from './slide-pane';
 export { SliderPagination } from './slider-pagination';

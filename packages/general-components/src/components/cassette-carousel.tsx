@@ -11,7 +11,7 @@ import {
 import type {
   CassetteSlideProps,
   CassetteCarouselProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 function CassetteTape({
   slide,
