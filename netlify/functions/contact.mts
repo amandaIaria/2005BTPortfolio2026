@@ -1,6 +1,8 @@
 import type { Context } from '@netlify/functions';
 import { Resend } from 'resend';
 
+import { isSpam } from './_lib/anti-spam';
+
 interface ContactPayload {
   name: string;
   email: string;
@@ -17,12 +19,9 @@ function jsonResponse(status: number, body: unknown) {
 }
 
 function validate(
-  body: unknown,
+  body: Record<string, unknown>,
 ): { ok: true; value: ContactPayload } | { ok: false; error: string } {
-  if (typeof body !== 'object' || body === null) {
-    return { ok: false, error: 'Invalid request body' };
-  }
-  const { name, email, message } = body as Record<string, unknown>;
+  const { name, email, message } = body;
   if (typeof name !== 'string' || !name.trim()) {
     return { ok: false, error: 'Name is required' };
   }
@@ -50,7 +49,26 @@ export default async (req: Request, _context: Context) => {
     return jsonResponse(400, { error: 'Invalid JSON body' });
   }
 
-  const result = validate(body);
+  if (typeof body !== 'object' || body === null) {
+    return jsonResponse(400, { error: 'Invalid request body' });
+  }
+  const record = body as Record<string, unknown>;
+
+  if (
+    isSpam({
+      honeypot: record.company,
+      formLoadedAt: record.formLoadedAt,
+    })
+  ) {
+    console.log('Spam submission dropped (honeypot/time-trap)', {
+      company: record.company,
+      formLoadedAt: record.formLoadedAt,
+    });
+    // Report success without sending an email, so bots don't adapt/retry.
+    return jsonResponse(200, { ok: true });
+  }
+
+  const result = validate(record);
   if (!result.ok) {
     return jsonResponse(400, { error: result.error });
   }
@@ -82,7 +100,7 @@ export default async (req: Request, _context: Context) => {
         variables: {
           email_address: email,
           MESSAGE: message,
-          Name: name
+          Name: name,
         },
       },
     });

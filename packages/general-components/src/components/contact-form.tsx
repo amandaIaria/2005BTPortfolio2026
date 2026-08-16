@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from '@tanstack/react-form';
 import { CircleNotchIcon } from '@phosphor-icons/react';
@@ -55,6 +55,8 @@ function floatingLabelClassNameTextarea(hasValue: boolean) {
 function ContactForm({ className, onSubmit }: ContactFormProps) {
   const { t } = useTranslation();
   const [isPending, setIsPending] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
+  const formLoadedAt = useRef(Date.now());
 
   const form = useForm({
     defaultValues: {
@@ -68,7 +70,11 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
         const response = await fetch(CONTACT_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(value),
+          body: JSON.stringify({
+            ...value,
+            company: honeypot,
+            formLoadedAt: formLoadedAt.current,
+          }),
         });
         if (!response.ok) {
           throw new Error('Request failed');
@@ -91,8 +97,24 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
         e.stopPropagation();
         void form.handleSubmit();
       }}
-      className={cn('grid grid-cols-1 gap-6', className)}
+      className={cn('relative grid grid-cols-1 gap-6', className)}
     >
+      {/* Honeypot — hidden from real users, only bots fill this in. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-0 w-0 overflow-hidden"
+      >
+        <label htmlFor="company">Company</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
       <form.Field
         name="name"
         validators={{ onChange: ({ value }) => required('Name')(value) }}

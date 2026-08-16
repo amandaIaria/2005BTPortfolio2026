@@ -39,6 +39,16 @@ describe('ContactForm', () => {
     vi.restoreAllMocks();
   });
 
+  it('renders the honeypot field hidden and out of tab order', () => {
+    render(<ContactForm onSubmit={vi.fn()} />);
+    const honeypot = document.querySelector<HTMLInputElement>(
+      'input[name="company"]',
+    );
+    expect(honeypot).not.toBeNull();
+    expect(honeypot?.closest('[aria-hidden="true"]')).not.toBeNull();
+    expect(honeypot?.tabIndex).toBe(-1);
+  });
+
   it('shows validation errors when required fields are empty on submit', async () => {
     render(<ContactForm onSubmit={vi.fn()} />);
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
@@ -61,15 +71,17 @@ describe('ContactForm', () => {
     await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledWith(
         '/.netlify/functions/contact',
-        expect.objectContaining({
-          method: 'POST',
-          body: JSON.stringify({
-            name: 'Ada Lovelace',
-            email: 'ada@example.com',
-            message: 'Hello there',
-          }),
-        }),
+        expect.objectContaining({ method: 'POST' }),
       );
+      const [, options] = fetchMock.mock.calls[0];
+      const body = JSON.parse(options.body as string);
+      expect(body).toMatchObject({
+        name: 'Ada Lovelace',
+        email: 'ada@example.com',
+        message: 'Hello there',
+        company: '',
+      });
+      expect(typeof body.formLoadedAt).toBe('number');
       expect(onSubmit).toHaveBeenCalledWith('success');
     });
   });
