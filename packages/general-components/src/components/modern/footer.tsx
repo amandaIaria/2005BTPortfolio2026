@@ -27,14 +27,14 @@ function Footer({
         <WebGLTentacleWall tentacleCount={6} inFooter />
       </div>
 
-      <div className="absolute z-1 bottom-0 bg-black w-full pt-10 pb-10">
+      <div className="absolute z-1 bottom-0 bg-black dark:bg-white w-full pt-10 pb-10">
         <div className="w-full max-w-300 mx-auto flex justify-between gap-4">
           <div className="flex items-center gap-3">
             <LogoMark />
             <span className="font-bold text-accent sr-only">{logoText}</span>
           </div>
 
-          <div className="flex items-center text-white text-shadow-black text-shadow-2xs">
+          <div className="flex items-center dark:text-foreground dark:text-shadow-white text-white text-shadow-black text-shadow-2xs">
             <div className="flex flex-col gap-4">
               <div className="text-sm text-right">@ {year}</div>
               <SocialBar />
