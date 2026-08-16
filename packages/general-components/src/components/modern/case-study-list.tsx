@@ -3,7 +3,7 @@ import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
 import { Button } from '../ui/button';
-import type { CaseStudyListProps } from '@general-purpose/types';
+import type { CaseStudyListProps } from '@packages/general-components/src/components/types.ts';
 
 function CaseStudyList({
   caseStudies,

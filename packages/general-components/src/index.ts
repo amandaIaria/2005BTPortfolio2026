@@ -1,5 +1,11 @@
 // UI Components
 export { AspectRatio } from './components/ui/aspect-ratio';
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+} from './components/ui/alert';
 export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
 export {
@@ -7,7 +13,12 @@ export {
   portfolioButtonVariants,
 } from './components/portfolio-button';
 export { Container } from './components/ui/container';
+export { Input } from './components/ui/input';
+export { Label } from './components/ui/label';
+export { Textarea } from './components/ui/textarea';
 export { Modal } from './components/modal';
+export { ImageModal } from './components/image-modal';
+export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
 export {
   Card,
@@ -86,6 +97,9 @@ export { default as LoadInCard } from './components/modern/load-in-card';
 export { Navigation } from './components/modern/navigation';
 export { NavToggle } from './components/modern/nav-toggle';
 export { ThemeToggle } from './components/modern/theme-toggle';
+export { Breadcrumb } from './components/modern/breadcrumb';
+export { Footer } from './components/modern/footer';
+export { SocialBar } from './components/modern/social-bar';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';
@@ -117,6 +131,9 @@ export type {
   AppHeaderProps,
   SpriteAnimationProps,
   ModalProps,
+  ImageModalProps,
+  ContactFormProps,
+  SubmitStatus,
   WebGLTentacleFooterProps,
   AnimatedTitleProps,
   ExperienceItemProps,
@@ -158,4 +175,7 @@ export type {
   NavLinkProps,
   NavItemProps,
   ImageHeaderProps,
-} from '@general-purpose/types';
+  BreadcrumbProps,
+  FooterProps,
+  SocialBarProps,
+} from '@packages/general-components/src/components/types.ts';

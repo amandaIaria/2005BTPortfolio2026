@@ -5,7 +5,7 @@ import { cn } from '../../lib/utils';
 import { useSlider } from '../../hooks/use-slider';
 import { SlidePaneImage, SlidePaneRight, SlideMobileImage } from './slide-pane';
 import { SliderPagination } from './slider-pagination';
-import type { SliderProps } from '@general-purpose/types';
+import type { SliderProps } from '@packages/general-components/src/components/types.ts';
 import { SliderMiddle } from './slide-middle';
 
 const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(

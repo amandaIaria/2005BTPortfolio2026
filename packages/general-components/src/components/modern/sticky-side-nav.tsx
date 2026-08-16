@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { cn } from '@general/components/lib/utils.ts';
-import type { StickySideNavProps } from '@general-purpose/types';
+import type { StickySideNavProps } from '@packages/general-components/src/components/types.ts';
 
 // should the memo be in this component or should it be in the parent
 

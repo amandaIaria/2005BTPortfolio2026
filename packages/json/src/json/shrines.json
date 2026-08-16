@@ -48,7 +48,7 @@
   ],
   "shrine-pages": {
     "stargate": {
-      "id": "shrine-of-the-stargate",
+      "slug": "shrine-of-the-stargate",
       "title": "Stargate Command",
       "description": "Chevron seven, locked. A gate address dialed a thousand times in my head.",
       "image": {
@@ -125,7 +125,7 @@
       ]
     },
     "babylon5": {
-      "id": "shrine-of-babylon-5",
+      "slug": "shrine-of-babylon-5",
       "title": "The Last, Best Hope",
       "description": "The last of the Babylon stations. Five years in the making.",
       "image": {
@@ -221,7 +221,7 @@
       ]
     },
     "foreverknight": {
-      "id": "nick-knights-confessional",
+      "slug": "nick-knights-confessional",
       "title": "Nick Knight's Confessional",
       "description": "Eight hundred years of guilt, one homicide at a time.",
       "image": {
@@ -303,7 +303,7 @@
       ]
     },
     "twinpeaks": {
-      "id": "the-black-lodge",
+      "slug": "the-black-lodge",
       "title": "The Black Lodge",
       "description": "Where nightmares come true.",
       "image": {

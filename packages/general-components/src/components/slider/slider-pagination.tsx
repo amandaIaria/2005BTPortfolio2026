@@ -1,7 +1,7 @@
 import { Button } from '../ui/button';
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 import { cn } from '../../lib/utils';
-import type { SliderPaginationProps } from '@general-purpose/types';
+import type { SliderPaginationProps } from '@packages/general-components/src/components/types.ts';
 
 export function SliderPagination({
   total,
