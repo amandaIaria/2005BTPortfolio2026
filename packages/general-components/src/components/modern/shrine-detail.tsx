@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
-import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import { ArrowDownIcon } from '@phosphor-icons/react/dist/ssr';
 import { Footer } from './footer';
 import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
@@ -17,7 +15,7 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
     <div data-component="shrine-detail" className={cn(className)} {...props}>
       <header className="bg-black dark:bg-(--surface) pt-20 relative block h-150 mb-50">
         <div className="flex flex-col gap-10  absolute inset-x-0 bottom-0 top-[60px]">
-          <div className="max-w-300 mx-auto w-full grid gap-10">
+          <div className="max-w-300 mx-auto w-full -mb-17">
             <Breadcrumb href="/shrines" label={t('shrines.detail.backLink')} />
           </div>
 
