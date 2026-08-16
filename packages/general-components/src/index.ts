@@ -1,5 +1,11 @@
 // UI Components
 export { AspectRatio } from './components/ui/aspect-ratio';
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+} from './components/ui/alert';
 export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
 export {
@@ -7,8 +13,12 @@ export {
   portfolioButtonVariants,
 } from './components/portfolio-button';
 export { Container } from './components/ui/container';
+export { Input } from './components/ui/input';
+export { Label } from './components/ui/label';
+export { Textarea } from './components/ui/textarea';
 export { Modal } from './components/modal';
 export { ImageModal } from './components/image-modal';
+export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
 export {
   Card,
@@ -122,6 +132,8 @@ export type {
   SpriteAnimationProps,
   ModalProps,
   ImageModalProps,
+  ContactFormProps,
+  SubmitStatus,
   WebGLTentacleFooterProps,
   AnimatedTitleProps,
   ExperienceItemProps,

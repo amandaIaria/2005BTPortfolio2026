@@ -5,13 +5,13 @@ import { cn } from '../lib/utils';
 import type { PortfolioButtonProps } from '@packages/general-components/src/components/types.ts';
 
 const portfolioButtonVariants = cva(
-  "group/portfolio-button inline-flex shrink-0 items-center justify-center none border border-transparent bg-clip-padding whitespace-nowrap transition-colors duration-300 ease-in-out outline-none select-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/portfolio-button inline-flex shrink-0 cursor-pointer items-center justify-center border border-transparent bg-clip-padding whitespace-nowrap transition-colors duration-300 ease-in-out outline-none select-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 
   {
     variants: {
       variant: {
         default:
-          'bg-accent text-white hover:bg-accent-hover  border-b-4 border-b-black active:-translate-y-4 active:border-b-0',
+          'rounded-[2px] border-[var(--bt-active)] bg-[var(--bt-active)] font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--bt-active-deep)] transition-[box-shadow,transform] duration-100 hover:bg-[var(--bt-active)] active:translate-y-1 active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-[var(--bt-active)] focus-visible:outline-offset-8',
         outline:
           'border border-accent text-accent hover:bg-accent-hover hover:text-white',
         secondary:
