@@ -19,7 +19,7 @@ function CaseStudyDetail({
       className={cn(className)}
       {...props}
     >
-      <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground backdrop-blur-lg">
+      <header className="w-full p-10  bg-black text-white dark:bg-background dark:text-foreground">
         <div className="max-w-300 mx-auto py-20">
           <Breadcrumb
             href="/case-studies"
@@ -58,7 +58,11 @@ function CaseStudyDetail({
         </div>
       </header>
 
-      <div className="max-w-300 w-full relative z-10 mx-auto pt-20 backdrop-blur-lg">
+      <div className="relative z-10 mx-auto w-full max-w-300 pb-20">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 backdrop-blur-sm [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_40px,black_calc(100%_-_40px),transparent),linear-gradient(to_bottom,transparent,black_40px,black_calc(100%_-_40px),transparent)]"
+        />
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="flex flex-col gap-4 stick top-0">
             <p className="text-sm font-bold tracking-wide text-accent uppercase">
