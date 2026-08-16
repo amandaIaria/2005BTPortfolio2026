@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { cn } from '../lib/utils';
-import type { PlaylistProps } from '@general-purpose/types';
+import type { PlaylistProps } from '@packages/general-components/src/components/types.ts';
 
 declare global {
   interface Window {

@@ -1,9 +1,6 @@
 import json from '@json/data/json/shrines.json';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import type {
-  ShrineListItemProps,
-  ShrineListingProps,
-} from '@general-purpose/types';
+import type { ShrineListItemProps, ShrineListingProps } from '@general/types';
 
 const items = json.listing as ShrineListItemProps[];
 

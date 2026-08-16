@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { cn } from '@general/components/lib/utils.ts';
-import type { StickySideNavProps } from '@general-purpose/types';
+import type { StickySideNavProps } from '@packages/general-components/src/components/types.ts';
 
 // should the memo be in this component or should it be in the parent
 
 export const StickySideNav = (props: StickySideNavProps) => {
   const { content, navLabel } = props;
   const stickyNavRef = useRef<HTMLDivElement | null>(null);
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>('0');
   const linksObj = useMemo(() => {
     const obj: Array<{ id: string; title: string }> = [];
     content.content?.forEach((block) => {
@@ -67,18 +67,15 @@ export const StickySideNav = (props: StickySideNavProps) => {
               <a
                 href={`#${link.id}`}
                 className={cn(
-                  'text-accent group flex gap-4',
-                  link.id === activeId && 'active-id',
+                  'text-accent group flex gap-4 border-l-2 pl-4 text-sm transition-colors',
+                  link.id === activeId || (activeId === '0' && idx === 0)
+                    ? 'border-accent'
+                    : 'border-transparent',
                 )}
                 onClick={stickyNavClickHandler}
               >
-                <span
-                  className="text-transparent [.active-id_&]:text-foreground font-bold"
-                  aria-hidden="true"
-                >
-                  |
-                </span>
-                <span className="text-accent group-hover:underline">
+                
+                <span className="text-foreground dark:text-foreground group-hover:border-b-accent border-b-transparent font-bold ease-in-out duration-300 pb-1 border-b-2 mt-1">
                   {link.title}
                 </span>
               </a>

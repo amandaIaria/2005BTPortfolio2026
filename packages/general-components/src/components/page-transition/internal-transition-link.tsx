@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { useTransitionLinkClick } from './use-transition-link-click';
-import type { InternalTransitionLinkProps } from '@general-purpose/types';
+import type { InternalTransitionLinkProps } from '@packages/general-components/src/components/types.ts';
 
 export const InternalTransitionLink = forwardRef<
   HTMLAnchorElement,

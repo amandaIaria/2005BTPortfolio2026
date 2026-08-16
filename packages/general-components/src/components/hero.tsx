@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { HeroProps } from '@general-purpose/types';
+import type { HeroProps } from '@packages/general-components/src/components/types.ts';
 
 function Hero({
   image,

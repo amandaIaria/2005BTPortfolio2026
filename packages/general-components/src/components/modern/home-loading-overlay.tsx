@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { WebGLTentacleWall } from '../webgl-tentacle-wall';
-import type { HomeLoadingOverlayProps } from '@general-purpose/types';
+import type { HomeLoadingOverlayProps } from '@packages/general-components/src/components/types.ts';
 
 const MIN_DISPLAY_MS = 1200;
 
