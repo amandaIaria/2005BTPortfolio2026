@@ -34,7 +34,7 @@ function Footer({
             <span className="font-bold text-accent sr-only">{logoText}</span>
           </div>
 
-          <div className="flex items-center dark:text-foreground dark:text-shadow-white text-white text-shadow-black text-shadow-2xs">
+          <div className="flex items-center dark:text-black dark:text-shadow-white text-white text-shadow-black text-shadow-2xs">
             <div className="flex flex-col gap-4">
               <div className="text-sm text-right">@ {year}</div>
               <SocialBar />

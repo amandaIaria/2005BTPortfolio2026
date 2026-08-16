@@ -43,8 +43,13 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
       </header>
 
       {shrine.content && shrine.content.length > 0 && (
-        <section className="max-w-300 mx-auto w-full flex gap-4 relative z-10">
-          <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
+        <section className="relative z-10 mx-auto w-full max-w-300">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 -z-10 backdrop-blur-sm [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_40px,black_calc(100%_-_40px),transparent),linear-gradient(to_bottom,transparent,black_40px,black_calc(100%_-_40px),transparent)]"
+            />
+          <div className="flex gap-4">
+            <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
             {shrine.content.map((content, blockIndex) => {
               // block.copy.map((copy, copyIndex) => {
               //   const image = block.image?.[copyIndex];
@@ -78,11 +83,13 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
               );
               // }),
             })}
+            </div>
+
+            <StickySideNav
+              content={shrine}
+              navLabel={t('shrines.navSidebarLabel')}
+            />
           </div>
-          <StickySideNav
-            content={shrine}
-            navLabel={t('shrines.navSidebarLabel')}
-          />
         </section>
       )}
 
