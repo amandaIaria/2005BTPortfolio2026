@@ -1,4 +1,5 @@
 import type { Context } from '@netlify/functions';
+import { Resend } from 'resend';
 
 interface ContactPayload {
   name: string;
@@ -68,26 +69,26 @@ export default async (req: Request, _context: Context) => {
   }
 
   const { name, email, message } = result.value;
+  const resend = new Resend(apiKey);
 
   try {
-    const resendResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
+    const { error } = await resend.emails.send({
+      from: fromEmail,
+      to: toEmail,
+      replyTo: email,
+      subject: `Portfolio contact form: ${name}`,
+      template: {
+        id: 'untitled-template',
+        variables: {
+          email_address: email,
+          MESSAGE: message,
+          Name: name
+        },
       },
-      body: JSON.stringify({
-        from: fromEmail,
-        to: toEmail,
-        reply_to: email,
-        subject: `Portfolio contact form: ${name}`,
-        text: `From: ${name} <${email}>\n\n${message}`,
-      }),
     });
 
-    if (!resendResponse.ok) {
-      const detail = await resendResponse.text();
-      console.error('Resend API error', resendResponse.status, detail);
+    if (error) {
+      console.error('Resend API error', error);
       return jsonResponse(502, { error: 'Failed to send message' });
     }
 
