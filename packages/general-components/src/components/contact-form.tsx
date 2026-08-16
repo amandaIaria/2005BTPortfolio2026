@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from '@tanstack/react-form';
-import {
-  CheckCircleIcon,
-  WarningCircleIcon,
-  CircleNotchIcon,
-} from '@phosphor-icons/react';
+import { CircleNotchIcon } from '@phosphor-icons/react';
 
 import { cn } from '../lib/utils';
 import { Button } from './ui/button';
@@ -13,8 +9,6 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import type { ContactFormProps } from '@packages/general-components/src/components/types.ts';
-
-type SubmitStatus = 'idle' | 'pending' | 'success' | 'error';
 
 const CONTACT_ENDPOINT = '/.netlify/functions/contact';
 
@@ -26,16 +20,41 @@ function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function floatingLabelClassName(hasValue: boolean) {
+// Legacy "BT" input styling — bordered flat-black container, bold accent focus
+// ring, floating label. Ported from packages/design-system/legacy-bt-scss's
+// .aic-a-label / .aic-m-input-field (input/textarea height, colors, and the
+// focus/error ring thickness all match the original values).
+const BARE_FIELD_CLASSNAME =
+  'h-auto border-transparent bg-transparent px-0 text-base shadow-none focus-visible:border-transparent focus-visible:ring-0 aria-invalid:border-transparent aria-invalid:ring-0 dark:bg-transparent dark:aria-invalid:border-transparent dark:aria-invalid:ring-0';
+
+function fieldContainerClassName(hasError: boolean) {
   return cn(
-    'pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all duration-150 peer-focus:top-2.5 peer-focus:translate-y-0 peer-focus:text-[10px]',
-    hasValue && 'top-2.5 translate-y-0 text-[10px]',
+    'relative border border-[var(--flat-black)] px-2 transition-[border-color,box-shadow] duration-150',
+    'focus-within:border-[var(--bt-active)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-active)]',
+    hasError &&
+      'border-[var(--bt-error)] shadow-[inset_0_0_0_4px_var(--bt-error)] focus-within:border-[var(--bt-error)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-error)]',
   );
 }
 
-function ContactForm({ className }: ContactFormProps) {
+function floatingLabelClassName(hasValue: boolean) {
+  return cn(
+    'pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-base text-[var(--flat-black)] transition-all duration-150',
+    'peer-focus:top-2 peer-focus:translate-y-0 peer-focus:text-[10px]',
+    hasValue && 'top-2 translate-y-0 text-[10px]',
+  );
+}
+
+function floatingLabelClassNameTextarea(hasValue: boolean) {
+  return cn(
+    'pointer-events-none absolute left-2 top-4 text-base text-[var(--flat-black)] transition-all duration-150',
+    'peer-focus:top-2 peer-focus:text-[10px]',
+    hasValue && 'top-2 text-[10px]',
+  );
+}
+
+function ContactForm({ className, onSubmit }: ContactFormProps) {
   const { t } = useTranslation();
-  const [status, setStatus] = useState<SubmitStatus>('idle');
+  const [isPending, setIsPending] = useState(false);
 
   const form = useForm({
     defaultValues: {
@@ -44,7 +63,7 @@ function ContactForm({ className }: ContactFormProps) {
       message: '',
     },
     onSubmit: async ({ value, formApi }) => {
-      setStatus('pending');
+      setIsPending(true);
       try {
         const response = await fetch(CONTACT_ENDPOINT, {
           method: 'POST',
@@ -54,15 +73,15 @@ function ContactForm({ className }: ContactFormProps) {
         if (!response.ok) {
           throw new Error('Request failed');
         }
-        setStatus('success');
+        onSubmit('success');
         formApi.reset();
       } catch {
-        setStatus('error');
+        onSubmit('error');
+      } finally {
+        setIsPending(false);
       }
     },
   });
-
-  const isPending = status === 'pending';
 
   return (
     <form
@@ -74,30 +93,17 @@ function ContactForm({ className }: ContactFormProps) {
       }}
       className={cn('grid grid-cols-1 gap-6', className)}
     >
-      {status === 'success' && (
-        <div
-          role="status"
-          className="flex animate-in items-center gap-2 border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs text-emerald-800 fade-in-0 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300"
-        >
-          <CheckCircleIcon className="size-4 shrink-0" />
-          {t('contact.successMessage')}
-        </div>
-      )}
-      {status === 'error' && (
-        <div
-          role="alert"
-          className="flex animate-in items-center gap-2 border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive fade-in-0"
-        >
-          <WarningCircleIcon className="size-4 shrink-0" />
-          {t('contact.errorMessage')}
-        </div>
-      )}
       <form.Field
         name="name"
         validators={{ onChange: ({ value }) => required('Name')(value) }}
         children={(field) => (
-          <div className="grid gap-1.5">
-            <div className="relative">
+          <div className="grid gap-1.5 bg-white dark:bg-background">
+            <div
+              className={cn(
+                fieldContainerClassName(!field.state.meta.isValid),
+                'flex min-h-14 items-center pt-4',
+              )}
+            >
               <Input
                 id={field.name}
                 name={field.name}
@@ -108,7 +114,7 @@ function ContactForm({ className }: ContactFormProps) {
                 onChange={(e) => field.handleChange(e.target.value)}
                 aria-invalid={!field.state.meta.isValid}
                 disabled={isPending}
-                className="peer pt-5 pb-1.5"
+                className={cn(BARE_FIELD_CLASSNAME, 'peer w-full')}
               />
               <Label
                 htmlFor={field.name}
@@ -118,7 +124,7 @@ function ContactForm({ className }: ContactFormProps) {
               </Label>
             </div>
             {!field.state.meta.isValid && (
-              <em className="text-xs text-destructive">
+              <em className="text-xs text-[var(--bt-error)]">
                 {field.state.meta.errors.join(', ')}
               </em>
             )}
@@ -133,8 +139,13 @@ function ContactForm({ className }: ContactFormProps) {
             (isValidEmail(value) ? undefined : 'Enter a valid email'),
         }}
         children={(field) => (
-          <div className="grid gap-1.5">
-            <div className="relative">
+          <div className="grid gap-1.5 bg-white dark:bg-background">
+            <div
+              className={cn(
+                fieldContainerClassName(!field.state.meta.isValid),
+                'flex min-h-14 items-center pt-4',
+              )}
+            >
               <Input
                 id={field.name}
                 name={field.name}
@@ -145,7 +156,7 @@ function ContactForm({ className }: ContactFormProps) {
                 onChange={(e) => field.handleChange(e.target.value)}
                 aria-invalid={!field.state.meta.isValid}
                 disabled={isPending}
-                className="peer pt-5 pb-1.5"
+                className={cn(BARE_FIELD_CLASSNAME, 'peer w-full')}
               />
               <Label
                 htmlFor={field.name}
@@ -155,7 +166,7 @@ function ContactForm({ className }: ContactFormProps) {
               </Label>
             </div>
             {!field.state.meta.isValid && (
-              <em className="text-xs text-destructive">
+              <em className="text-xs text-[var(--bt-error)]">
                 {field.state.meta.errors.join(', ')}
               </em>
             )}
@@ -166,8 +177,13 @@ function ContactForm({ className }: ContactFormProps) {
         name="message"
         validators={{ onChange: ({ value }) => required('Message')(value) }}
         children={(field) => (
-          <div className="grid gap-1.5">
-            <div className="relative">
+          <div className="grid gap-1.5 bg-white dark:bg-background">
+            <div
+              className={cn(
+                fieldContainerClassName(!field.state.meta.isValid),
+                'pt-5 pb-2',
+              )}
+            >
               <Textarea
                 id={field.name}
                 name={field.name}
@@ -178,17 +194,19 @@ function ContactForm({ className }: ContactFormProps) {
                 aria-invalid={!field.state.meta.isValid}
                 disabled={isPending}
                 rows={6}
-                className="peer pt-5 pb-1.5"
+                className={cn(BARE_FIELD_CLASSNAME, 'peer w-full')}
               />
               <Label
                 htmlFor={field.name}
-                className={floatingLabelClassName(field.state.value.length > 0)}
+                className={floatingLabelClassNameTextarea(
+                  field.state.value.length > 0,
+                )}
               >
                 {t('contact.messagePlaceholder')}
               </Label>
             </div>
             {!field.state.meta.isValid && (
-              <em className="text-xs text-destructive">
+              <em className="text-xs text-[var(--bt-error)]">
                 {field.state.meta.errors.join(', ')}
               </em>
             )}
@@ -196,7 +214,16 @@ function ContactForm({ className }: ContactFormProps) {
         )}
       />
       <div className="flex items-center justify-end">
-        <Button type="submit" size="lg" disabled={isPending}>
+        <Button
+          type="submit"
+          size="lg"
+          disabled={isPending}
+          className={cn(
+            'cursor-pointer h-auto rounded-xs border border-[var(--bt-active)] bg-[var(--bt-active)] px-6 py-1.5 pb-2 font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--bt-active-deep)] transition-[box-shadow,padding-bottom,top] duration-100',
+            'active:top-1 active:pb-1.5 active:shadow-none',
+            'focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-[var(--bt-active)] focus-visible:outline-offset-8',
+          )}
+        >
           {isPending && (
             <CircleNotchIcon className="size-4 shrink-0 animate-spin" />
           )}

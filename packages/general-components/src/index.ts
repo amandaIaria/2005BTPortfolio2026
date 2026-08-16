@@ -1,5 +1,11 @@
 // UI Components
 export { AspectRatio } from './components/ui/aspect-ratio';
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+} from './components/ui/alert';
 export { Badge, badgeVariants } from './components/ui/badge';
 export { Button, buttonVariants } from './components/ui/button';
 export {
@@ -127,6 +133,7 @@ export type {
   ModalProps,
   ImageModalProps,
   ContactFormProps,
+  SubmitStatus,
   WebGLTentacleFooterProps,
   AnimatedTitleProps,
   ExperienceItemProps,

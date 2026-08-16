@@ -20,6 +20,18 @@ i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },
 });
 
+function fillForm() {
+  fireEvent.change(screen.getByLabelText('Your Name'), {
+    target: { value: 'Ada Lovelace' },
+  });
+  fireEvent.change(screen.getByLabelText('Your Email'), {
+    target: { value: 'ada@example.com' },
+  });
+  fireEvent.change(screen.getByLabelText('Your Message'), {
+    target: { value: 'Hello there' },
+  });
+}
+
 describe('ContactForm', () => {
   afterEach(cleanup);
 
@@ -28,29 +40,22 @@ describe('ContactForm', () => {
   });
 
   it('shows validation errors when required fields are empty on submit', async () => {
-    render(<ContactForm />);
+    render(<ContactForm onSubmit={vi.fn()} />);
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
     await waitFor(() => {
       expect(screen.getAllByText(/is required/i).length).toBeGreaterThan(0);
     });
   });
 
-  it('posts the expected payload and shows success copy on a successful submit', async () => {
+  it('posts the expected payload and calls onSubmit("success") on a successful submit', async () => {
     const fetchMock = vi
       .fn()
       .mockResolvedValue({ ok: true, json: async () => ({ ok: true }) });
     vi.stubGlobal('fetch', fetchMock);
+    const onSubmit = vi.fn();
 
-    render(<ContactForm />);
-    fireEvent.change(screen.getByLabelText('Your Name'), {
-      target: { value: 'Ada Lovelace' },
-    });
-    fireEvent.change(screen.getByLabelText('Your Email'), {
-      target: { value: 'ada@example.com' },
-    });
-    fireEvent.change(screen.getByLabelText('Your Message'), {
-      target: { value: 'Hello there' },
-    });
+    render(<ContactForm onSubmit={onSubmit} />);
+    fillForm();
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
     await waitFor(() => {
@@ -65,26 +70,46 @@ describe('ContactForm', () => {
           }),
         }),
       );
+      expect(onSubmit).toHaveBeenCalledWith('success');
     });
-    expect(await screen.findByText(/thanks for reaching out/i)).not.toBeNull();
   });
 
-  it('shows error copy when the request fails', async () => {
+  it('calls onSubmit("error") when the request fails', async () => {
     const fetchMock = vi.fn().mockResolvedValue({ ok: false, status: 500 });
     vi.stubGlobal('fetch', fetchMock);
+    const onSubmit = vi.fn();
 
-    render(<ContactForm />);
-    fireEvent.change(screen.getByLabelText('Your Name'), {
-      target: { value: 'Ada Lovelace' },
-    });
-    fireEvent.change(screen.getByLabelText('Your Email'), {
-      target: { value: 'ada@example.com' },
-    });
-    fireEvent.change(screen.getByLabelText('Your Message'), {
-      target: { value: 'Hello there' },
-    });
+    render(<ContactForm onSubmit={onSubmit} />);
+    fillForm();
     fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
-    expect(await screen.findByText(/something went wrong/i)).not.toBeNull();
+    await waitFor(() => {
+      expect(onSubmit).toHaveBeenCalledWith('error');
+    });
+  });
+
+  it('disables the submit button and shows a spinner while the request is in flight', async () => {
+    let resolveFetch: (value: unknown) => void = () => {};
+    const fetchMock = vi.fn(
+      () =>
+        new Promise((resolve) => {
+          resolveFetch = resolve;
+        }),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+
+    render(<ContactForm onSubmit={vi.fn()} />);
+    fillForm();
+    fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+    await waitFor(() => {
+      expect(
+        screen
+          .getByRole('button', { name: /sending/i })
+          .hasAttribute('disabled'),
+      ).toBe(true);
+    });
+
+    resolveFetch({ ok: true, json: async () => ({ ok: true }) });
   });
 });
