@@ -18,6 +18,8 @@ export { Label } from './components/ui/label';
 export { Textarea } from './components/ui/textarea';
 export { Modal } from './components/modal';
 export { ImageModal } from './components/image-modal';
+export { ImageComparison } from './components/image-comparison';
+export { Typewriter } from './components/typewriter';
 export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
 export {
@@ -132,6 +134,9 @@ export type {
   SpriteAnimationProps,
   ModalProps,
   ImageModalProps,
+  ImageModalDefaultProps,
+  ImageComparisonProps,
+  TypewriterProps,
   ContactFormProps,
   SubmitStatus,
   WebGLTentacleFooterProps,
@@ -178,4 +183,5 @@ export type {
   BreadcrumbProps,
   FooterProps,
   SocialBarProps,
+  ModernAboutPageProps,
 } from '@packages/general-components/src/components/types.ts';

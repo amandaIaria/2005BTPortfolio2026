@@ -4,7 +4,6 @@ import { Dialog as DialogPrimitive } from 'radix-ui';
 import { XIcon } from '@phosphor-icons/react';
 
 import { cn } from '../lib/utils';
-import { Button } from './ui/button';
 import {
   Dialog,
   DialogDescription,
@@ -15,16 +14,19 @@ import {
 } from './ui/dialog';
 import type { ImageModalProps } from '@packages/general-components/src/components/types.ts';
 import { PortfolioButton } from './portfolio-button';
+import { ImageComparison } from './image-comparison';
 
-function ImageModal({
-  src,
-  alt,
-  thumbnailSrc,
-  className,
-  imageClassName,
-}: ImageModalProps) {
+function ImageModal(props: ImageModalProps) {
+  const { thumbnail, className, imageClassName } = props;
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
+
+  const isCompare = props.variant === 'compare';
+  const fallbackAlt = isCompare ? props.before?.alt : props.alt;
+  const fallbackSrc = isCompare ? props.before?.src : props.src;
+  const alt = thumbnail?.alt ?? fallbackAlt ?? '';
+  const thumbSrc = thumbnail?.src ?? fallbackSrc ?? '';
+  const thumbnailAlt = thumbnail?.alt ?? '';
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -35,12 +37,24 @@ function ImageModal({
           aria-label={t('imageModal.viewFullLabel', { alt })}
           className="aspect-square overflow-hidden block cursor-zoom-in"
         >
-          <img
-            src={thumbnailSrc ?? src}
-            alt=""
-            loading="lazy"
-            className={cn('h-full w-full object-cover', className)}
-          />
+          {isCompare && props.before && props.after ? (
+            <ImageComparison
+              before={{ ...props.before, alt: '' }}
+              after={{ ...props.after, alt: '' }}
+              beforeLabel={props.beforeLabel}
+              afterLabel={props.afterLabel}
+              className={cn(imageClassName)}
+              thumb
+            />
+          ) : (
+            <img
+              src={thumbSrc}
+              alt={thumbnailAlt}
+              loading="lazy"
+              className={cn('h-full w-full object-cover', className)}
+            />
+          )}
+          
         </button>
       </DialogTrigger>
       <DialogPortal>
@@ -50,18 +64,30 @@ function ImageModal({
           className="fixed top-1/2 left-1/2 z-50 grid w-fit max-w-[90vw] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-none p-2 outline-none duration-100 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"
         >
           <div>
-            <DialogTitle className="sr-only">{alt}</DialogTitle>
+            <DialogTitle className="sr-only">
+              {alt ? alt : t('imageModal.defaultTitle')}
+            </DialogTitle>
             <DialogDescription className="sr-only">
               {t('imageModal.description')}
             </DialogDescription>
-            <img
-              src={src}
-              alt={alt}
-              className={cn(
-                'mx-auto max-h-[85vh] w-auto object-contain',
-                imageClassName,
-              )}
-            />
+            {isCompare && props.before && props.after ? (
+              <ImageComparison
+                before={props.before}
+                after={props.after}
+                beforeLabel={props.beforeLabel}
+                afterLabel={props.afterLabel}
+                className={cn(imageClassName)}
+              />
+            ) : (
+              <img
+                src={props.src}
+                alt={props.alt}
+                className={cn(
+                  'mx-auto max-h-[85vh] w-auto object-contain',
+                  imageClassName,
+                )}
+              />
+            )}
           </div>
           <DialogPrimitive.Close asChild>
             <PortfolioButton

@@ -45,11 +45,11 @@ describe('ImageModal', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
-  it('uses thumbnailSrc for the trigger image when provided', () => {
+  it('uses thumbnail for the trigger image when provided', () => {
     render(
       <ImageModal
         src="/full.jpg"
-        thumbnailSrc="/thumb.jpg"
+        thumbnail={{ src: '/thumb.jpg', alt: 'A mountain view' }}
         alt="A mountain view"
       />,
     );
@@ -58,5 +58,42 @@ describe('ImageModal', () => {
     });
     const thumb = trigger.querySelector('img');
     expect(thumb?.getAttribute('src')).toBe('/thumb.jpg');
+  });
+
+  it('renders the ImageComparison slider inside the dialog for variant="compare"', () => {
+    render(
+      <ImageModal
+        variant="compare"
+        before={{ src: '/before.jpg', alt: 'Before shot' }}
+        after={{ src: '/after.jpg', alt: 'After shot' }}
+      />,
+    );
+    fireEvent.click(
+      screen.getByRole('button', { name: 'View full image: Before shot' }),
+    );
+    const dialog = screen.getByRole('dialog');
+    expect(dialog).not.toBeNull();
+    expect(screen.getByRole('slider')).not.toBeNull();
+    expect(screen.getByAltText('Before shot').getAttribute('src')).toBe(
+      '/before.jpg',
+    );
+    expect(screen.getByAltText('After shot').getAttribute('src')).toBe(
+      '/after.jpg',
+    );
+  });
+
+  it('uses before.src as the thumbnail for variant="compare" when thumbnailSrc is not provided', () => {
+    render(
+      <ImageModal
+        variant="compare"
+        before={{ src: '/before.jpg', alt: 'Before shot' }}
+        after={{ src: '/after.jpg', alt: 'After shot' }}
+      />,
+    );
+    const trigger = screen.getByRole('button', {
+      name: 'View full image: Before shot',
+    });
+    const thumb = trigger.querySelector('img');
+    expect(thumb?.getAttribute('src')).toBe('/before.jpg');
   });
 });
