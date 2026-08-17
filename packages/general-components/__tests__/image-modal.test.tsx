@@ -45,11 +45,11 @@ describe('ImageModal', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
-  it('uses thumbnailSrc for the trigger image when provided', () => {
+  it('uses thumbnail for the trigger image when provided', () => {
     render(
       <ImageModal
         src="/full.jpg"
-        thumbnailSrc="/thumb.jpg"
+        thumbnail={{ src: '/thumb.jpg', alt: 'A mountain view' }}
         alt="A mountain view"
       />,
     );

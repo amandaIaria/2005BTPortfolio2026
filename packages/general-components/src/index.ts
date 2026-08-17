@@ -134,7 +134,6 @@ export type {
   ModalProps,
   ImageModalProps,
   ImageModalDefaultProps,
-  ImageModalCompareProps,
   ImageComparisonProps,
   ContactFormProps,
   SubmitStatus,
@@ -182,4 +181,5 @@ export type {
   BreadcrumbProps,
   FooterProps,
   SocialBarProps,
+  ModernAboutPageProps,
 } from '@packages/general-components/src/components/types.ts';

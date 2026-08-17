@@ -14,6 +14,7 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
       afterLabel,
       initialPosition = 50,
       className,
+      thumb,
       ...props
     },
     forwardedRef,
@@ -80,11 +81,11 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
 
     const roundedPosition = Math.round(position);
 
-    return (
+    return !thumb ? (
       <div
         ref={setRefs}
         data-component="image-comparison"
-        className={cn('relative h-full w-full overflow-hidden', className)}
+        className={cn('relative h-200 w-200 overflow-hidden', className)}
         {...props}
       >
         <img
@@ -128,12 +129,43 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onKeyDown={handleKeyDown}
-          className="absolute top-1/2 flex size-9 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full border bg-[var(--lagoon)] border-[var(--surface-strong)] shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--lagoon-deep)]"
+          className="absolute top-1/2 flex size-9 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full border bg-accent border-[var(--surface-strong)] shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           style={{ left: `${position}%` }}
         >
           <CaretLeftIcon size={12} weight="bold" className="text-white" />
           <CaretRightIcon size={12} weight="bold" className="text-white" />
         </div>
+      </div>
+    ) : (
+      <div
+        ref={setRefs}
+        data-component="image-comparison-thumbnail"
+        className={cn('relative h-20 w-20 overflow-hidden', className)}
+        {...props}
+      >
+        <img
+          src={before.src}
+          alt={before.alt}
+          className={cn(
+            'absolute inset-0 h-full w-full object-cover',
+            before.className,
+          )}
+        />
+        <img
+          src={after.src}
+          alt={after.alt}
+          className={cn(
+            'absolute inset-0 h-full w-full object-cover',
+            after.className,
+          )}
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        />
+        <span className="sr-only">{resolvedBeforeLabel}</span>
+        <span className="sr-only">{resolvedAfterLabel}</span>
+        <div
+          className="absolute top-0 bottom-0 w-px bg-[var(--surface-strong)]"
+          style={{ left: `${position}%` }}
+        />
       </div>
     );
   },

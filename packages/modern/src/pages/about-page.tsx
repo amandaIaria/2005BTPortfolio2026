@@ -1,29 +1,14 @@
 import {
   Button,
   Container,
+  ImageModal,
   InternalTransitionLink,
-  WebGLTentacleWall,
 } from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import DOMPurify from 'dompurify';
-
-interface ModernAboutPageProps {
-  about: {
-    title: string;
-    name: string;
-    image: {
-      src: string;
-      alt: string;
-      height: number;
-      width: number;
-    };
-    summary: string;
-    full: string;
-    social: string[];
-  };
-}
+import type { ModernAboutPageProps } from '@general/components';
 
 function ModernAboutPage() {
   const { about }: ModernAboutPageProps = json;
@@ -31,20 +16,18 @@ function ModernAboutPage() {
   return (
     <Container
       data-component="modern-about-page"
-      // className="max-w-5xl h-screen mx-auto grid items-center"
-      className="max-w-[1200px] mx-auto grid items-center py-20"
+      className="max-w-300 mx-auto grid items-center py-20"
     >
       <div className="grid grid-cols-1 gap-20 md:grid-cols-[auto_1fr]">
         <div className="grid gap-10 items-center h-[70%]">
-          <div className="flex sticky top-[100px] flex-col gap-10">
+          <div className="flex sticky top-25 flex-col gap-10">
             <div className="flex gap-10 items-center">
-              <div className="overflow-hidden rounded-lg h-[100px] w-[100px] flex items-center justify-center">
-                <img
-                  src={about.image.src}
-                  alt={about.image.alt}
-                  height={about.image.height}
-                  width={about.image.width}
-                  className="object-cover w-full h-full object-center block"
+              <div className="overflow-hidden rounded-lg h-25 w-25 flex items-center justify-center">
+                <ImageModal
+                  variant="compare"
+                  before={about.images.before}
+                  after={about.images.after}
+                  imageClassName=""
                 />
               </div>
               <h1 className="text-6xl">{about.title}</h1>

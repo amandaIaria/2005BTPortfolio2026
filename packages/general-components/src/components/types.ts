@@ -17,29 +17,25 @@ export interface ImageComparisonProps extends React.ComponentProps<'div'> {
   afterLabel?: string;
   initialPosition?: number; // 0-100, default 50
   className?: string;
+  thumb?: boolean
 }
 
 // image-modal.tsx
 interface ImageModalBaseProps extends React.ComponentProps<'button'> {
-  thumbnailSrc?: string;
+  thumbnail?: ImageProps;
   imageClassName?: string;
   className?: string;
 }
 
 export interface ImageModalDefaultProps
-  extends ImageModalBaseProps, ImageProps {
-  variant?: 'default';
+  extends
+    ImageModalBaseProps,
+    Partial<ImageProps>,
+    Partial<Omit<ImageComparisonProps, keyof React.ComponentProps<'div'>>> {
+  variant?: 'default' | 'compare';
 }
 
-export interface ImageModalCompareProps extends ImageModalBaseProps {
-  variant: 'compare';
-  before: ImageProps;
-  after: ImageProps;
-  beforeLabel?: string;
-  afterLabel?: string;
-}
-
-export type ImageModalProps = ImageModalDefaultProps | ImageModalCompareProps;
+export type ImageModalProps = ImageModalDefaultProps;
 
 // contact-form.tsx
 export interface ContactFormProps {
@@ -134,6 +130,21 @@ export interface CassetteCarouselProps extends React.ComponentProps<'div'> {
 // animated-footer.tsx
 export interface AnimatedFooterProps extends React.ComponentProps<'footer'> {
   text?: string;
+}
+
+// About Page
+export interface ModernAboutPageProps {
+  about: {
+    title: string;
+    name: string;
+    images: {
+      before: ImageProps,
+      after: ImageProps
+    }
+    summary: string;
+    full: string;
+    social: string[];
+  };
 }
 
 // webgl-tentacle-wall.tsx
