@@ -9,6 +9,16 @@ export interface ImageProps {
   className?: string;
 }
 
+// typewriter.tsx
+export interface TypewriterProps extends React.ComponentProps<'div'> {
+  text: string | string[];
+  /** ms per character, default 40 */
+  speed?: number;
+  delay?: number;
+  duration?: number;
+  className?: string;
+}
+
 // image-comparison.tsx
 export interface ImageComparisonProps extends React.ComponentProps<'div'> {
   before: ImageProps;

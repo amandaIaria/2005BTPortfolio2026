@@ -47,6 +47,7 @@ import {
 import { AnimatedTitle } from '../components/animated-title';
 import { ImageModal } from '../components/image-modal';
 import { ImageComparison } from '../components/image-comparison';
+import { Typewriter } from '../components/typewriter';
 import { ContactForm } from '../components/contact-form';
 import { sliderSamples } from '@json/data';
 
@@ -358,6 +359,11 @@ export default function UiKitPage() {
                 className="aspect-square rounded-md"
               />
             </div>
+          </Section>
+
+          {/* Typewriter */}
+          <Section title="Typewriter">
+            <Typewriter text="Playground component — types itself out." />
           </Section>
 
           {/* Contact Form */}

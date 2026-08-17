@@ -19,6 +19,7 @@ export { Textarea } from './components/ui/textarea';
 export { Modal } from './components/modal';
 export { ImageModal } from './components/image-modal';
 export { ImageComparison } from './components/image-comparison';
+export { Typewriter } from './components/typewriter';
 export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
 export {
@@ -135,6 +136,7 @@ export type {
   ImageModalProps,
   ImageModalDefaultProps,
   ImageComparisonProps,
+  TypewriterProps,
   ContactFormProps,
   SubmitStatus,
   WebGLTentacleFooterProps,

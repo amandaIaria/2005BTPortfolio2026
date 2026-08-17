@@ -3,19 +3,16 @@ import {
   Container,
   ImageModal,
   InternalTransitionLink,
+  Typewriter,
 } from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import DOMPurify from 'dompurify';
 import type { ModernAboutPageProps } from '@general/components';
 
 function ModernAboutPage() {
   const { about }: ModernAboutPageProps = json;
   const { t } = useTranslation();
-  const toBeTyped = Array.from(about.full);
-
-
 
   return (
     <Container
@@ -61,12 +58,7 @@ function ModernAboutPage() {
             <div className="text-2xl font-medium text-accent">
               <p>{about.summary}</p>
             </div>
-            <div
-              className="prose py-4"
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(about.full),
-              }}
-            />
+            <Typewriter text={about.full} className="prose py-4" />
           </div>
         </div>
       </div>
