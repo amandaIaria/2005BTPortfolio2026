@@ -15,16 +15,18 @@ import {
 } from './ui/dialog';
 import type { ImageModalProps } from '@packages/general-components/src/components/types.ts';
 import { PortfolioButton } from './portfolio-button';
+import { ImageComparison } from './image-comparison';
 
-function ImageModal({
-  src,
-  alt,
-  thumbnailSrc,
-  className,
-  imageClassName,
-}: ImageModalProps) {
+function ImageModal(props: ImageModalProps) {
+  const { thumbnailSrc, className, imageClassName } = props;
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
+
+  const isCompare = props.variant === 'compare';
+  const alt = isCompare ? props.before.alt : props.alt;
+  const thumbSrc = isCompare
+    ? (thumbnailSrc ?? props.before.src)
+    : (thumbnailSrc ?? props.src);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -36,7 +38,7 @@ function ImageModal({
           className="aspect-square overflow-hidden block cursor-zoom-in"
         >
           <img
-            src={thumbnailSrc ?? src}
+            src={thumbSrc}
             alt=""
             loading="lazy"
             className={cn('h-full w-full object-cover', className)}
@@ -54,14 +56,24 @@ function ImageModal({
             <DialogDescription className="sr-only">
               {t('imageModal.description')}
             </DialogDescription>
-            <img
-              src={src}
-              alt={alt}
-              className={cn(
-                'mx-auto max-h-[85vh] w-auto object-contain',
-                imageClassName,
-              )}
-            />
+            {isCompare ? (
+              <ImageComparison
+                before={props.before}
+                after={props.after}
+                beforeLabel={props.beforeLabel}
+                afterLabel={props.afterLabel}
+                className={imageClassName}
+              />
+            ) : (
+              <img
+                src={props.src}
+                alt={props.alt}
+                className={cn(
+                  'mx-auto max-h-[85vh] w-auto object-contain',
+                  imageClassName,
+                )}
+              />
+            )}
           </div>
           <DialogPrimitive.Close asChild>
             <PortfolioButton

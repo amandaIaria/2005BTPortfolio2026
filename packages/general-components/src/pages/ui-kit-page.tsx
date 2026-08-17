@@ -46,6 +46,7 @@ import {
 } from '../components/ui/tooltip';
 import { AnimatedTitle } from '../components/animated-title';
 import { ImageModal } from '../components/image-modal';
+import { ImageComparison } from '../components/image-comparison';
 import { ContactForm } from '../components/contact-form';
 import { sliderSamples } from '@json/data';
 
@@ -329,11 +330,32 @@ export default function UiKitPage() {
 
           {/* Image Modal */}
           <Section title="Image Modal">
-            <div className="max-w-[200px]">
-              <ImageModal
-                src="/placeholder-man.jpg"
-                alt="Placeholder portrait"
-                className="rounded-md"
+            <div className="flex flex-wrap gap-8">
+              <div className="max-w-[200px]">
+                <ImageModal
+                  src="/placeholder-man.jpg"
+                  alt="Placeholder portrait"
+                  className="rounded-md"
+                />
+              </div>
+              <div className="max-w-[200px]">
+                <ImageModal
+                  variant="compare"
+                  before={{ src: '/placeholder-man.jpg', alt: 'Before' }}
+                  after={{ src: '/temp-header.jpg', alt: 'After' }}
+                  className="rounded-md"
+                />
+              </div>
+            </div>
+          </Section>
+
+          {/* Image Comparison */}
+          <Section title="Image Comparison">
+            <div className="max-w-md">
+              <ImageComparison
+                before={{ src: '/placeholder-man.jpg', alt: 'Before' }}
+                after={{ src: '/temp-header.jpg', alt: 'After' }}
+                className="aspect-square rounded-md"
               />
             </div>
           </Section>

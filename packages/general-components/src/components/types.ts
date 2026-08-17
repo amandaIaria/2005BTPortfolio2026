@@ -9,11 +9,37 @@ export interface ImageProps {
   className?: string;
 }
 
+// image-comparison.tsx
+export interface ImageComparisonProps extends React.ComponentProps<'div'> {
+  before: ImageProps;
+  after: ImageProps;
+  beforeLabel?: string;
+  afterLabel?: string;
+  initialPosition?: number; // 0-100, default 50
+  className?: string;
+}
+
 // image-modal.tsx
-export interface ImageModalProps extends ImageProps {
+interface ImageModalBaseProps extends React.ComponentProps<'button'> {
   thumbnailSrc?: string;
   imageClassName?: string;
+  className?: string;
 }
+
+export interface ImageModalDefaultProps
+  extends ImageModalBaseProps, ImageProps {
+  variant?: 'default';
+}
+
+export interface ImageModalCompareProps extends ImageModalBaseProps {
+  variant: 'compare';
+  before: ImageProps;
+  after: ImageProps;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
+export type ImageModalProps = ImageModalDefaultProps | ImageModalCompareProps;
 
 // contact-form.tsx
 export interface ContactFormProps {

@@ -79,5 +79,9 @@
   "imageModal": {
     "viewFullLabel": "View full image: {{alt}}",
     "description": "Full-size view of the image. Press Escape or click outside to close."
+  },
+  "imageComparison": {
+    "beforeLabel": "Before",
+    "afterLabel": "After"
   }
 }
