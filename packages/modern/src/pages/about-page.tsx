@@ -13,6 +13,10 @@ import type { ModernAboutPageProps } from '@general/components';
 function ModernAboutPage() {
   const { about }: ModernAboutPageProps = json;
   const { t } = useTranslation();
+  const toBeTyped = Array.from(about.full);
+
+
+
   return (
     <Container
       data-component="modern-about-page"
@@ -71,3 +75,5 @@ function ModernAboutPage() {
 }
 
 export { ModernAboutPage };
+
+
