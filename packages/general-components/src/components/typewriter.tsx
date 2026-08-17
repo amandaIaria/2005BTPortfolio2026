@@ -6,17 +6,31 @@ import type { AnimationGeneratorType } from 'framer-motion';
 import { motion } from 'framer-motion';
 import DOMPurify from 'dompurify';
 
+// Linear indexOf scan instead of a regex — a lazy `<p[^>]*>([\s\S]*?)<\/p>`
+// pattern can be forced into O(n^2) rescans on adversarial input (e.g. many
+// unclosed "<p" repetitions), which GitHub's ReDoS scanner flags.
+function extractParagraphs(html: string) {
+  const result: string[] = [];
+  let cursor = 0;
+  while (cursor < html.length) {
+    const openStart = html.indexOf('<p', cursor);
+    if (openStart === -1) break;
+    const openEnd = html.indexOf('>', openStart);
+    if (openEnd === -1) break;
+    const closeStart = html.indexOf('</p>', openEnd);
+    if (closeStart === -1) break;
+    result.push(html.slice(openEnd + 1, closeStart));
+    cursor = closeStart + 4;
+  }
+  return result;
+}
+
 const Typewriter = forwardRef<HTMLDivElement, TypewriterProps>(
   (
     { text, speed = 40, className, delay = 0.5, duration = 0.05, ...props },
     ref,
   ) => {
-    const paragraphs = Array.isArray(text)
-      ? text
-      : Array.from(
-          text.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g),
-          (match) => match[1],
-        );
+    const paragraphs = Array.isArray(text) ? text : extractParagraphs(text);
 
     const paragraphStagger = 0.5;
 
