@@ -25,12 +25,32 @@ function extractParagraphs(html: string) {
   return result;
 }
 
+// Matches Tailwind's default `md` breakpoint (768px) — animation is off below it.
+const MOBILE_QUERY = '(max-width: 767px)';
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== 'undefined' && window.matchMedia(MOBILE_QUERY).matches,
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const onChange = () => setIsMobile(mql.matches);
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
+
+  return isMobile;
+}
+
 const Typewriter = forwardRef<HTMLDivElement, TypewriterProps>(
   (
     { text, speed = 40, className, delay = 0.5, duration = 0.05, ...props },
     ref,
   ) => {
     const paragraphs = Array.isArray(text) ? text : extractParagraphs(text);
+    const isMobile = useIsMobile();
 
     const paragraphStagger = 0.5;
 
@@ -57,37 +77,44 @@ const Typewriter = forwardRef<HTMLDivElement, TypewriterProps>(
             stiffness: 200,
           },
         },
-      }
+      };
     };
 
     return (
       <div
-        className={`flex items-center ${className}`}
+        className={`flex items-center prose ${className}`}
         data-component="typewriter-component"
       >
         <div>
           {paragraphs.map((copy, idx) =>
             !copy.includes('<ul') ? (
-              <motion.p
-                className="mb-4"
-                key={`typewriter__${idx}`}
-                variants={containerVariants(idx)}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
-              >
-                <span className="sr-only">{copy}</span>
-                {copy.split(' ').map((word, index) => (
-                  <motion.span
-                    key={index}
-                    className="inline-block"
-                    aria-hidden={true}
-                    variants={characterVariants(index)}
-                  >
-                    {word}{'\u00A0'}
-                  </motion.span>
-                ))}
-              </motion.p>
+              isMobile ? (
+                <p className="mb-4 mt-0" key={`typewriter__${idx}`}>
+                  {copy}
+                </p>
+              ) : (
+                <motion.p
+                  className="mb-4 mt-0"
+                  key={`typewriter__${idx}`}
+                  variants={containerVariants(idx)}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.4 }}
+                >
+                  <span className="sr-only">{copy}</span>
+                  {copy.split(' ').map((word, index) => (
+                    <motion.span
+                      key={index}
+                      className="inline-block"
+                      aria-hidden={true}
+                      variants={characterVariants(index)}
+                    >
+                      {word}
+                      {'\u00A0'}
+                    </motion.span>
+                  ))}
+                </motion.p>
+              )
             ) : (
               <div
                 dangerouslySetInnerHTML={{

@@ -17,11 +17,11 @@ function ModernAboutPage() {
   return (
     <Container
       data-component="modern-about-page"
-      className="max-w-300 mx-auto grid items-center py-20"
+      className="max-w-300 mx-auto grid items-center pt-22 pb-0 md:pb-20 md:pt-20"
     >
-      <div className="grid grid-cols-1 gap-20 md:grid-cols-[auto_1fr]">
-        <div className="grid gap-10 items-center h-[70%]">
-          <div className="flex sticky top-25 flex-col gap-10">
+      <div className="grid grid-cols-1 px-4 md:px-0 gap-4 md:gap-20 md:grid-cols-[auto_1fr]">
+        <header className="grid items-center h-full md:h-[70%]">
+          <div className="flex md:sticky md:top-25 flex-col gap-0 md:gap-10">
             <div className="flex gap-10 items-center">
               <div className="overflow-hidden rounded-lg h-25 w-25 flex items-center justify-center">
                 <ImageModal
@@ -31,13 +31,15 @@ function ModernAboutPage() {
                   imageClassName=""
                 />
               </div>
-              <h1 className="text-6xl">{about.title}</h1>
+              <h1 className="w-full text-right md:text-left">
+                {about.title}
+              </h1>
             </div>
-            <div>
+            <div className="text-right md:text-left">
               <Button
                 asChild
                 variant="link"
-                className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
+                className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
               >
                 <InternalTransitionLink href="/contact">
                   {t('about.ctaLabel')}
@@ -46,9 +48,9 @@ function ModernAboutPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </header>
         <div className="flex flex-col">
-          <div className="grid grid-cols-1 gap-10 pt-20 pb-20">
+          <div className="grid grid-cols-1 gap-4 md:gap-10 md:pt-20 md:pb-20">
             <div className="text-3xl font-bold flex gap-4 items-center">
               <span>{about.name}</span>
               <span className="text-accent animate-caret-blink duration-100">
@@ -58,7 +60,7 @@ function ModernAboutPage() {
             <div className="text-2xl font-medium text-accent">
               <p>{about.summary}</p>
             </div>
-            <Typewriter text={about.full} className="prose py-4" />
+            <Typewriter text={about.full} className="pt-0 md:py-4" />
           </div>
         </div>
       </div>
@@ -67,5 +69,3 @@ function ModernAboutPage() {
 }
 
 export { ModernAboutPage };
-
-

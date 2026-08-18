@@ -100,7 +100,7 @@ export default function UiKitPage() {
       </header>
       <div>
         <p className="island-kicker mb-2">General Components</p>
-        <h1 className="display-title text-3xl font-bold tracking-tight text-[var(--sea-ink)] sm:text-5xl">
+        <h1 className="display-title text-accent">
           UI Kit
         </h1>
         <p className="mt-3 max-w-xl text-[var(--sea-ink-soft)]">

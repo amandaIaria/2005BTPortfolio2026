@@ -16,7 +16,7 @@ export default function WebGLTentacleFooterPage() {
         <Button variant="link" className="mb-2 px-0" asChild>
           <Link to="/ui-kit">&larr; Back to UI Kit</Link>
         </Button>
-        <h1 className="display-title text-3xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="display-title">
           WebGL Tentacle Footer
         </h1>
         <p className="mt-3 max-w-xl text-white/60">

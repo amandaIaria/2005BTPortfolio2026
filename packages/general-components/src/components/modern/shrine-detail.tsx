@@ -13,13 +13,13 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 
   return (
     <div data-component="shrine-detail" className={cn(className)} {...props}>
-      <header className="bg-black dark:bg-(--surface) pt-20 relative block h-150 mb-25">
-        <div className="flex flex-col gap-10  absolute inset-x-0 bottom-0 top-15">
-          <div className="max-w-300 mx-auto w-full -mb-17">
+      <header className="bg-black dark:bg-(--surface) pt-22 md:pt-20 relative block mb-10 md:h-150 md:mb-25">
+        <div className="flex flex-col gap-4 md:gap-10 md:absolute inset-x-0 bottom-0 top-0 md:top-15">
+          <div className="max-w-300  px-4 md:px-0 mx-auto w-full mb-0 md:-mb-17">
             <Breadcrumb href="/shrines" label={t('shrines.detail.backLink')} />
           </div>
 
-          <div className="">
+          <div className="hidden md:block">
             <div className="flex">
               <figure className="aspect-video overflow-hidden bg-(--surface) basis-[calc(50%+250px)] rounded-r-lg z-2 max-h-[500px]">
                 <img
@@ -38,63 +38,78 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
               <div className="basis-[calc(25%-300px)] " />
             </div>
           </div>
-          <div />
+
+          <div className="md:hidden block">
+            <div className="">
+              <figure className="aspect-video overflow-hidden">
+                <img
+                  src={shrine.image.src}
+                  alt={shrine.image.alt}
+                  className="h-full w-full object-cover object-top"
+                />
+              </figure>
+              {shrine.description && (
+                <div className="bg-accent">
+                  <p className="md:text-3xl  text-foreground text-xl p-4">
+                    {shrine.description}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </header>
 
       {shrine.content && shrine.content.length > 0 && (
-        <section className="relative z-10 mx-auto w-full max-w-300">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 -z-10 backdrop-blur-sm [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_40px,black_calc(100%_-_40px),transparent),linear-gradient(to_bottom,transparent,black_40px,black_calc(100%_-_40px),transparent)]"
-            />
-          <div className="flex gap-4">
-            <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
-            {shrine.content.map((content, blockIndex) => {
-              // block.copy.map((copy, copyIndex) => {
-              //   const image = block.image?.[copyIndex];
-              return (
-                <React.Fragment
-                  key={`${content.id}__${blockIndex}_${blockIndex}`}
-                >
-                  {content.title && (
-                    <h2
-                      id={content.id}
-                      className="max-w-200 w-full mx-auto text-foreground"
-                    >
-                      {content.title}
-                    </h2>
-                  )}
-                  {content.copy && (
-                    <p className="max-w-200 w-full mx-auto text-foreground">
-                      {content.copy}
-                    </p>
-                  )}
-                  {content.image && content.image.src !== '' && (
-                    <figure className="h-50 w-full overflow-hidden bg-(--surface)">
-                      <img
-                        src={content.image.src}
-                        alt={content.image.alt}
-                        className="h-full w-full object-cover object-center"
-                      />
-                    </figure>
-                  )}
-                </React.Fragment>
-              );
-              // }),
-            })}
-            </div>
-
+        <section className="relative z-10 mx-auto px-4 md:px-0 w-full max-w-300">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 backdrop-blur-sm [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_40px,black_calc(100%_-_40px),transparent),linear-gradient(to_bottom,transparent,black_40px,black_calc(100%_-_40px),transparent)]"
+          />
+          <div className="flex flex-col md:flex-row-reverse gap-4 relative">
             <StickySideNav
               content={shrine}
               navLabel={t('shrines.navSidebarLabel')}
             />
+            <div className="prose max-w-none flex-[60%]" ref={contentNavRef}>
+              {shrine.content.map((content, blockIndex) => {
+                return (
+                  <React.Fragment
+                    key={`${content.id}__${blockIndex}_${blockIndex}`}
+                  >
+                    {content.title && (
+                      <h2
+                        id={content.id}
+                        className="max-w-200 w-full mx-auto text-foreground scroll-mt-30.5"
+                      >
+                        {content.title}
+                      </h2>
+                    )}
+                    {content.copy && (
+                      <p className="max-w-200 w-full mx-auto text-foreground">
+                        {content.copy}
+                      </p>
+                    )}
+                    {content.image && content.image.src !== '' && (
+                      <figure className="h-50 w-full overflow-hidden bg-(--surface)">
+                        <img
+                          src={content.image.src}
+                          alt={content.image.alt}
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </figure>
+                    )}
+                  </React.Fragment>
+                );
+                // }),
+              })}
+            </div>
           </div>
         </section>
       )}
 
       {shrine.gallery && shrine.gallery.length > 0 && (
-        <div className="backdrop-blur-lg max-w-300 w-full relative z-10 mx-auto pt-20">
+        <div className="backdrop-blur-lg max-w-300 px-4 md:px-0 w-full relative z-10 mx-auto md:pt-20">
           <div className="flex flex-col gap-6 border-t border-(--surface-strong) pt-12">
             <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
               {t('shrines.detail.galleryHeading')}
