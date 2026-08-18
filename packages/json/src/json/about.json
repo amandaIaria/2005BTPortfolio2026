@@ -3,7 +3,7 @@
     "title": "About",
     "name": "Alex",
     "thumbnail": {
-      "src":"https://picsum.photos/id/1005/600/800?grayscale",
+      "src": "https://picsum.photos/id/1005/600/800?grayscale",
       "alt": "blah"
     },
     "images": {

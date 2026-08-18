@@ -16,7 +16,7 @@ function ShrineListing({ kicker, heading, intro }: ShrineListingProps) {
             {kicker}
           </p>
         )}
-        <h1 className="text-3xl font-bold text-(--sea-ink) sm:text-4xl">
+        <h1 className="">
           {heading}
         </h1>
         {intro && <p className="text-(--sea-ink-soft)">{intro}</p>}

@@ -7,7 +7,7 @@ function Breadcrumb({ href, label, className, ...props }: BreadcrumbProps) {
   return (
     <div
       data-component="breadcrumb"
-      className={cn('flex items-center gap-4 pb-20', className)}
+      className={cn('flex items-center gap-4 pb-0 md:pb-20 w-full', className)}
       {...props}
     >
       <InternalTransitionLink

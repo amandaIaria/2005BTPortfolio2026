@@ -14,16 +14,16 @@ function ModernExperiencePage() {
   return (
     <Container
       data-component="modern-experience-page"
-      className="max-w-[1200px] mx-auto grid items-center py-20"
+      className="max-w-[1200px] mx-auto grid items-center pt-22 pb-0 md:py-20"
     >
-      <div className="grid grid-cols-1 items-start gap-20 md:grid-cols-[300px_1fr]">
-        <div className="grid gap-10 items-center h-[70%]">
-          <div className="flex sticky top-[100px] flex-col gap-10">
-            <h1 className="text-6xl">{t('experience.heading')}</h1>
+      <div className="md:px-0 px-4 grid grid-cols-1 items-start gap-10 md:gap-20 md:grid-cols-[300px_1fr]">
+        <header className="grid gap-4 md:gap-10 items-center h-[70%]">
+          <div className="flex md:sticky top-[100px] flex-col gap-4 md:gap-10">
+            <h1 className="">{t('experience.heading')}</h1>
             <p className="text-2xl font-medium text-accent">
               {t('experience.subtitle')}
             </p>
-            <div>
+            <div className="w-full text-right md:text-left">
               <Button
                 asChild
                 variant="link"
@@ -36,7 +36,7 @@ function ModernExperiencePage() {
               </Button>
             </div>
           </div>
-        </div>
+        </header>
         <ExperienceList experiences={experience} />
       </div>
     </Container>

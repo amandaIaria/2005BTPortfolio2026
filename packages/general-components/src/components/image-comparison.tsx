@@ -85,7 +85,10 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
       <div
         ref={setRefs}
         data-component="image-comparison"
-        className={cn('relative h-200 w-200 overflow-hidden', className)}
+        className={cn(
+          'relative h-75 w-62.5 md:h-200 md:w-200 overflow-hidden',
+          className,
+        )}
         {...props}
       >
         <img

@@ -23,11 +23,11 @@ function Footer({
       className={cn('relative isolate ', className)}
       {...props}
     >
-      <div className="relative block -z-10 " aria-hidden="true">
+      <div className="relative hidden md:block -z-10 " aria-hidden="true">
         <WebGLTentacleWall tentacleCount={6} inFooter />
       </div>
 
-      <div className="absolute z-1 bottom-0 bg-black dark:bg-white w-full pt-10 pb-10">
+      <div className="relative mt-10 md:mt-0 md:absolute z-1 bottom-0 bg-black dark:bg-white w-full pt-10 pb-10">
         <div className="w-full max-w-300 mx-auto flex justify-between gap-4">
           <div className="flex items-center gap-3">
             <LogoMark />

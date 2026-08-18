@@ -27,7 +27,7 @@ export interface ImageComparisonProps extends React.ComponentProps<'div'> {
   afterLabel?: string;
   initialPosition?: number; // 0-100, default 50
   className?: string;
-  thumb?: boolean
+  thumb?: boolean;
 }
 
 // image-modal.tsx
@@ -148,9 +148,9 @@ export interface ModernAboutPageProps {
     title: string;
     name: string;
     images: {
-      before: ImageProps,
-      after: ImageProps
-    }
+      before: ImageProps;
+      after: ImageProps;
+    };
     summary: string;
     full: string;
     social: string[];
@@ -318,7 +318,7 @@ export interface SliderPaginationProps {
   isLast: boolean;
   loop: boolean;
   dotsTrackRef: React.RefObject<HTMLDivElement | null>;
-  dotsInnerRef: React.RefObject<HTMLDivElement | null>;
+  dotsInnerRef: React.RefObject<HTMLElement | null>;
 }
 
 // slider/codepen-slider.tsx — dead/unused prototype, kept distinctly named to

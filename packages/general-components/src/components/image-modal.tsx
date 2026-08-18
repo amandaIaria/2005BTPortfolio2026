@@ -54,7 +54,6 @@ function ImageModal(props: ImageModalProps) {
               className={cn('h-full w-full object-cover', className)}
             />
           )}
-          
         </button>
       </DialogTrigger>
       <DialogPortal>
