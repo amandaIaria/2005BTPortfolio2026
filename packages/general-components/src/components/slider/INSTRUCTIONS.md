@@ -7,7 +7,7 @@ Modular carousel component with vertical-translate animations, keyboard/swipe na
 **Key Features:**
 
 - Vertical slide transitions (direction-aware: left pane up/down, right pane inverted)
-- Container queries for responsive stacking on mobile
+- Viewport breakpoint (`md`) for responsive stacking on mobile
 - Keyboard arrows (←/→) + horizontal swipe gestures
 - Centered pagination dots with size-differentiated active/inactive states
 - Full accessibility (ARIA roles, live regions, screen reader support)
@@ -120,9 +120,9 @@ interface SliderSlideLink {
 ### slide-pane.tsx
 
 - Three exported functions:
-  - `SlidePaneImage` - Left pane with image (desktop only, hidden @lg:hidden)
+  - `SlidePaneImage` - Left pane with image (desktop only, hidden md:hidden)
   - `SlidePaneRight` - Right pane container with flex layout
-  - `SlideMobileImage` - Mobile image (shown below @lg:hidden)
+  - `SlideMobileImage` - Mobile image (shown below md:hidden)
 - Each handles outgoing/incoming phase rendering
 - **Receives:** slide, isOutgoing, isTransitioning, outgoingRef (for transitions)
 - **Does NOT handle:** Content rendering (delegates to SlideContent)
@@ -158,8 +158,8 @@ interface SliderSlideLink {
 
 ### Typography
 
-- Title: Fraunces serif, text-4xl @lg:text-5xl, bold, dark (var(--sea-ink))
-- Description/list: text-sm @lg:text-base, soft (var(--sea-ink-soft))
+- Title: Fraunces serif, text-4xl md:text-5xl, bold, dark (var(--sea-ink))
+- Description/list: text-sm md:text-base, soft (var(--sea-ink-soft))
 - All dark mode via dark: prefix
 
 ### Layout

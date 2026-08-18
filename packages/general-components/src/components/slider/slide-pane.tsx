@@ -18,7 +18,7 @@ export function SlidePaneImage({
       exit="exit"
       transition={transition}
       data-pane="left"
-      className="absolute inset-0 w-1/2 h-full @lg:w-1/2 hidden @lg:block"
+      className="absolute inset-0 w-1/2 h-full hidden md:block"
       inert={isTransitioning}
     >
       <img
@@ -46,7 +46,7 @@ export function SlidePaneRight({
       exit="exit"
       transition={transition}
       data-pane="right"
-      className="absolute inset-0 w-full h-full @lg:w-1/2 @lg:left-1/2 justify-center items-center bg-white dark:bg-(--sand) flex flex-col p-6 @lg:p-8"
+      className="max-w-screen md:max-w-none col-start-1 row-start-1 w-full md:absolute md:inset-0 md:h-full md:w-1/2 md:left-1/2 justify-center items-center bg-white dark:bg-(--sand) flex flex-col p-6 md:p-8 pb-20"
       inert={isTransitioning}
     >
       <SlideContent slide={slide} />
@@ -69,7 +69,7 @@ export function SlideMobileImage({
       animate="center"
       exit="exit"
       transition={transition}
-      className="absolute inset-0 w-full h-full @lg:hidden"
+      className="absolute inset-0 w-full h-full md:hidden"
       inert={isTransitioning}
     >
       <img

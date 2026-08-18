@@ -86,17 +86,22 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
       [prev, next],
     );
 
-    useEffect(() => {
-      if (!dotsTrackRef.current || !dotsInnerRef.current) return;
-
+    const centerActiveDot = useCallback(() => {
       const track = dotsTrackRef.current;
       const inner = dotsInnerRef.current;
-      const trackRect = track.getBoundingClientRect();
-      const dots = inner.querySelectorAll('[role="tab"]');
+      if (!track || !inner) return;
 
+      const dots = inner.querySelectorAll('[role="tab"]');
       if (dots.length === 0) return;
 
       const activeDot = dots[index] as HTMLElement;
+
+      // Reset first so the measurement reflects the dot's natural position,
+      // not its position under the previous translateX (getBoundingClientRect
+      // includes transforms, so measuring without resetting compounds drift).
+      inner.style.transform = 'translateX(0px)';
+
+      const trackRect = track.getBoundingClientRect();
       const activeDotRect = activeDot.getBoundingClientRect();
       const activeDotCenterX =
         activeDotRect.left - trackRect.left + activeDotRect.width / 2;
@@ -107,30 +112,15 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
     }, [index]);
 
     useEffect(() => {
+      centerActiveDot();
+    }, [centerActiveDot]);
+
+    useEffect(() => {
       if (!dotsTrackRef.current) return;
-      const resizeObserver = new ResizeObserver(() => {
-        if (dotsTrackRef.current && dotsInnerRef.current) {
-          const track = dotsTrackRef.current;
-          const inner = dotsInnerRef.current;
-          const trackRect = track.getBoundingClientRect();
-          const dots = inner.querySelectorAll('[role="tab"]');
-
-          if (dots.length === 0) return;
-
-          const activeDot = dots[index] as HTMLElement;
-          const activeDotRect = activeDot.getBoundingClientRect();
-          const activeDotCenterX =
-            activeDotRect.left - trackRect.left + activeDotRect.width / 2;
-          const trackCenterX = trackRect.width / 2;
-          const translateX = trackCenterX - activeDotCenterX;
-
-          inner.style.transform = `translateX(${translateX}px)`;
-        }
-      });
-
+      const resizeObserver = new ResizeObserver(centerActiveDot);
       resizeObserver.observe(dotsTrackRef.current);
       return () => resizeObserver.disconnect();
-    }, [index]);
+    }, [centerActiveDot]);
 
     const handlePointerDown = (e: React.PointerEvent) => {
       swipeStartRef.current = { x: e.clientX, y: e.clientY };
@@ -162,7 +152,7 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
           isTransitioning ? (direction === 1 ? 'next' : 'prev') : undefined
         }
         className={cn(
-          'relative w-full h-full @container/slider overflow-hidden',
+          'relative w-full h-auto md:h-full overflow-hidden grid md:block',
           className,
         )}
         onKeyDown={handleKeyDown}
@@ -190,31 +180,35 @@ const SliderContainer = forwardRef<HTMLDivElement, SliderProps>(
 
         <SliderMiddle />
 
-        <AnimatePresence
-          custom={direction}
-          mode="sync"
-          onExitComplete={onTransitionSettled}
-        >
-          <SlidePaneRight
-            key={index}
-            slide={currentSlide}
-            isTransitioning={isTransitioning}
-            direction={direction}
-            variants={rightPaneVariants}
-            transition={paneTransition}
-          />
-        </AnimatePresence>
+        <div className="relative w-full aspect-[4/3] overflow-hidden md:contents">
+          <AnimatePresence custom={direction} mode="sync">
+            <SlideMobileImage
+              key={index}
+              slide={currentSlide}
+              isTransitioning={isTransitioning}
+              direction={direction}
+              variants={leftPaneVariants}
+              transition={paneTransition}
+            />
+          </AnimatePresence>
+        </div>
 
-        <AnimatePresence custom={direction} mode="sync">
-          <SlideMobileImage
-            key={index}
-            slide={currentSlide}
-            isTransitioning={isTransitioning}
-            direction={direction}
-            variants={leftPaneVariants}
-            transition={paneTransition}
-          />
-        </AnimatePresence>
+        <div className="grid w-full md:contents">
+          <AnimatePresence
+            custom={direction}
+            mode="sync"
+            onExitComplete={onTransitionSettled}
+          >
+            <SlidePaneRight
+              key={index}
+              slide={currentSlide}
+              isTransitioning={isTransitioning}
+              direction={direction}
+              variants={rightPaneVariants}
+              transition={paneTransition}
+            />
+          </AnimatePresence>
+        </div>
 
         <div aria-live="polite" aria-atomic="true" className="sr-only">
           {`Slide ${index + 1} of ${slides.length}: ${currentSlide.right.title}`}

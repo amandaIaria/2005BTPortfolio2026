@@ -318,7 +318,7 @@ export interface SliderPaginationProps {
   isLast: boolean;
   loop: boolean;
   dotsTrackRef: React.RefObject<HTMLDivElement | null>;
-  dotsInnerRef: React.RefObject<HTMLDivElement | null>;
+  dotsInnerRef: React.RefObject<HTMLElement | null>;
 }
 
 // slider/codepen-slider.tsx — dead/unused prototype, kept distinctly named to
