@@ -5,14 +5,17 @@ import * as React from 'react';
  * nearest the top of the viewport. Used to drive scrollspy-style table of
  * contents highlighting.
  */
-function useActiveSection(ids: string[]): string | null {
+function useActiveSection(
+  ids: string[],
+  root: Document | ShadowRoot = document,
+): string | null {
   const [activeId, setActiveId] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     if (ids.length === 0) return;
 
     const elements = ids
-      .map((id) => document.getElementById(id))
+      .map((id) => root.querySelector<HTMLElement>(`#${CSS.escape(id)}`))
       .filter((el): el is HTMLElement => el !== null);
 
     if (elements.length === 0) return;
@@ -36,7 +39,7 @@ function useActiveSection(ids: string[]): string | null {
     for (const el of elements) observer.observe(el);
 
     return () => observer.disconnect();
-  }, [ids]);
+  }, [ids, root]);
 
   return activeId;
 }

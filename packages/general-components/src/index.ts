@@ -59,6 +59,10 @@ export { ScrollArea, ScrollBar } from './components/ui/scroll-area';
 export { Separator } from './components/ui/separator';
 export { Skeleton } from './components/ui/skeleton';
 export { TempNav } from './components/temp-nav';
+export {
+  UIKitSticky,
+  type UIKitStickyProps,
+} from './components/ui-kit/ui-kit-sticky';
 export { CassetteCarousel } from './components/cassette-carousel';
 export { Playlist } from './components/playlist';
 export { AnimatedFooter } from './components/animated-footer';

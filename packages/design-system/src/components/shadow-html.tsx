@@ -13,6 +13,8 @@ type ShadowHtmlProps = {
    * fixed-position descendant to escape (e.g. a modal/overlay demo).
    */
   contained?: boolean;
+  /** Called with the shadow root once its content is mounted. */
+  onReady?: (root: ShadowRoot) => void;
 };
 
 export function ShadowHtml({
@@ -20,6 +22,7 @@ export function ShadowHtml({
   html,
   className,
   contained = true,
+  onReady,
 }: ShadowHtmlProps) {
   const hostRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +31,8 @@ export function ShadowHtml({
     if (!host) return;
     const root = host.shadowRoot ?? host.attachShadow({ mode: 'open' });
     root.innerHTML = `<style>${css}</style>${html}`;
-  }, [css, html]);
+    onReady?.(root);
+  }, [css, html, onReady]);
 
   return (
     <div
