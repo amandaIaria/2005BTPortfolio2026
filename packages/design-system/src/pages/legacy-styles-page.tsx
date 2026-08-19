@@ -36,7 +36,7 @@ export default function LegacyStylesPage() {
     const headings = Array.from(root.querySelectorAll('h2'));
     setTocItems(
       headings.map((heading) => {
-        const title = heading.textContent ?? '';
+        const title = heading.textContent;
         const id = slugify(title);
         heading.id = id;
         return { id, title };
