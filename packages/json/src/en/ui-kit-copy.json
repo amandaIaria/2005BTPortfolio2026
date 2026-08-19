@@ -1,0 +1,188 @@
+{
+  "page": {
+    "kicker": "General Components",
+    "title": "UI Kit",
+    "descriptionBefore": "Live examples of every component in the ",
+    "descriptionCode": "@general/components",
+    "descriptionAfter": " package."
+  },
+  "legacyStyles": {
+    "kicker": "Design System",
+    "title": "Legacy Styles",
+    "description": "Rendered from the legacy BT-Design-System SCSS, compiled and isolated in a Shadow DOM so its resets can't affect the rest of this site."
+  },
+  "colors": {
+    "kicker": "Design System",
+    "title": "Colors",
+    "description": "Design tokens defined in tokens.css. Swatches read live CSS variables, so values reflect the current light or dark theme."
+  },
+  "webglTentacleFooter": {
+    "backLink": "← Back to UI Kit",
+    "title": "WebGL Tentacle Footer",
+    "description": "GPU-rendered octopus tentacles using a WebGL fragment shader. Procedural bezier ribbons with suckers and floating ink particles.",
+    "defaultHeading": "Default (8 tentacles)",
+    "defaultText": "© 2026 Portfolio",
+    "denseHeading": "Dense (14 tentacles)",
+    "denseText": "🐙 Dense tentacles",
+    "minimalHeading": "Minimal (3 tentacles)",
+    "minimalText": "Just a few tentacles",
+    "customHeading": "Custom footer content",
+    "wallHeading": "Tentacle Wall (100vh × 100vw)",
+    "wallDescription": "Black wall on the left with tentacles reaching out horizontally. Scroll down to see it."
+  },
+  "sections": {
+    "switch": {
+      "title": "Switch",
+      "default": "Default",
+      "small": "Small",
+      "disabled": "Disabled"
+    },
+    "appHeader": {
+      "title": "App Header"
+    },
+    "button": {
+      "title": "Button",
+      "default": "Default",
+      "secondary": "Secondary",
+      "outline": "Outline",
+      "ghost": "Ghost",
+      "destructive": "Destructive",
+      "link": "Link",
+      "extraSmall": "Extra Small",
+      "small": "Small",
+      "large": "Large",
+      "disabled": "Disabled"
+    },
+    "animatedTitle": {
+      "title": "Animated Title",
+      "hover": "Hover for animation",
+      "large": "Large animated title",
+      "small": "Small animated title"
+    },
+    "badge": {
+      "title": "Badge",
+      "default": "Default",
+      "secondary": "Secondary",
+      "destructive": "Destructive",
+      "outline": "Outline"
+    },
+    "alert": {
+      "title": "Alert",
+      "defaultTitle": "Default",
+      "defaultDescription": "A neutral, informational alert.",
+      "infoTitle": "Info",
+      "infoDescription": "Uses the BT active/info blue.",
+      "successTitle": "Success",
+      "successDescription": "Uses the BT success green.",
+      "errorTitle": "Error",
+      "errorDescription": "Uses the BT error red.",
+      "dismissibleSuccessTitle": "Dismissible success",
+      "dismissibleErrorTitle": "Dismissible error",
+      "dismissDescription": "Click the × to dismiss."
+    },
+    "card": {
+      "title": "Card",
+      "basicTitle": "Card Title",
+      "basicDescription": "A brief description of the card content.",
+      "basicBody": "This is the card body. It can contain any content.",
+      "action": "Action",
+      "withBadgeTitle": "With Badge",
+      "withBadgeDescription": "Cards can contain other components.",
+      "react": "React",
+      "typescript": "TypeScript",
+      "tailwind": "Tailwind",
+      "smallTitle": "Small Card",
+      "smallDescription": "Compact variant.",
+      "smallBodyBefore": "Uses the ",
+      "smallBodyCode": "sm",
+      "smallBodyAfter": " size prop."
+    },
+    "dialog": {
+      "title": "Dialog",
+      "trigger": "Open Dialog",
+      "dialogTitle": "Dialog Title",
+      "description": "This is a description of the dialog content. It explains what the user should expect.",
+      "body": "Dialog body content goes here.",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "imageModal": {
+      "title": "Image Modal",
+      "placeholderAlt": "Placeholder portrait",
+      "beforeAlt": "Before",
+      "afterAlt": "After"
+    },
+    "imageComparison": {
+      "title": "Image Comparison",
+      "beforeAlt": "Before",
+      "afterAlt": "After"
+    },
+    "typewriter": {
+      "title": "Typewriter",
+      "text": "Playground component — types itself out."
+    },
+    "contactForm": {
+      "title": "Contact Form"
+    },
+    "tooltip": {
+      "title": "Tooltip",
+      "hoverMe": "Hover me",
+      "hoverContent": "This is a tooltip",
+      "withDelay": "With delay",
+      "delayContent": "Appears on the bottom",
+      "badgeTooltip": "Badge tooltip",
+      "badgeContent": "Works on any element"
+    },
+    "separator": {
+      "title": "Separator",
+      "horizontalLabel": "Horizontal (default)",
+      "itemA": "Item A",
+      "itemB": "Item B",
+      "itemC": "Item C"
+    },
+    "skeleton": {
+      "title": "Skeleton"
+    },
+    "aspectRatio": {
+      "title": "Aspect Ratio",
+      "label": "16:9 Aspect Ratio"
+    },
+    "scrollArea": {
+      "title": "Scroll Area",
+      "itemPrefix": "Scrollable item"
+    },
+    "cassetteCarousel": {
+      "title": "Cassette Carousel",
+      "horizontalLabel": "Horizontal (default)",
+      "verticalLabel": "Vertical",
+      "sideALabel": "Side A",
+      "sideASublabel": "Mixtape Vol. 1",
+      "sideAContent": "Content for Side A",
+      "sideBLabel": "Side B",
+      "sideBSublabel": "Chill Vibes",
+      "sideBContent": "Content for Side B",
+      "demoLabel": "Demo",
+      "demoSublabel": "Unreleased",
+      "demoContent": "Demo tape content",
+      "loFiLabel": "Lo-Fi",
+      "loFiSublabel": "Late Night",
+      "loFiContent": "Lo-fi tape content",
+      "track1Label": "Track 1",
+      "track1Sublabel": "Intro",
+      "track2Label": "Track 2",
+      "track2Sublabel": "Main Theme",
+      "track3Label": "Track 3",
+      "track3Sublabel": "Outro"
+    },
+    "playlist": {
+      "title": "Playlist",
+      "track1Title": "Track 1"
+    },
+    "footer": {
+      "title": "Footer"
+    },
+    "socialBar": {
+      "title": "Social Bar"
+    }
+  }
+}

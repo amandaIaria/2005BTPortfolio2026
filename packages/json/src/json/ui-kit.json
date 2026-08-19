@@ -1,0 +1,80 @@
+{
+  "nav": [
+    { "href": "/ui-kit", "label": "Home" },
+    { "href": "/ui-kit/slider", "label": "Project Slider" },
+    { "href": "/ui-kit/colors", "label": "Colors" },
+    { "href": "/ui-kit/legacy-styles", "label": "Legacy BT Styles" },
+    {
+      "href": "/ui-kit/webgl-tentacle-footer",
+      "label": "Animated Tentacle Wall"
+    },
+    { "href": "/", "label": "Portfolio" }
+  ],
+  "colorsPage": {
+    "groups": [
+      {
+        "title": "Ink & Text",
+        "tokens": [
+          { "name": "--sea-ink", "label": "Sea Ink" },
+          { "name": "--sea-ink-soft", "label": "Sea Ink Soft" }
+        ]
+      },
+      {
+        "title": "Accent",
+        "tokens": [
+          { "name": "--lagoon", "label": "Lagoon" },
+          { "name": "--lagoon-deep", "label": "Lagoon Deep" },
+          { "name": "--lagoon-600", "label": "Lagoon 600" },
+          { "name": "--lagoon-700", "label": "Lagoon 700" },
+          { "name": "--lagoon-800", "label": "Lagoon 800" },
+          { "name": "--palm", "label": "Palm" }
+        ]
+      },
+      {
+        "title": "Background & Surface",
+        "tokens": [
+          { "name": "--sand", "label": "Sand" },
+          { "name": "--foam", "label": "Foam" },
+          { "name": "--bg-base", "label": "Background Base" },
+          { "name": "--surface", "label": "Surface" },
+          { "name": "--surface-strong", "label": "Surface Strong" },
+          { "name": "--header-bg", "label": "Header Background" },
+          { "name": "--chip-bg", "label": "Chip Background" }
+        ]
+      },
+      {
+        "title": "Line & Glint",
+        "tokens": [
+          { "name": "--line", "label": "Line" },
+          { "name": "--chip-line", "label": "Chip Line" },
+          { "name": "--inset-glint", "label": "Inset Glint" },
+          { "name": "--link-bg-hover", "label": "Link Background Hover" }
+        ]
+      },
+      {
+        "title": "Brand & State",
+        "tokens": [
+          { "name": "--flat-black", "label": "Flat Black" },
+          { "name": "--bt-active", "label": "BT Active" },
+          { "name": "--bt-active-deep", "label": "BT Active Deep" },
+          { "name": "--bt-error", "label": "BT Error" },
+          { "name": "--bt-success", "label": "BT Success" }
+        ]
+      },
+      {
+        "title": "Hero Gradient",
+        "tokens": [
+          { "name": "--hero-a", "label": "Hero A" },
+          { "name": "--hero-b", "label": "Hero B" }
+        ]
+      },
+      {
+        "title": "Kicker",
+        "tokens": [{ "name": "--kicker", "label": "Kicker" }]
+      }
+    ]
+  },
+  "webglTentacleFooterPage": {
+    "customTags": ["Built with WebGL", "No dependencies", "60fps"]
+  }
+}
