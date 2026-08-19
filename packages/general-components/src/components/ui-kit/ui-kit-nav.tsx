@@ -6,6 +6,9 @@ import { InternalTransitionLink } from '../page-transition/internal-transition-l
 const navLinks = uiKit.nav;
 
 function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
+  const pathname =
+    typeof window !== 'undefined' ? window.location.pathname : '';
+
   return (
     <nav
       data-component="temp-nav"
@@ -13,21 +16,32 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
       {...props}
     >
       <ul className="flex items-center gap-4">
-        {navLinks.map((link) => (
-          <li key={link.href}>
-            <InternalTransitionLink
-              href={link.href}
-              className="group text-foreground"
-            >
-              <span className="border-b border-transparent group-hover:border-accent transition ease-in-out">
-                {link.label}
-              </span>
-            </InternalTransitionLink>
-          </li>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <li key={link.href}>
+              <InternalTransitionLink
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className="group text-foreground"
+              >
+                <span
+                  className={cn(
+                    'border-b transition ease-in-out',
+                    isActive
+                      ? 'border-accent font-semibold'
+                      : 'border-transparent group-hover:border-accent',
+                  )}
+                >
+                  {link.label}
+                </span>
+              </InternalTransitionLink>
+            </li>
+          );
+        })}
       </ul>
       <div>
-        <img src="./img/logo2019.svg" className="w-100" />
+        <img src="/img/logo2019.svg" className="w-100" />
       </div>
     </nav>
   );

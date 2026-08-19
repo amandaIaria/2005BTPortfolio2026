@@ -7,9 +7,10 @@ export interface UIKitHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   header: {
     kicker: string;
     title: string;
-    descriptionBefore: string;
-    descriptionCode: string;
-    descriptionAfter: string;
+    descriptionBefore?: string;
+    descriptionCode?: string;
+    descriptionAfter?: string;
+    description?: string;
   };
 }
 
@@ -27,10 +28,11 @@ const UIKitHeader = forwardRef<HTMLDivElement, UIKitHeaderProps>(
       <div>
         <p className="island-kicker mb-2">{header.kicker}</p>
         <h1 className="display-title text-accent">{header.title}</h1>
-        <p className="mt-3 max-w-xl text-accent">
-          {header.descriptionBefore}
-          <code>{header.descriptionCode}</code>
-          {header.descriptionAfter}
+        <p className="mt-3 max-w-xl mb-10">
+          {header.descriptionBefore && header.descriptionBefore}
+          {header.descriptionCode && <code>{header.descriptionCode}</code>}
+          {header.descriptionAfter && header.descriptionAfter}
+          {header.description && header.description}
         </p>
       </div>
 

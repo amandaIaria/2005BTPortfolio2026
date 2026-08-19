@@ -17,6 +17,7 @@
     "description": "Design tokens defined in tokens.css. Swatches read live CSS variables, so values reflect the current light or dark theme."
   },
   "webglTentacleFooter": {
+    "kicker": "General Components",
     "backLink": "← Back to UI Kit",
     "title": "WebGL Tentacle Footer",
     "description": "GPU-rendered octopus tentacles using a WebGL fragment shader. Procedural bezier ribbons with suckers and floating ink particles.",
@@ -27,6 +28,9 @@
     "minimalHeading": "Minimal (3 tentacles)",
     "minimalText": "Just a few tentacles",
     "customHeading": "Custom footer content",
+    "customTagWebgl": "Built with WebGL",
+    "customTagNoDependencies": "No dependencies",
+    "customTag60fps": "60fps",
     "wallHeading": "Tentacle Wall (100vh × 100vw)",
     "wallDescription": "Black wall on the left with tentacles reaching out horizontally. Scroll down to see it."
   },
