@@ -14,15 +14,15 @@ function ColorSwatch({ name, label }: ColorToken) {
   return (
     <div
       data-component="color-swatch"
-      className="flex flex-col overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)]"
+      className="flex flex-col overflow-hidden rounded-xl border bg-background"
     >
       <div
         className="h-20 w-full"
         style={{ backgroundColor: `var(${name})` }}
       />
       <div className="space-y-0.5 p-3">
-        <p className="text-sm font-medium text-[var(--sea-ink)]">{label}</p>
-        <code className="text-xs text-[var(--sea-ink-soft)]">{name}</code>
+        <p className="text-sm font-medium text-foreground">{label}</p>
+        <code className="text-xs text-foreground ">{name}</code>
       </div>
     </div>
   );

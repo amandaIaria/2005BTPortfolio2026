@@ -11,7 +11,10 @@ const UIKitSticky = forwardRef<HTMLElement, UIKitStickyProps>(
     <nav
       ref={ref}
       data-component="ui-kit-sticky"
-      className={cn('sticky top-10 flex flex-col gap-1', className)}
+      className={cn(
+        'flex flex-row gap-4 overflow-x-auto whitespace-nowrap pb-2 md:flex-col md:gap-1 md:overflow-visible md:whitespace-normal md:pb-0',
+        className,
+      )}
       {...props}
     >
       {tocItems.map(({ id, title }) => (
@@ -19,7 +22,7 @@ const UIKitSticky = forwardRef<HTMLElement, UIKitStickyProps>(
           key={id}
           href={`#${id}`}
           className={cn(
-            'border-l-2 py-1 pl-4 text-sm transition-colors',
+            'shrink-0 border-b-2 py-1 text-sm transition-colors md:border-b-0 md:border-l-2 md:pl-4',
             id === activeId
               ? 'border-accent font-semibold text-[var(--sea-ink)]'
               : 'border-transparent text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)]',

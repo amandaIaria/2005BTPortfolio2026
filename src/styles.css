@@ -45,7 +45,7 @@
   --success: var(--bt-success);
   --accent: var(--color-cyan-500);
   --accent-foreground: var(--lagoon-deep);
-  --accent-hover: var(--lagoon-deep);
+  --accent-hover: var(--lagoon);
 }
 
 :root[data-theme='dark'] {

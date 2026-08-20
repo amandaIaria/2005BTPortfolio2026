@@ -14,8 +14,20 @@
   "colorsPage": {
     "groups": [
       {
+        "title": "Brand & State",
+        "tokens": [
+          { "name": "--flat-black", "label": "Flat Black" },
+          { "name": "--bt-active", "label": "BT Active" },
+          { "name": "--bt-active-deep", "label": "BT Active Deep" },
+          { "name": "--bt-error", "label": "BT Error" },
+          { "name": "--bt-success", "label": "BT Success" }
+        ]
+      },
+
+      {
         "title": "Ink & Text",
         "tokens": [
+          {"name": "--foreground", "label": "foreground"},
           { "name": "--sea-ink", "label": "Sea Ink" },
           { "name": "--sea-ink-soft", "label": "Sea Ink Soft" }
         ]
@@ -23,6 +35,9 @@
       {
         "title": "Accent",
         "tokens": [
+          { "name": "--accent", "label": "Accent" },
+          { "name": "--accent-foreground", "label": "Accent Foreground" },
+          { "name": "--accent-hover", "label": "Accent Hover" },
           { "name": "--lagoon", "label": "Lagoon" },
           { "name": "--lagoon-deep", "label": "Lagoon Deep" },
           { "name": "--lagoon-600", "label": "Lagoon 600" },
@@ -34,6 +49,7 @@
       {
         "title": "Background & Surface",
         "tokens": [
+          { "name": "--background", "label": "Background" },
           { "name": "--sand", "label": "Sand" },
           { "name": "--foam", "label": "Foam" },
           { "name": "--bg-base", "label": "Background Base" },
@@ -52,16 +68,7 @@
           { "name": "--link-bg-hover", "label": "Link Background Hover" }
         ]
       },
-      {
-        "title": "Brand & State",
-        "tokens": [
-          { "name": "--flat-black", "label": "Flat Black" },
-          { "name": "--bt-active", "label": "BT Active" },
-          { "name": "--bt-active-deep", "label": "BT Active Deep" },
-          { "name": "--bt-error", "label": "BT Error" },
-          { "name": "--bt-success", "label": "BT Success" }
-        ]
-      },
+      
       {
         "title": "Hero Gradient",
         "tokens": [

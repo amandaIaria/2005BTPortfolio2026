@@ -29,7 +29,7 @@ function UIKitShell({
         <UIKitHeader header={header} />
 
         <div className="relative grid grid-cols-1 items-start gap-10 md:grid-cols-[240px_1fr]">
-          <div className="sticky top-4" onClick={onNavClick}>
+          <div className="sticky top-4 backdrop-blur-2xl z-11" onClick={onNavClick}>
             <UIKitSticky tocItems={tocItems} activeId={activeId} />
           </div>
 
