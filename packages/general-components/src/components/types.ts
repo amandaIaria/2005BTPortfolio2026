@@ -4,6 +4,7 @@ import type { VariantProps } from 'class-variance-authority';
 import type { AnyFieldApi } from '@tanstack/react-form';
 import type { portfolioButtonVariants } from './atoms/portfolio-button';
 import type { Switch } from './ui/switch';
+import type { Alert } from './ui/alert';
 
 export interface ImageProps {
   src: string;
@@ -129,8 +130,25 @@ export interface GlitchEffectProps {
 }
 
 // portfolio-switch.tsx
-export interface PortfolioSwitchProps
-  extends React.ComponentProps<typeof Switch> {}
+export interface PortfolioSwitchProps extends React.ComponentProps<
+  typeof Switch
+> {}
+
+// portfolio-alert.tsx
+export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info';
+
+export interface PortfolioAlertProps extends Omit<
+  React.ComponentProps<typeof Alert>,
+  'variant'
+> {
+  variant?: PortfolioAlertVariant;
+  /** Custom leading icon. Omit for the variant default, pass `false` to hide it. */
+  icon?: React.ReactNode | false;
+  /** Renders a dismiss button and calls this when clicked. Omit to hide it. */
+  onDismiss?: () => void;
+  /** Accessible label for the dismiss button. */
+  dismissLabel?: string;
+}
 
 // portfolio-button.tsx
 export interface PortfolioButtonProps

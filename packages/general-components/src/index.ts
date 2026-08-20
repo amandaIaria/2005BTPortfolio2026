@@ -25,6 +25,11 @@ export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
 export { PortfolioSwitch } from './components/atoms/portfolio-switch';
 export {
+  PortfolioAlert,
+  PortfolioAlertTitle,
+  PortfolioAlertDescription,
+} from './components/atoms/portfolio-alert';
+export {
   Card,
   CardHeader,
   CardFooter,
@@ -109,6 +114,7 @@ export { SocialBar } from './components/modern/social-bar';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';
+export { default as LegacyStylesPage } from './pages/legacy-styles-page';
 
 // Utilities
 export { cn } from './lib/utils';
@@ -128,6 +134,8 @@ export type {
   GlitchEffectProps,
   PortfolioButtonProps,
   PortfolioSwitchProps,
+  PortfolioAlertProps,
+  PortfolioAlertVariant,
   CassetteSlideProps,
   CassetteCarouselProps,
   AnimatedFooterProps,
