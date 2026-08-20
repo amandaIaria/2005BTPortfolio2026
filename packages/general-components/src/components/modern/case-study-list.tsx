@@ -40,7 +40,7 @@ function CaseStudyList({
           >
             <InternalTransitionLink href={`/case-studies/${caseStudy.slug}`}>
               {caseStudy.link.copy}
-              <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4" />
+              <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4 text-accent" />
             </InternalTransitionLink>
           </Button>
         </div>

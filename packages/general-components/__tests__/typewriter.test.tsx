@@ -1,7 +1,7 @@
 import { render, act } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import { Typewriter } from '../src/components/typewriter';
+import { Typewriter } from '../src/components/modern/typewriter';
 
 describe('Typewriter', () => {
   it('starts empty and types out the text over time', () => {

@@ -1,5 +1,5 @@
 import { ExternalTransitionLink } from '../page-transition/external-transition-link';
-import { PortfolioButton } from '../portfolio-button';
+import { PortfolioButton } from '../atoms/portfolio-button';
 import SliderTags from './slider-tags';
 import type { SlideContentProps } from '@packages/general-components/src/components/types.ts';
 

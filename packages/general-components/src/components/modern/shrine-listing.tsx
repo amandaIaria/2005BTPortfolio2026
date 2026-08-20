@@ -16,9 +16,7 @@ function ShrineListing({ kicker, heading, intro }: ShrineListingProps) {
             {kicker}
           </p>
         )}
-        <h1 className="">
-          {heading}
-        </h1>
+        <h1 className="">{heading}</h1>
         {intro && <p className="text-(--sea-ink-soft)">{intro}</p>}
       </div>
       {items.map((item) => (

@@ -16,10 +16,7 @@ describe('PortfolioSwitch', () => {
   it('calls onCheckedChange when toggled', () => {
     const onCheckedChange = vi.fn();
     render(
-      <PortfolioSwitch
-        aria-label="Toggle"
-        onCheckedChange={onCheckedChange}
-      />,
+      <PortfolioSwitch aria-label="Toggle" onCheckedChange={onCheckedChange} />,
     );
     fireEvent.click(screen.getByRole('switch'));
     expect(onCheckedChange).toHaveBeenCalledWith(true);

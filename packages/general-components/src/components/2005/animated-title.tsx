@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';
 import type { AnimatedTitleProps } from '@packages/general-components/src/components/types.ts';
 
 const AnimatedTitle = forwardRef<HTMLDivElement, AnimatedTitleProps>(

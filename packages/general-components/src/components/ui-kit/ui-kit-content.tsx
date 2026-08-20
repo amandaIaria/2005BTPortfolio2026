@@ -22,6 +22,8 @@ import { ScrollAreaSection } from './sections/scroll-area-section';
 import { CassetteCarouselSection } from './sections/cassette-carousel-section';
 import { PlaylistSection } from './sections/playlist-section';
 import { SocialBarSection } from './sections/social-bar-section';
+import { PortfolioButtonSection } from './sections/portfolio-button-section';
+
 
 export interface UIKitContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -37,6 +39,7 @@ const UIKitContent = forwardRef<HTMLDivElement, UIKitContentProps>(
       <PortfolioSwitchSection />
       <AppHeaderSection />
       <ButtonSection />
+      <PortfolioButtonSection />
       <AnimatedTitleSection />
       <BadgeSection />
       <AlertSection />

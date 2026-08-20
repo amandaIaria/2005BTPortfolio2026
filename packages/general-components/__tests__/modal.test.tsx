@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 
-import { Modal } from '../src/components/modal';
+import { Modal } from '../src/components/atoms/modal';
 
 function clearCookies() {
   document.cookie.split('; ').forEach((cookie) => {

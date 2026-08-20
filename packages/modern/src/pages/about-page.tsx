@@ -31,9 +31,7 @@ function ModernAboutPage() {
                   imageClassName=""
                 />
               </div>
-              <h1 className="w-full text-right md:text-left">
-                {about.title}
-              </h1>
+              <h1 className="w-full text-right md:text-left">{about.title}</h1>
             </div>
             <div className="text-right md:text-left">
               <Button

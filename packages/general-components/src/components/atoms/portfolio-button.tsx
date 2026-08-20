@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cva } from 'class-variance-authority';
 import { Slot } from 'radix-ui';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';
 import type { PortfolioButtonProps } from '@packages/general-components/src/components/types.ts';
 
 const portfolioButtonVariants = cva(
@@ -11,7 +11,7 @@ const portfolioButtonVariants = cva(
     variants: {
       variant: {
         default:
-          'rounded-[2px] border-[var(--bt-active)] bg-[var(--bt-active)] font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--bt-active-deep)] transition-[box-shadow,transform] duration-100 hover:bg-[var(--bt-active)] active:translate-y-1 active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-[var(--bt-active)] focus-visible:outline-offset-8',
+          'border-transparent bg-accent font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--accent-hover)] transition-[box-shadow,transform] duration-100 hover:bg-accent-hover active:translate-y-1 active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent-hover focus-visible:outline-offset-8',
         outline:
           'border border-accent text-accent hover:bg-accent-hover hover:text-white',
         secondary:

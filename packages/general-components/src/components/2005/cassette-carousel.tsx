@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { cn } from '../lib/utils';
+import { cn } from '../../lib/utils';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from './ui/dialog';
+} from '../ui/dialog';
 import type {
   CassetteSlideProps,
   CassetteCarouselProps,

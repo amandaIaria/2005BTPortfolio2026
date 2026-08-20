@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import {
   Dialog,
   DialogContent,
@@ -8,8 +8,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from './ui/dialog';
-import { getCookie, setCookie } from '../lib/cookies';
+} from '../ui/dialog';
+import { getCookie, setCookie } from '../../lib/cookies';
 import type { ModalProps } from '@packages/general-components/src/components/types.ts';
 
 const DISMISS_COOKIE_DAYS = 7;

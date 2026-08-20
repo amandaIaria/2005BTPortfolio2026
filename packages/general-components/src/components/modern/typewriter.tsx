@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useState } from 'react';
 
-import { cn, componentName } from '../lib/utils';
+import { cn, componentName } from '../../lib/utils';
 import type { TypewriterProps } from '@packages/general-components/src/components/types.ts';
 import type { AnimationGeneratorType } from 'framer-motion';
 import { motion } from 'framer-motion';

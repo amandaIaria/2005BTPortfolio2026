@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { cn } from '../lib/utils';
-import { Badge } from './ui/badge';
+import { cn } from '../../lib/utils';
+import { Badge } from '../ui/badge';
 import type { ExperienceListProps } from '@packages/general-components/src/components/types.ts';
 
 function ExperienceList({
@@ -18,7 +18,7 @@ function ExperienceList({
         <div
           key={`${experience.company}-${experience.title}`}
           data-component="experience-list-item"
-          className="relative border-t border-border py-10 first:pt-0"
+          className="relative border-t border-border py-10"
         >
           <span
             aria-hidden="true"

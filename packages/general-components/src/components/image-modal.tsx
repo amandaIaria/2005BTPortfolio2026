@@ -13,7 +13,7 @@ import {
   DialogTrigger,
 } from './ui/dialog';
 import type { ImageModalProps } from '@packages/general-components/src/components/types.ts';
-import { PortfolioButton } from './portfolio-button';
+import { PortfolioButton } from './atoms/portfolio-button';
 import { ImageComparison } from './image-comparison';
 
 function ImageModal(props: ImageModalProps) {

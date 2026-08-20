@@ -49,6 +49,19 @@
     "appHeader": {
       "title": "App Header"
     },
+    "portfolioButton": {
+      "title": "Portfolio Button",
+      "default": "Default",
+      "secondary": "Secondary",
+      "outline": "Outline",
+      "ghost": "Ghost",
+      "destructive": "Destructive",
+      "link": "Link",
+      "extraSmall": "Extra Small",
+      "small": "Small",
+      "large": "Large",
+      "disabled": "Disabled"
+    },
     "button": {
       "title": "Button",
       "default": "Default",
