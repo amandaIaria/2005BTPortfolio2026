@@ -1,7 +1,9 @@
 import type * as React from 'react';
 import type { Variants, Transition, MotionValue } from 'motion/react';
 import type { VariantProps } from 'class-variance-authority';
-import type { portfolioButtonVariants } from './portfolio-button';
+import type { AnyFieldApi } from '@tanstack/react-form';
+import type { portfolioButtonVariants } from './atoms/portfolio-button';
+import type { Switch } from './ui/switch';
 
 export interface ImageProps {
   src: string;
@@ -54,6 +56,17 @@ export interface ContactFormProps {
 }
 
 export type SubmitStatus = 'idle' | 'pending' | 'success' | 'error';
+
+// atoms/form-input.tsx
+export interface FormInputProps {
+  field: AnyFieldApi;
+  label: string;
+  type?: string;
+  multiline?: boolean;
+  rows?: number;
+  disabled?: boolean;
+  className?: string;
+}
 
 // hero.tsx
 export interface HeroProps extends React.ComponentProps<'div'> {
@@ -114,6 +127,10 @@ export interface GlitchEffectProps {
   /** Clips the glitch animation to this element's bounds. Default false. */
   hideOverflow?: boolean;
 }
+
+// portfolio-switch.tsx
+export interface PortfolioSwitchProps
+  extends React.ComponentProps<typeof Switch> {}
 
 // portfolio-button.tsx
 export interface PortfolioButtonProps
@@ -233,11 +250,6 @@ export interface ModalProps {
 }
 
 // webgl-tentacle-footer.tsx
-export interface WebGLTentacleFooterProps extends React.ComponentProps<'footer'> {
-  text?: string;
-  tentacleCount?: number;
-}
-
 // animated-title.tsx
 export interface AnimatedTitleProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

@@ -11,17 +11,19 @@ export { Button, buttonVariants } from './components/ui/button';
 export {
   PortfolioButton,
   portfolioButtonVariants,
-} from './components/portfolio-button';
+} from './components/atoms/portfolio-button';
 export { Container } from './components/ui/container';
 export { Input } from './components/ui/input';
 export { Label } from './components/ui/label';
 export { Textarea } from './components/ui/textarea';
-export { Modal } from './components/modal';
+export { Modal } from './components/atoms/modal';
+export { FormInput } from './components/atoms/form-input';
 export { ImageModal } from './components/image-modal';
 export { ImageComparison } from './components/image-comparison';
-export { Typewriter } from './components/typewriter';
+export { Typewriter } from './components/modern/typewriter';
 export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
+export { PortfolioSwitch } from './components/atoms/portfolio-switch';
 export {
   Card,
   CardHeader,
@@ -58,24 +60,22 @@ export {
 export { ScrollArea, ScrollBar } from './components/ui/scroll-area';
 export { Separator } from './components/ui/separator';
 export { Skeleton } from './components/ui/skeleton';
-export { TempNav } from './components/temp-nav';
 export {
   UIKitSticky,
   type UIKitStickyProps,
 } from './components/ui-kit/ui-kit-sticky';
-export { CassetteCarousel } from './components/cassette-carousel';
-export { Playlist } from './components/playlist';
-export { AnimatedFooter } from './components/animated-footer';
-export { TentacleFooter } from './components/tentacle-footer';
-export { WebGLTentacleFooter } from './components/webgl-tentacle-footer';
+export { CassetteCarousel } from './components/2005/cassette-carousel';
+export { Playlist } from './components/2005/playlist';
+export { AnimatedFooter } from './components/2005/animated-footer';
+export { TentacleFooter } from './components/2005/tentacle-footer';
 export { WebGLTentacleWall } from './components/webgl-tentacle-wall';
-export { ExperienceList } from './components/experience-list';
+export { ExperienceList } from './components/modern/experience-list';
 export { CaseStudyList } from './components/modern/case-study-list';
 export { CaseStudyDetail } from './components/modern/case-study-detail';
-export { Hero } from './components/hero';
-export { SpriteAnimation } from './components/sprite-animation';
+export { Hero } from './components/atoms/hero';
+export { SpriteAnimation } from './components/2005/sprite-animation';
 export { AppHeader } from './components/app-header';
-export { AnimatedTitle } from './components/animated-title';
+export { AnimatedTitle } from './components/2005/animated-title';
 export { GlitchEffect } from './components/glitch-effect';
 export { Slider } from './components/slider';
 export {
@@ -127,6 +127,7 @@ export type {
   PlaylistProps,
   GlitchEffectProps,
   PortfolioButtonProps,
+  PortfolioSwitchProps,
   CassetteSlideProps,
   CassetteCarouselProps,
   AnimatedFooterProps,
@@ -143,7 +144,6 @@ export type {
   TypewriterProps,
   ContactFormProps,
   SubmitStatus,
-  WebGLTentacleFooterProps,
   AnimatedTitleProps,
   ExperienceItemProps,
   ExperienceListProps,

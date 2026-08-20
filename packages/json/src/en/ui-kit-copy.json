@@ -41,6 +41,11 @@
       "small": "Small",
       "disabled": "Disabled"
     },
+    "portfolioSwitch": {
+      "title": "Portfolio Switch",
+      "default": "Default",
+      "disabled": "Disabled"
+    },
     "appHeader": {
       "title": "App Header"
     },

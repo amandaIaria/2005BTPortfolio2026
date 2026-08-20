@@ -27,16 +27,17 @@ import { Skeleton } from '../ui/skeleton';
 import { ScrollArea } from '../ui/scroll-area';
 import { AspectRatio } from '../ui/aspect-ratio';
 
-import { CassetteCarousel } from '../cassette-carousel';
-import { Playlist } from '../playlist';
+import { CassetteCarousel } from '../2005/cassette-carousel';
+import { Playlist } from '../2005/playlist';
 import { SocialBar } from '../modern/social-bar';
 import { AppHeader } from '../app-header';
 import { Switch } from '../ui/switch';
+import { PortfolioSwitch } from '../atoms/portfolio-switch';
 import { Tooltip, TooltipTrigger, TooltipContent } from '../ui/tooltip';
-import { AnimatedTitle } from '../animated-title';
+import { AnimatedTitle } from '../2005/animated-title';
 import { ImageModal } from '../image-modal';
 import { ImageComparison } from '../image-comparison';
-import { Typewriter } from '../typewriter';
+import { Typewriter } from '../modern/typewriter';
 import { ContactForm } from '../contact-form';
 import { useTranslation } from 'react-i18next';
 
@@ -76,6 +77,27 @@ const UIKitContent = forwardRef<HTMLDivElement, UIKitContentProps>(
                 className="text-sm text-muted-foreground"
               >
                 {t('sections.switch.disabled')}
+              </label>
+            </div>
+          </div>
+        </Section>
+
+        {/* Portfolio Switch */}
+        <Section title={t('sections.portfolioSwitch.title')}>
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex items-center gap-2">
+              <PortfolioSwitch id="portfolio-switch-default" />
+              <label htmlFor="portfolio-switch-default" className="text-sm">
+                {t('sections.portfolioSwitch.default')}
+              </label>
+            </div>
+            <div className="flex items-center gap-2">
+              <PortfolioSwitch id="portfolio-switch-disabled" disabled />
+              <label
+                htmlFor="portfolio-switch-disabled"
+                className="text-sm text-muted-foreground"
+              >
+                {t('sections.portfolioSwitch.disabled')}
               </label>
             </div>
           </div>
