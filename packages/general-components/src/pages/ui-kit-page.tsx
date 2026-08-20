@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useActiveSection } from '../hooks/use-active-section';
-import { UIKitHeader } from '../components/ui-kit/ui-kit-header';
 import { UIKitContent } from '../components/ui-kit/ui-kit-content';
-import { UIKitFooter } from '../components/ui-kit/ui-kit-footer';
-import { UIKitSticky } from '../components/ui-kit/ui-kit-sticky';
+import { UIKitShell } from '../components/ui-kit/ui-kit-shell';
 import { useTranslation } from 'react-i18next';
 
 export default function UiKitPage() {
@@ -32,17 +30,8 @@ export default function UiKitPage() {
   const activeId = useActiveSection(tocItems.map((item) => item.id));
 
   return (
-    <>
-      <main className="relative z-10 max-w-300 w-full mx-auto bg-background text-foreground space-y-10 px-4 pb-16 pt-14">
-        <UIKitHeader header={headerObj} />
-
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[240px_1fr]">
-          <UIKitSticky tocItems={tocItems} activeId={activeId} />
-
-          <UIKitContent ref={contentRef} />
-        </div>
-      </main>
-      <UIKitFooter />
-    </>
+    <UIKitShell header={headerObj} tocItems={tocItems} activeId={activeId}>
+      <UIKitContent ref={contentRef} />
+    </UIKitShell>
   );
 }

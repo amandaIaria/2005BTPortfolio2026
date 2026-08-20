@@ -1,11 +1,10 @@
 import { useCallback, useState } from 'react';
 import { ShadowHtml } from '../components/shadow-html';
 import { legacyHtml } from './legacy-styles-content';
-import legacyCss from '../../legacy-bt-scss/_bt.scss?inline';
-import { UIKitHeader } from 'packages/general-components/src/components/ui-kit/ui-kit-header';
+import legacyCss from '../../../design-system/legacy-bt-scss/_bt.scss?inline';
+import { UIKitShell } from '../components/ui-kit/ui-kit-shell';
 import { useTranslation } from 'react-i18next';
-import { UIKitSticky, useActiveSection } from '@general/components';
-import { UIKitFooter } from 'packages/general-components/src/components/ui-kit/ui-kit-footer';
+import { useActiveSection } from '../hooks/use-active-section';
 
 const materialIconsImport =
   "@import url('https://fonts.googleapis.com/icon?family=Material+Icons');";
@@ -66,23 +65,17 @@ export default function LegacyStylesPage() {
   };
 
   return (
-    <>
-    <main className="relative z-10 max-w-300 w-full mx-auto bg-background text-foreground space-y-10 px-4 pb-16 pt-14">
-        <UIKitHeader header={headerObj} />
-
-        <div className="relative grid grid-cols-1 items-start gap-10 md:grid-cols-[240px_1fr]">
-          <div className="sticky top-4" onClick={handleNavClick}>
-            <UIKitSticky tocItems={tocItems} activeId={activeId} />
-          </div>
-
-          <ShadowHtml
-          css={materialIconsImport + legacyCss + legacyBaseStyles}
-          html={legacyHtml}
-          onReady={handleShadowReady}
-        />
-        </div>
-      </main>
-      <UIKitFooter />
-</>
+    <UIKitShell
+      header={headerObj}
+      tocItems={tocItems}
+      activeId={activeId}
+      onNavClick={handleNavClick}
+    >
+      <ShadowHtml
+        css={materialIconsImport + legacyCss + legacyBaseStyles}
+        html={legacyHtml}
+        onReady={handleShadowReady}
+      />
+    </UIKitShell>
   );
 }

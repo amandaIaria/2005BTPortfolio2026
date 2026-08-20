@@ -78,13 +78,20 @@
     "alert": {
       "title": "Alert",
       "defaultTitle": "Default",
+      "defaultDescription": "The plain shadcn primitive, unstyled beyond default/destructive.",
+      "destructiveTitle": "Destructive",
+      "destructiveDescription": "Uses the shadcn destructive token."
+    },
+    "portfolioAlert": {
+      "title": "Portfolio Alert",
+      "defaultTitle": "Default",
       "defaultDescription": "A neutral, informational alert.",
       "infoTitle": "Info",
-      "infoDescription": "Uses the BT active/info blue.",
+      "infoDescription": "Uses the lagoon accent.",
       "successTitle": "Success",
-      "successDescription": "Uses the BT success green.",
+      "successDescription": "Uses the palm accent.",
       "errorTitle": "Error",
-      "errorDescription": "Uses the BT error red.",
+      "errorDescription": "Uses the destructive token.",
       "dismissibleSuccessTitle": "Dismissible success",
       "dismissibleErrorTitle": "Dismissible error",
       "dismissDescription": "Click the × to dismiss."
