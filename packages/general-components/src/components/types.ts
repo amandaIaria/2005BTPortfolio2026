@@ -5,6 +5,7 @@ import type { AnyFieldApi } from '@tanstack/react-form';
 import type { portfolioButtonVariants } from './atoms/portfolio-button';
 import type { Switch } from './ui/switch';
 import type { Alert } from './ui/alert';
+import type { TooltipContent } from './ui/tooltip';
 
 export interface ImageProps {
   src: string;
@@ -157,6 +158,11 @@ export interface PortfolioButtonProps
     VariantProps<typeof portfolioButtonVariants> {
   asChild?: boolean;
 }
+
+// portfolio-tooltip.tsx
+export interface PortfolioTooltipContentProps extends React.ComponentProps<
+  typeof TooltipContent
+> {}
 
 // cassette-carousel.tsx
 export interface CassetteSlideProps {

@@ -89,6 +89,12 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from './components/ui/tooltip';
+export {
+  PortfolioTooltip,
+  PortfolioTooltipTrigger,
+  PortfolioTooltipContent,
+  PortfolioTooltipProvider,
+} from './components/atoms/portfolio-tooltip';
 export { PageTransitionProvider } from './components/page-transition/page-transition-provider';
 export { usePageTransition } from './components/page-transition/page-transition-context';
 export { ExternalTransitionLink } from './components/page-transition/external-transition-link';
@@ -136,6 +142,7 @@ export type {
   PortfolioSwitchProps,
   PortfolioAlertProps,
   PortfolioAlertVariant,
+  PortfolioTooltipContentProps,
   CassetteSlideProps,
   CassetteCarouselProps,
   AnimatedFooterProps,

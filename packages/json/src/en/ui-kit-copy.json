@@ -162,6 +162,15 @@
       "badgeTooltip": "Badge tooltip",
       "badgeContent": "Works on any element"
     },
+    "portfolioTooltip": {
+      "title": "Portfolio Tooltip",
+      "hoverMe": "Hover me",
+      "hoverContent": "This is a tooltip",
+      "withDelay": "With delay",
+      "delayContent": "Appears on the bottom",
+      "badgeTooltip": "Badge tooltip",
+      "badgeContent": "Works on any element"
+    },
     "separator": {
       "title": "Separator",
       "horizontalLabel": "Horizontal (default)",

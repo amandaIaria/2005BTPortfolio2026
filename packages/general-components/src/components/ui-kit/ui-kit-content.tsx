@@ -15,6 +15,7 @@ import { ImageComparisonSection } from './sections/image-comparison-section';
 import { TypewriterSection } from './sections/typewriter-section';
 import { ContactFormSection } from './sections/contact-form-section';
 import { TooltipSection } from './sections/tooltip-section';
+import { PortfolioTooltipSection } from './sections/portfolio-tooltip-section';
 import { SeparatorSection } from './sections/separator-section';
 import { SkeletonSection } from './sections/skeleton-section';
 import { AspectRatioSection } from './sections/aspect-ratio-section';
@@ -51,6 +52,7 @@ const UIKitContent = forwardRef<HTMLDivElement, UIKitContentProps>(
       <TypewriterSection />
       <ContactFormSection />
       <TooltipSection />
+      <PortfolioTooltipSection />
       <SeparatorSection />
       <SkeletonSection />
       <AspectRatioSection />
