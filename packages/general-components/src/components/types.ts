@@ -5,6 +5,9 @@ import type { AnyFieldApi } from '@tanstack/react-form';
 import type { portfolioButtonVariants } from './atoms/portfolio-button';
 import type { Switch } from './ui/switch';
 import type { Alert } from './ui/alert';
+import type { Badge } from './ui/badge';
+import type { Separator } from './ui/separator';
+import type { DialogContent, DialogTitle } from './ui/dialog';
 import type { TooltipContent } from './ui/tooltip';
 
 export interface ImageProps {
@@ -60,6 +63,8 @@ export interface ContactFormProps {
 export type SubmitStatus = 'idle' | 'pending' | 'success' | 'error';
 
 // atoms/form-input.tsx
+export type FormInputVariant = 'legacy' | 'portfolio';
+
 export interface FormInputProps {
   field: AnyFieldApi;
   label: string;
@@ -67,6 +72,7 @@ export interface FormInputProps {
   multiline?: boolean;
   rows?: number;
   disabled?: boolean;
+  variant?: FormInputVariant;
   className?: string;
 }
 
@@ -158,6 +164,31 @@ export interface PortfolioButtonProps
     VariantProps<typeof portfolioButtonVariants> {
   asChild?: boolean;
 }
+
+// portfolio-badge.tsx
+export interface PortfolioBadgeProps extends React.ComponentProps<
+  typeof Badge
+> {}
+
+// portfolio-separator.tsx
+export interface PortfolioSeparatorProps extends React.ComponentProps<
+  typeof Separator
+> {}
+
+// portfolio-dialog.tsx
+export interface PortfolioDialogContentProps extends React.ComponentProps<
+  typeof DialogContent
+> {}
+
+export interface PortfolioDialogTitleProps extends React.ComponentProps<
+  typeof DialogTitle
+> {}
+
+// portfolio-form-input.tsx
+export interface PortfolioFormInputProps extends Omit<
+  FormInputProps,
+  'variant'
+> {}
 
 // portfolio-tooltip.tsx
 export interface PortfolioTooltipContentProps extends React.ComponentProps<

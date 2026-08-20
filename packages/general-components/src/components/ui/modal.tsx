@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { Button } from '../ui/button';
+import { Button } from './button';
 import {
   Dialog,
   DialogContent,
@@ -8,7 +8,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '../ui/dialog';
+} from './dialog';
 import { getCookie, setCookie } from '../../lib/cookies';
 import type { ModalProps } from '@packages/general-components/src/components/types.ts';
 

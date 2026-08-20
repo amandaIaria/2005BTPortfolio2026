@@ -6,17 +6,22 @@ import { AppHeaderSection } from './sections/app-header-section';
 import { ButtonSection } from './sections/button-section';
 import { AnimatedTitleSection } from './sections/animated-title-section';
 import { BadgeSection } from './sections/badge-section';
+import { PortfolioBadgeSection } from './sections/portfolio-badge-section';
 import { AlertSection } from './sections/alert-section';
 import { PortfolioAlertSection } from './sections/portfolio-alert-section';
 import { CardSection } from './sections/card-section';
 import { DialogSection } from './sections/dialog-section';
+import { PortfolioDialogSection } from './sections/portfolio-dialog-section';
 import { ImageModalSection } from './sections/image-modal-section';
 import { ImageComparisonSection } from './sections/image-comparison-section';
 import { TypewriterSection } from './sections/typewriter-section';
 import { ContactFormSection } from './sections/contact-form-section';
+import { PortfolioFormInputSection } from './sections/portfolio-form-input-section';
 import { TooltipSection } from './sections/tooltip-section';
 import { PortfolioTooltipSection } from './sections/portfolio-tooltip-section';
 import { SeparatorSection } from './sections/separator-section';
+import { PortfolioSeparatorSection } from './sections/portfolio-separator-section';
+import { InputSection } from './sections/input-section';
 import { SkeletonSection } from './sections/skeleton-section';
 import { AspectRatioSection } from './sections/aspect-ratio-section';
 import { ScrollAreaSection } from './sections/scroll-area-section';
@@ -24,7 +29,6 @@ import { CassetteCarouselSection } from './sections/cassette-carousel-section';
 import { PlaylistSection } from './sections/playlist-section';
 import { SocialBarSection } from './sections/social-bar-section';
 import { PortfolioButtonSection } from './sections/portfolio-button-section';
-
 
 export interface UIKitContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -43,17 +47,22 @@ const UIKitContent = forwardRef<HTMLDivElement, UIKitContentProps>(
       <PortfolioButtonSection />
       <AnimatedTitleSection />
       <BadgeSection />
+      <PortfolioBadgeSection />
       <AlertSection />
       <PortfolioAlertSection />
       <CardSection />
       <DialogSection />
+      <PortfolioDialogSection />
       <ImageModalSection />
       <ImageComparisonSection />
       <TypewriterSection />
       <ContactFormSection />
+      <InputSection />
+      <PortfolioFormInputSection />
       <TooltipSection />
       <PortfolioTooltipSection />
       <SeparatorSection />
+      <PortfolioSeparatorSection />
       <SkeletonSection />
       <AspectRatioSection />
       <ScrollAreaSection />

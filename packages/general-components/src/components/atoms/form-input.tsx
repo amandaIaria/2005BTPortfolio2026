@@ -2,7 +2,10 @@ import { cn } from '../../lib/utils';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Label } from '../ui/label';
-import type { FormInputProps } from '@packages/general-components/src/components/types.ts';
+import type {
+  FormInputProps,
+  FormInputVariant,
+} from '@packages/general-components/src/components/types.ts';
 
 // Legacy "BT" input styling — bordered flat-black container, bold accent focus
 // ring, floating label. Ported from packages/design-system/legacy-bt-scss's
@@ -11,26 +14,43 @@ import type { FormInputProps } from '@packages/general-components/src/components
 const BARE_FIELD_CLASSNAME =
   'h-auto border-transparent bg-transparent px-0 text-base shadow-none focus-visible:border-transparent focus-visible:ring-0 aria-invalid:border-transparent aria-invalid:ring-0 dark:bg-transparent dark:aria-invalid:border-transparent dark:aria-invalid:ring-0';
 
-function fieldContainerClassName(hasError: boolean) {
+const FIELD_CONTAINER_VARIANT_CLASSNAME: Record<FormInputVariant, string> = {
+  legacy:
+    'border-[var(--flat-black)] focus-within:border-[var(--bt-active)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-active)]',
+  portfolio:
+    'border-[var(--accent)] focus-within:border-[var(--accent-hover)] focus-within:shadow-[inset_0_0_0_4px_var(--accent-hover)]',
+};
+
+const LABEL_VARIANT_CLASSNAME: Record<FormInputVariant, string> = {
+  legacy: 'text-[var(--flat-black)]',
+  portfolio: 'text-[var(--accent)]',
+};
+
+function fieldContainerClassName(hasError: boolean, variant: FormInputVariant) {
   return cn(
-    'relative border border-[var(--flat-black)] px-2 transition-[border-color,box-shadow] duration-150',
-    'focus-within:border-[var(--bt-active)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-active)]',
+    'relative border px-2 transition-[border-color,box-shadow] duration-150',
+    FIELD_CONTAINER_VARIANT_CLASSNAME[variant],
     hasError &&
       'border-[var(--bt-error)] shadow-[inset_0_0_0_4px_var(--bt-error)] focus-within:border-[var(--bt-error)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-error)]',
   );
 }
 
-function floatingLabelClassName(hasValue: boolean) {
+function floatingLabelClassName(hasValue: boolean, variant: FormInputVariant) {
   return cn(
-    'pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-base text-[var(--flat-black)] transition-all duration-150',
+    'pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-base transition-all duration-150',
+    LABEL_VARIANT_CLASSNAME[variant],
     'peer-focus:top-2 peer-focus:translate-y-0 peer-focus:text-[10px]',
     hasValue && 'top-2 translate-y-0 text-[10px]',
   );
 }
 
-function floatingLabelClassNameTextarea(hasValue: boolean) {
+function floatingLabelClassNameTextarea(
+  hasValue: boolean,
+  variant: FormInputVariant,
+) {
   return cn(
-    'pointer-events-none absolute left-2 top-4 text-base text-[var(--flat-black)] transition-all duration-150',
+    'pointer-events-none absolute left-2 top-4 text-base transition-all duration-150',
+    LABEL_VARIANT_CLASSNAME[variant],
     'peer-focus:top-2 peer-focus:text-[10px]',
     hasValue && 'top-2 text-[10px]',
   );
@@ -43,6 +63,7 @@ function FormInput({
   multiline = false,
   rows = 6,
   disabled = false,
+  variant = 'legacy',
   className,
 }: FormInputProps) {
   const hasError = !field.state.meta.isValid;
@@ -51,11 +72,12 @@ function FormInput({
   return (
     <div
       data-component="form-input"
+      data-variant={variant}
       className={cn('grid gap-1.5 bg-white dark:bg-background', className)}
     >
       <div
         className={cn(
-          fieldContainerClassName(hasError),
+          fieldContainerClassName(hasError, variant),
           multiline ? 'pt-5 pb-2' : 'flex min-h-14 items-center pt-4',
         )}
       >
@@ -90,8 +112,8 @@ function FormInput({
           htmlFor={field.name}
           className={
             multiline
-              ? floatingLabelClassNameTextarea(hasValue)
-              : floatingLabelClassName(hasValue)
+              ? floatingLabelClassNameTextarea(hasValue, variant)
+              : floatingLabelClassName(hasValue, variant)
           }
         >
           {label}

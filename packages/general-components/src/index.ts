@@ -7,6 +7,7 @@ export {
   alertVariants,
 } from './components/ui/alert';
 export { Badge, badgeVariants } from './components/ui/badge';
+export { PortfolioBadge } from './components/atoms/portfolio-badge';
 export { Button, buttonVariants } from './components/ui/button';
 export {
   PortfolioButton,
@@ -16,8 +17,9 @@ export { Container } from './components/ui/container';
 export { Input } from './components/ui/input';
 export { Label } from './components/ui/label';
 export { Textarea } from './components/ui/textarea';
-export { Modal } from './components/atoms/modal';
+export { Modal } from './components/ui/modal';
 export { FormInput } from './components/atoms/form-input';
+export { PortfolioFormInput } from './components/atoms/portfolio-form-input';
 export { ImageModal } from './components/image-modal';
 export { ImageComparison } from './components/image-comparison';
 export { Typewriter } from './components/modern/typewriter';
@@ -50,6 +52,16 @@ export {
   DialogTitle,
   DialogTrigger,
 } from './components/ui/dialog';
+export {
+  PortfolioDialog,
+  PortfolioDialogTrigger,
+  PortfolioDialogContent,
+  PortfolioDialogHeader,
+  PortfolioDialogTitle,
+  PortfolioDialogDescription,
+  PortfolioDialogFooter,
+  PortfolioDialogClose,
+} from './components/atoms/portfolio-dialog';
 export { DirectionProvider, useDirection } from './components/ui/direction';
 export {
   NavigationMenu,
@@ -64,6 +76,7 @@ export {
 } from './components/ui/navigation-menu';
 export { ScrollArea, ScrollBar } from './components/ui/scroll-area';
 export { Separator } from './components/ui/separator';
+export { PortfolioSeparator } from './components/atoms/portfolio-separator';
 export { Skeleton } from './components/ui/skeleton';
 export {
   UIKitSticky,
@@ -77,7 +90,8 @@ export { WebGLTentacleWall } from './components/webgl-tentacle-wall';
 export { ExperienceList } from './components/modern/experience-list';
 export { CaseStudyList } from './components/modern/case-study-list';
 export { CaseStudyDetail } from './components/modern/case-study-detail';
-export { Hero } from './components/atoms/hero';
+export { Hero } from './components/ui/hero';
+export { PortfolioHero } from './components/atoms/portfolio-hero';
 export { SpriteAnimation } from './components/2005/sprite-animation';
 export { AppHeader } from './components/app-header';
 export { AnimatedTitle } from './components/2005/animated-title';

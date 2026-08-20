@@ -2,6 +2,7 @@
   "nav": [
     { "href": "/ui-kit", "label": "Home" },
     { "href": "/ui-kit/slider", "label": "Project Slider" },
+    { "href": "/ui-kit/heros", "label": "Heros" },
     { "href": "/ui-kit/colors", "label": "Colors" },
     { "href": "/ui-kit/legacy-styles", "label": "Legacy BT Styles" },
     {

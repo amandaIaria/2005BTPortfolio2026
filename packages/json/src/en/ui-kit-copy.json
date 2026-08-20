@@ -16,6 +16,19 @@
     "title": "Colors",
     "description": "Design tokens defined in tokens.css. Swatches read live CSS variables, so values reflect the current light or dark theme."
   },
+  "heros": {
+    "kicker": "General Components",
+    "title": "Heros",
+    "description": "Full-viewport hero banner. Hero is the base primitive; PortfolioHero applies it as-is on the portfolio site.",
+    "heroSectionTitle": "Hero",
+    "portfolioHeroSectionTitle": "Portfolio Hero",
+    "imageAlt": "Portrait in shadow against a black background",
+    "topText": "Beautiful",
+    "bottomText": "Tragedy",
+    "caption": "Let's build something beautiful together.",
+    "heading": "I'm a Frontend Developer",
+    "hiddenH1": "The Portfolio of Alex Iaria"
+  },
   "webglTentacleFooter": {
     "kicker": "General Components",
     "backLink": "← Back to UI Kit",
@@ -88,6 +101,13 @@
       "destructive": "Destructive",
       "outline": "Outline"
     },
+    "portfolioBadge": {
+      "title": "Portfolio Badge",
+      "default": "Default",
+      "secondary": "Secondary",
+      "destructive": "Destructive",
+      "outline": "Outline"
+    },
     "alert": {
       "title": "Alert",
       "defaultTitle": "Default",
@@ -135,6 +155,15 @@
       "cancel": "Cancel",
       "confirm": "Confirm"
     },
+    "portfolioDialog": {
+      "title": "Portfolio Dialog",
+      "trigger": "Open Dialog",
+      "dialogTitle": "Dialog Title",
+      "description": "This is a description of the dialog content. It explains what the user should expect.",
+      "body": "Dialog body content goes here.",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
     "imageModal": {
       "title": "Image Modal",
       "placeholderAlt": "Placeholder portrait",
@@ -152,6 +181,13 @@
     },
     "contactForm": {
       "title": "Contact Form"
+    },
+    "portfolioFormInput": {
+      "title": "Portfolio Form Input",
+      "nameLabel": "Name",
+      "disabledLabel": "Disabled",
+      "errorLabel": "Required field",
+      "errorMessage": "This field is required"
     },
     "tooltip": {
       "title": "Tooltip",
@@ -177,6 +213,18 @@
       "itemA": "Item A",
       "itemB": "Item B",
       "itemC": "Item C"
+    },
+    "portfolioSeparator": {
+      "title": "Portfolio Separator",
+      "horizontalLabel": "Horizontal (default)",
+      "itemA": "Item A",
+      "itemB": "Item B",
+      "itemC": "Item C"
+    },
+    "input": {
+      "title": "Input",
+      "label": "Name",
+      "placeholder": "Enter your name"
     },
     "skeleton": {
       "title": "Skeleton"
