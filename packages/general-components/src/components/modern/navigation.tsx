@@ -9,7 +9,7 @@ import type {
   NavigationProps,
   NavLinkProps,
   NavItemProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 const TICKER_SPEED_PX_PER_SECOND = 120;
 

@@ -5,7 +5,7 @@ import type {
   AppHeaderProps,
   ThemeVariantProps,
   ColorModeProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 function AppHeader({
   themeVariant: controlledVariant,

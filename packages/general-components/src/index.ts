@@ -1,14 +1,36 @@
 // UI Components
 export { AspectRatio } from './components/ui/aspect-ratio';
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+} from './components/ui/alert';
 export { Badge, badgeVariants } from './components/ui/badge';
+export { PortfolioBadge } from './components/atoms/portfolio-badge';
 export { Button, buttonVariants } from './components/ui/button';
 export {
   PortfolioButton,
   portfolioButtonVariants,
-} from './components/portfolio-button';
+} from './components/atoms/portfolio-button';
 export { Container } from './components/ui/container';
-export { Modal } from './components/modal';
+export { Input } from './components/ui/input';
+export { Label } from './components/ui/label';
+export { Textarea } from './components/ui/textarea';
+export { Modal } from './components/ui/modal';
+export { FormInput } from './components/atoms/form-input';
+export { PortfolioFormInput } from './components/atoms/portfolio-form-input';
+export { ImageModal } from './components/image-modal';
+export { ImageComparison } from './components/image-comparison';
+export { Typewriter } from './components/modern/typewriter';
+export { ContactForm } from './components/contact-form';
 export { Switch } from './components/ui/switch';
+export { PortfolioSwitch } from './components/atoms/portfolio-switch';
+export {
+  PortfolioAlert,
+  PortfolioAlertTitle,
+  PortfolioAlertDescription,
+} from './components/atoms/portfolio-alert';
 export {
   Card,
   CardHeader,
@@ -30,6 +52,16 @@ export {
   DialogTitle,
   DialogTrigger,
 } from './components/ui/dialog';
+export {
+  PortfolioDialog,
+  PortfolioDialogTrigger,
+  PortfolioDialogContent,
+  PortfolioDialogHeader,
+  PortfolioDialogTitle,
+  PortfolioDialogDescription,
+  PortfolioDialogFooter,
+  PortfolioDialogClose,
+} from './components/atoms/portfolio-dialog';
 export { DirectionProvider, useDirection } from './components/ui/direction';
 export {
   NavigationMenu,
@@ -44,21 +76,25 @@ export {
 } from './components/ui/navigation-menu';
 export { ScrollArea, ScrollBar } from './components/ui/scroll-area';
 export { Separator } from './components/ui/separator';
+export { PortfolioSeparator } from './components/atoms/portfolio-separator';
 export { Skeleton } from './components/ui/skeleton';
-export { TempNav } from './components/temp-nav';
-export { CassetteCarousel } from './components/cassette-carousel';
-export { Playlist } from './components/playlist';
-export { AnimatedFooter } from './components/animated-footer';
-export { TentacleFooter } from './components/tentacle-footer';
-export { WebGLTentacleFooter } from './components/webgl-tentacle-footer';
+export {
+  UIKitSticky,
+  type UIKitStickyProps,
+} from './components/ui-kit/ui-kit-sticky';
+export { CassetteCarousel } from './components/2005/cassette-carousel';
+export { Playlist } from './components/2005/playlist';
+export { AnimatedFooter } from './components/2005/animated-footer';
+export { TentacleFooter } from './components/2005/tentacle-footer';
 export { WebGLTentacleWall } from './components/webgl-tentacle-wall';
-export { ExperienceList } from './components/experience-list';
+export { ExperienceList } from './components/modern/experience-list';
 export { CaseStudyList } from './components/modern/case-study-list';
 export { CaseStudyDetail } from './components/modern/case-study-detail';
-export { Hero } from './components/hero';
-export { SpriteAnimation } from './components/sprite-animation';
+export { Hero } from './components/ui/hero';
+export { PortfolioHero } from './components/atoms/portfolio-hero';
+export { SpriteAnimation } from './components/2005/sprite-animation';
 export { AppHeader } from './components/app-header';
-export { AnimatedTitle } from './components/animated-title';
+export { AnimatedTitle } from './components/2005/animated-title';
 export { GlitchEffect } from './components/glitch-effect';
 export { Slider } from './components/slider';
 export {
@@ -67,6 +103,12 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from './components/ui/tooltip';
+export {
+  PortfolioTooltip,
+  PortfolioTooltipTrigger,
+  PortfolioTooltipContent,
+  PortfolioTooltipProvider,
+} from './components/atoms/portfolio-tooltip';
 export { PageTransitionProvider } from './components/page-transition/page-transition-provider';
 export { usePageTransition } from './components/page-transition/page-transition-context';
 export { ExternalTransitionLink } from './components/page-transition/external-transition-link';
@@ -86,9 +128,13 @@ export { default as LoadInCard } from './components/modern/load-in-card';
 export { Navigation } from './components/modern/navigation';
 export { NavToggle } from './components/modern/nav-toggle';
 export { ThemeToggle } from './components/modern/theme-toggle';
+export { Breadcrumb } from './components/modern/breadcrumb';
+export { Footer } from './components/modern/footer';
+export { SocialBar } from './components/modern/social-bar';
 
 // Pages
 export { default as UiKitPage } from './pages/ui-kit-page';
+export { default as LegacyStylesPage } from './pages/legacy-styles-page';
 
 // Utilities
 export { cn } from './lib/utils';
@@ -107,6 +153,10 @@ export type {
   PlaylistProps,
   GlitchEffectProps,
   PortfolioButtonProps,
+  PortfolioSwitchProps,
+  PortfolioAlertProps,
+  PortfolioAlertVariant,
+  PortfolioTooltipContentProps,
   CassetteSlideProps,
   CassetteCarouselProps,
   AnimatedFooterProps,
@@ -117,7 +167,12 @@ export type {
   AppHeaderProps,
   SpriteAnimationProps,
   ModalProps,
-  WebGLTentacleFooterProps,
+  ImageModalProps,
+  ImageModalDefaultProps,
+  ImageComparisonProps,
+  TypewriterProps,
+  ContactFormProps,
+  SubmitStatus,
   AnimatedTitleProps,
   ExperienceItemProps,
   ExperienceListProps,
@@ -158,4 +213,8 @@ export type {
   NavLinkProps,
   NavItemProps,
   ImageHeaderProps,
-} from '@general-purpose/types';
+  BreadcrumbProps,
+  FooterProps,
+  SocialBarProps,
+  ModernAboutPageProps,
+} from '@packages/general-components/src/components/types.ts';

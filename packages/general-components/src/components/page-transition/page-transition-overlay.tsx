@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import type { PageTransitionOverlayProps } from '@general-purpose/types';
+import type { PageTransitionOverlayProps } from '@packages/general-components/src/components/types.ts';
 
 export function PageTransitionOverlay({
   top,

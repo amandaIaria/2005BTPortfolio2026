@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import type { MouseEvent } from 'react';
 import { usePageTransition } from './page-transition-context';
-import type { UseTransitionLinkClickOptionsProps } from '@general-purpose/types';
+import type { UseTransitionLinkClickOptionsProps } from '@packages/general-components/src/components/types.ts';
 
 export function useTransitionLinkClick({
   href,

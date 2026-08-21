@@ -1,11 +1,78 @@
 import type * as React from 'react';
 import type { Variants, Transition, MotionValue } from 'motion/react';
 import type { VariantProps } from 'class-variance-authority';
-import type { portfolioButtonVariants } from './portfolio-button';
+import type { AnyFieldApi } from '@tanstack/react-form';
+import type { portfolioButtonVariants } from './atoms/portfolio-button';
+import type { Switch } from './ui/switch';
+import type { Alert } from './ui/alert';
+import type { Badge } from './ui/badge';
+import type { Separator } from './ui/separator';
+import type { DialogContent, DialogTitle } from './ui/dialog';
+import type { TooltipContent } from './ui/tooltip';
 
 export interface ImageProps {
   src: string;
   alt: string;
+  className?: string;
+}
+
+// typewriter.tsx
+export interface TypewriterProps extends React.ComponentProps<'div'> {
+  text: string | string[];
+  /** ms per character, default 40 */
+  speed?: number;
+  delay?: number;
+  duration?: number;
+  className?: string;
+}
+
+// image-comparison.tsx
+export interface ImageComparisonProps extends React.ComponentProps<'div'> {
+  before: ImageProps;
+  after: ImageProps;
+  beforeLabel?: string;
+  afterLabel?: string;
+  initialPosition?: number; // 0-100, default 50
+  className?: string;
+  thumb?: boolean;
+}
+
+// image-modal.tsx
+interface ImageModalBaseProps extends React.ComponentProps<'button'> {
+  thumbnail?: ImageProps;
+  imageClassName?: string;
+  className?: string;
+}
+
+export interface ImageModalDefaultProps
+  extends
+    ImageModalBaseProps,
+    Partial<ImageProps>,
+    Partial<Omit<ImageComparisonProps, keyof React.ComponentProps<'div'>>> {
+  variant?: 'default' | 'compare';
+}
+
+export type ImageModalProps = ImageModalDefaultProps;
+
+// contact-form.tsx
+export interface ContactFormProps {
+  className?: string;
+  onSubmit: (status: 'success' | 'error') => void;
+}
+
+export type SubmitStatus = 'idle' | 'pending' | 'success' | 'error';
+
+// atoms/form-input.tsx
+export type FormInputVariant = 'legacy' | 'portfolio';
+
+export interface FormInputProps {
+  field: AnyFieldApi;
+  label: string;
+  type?: string;
+  multiline?: boolean;
+  rows?: number;
+  disabled?: boolean;
+  variant?: FormInputVariant;
   className?: string;
 }
 
@@ -69,6 +136,27 @@ export interface GlitchEffectProps {
   hideOverflow?: boolean;
 }
 
+// portfolio-switch.tsx
+export interface PortfolioSwitchProps extends React.ComponentProps<
+  typeof Switch
+> {}
+
+// portfolio-alert.tsx
+export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info' | 'caution';
+
+export interface PortfolioAlertProps extends Omit<
+  React.ComponentProps<typeof Alert>,
+  'variant'
+> {
+  variant?: PortfolioAlertVariant;
+  /** Custom leading icon. Omit for the variant default, pass `false` to hide it. */
+  icon?: React.ReactNode | false;
+  /** Renders a dismiss button and calls this when clicked. Omit to hide it. */
+  onDismiss?: () => void;
+  /** Accessible label for the dismiss button. */
+  dismissLabel?: string;
+}
+
 // portfolio-button.tsx
 export interface PortfolioButtonProps
   extends
@@ -76,6 +164,31 @@ export interface PortfolioButtonProps
     VariantProps<typeof portfolioButtonVariants> {
   asChild?: boolean;
 }
+
+// portfolio-badge.tsx
+export interface PortfolioBadgeProps extends React.ComponentProps<
+  typeof Badge
+> {}
+
+// portfolio-separator.tsx
+export interface PortfolioSeparatorProps extends React.ComponentProps<
+  typeof Separator
+> {}
+
+// portfolio-dialog.tsx
+export interface PortfolioDialogContentProps extends React.ComponentProps<
+  typeof DialogContent
+> {}
+
+export interface PortfolioDialogTitleProps extends React.ComponentProps<
+  typeof DialogTitle
+> {}
+
+// portfolio-form-input.tsx
+export interface PortfolioFormInputProps extends Omit<
+  FormInputProps,
+  'variant'
+> {}
 
 // cassette-carousel.tsx
 export interface CassetteSlideProps {
@@ -96,6 +209,21 @@ export interface AnimatedFooterProps extends React.ComponentProps<'footer'> {
   text?: string;
 }
 
+// About Page
+export interface ModernAboutPageProps {
+  about: {
+    title: string;
+    name: string;
+    images: {
+      before: ImageProps;
+      after: ImageProps;
+    };
+    summary: string;
+    full: string;
+    social: string[];
+  };
+}
+
 // webgl-tentacle-wall.tsx
 export interface WebGLTentacleWallProps extends React.ComponentProps<'div'> {
   tentacleCount?: number;
@@ -107,6 +235,17 @@ export interface WebGLTentacleWallProps extends React.ComponentProps<'div'> {
    * default behavior.
    */
   colorValue?: string;
+  /**
+   * Set by parents rendering this inside Footer, so it can apply
+   * footer-specific Tailwind classes instead of its standalone defaults.
+   */
+  inFooter?: boolean;
+  /**
+   * Fraction (0-1) of the canvas given to the solid base wall before the
+   * tentacles start — drawn pre-rotation, so after a -90/270 rotate this is
+   * the band height at the bottom. Defaults to 0.48.
+   */
+  baseSize?: number;
 }
 
 // tentacle-footer.tsx
@@ -161,11 +300,6 @@ export interface ModalProps {
 }
 
 // webgl-tentacle-footer.tsx
-export interface WebGLTentacleFooterProps extends React.ComponentProps<'footer'> {
-  text?: string;
-  tentacleCount?: number;
-}
-
 // animated-title.tsx
 export interface AnimatedTitleProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -246,7 +380,7 @@ export interface SliderPaginationProps {
   isLast: boolean;
   loop: boolean;
   dotsTrackRef: React.RefObject<HTMLDivElement | null>;
-  dotsInnerRef: React.RefObject<HTMLDivElement | null>;
+  dotsInnerRef: React.RefObject<HTMLElement | null>;
 }
 
 // slider/codepen-slider.tsx — dead/unused prototype, kept distinctly named to
@@ -384,7 +518,7 @@ export interface ShrineContentBlockProps {
 
 // shrines.json `shrine-pages` entries — full detail page data
 export interface ShrineItemProps {
-  id: string;
+  slug: string;
   title: string;
   description?: string;
   image: ImageProps;
@@ -517,4 +651,22 @@ export interface ImageHeaderProps extends React.ComponentProps<'div'> {
   siteName?: string;
   src: string;
   alt: string;
+}
+
+// modern/breadcrumb.tsx
+export interface BreadcrumbProps extends React.ComponentProps<'div'> {
+  href: string;
+  label: string;
+}
+
+// modern/footer.tsx
+export interface FooterProps extends React.ComponentProps<'footer'> {
+  logoText?: string;
+  year?: number;
+}
+
+// modern/social-bar.tsx
+export interface SocialBarProps extends React.ComponentProps<'div'> {
+  linkedinHref?: string;
+  githubHref?: string;
 }

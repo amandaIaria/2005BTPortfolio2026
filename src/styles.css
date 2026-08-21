@@ -22,7 +22,7 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: var(--bt-error);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -41,39 +41,21 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --body: var(--flat-black);
+  --error: var(--bt-error);
+  --info: var(--accent);
+  --caution: var(--color-yellow-300);
+  --success: var(--bt-success);
   --accent: var(--color-cyan-500);
   --accent-foreground: var(--lagoon-deep);
-  --accent-hover: var(--lagoon-deep);
+  --accent-hover: var(--lagoon);
 }
 
 :root[data-theme='dark'] {
   --body: var(--color-white);
-  --accent: #ff0000;
+  --accent: var(--bt-error);
+  --accent-foreground: #ff0000;
+  --accent-hover: #ff0000;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --sea-ink: #d7ece8;
-    --sea-ink-soft: #afcdc8;
-    --lagoon: #60d7cf;
-    --lagoon-deep: #8de5db;
-    --palm: #6ec89a;
-    --sand: #0f1a1e;
-    --foam: #101d22;
-    --surface: rgba(16, 30, 34, 0.8);
-    --surface-strong: rgba(15, 27, 31, 0.92);
-    --line: rgba(141, 229, 219, 0.18);
-    --inset-glint: rgba(194, 247, 238, 0.14);
-    --kicker: #b8efe5;
-    --bg-base: #0a1418;
-    --header-bg: rgba(10, 20, 24, 0.8);
-    --chip-bg: rgba(13, 28, 32, 0.9);
-    --chip-line: rgba(141, 229, 219, 0.24);
-    --link-bg-hover: rgba(24, 44, 49, 0.8);
-    --hero-a: rgba(96, 215, 207, 0.18);
-    --hero-b: rgba(110, 200, 154, 0.12);
-  }
-} */
 
 @theme {
   /* Colors - shadcn */
@@ -109,6 +91,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --color-info: var(--info);
+  --color-caution: var(--caution);
 }
 
 .dark {
@@ -143,6 +129,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --error: var(--color-red-900);
+  --success: var(--color-green-900);
+  --info: var(--color-cyan-900);
+  --caution: var(--color-yellow-700);
 }
 
 @layer base {
@@ -160,7 +150,7 @@
     color: var(--text-body);
     font-family: var(--font-sans);
     background-color: var(--bg-base);
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     @apply bg-background text-foreground;
@@ -176,6 +166,10 @@
   }
   a:hover {
     color: #246f76;
+  }
+
+  h1 {
+    @apply text-3xl md:text-5xl tracking-tight;
   }
 }
 

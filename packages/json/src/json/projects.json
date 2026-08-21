@@ -2,6 +2,213 @@
   {
     "left": {
       "image": {
+        "src": "/img/project-images/screencapture-steris-healthcare-products-devicematrix-vpro-2026-08-04-14_29_59.png",
+        "alt": "Steris Devices Matrix search tool screenshot"
+      }
+    },
+    "right": {
+      "title": "Devices Matrix",
+      "description": "My team created an updated app for finding compatible devices and their paperwork. It gives you links to where you can buy the device or who to contact.",
+      "list": ["Sitecore", "React", "SCSS"],
+      "link": {
+        "url": "https://www.steris.com/healthcare/products/devicematrix",
+        "copy": "View Project"
+      },
+      "tags": ["health", "app"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-sterislifesciences-2026-08-04-14_25_54.png",
+        "alt": "Steris Life Sciences website screenshot"
+      }
+    },
+    "right": {
+      "title": "Life Sciences",
+      "description": "Created a new site on Sitecore XM Cloud (now Sitecore AI), using a new accelerator that Sitecore gave its seal of approval.",
+      "list": ["Sitecore AI", "React", "TypeScript", "Tailwind"],
+      "link": {
+        "url": "https://www.sterislifesciences.com/",
+        "copy": "View Project"
+      },
+      "tags": ["products", "hospital supplies"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-dev-steris-velir-net-healthcare-test-amish-test-2026-08-04-14_25_29.png",
+        "alt": "Steris Health/US Corporate site screenshot"
+      }
+    },
+    "right": {
+      "title": "Health/US Corporate",
+      "description": "Before starting the long work of redesigning and moving to an updated platform, Steris wanted us to update their most-used components to freshen things up before the real challenge began.",
+      "list": ["Sitecore", "React", "SCSS"],
+      "link": { "url": "https://www.steris.com/", "copy": "View Project" },
+      "tags": ["corporate", "design update"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-driscolls-2026-08-04-14_37_54%20(1).png",
+        "alt": "Driscoll's website screenshot"
+      }
+    },
+    "right": {
+      "title": "Driscoll",
+      "description": "Created a new site with an updated platform, including an accelerator that Sitecore gave its blessing to. This was also some of the first AI work done for the agency.",
+      "list": [
+        "Sitecore AI",
+        "React",
+        "Tailwind",
+        "TypeScript",
+        "Multiple APIs"
+      ],
+      "link": { "url": "https://www.driscolls.com/", "copy": "View Project" },
+      "tags": ["food", "marketing"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-nera-2026-08-04-14_46_10.png",
+        "alt": "NERA website screenshot"
+      }
+    },
+    "right": {
+      "title": "Nera",
+      "description": "The first site worked on after starting at Velir.",
+      "list": ["Adobe CMS", "SCSS", "Handlebars", "Storybook in React"],
+      "link": { "url": "https://www.nera.com/", "copy": "View Project" },
+      "tags": ["financial", "international"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-ahrinet-org-2026-08-04-16_03_01.png",
+        "alt": "AHRI website screenshot"
+      }
+    },
+    "right": {
+      "title": "AHRI",
+      "description": "Tasked with updating and fixing the accessibility level of the site. There were a lot of large issues, and the goal was to make it more usable for those who may have trouble.",
+      "list": ["Drupal", "SCSS"],
+      "link": { "url": "https://www.ahrinet.org/", "copy": "View Project" },
+      "tags": ["hvac", "advocacy"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-hematology-org-2026-08-04-15_30_39.png",
+        "alt": "ASH (American Society of Hematology) website screenshot"
+      }
+    },
+    "right": {
+      "title": "ASH",
+      "description": "Tasked with doing a component refresh for the site.",
+      "list": ["Sitecore", "SCSS"],
+      "link": { "url": "https://www.hematology.org/", "copy": "View Project" },
+      "tags": ["medical", "research"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-oerproject-2026-08-04-16_03_49.png",
+        "alt": "OER Project website screenshot"
+      }
+    },
+    "right": {
+      "title": "OER",
+      "description": "This education site needed a redesign. They wanted something young users could work with and enjoy while learning.",
+      "list": ["Sitecore XM Cloud", "Tailwind", "React"],
+      "link": { "url": "https://www.oerproject.com/", "copy": "View Project" },
+      "tags": ["education", "gates"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-localhost-3001-faculty-daniel-bilbao-cortes-phd-mba-2026-08-04-16_11_55.png",
+        "alt": "UMiami Health faculty page screenshot"
+      }
+    },
+    "right": {
+      "title": "UMAIAMI",
+      "description": "Support work — updates and fixes after a major redesign or build. Not something usually included here, but this work was especially enjoyable, particularly making it more accessible.",
+      "list": ["Sitecore", "SCSS", "React"],
+      "link": { "url": "https://umiamihealth.org/en/", "copy": "View Project" },
+      "tags": ["university", "education", "medical"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-educationtoworkforce-org-2026-08-04-15_42_17.png",
+        "alt": "Education to Workforce Framework website screenshot"
+      }
+    },
+    "right": {
+      "title": "Math",
+      "description": "The Mathematica group asked us to create a new site to house their education framework.",
+      "list": ["Drupal", "SCSS", "Layout Builder"],
+      "link": {
+        "url": "https://educationtoworkforce.org/",
+        "copy": "View Project"
+      },
+      "tags": ["education", "workforce", "gates"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
+        "alt": "OAT internal app placeholder image"
+      }
+    },
+    "right": {
+      "title": "OAT",
+      "description": "A new internal app.",
+      "list": ["TanStack", "React", "Tailwind"],
+      "link": { "url": "#", "copy": "View Project" },
+      "tags": ["travel"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
+        "src": "/img/project-images/screencapture-ukg-2026-08-04-15_45_47.png",
+        "alt": "UKG website screenshot"
+      }
+    },
+    "right": {
+      "title": "UKG",
+      "description": "My team created a fresh, modern website for the company.",
+      "list": ["Drupal"],
+      "link": { "url": "https://www.ukg.com/", "copy": "View Project" },
+      "tags": ["pr", "work"],
+      "company": "Velir"
+    }
+  },
+  {
+    "left": {
+      "image": {
         "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
         "alt": "User Site project placeholder image"
       }
@@ -212,213 +419,6 @@
       "link": { "url": "#", "copy": "View Project" },
       "tags": ["design system", "brand"],
       "company": "Personal"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-steris-healthcare-products-devicematrix-vpro-2026-08-04-14_29_59.png",
-        "alt": "Steris Devices Matrix search tool screenshot"
-      }
-    },
-    "right": {
-      "title": "Devices Matrix",
-      "description": "My team created an updated app for finding compatible devices and their paperwork. It gives you links to where you can buy the device or who to contact.",
-      "list": ["Sitecore", "React", "SCSS"],
-      "link": {
-        "url": "https://www.steris.com/healthcare/products/devicematrix",
-        "copy": "View Project"
-      },
-      "tags": ["health", "app"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-sterislifesciences-2026-08-04-14_25_54.png",
-        "alt": "Steris Life Sciences website screenshot"
-      }
-    },
-    "right": {
-      "title": "Life Sciences",
-      "description": "Created a new site on Sitecore XM Cloud (now Sitecore AI), using a new accelerator that Sitecore gave its seal of approval.",
-      "list": ["Sitecore AI", "React", "TypeScript", "Tailwind"],
-      "link": {
-        "url": "https://www.sterislifesciences.com/",
-        "copy": "View Project"
-      },
-      "tags": ["products", "hospital supplies"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-dev-steris-velir-net-healthcare-test-amish-test-2026-08-04-14_25_29.png",
-        "alt": "Steris Health/US Corporate site screenshot"
-      }
-    },
-    "right": {
-      "title": "Health/US Corporate",
-      "description": "Before starting the long work of redesigning and moving to an updated platform, Steris wanted us to update their most-used components to freshen things up before the real challenge began.",
-      "list": ["Sitecore", "React", "SCSS"],
-      "link": { "url": "https://www.steris.com/", "copy": "View Project" },
-      "tags": ["corporate", "design update"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-driscolls-2026-08-04-14_37_54%20(1).png",
-        "alt": "Driscoll's website screenshot"
-      }
-    },
-    "right": {
-      "title": "Driscoll",
-      "description": "Created a new site with an updated platform, including an accelerator that Sitecore gave its blessing to. This was also some of the first AI work done for the agency.",
-      "list": [
-        "Sitecore AI",
-        "React",
-        "Tailwind",
-        "TypeScript",
-        "Multiple APIs"
-      ],
-      "link": { "url": "https://www.driscolls.com/", "copy": "View Project" },
-      "tags": ["food", "marketing"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-nera-2026-08-04-14_46_10.png",
-        "alt": "NERA website screenshot"
-      }
-    },
-    "right": {
-      "title": "Nera",
-      "description": "The first site worked on after starting at Velir.",
-      "list": ["Adobe CMS", "SCSS", "Handlebars", "Storybook in React"],
-      "link": { "url": "https://www.nera.com/", "copy": "View Project" },
-      "tags": ["financial", "international"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-ahrinet-org-2026-08-04-16_03_01.png",
-        "alt": "AHRI website screenshot"
-      }
-    },
-    "right": {
-      "title": "AHRI",
-      "description": "Tasked with updating and fixing the accessibility level of the site. There were a lot of large issues, and the goal was to make it more usable for those who may have trouble.",
-      "list": ["Drupal", "SCSS"],
-      "link": { "url": "https://www.ahrinet.org/", "copy": "View Project" },
-      "tags": ["hvac", "advocacy"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-hematology-org-2026-08-04-15_30_39.png",
-        "alt": "ASH (American Society of Hematology) website screenshot"
-      }
-    },
-    "right": {
-      "title": "ASH",
-      "description": "Tasked with doing a component refresh for the site.",
-      "list": ["Sitecore", "SCSS"],
-      "link": { "url": "https://www.hematology.org/", "copy": "View Project" },
-      "tags": ["medical", "research"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-oerproject-2026-08-04-16_03_49.png",
-        "alt": "OER Project website screenshot"
-      }
-    },
-    "right": {
-      "title": "OER",
-      "description": "This education site needed a redesign. They wanted something young users could work with and enjoy while learning.",
-      "list": ["Sitecore XM Cloud", "Tailwind", "React"],
-      "link": { "url": "https://www.oerproject.com/", "copy": "View Project" },
-      "tags": ["education", "gates"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-localhost-3001-faculty-daniel-bilbao-cortes-phd-mba-2026-08-04-16_11_55.png",
-        "alt": "UMiami Health faculty page screenshot"
-      }
-    },
-    "right": {
-      "title": "UMAIAMI",
-      "description": "Support work — updates and fixes after a major redesign or build. Not something usually included here, but this work was especially enjoyable, particularly making it more accessible.",
-      "list": ["Sitecore", "SCSS", "React"],
-      "link": { "url": "https://umiamihealth.org/en/", "copy": "View Project" },
-      "tags": ["university", "education", "medical"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-educationtoworkforce-org-2026-08-04-15_42_17.png",
-        "alt": "Education to Workforce Framework website screenshot"
-      }
-    },
-    "right": {
-      "title": "Math",
-      "description": "The Mathematica group asked us to create a new site to house their education framework.",
-      "list": ["Drupal", "SCSS", "Layout Builder"],
-      "link": {
-        "url": "https://educationtoworkforce.org/",
-        "copy": "View Project"
-      },
-      "tags": ["education", "workforce", "gates"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
-        "alt": "OAT internal app placeholder image"
-      }
-    },
-    "right": {
-      "title": "OAT",
-      "description": "A new internal app.",
-      "list": ["TanStack", "React", "Tailwind"],
-      "link": { "url": "#", "copy": "View Project" },
-      "tags": ["travel"],
-      "company": "Velir"
-    }
-  },
-  {
-    "left": {
-      "image": {
-        "src": "/img/project-images/screencapture-ukg-2026-08-04-15_45_47.png",
-        "alt": "UKG website screenshot"
-      }
-    },
-    "right": {
-      "title": "UKG",
-      "description": "My team created a fresh, modern website for the company.",
-      "list": ["Drupal"],
-      "link": { "url": "https://www.ukg.com/", "copy": "View Project" },
-      "tags": ["pr", "work"],
-      "company": "Velir"
     }
   }
 ]

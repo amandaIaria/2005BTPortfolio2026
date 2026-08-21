@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { useLayoutEffect, useState } from 'react';
 import { MoonIcon, SunIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import type { ColorModeProps } from '@general-purpose/types';
+import type { ColorModeProps } from '@packages/general-components/src/components/types.ts';
 
 const STORAGE_KEY = 'theme-mode';
 

@@ -11,5 +11,8 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+.netlify
 
 packages/json/src/markdown/Portfolio/.obsidian/
+
+deno.lock

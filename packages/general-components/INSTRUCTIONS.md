@@ -76,9 +76,8 @@ src/
 - **Playlist:** YouTube embed with multiple videos
 - **AnimatedFooter:** Text with animation effects
 - **TentacleFooter:** SVG-based animated footer
-- **WebGLTentacleFooter/Wall:** WebGL canvas animations
+- **WebGLTentacleWall:** WebGL canvas animations
 - **SpriteAnimation:** Sprite sheet frame animator
-- **TempNav:** Navigation UI
 
 **Use for:** Feature-specific, visually distinct components
 
