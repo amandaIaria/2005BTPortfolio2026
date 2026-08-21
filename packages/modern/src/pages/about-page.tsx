@@ -31,21 +31,16 @@ function ModernAboutPage() {
                   imageClassName=""
                 />
               </div>
-              <h1 className="w-full text-right md:text-left">
-                {about.title}
-              </h1>
+              <h1 className="w-full text-right md:text-left">{about.title}</h1>
             </div>
             <div className="text-right md:text-left">
-              <Button
-                asChild
-                variant="link"
+              <InternalTransitionLink
+                href="/contact"
                 className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
               >
-                <InternalTransitionLink href="/contact">
-                  {t('about.ctaLabel')}
-                  <ArrowUpRightIcon className="inline-block h-4 w-4 text-accent bold" />
-                </InternalTransitionLink>
-              </Button>
+                <span>{t('about.ctaLabel')}</span>
+                <ArrowUpRightIcon className="ml-2 inline-block h-5 w-5 text-accent bold" />
+              </InternalTransitionLink>
             </div>
           </div>
         </header>

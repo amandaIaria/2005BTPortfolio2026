@@ -11,11 +11,14 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
 
   return (
     <nav
-      data-component="temp-nav"
-      className={cn('flex items-center justify-between', className)}
+      data-component="ui-kit-nav"
+      className={cn(
+        'flex flex-wrap items-center justify-between gap-x-4 gap-y-2',
+        className,
+      )}
       {...props}
     >
-      <ul className="flex items-center gap-4">
+      <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 md:mb-0">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -41,7 +44,11 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
         })}
       </ul>
       <div>
-        <img src="/img/logo2019.svg" className="w-100" />
+        <img
+          src="/img/logo2019.svg"
+          className="w-24 sm:w-32 md:w-40 mb-6 md:mb-0"
+          alt=""
+        />
       </div>
     </nav>
   );

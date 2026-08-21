@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 import { cn } from '../../lib/utils';
 import { UIKitNav } from './ui-kit-nav';
-import { Separator } from '../ui/separator';
+import { ThemeToggle } from '../modern/theme-toggle';
+import { PortfolioSeparator } from '../atoms/portfolio-separator';
 
 export interface UIKitHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   header: {
@@ -25,6 +26,7 @@ const UIKitHeader = forwardRef<HTMLDivElement, UIKitHeaderProps>(
       <div>
         <UIKitNav />
       </div>
+      <ThemeToggle />
       <div>
         <p className="island-kicker mb-2">{header.kicker}</p>
         <h1 className="display-title text-accent">{header.title}</h1>
@@ -36,7 +38,7 @@ const UIKitHeader = forwardRef<HTMLDivElement, UIKitHeaderProps>(
         </p>
       </div>
 
-      <Separator />
+      <PortfolioSeparator />
     </header>
   ),
 );

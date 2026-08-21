@@ -1,5 +1,5 @@
 import { ExternalTransitionLink } from '../page-transition/external-transition-link';
-import { PortfolioButton } from '../portfolio-button';
+import { PortfolioButton } from '../atoms/portfolio-button';
 import SliderTags from './slider-tags';
 import type { SlideContentProps } from '@packages/general-components/src/components/types.ts';
 
@@ -31,7 +31,7 @@ export function SlideContent({ slide }: SlideContentProps) {
       </div>
       <div className="mt-auto flex flex-col md:flex-row gap-4 justify-between items-center">
         <SliderTags tags={slide.right.tags} />
-        <PortfolioButton asChild size="lg" className="slider-button">
+        <PortfolioButton asChild size="lg" className="">
           <ExternalTransitionLink href={slide.right.link.url}>
             {slide.right.link.copy ?? 'Go to site'}
           </ExternalTransitionLink>

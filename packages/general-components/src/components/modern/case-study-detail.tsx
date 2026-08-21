@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { CheckCircleIcon } from '@phosphor-icons/react';
-import { Separator } from '../ui/separator';
 import { Breadcrumb } from './breadcrumb';
 import { Footer } from './footer';
 import { StickySideNav } from './sticky-side-nav';
 import type { CaseStudyDetailProps } from '@packages/general-components/src/components/types.ts';
 import { cn } from '../../lib/utils';
+import { PortfolioSeparator } from '../atoms/portfolio-separator';
 
 function CaseStudyDetail({
   caseStudy,
@@ -27,9 +27,7 @@ function CaseStudyDetail({
           />
           <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
             <div className="flex flex-col gap-6">
-              <h1 className="md:mt-0 mt-4">
-                {caseStudy.title}
-              </h1>
+              <h1 className="md:mt-0 mt-4">{caseStudy.title}</h1>
               <div className="flex flex-col gap-3">
                 <p className="text-sm text-muted-foreground">
                   {t('caseStudies.detail.featuringInsightsFrom')}
@@ -60,7 +58,7 @@ function CaseStudyDetail({
         </div>
       </header>
 
-      <div className="relative z-10 mx-auto w-full max-w-300 pb-20 pt-4 px-4 ">
+      <div className="relative z-10 mx-auto w-full max-w-300 pb-20 pt-4 md:pt-20 px-4 ">
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 backdrop-blur-sm [mask-composite:intersect] [mask-image:linear-gradient(to_right,transparent,black_40px,black_calc(100%_-_40px),transparent),linear-gradient(to_bottom,transparent,black_40px,black_calc(100%_-_40px),transparent)]"
@@ -73,8 +71,8 @@ function CaseStudyDetail({
             />
           </div>
 
-          <div className="col-span-3 flex flex-col gap-6 md:order-1">
-            <div className="flex flex-col gap-4 md:sticky top-0">
+          <div className="col-span-3 flex flex-col md:flex-row gap-6 md:order-1">
+            <div className="flex flex-col gap-4 relative top-0 flex-basis-[200px] w-[200px]">
               <p className="text-sm font-bold tracking-wide text-accent uppercase">
                 {caseStudy.overview.label}
               </p>
@@ -112,7 +110,7 @@ function CaseStudyDetail({
               </dl>
             </div>
 
-            <div className="col-span-2 flex flex-col gap-6">
+            <div className="col-span-2 flex flex-col gap-6 flex-1">
               <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
                 <div className="flex flex-col gap-4">
                   <h3 className="text-lg font-bold">
@@ -128,7 +126,7 @@ function CaseStudyDetail({
                 </div>
               </div>
 
-              <Separator />
+              <PortfolioSeparator />
 
               <div className="flex flex-col gap-6">
                 <h3 className="text-2xl font-bold">
@@ -147,7 +145,7 @@ function CaseStudyDetail({
                 </ul>
               </div>
 
-              <Separator />
+              <PortfolioSeparator />
 
               <div className="flex flex-col gap-16">
                 {caseStudy.content.map((section) => (

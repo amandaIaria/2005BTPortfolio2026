@@ -30,6 +30,7 @@ import { Route as AppProjectsRouteImport } from './routes/_app.projects'
 import { Route as AppShrinesRouteImport } from './routes/_app.shrines'
 import { Route as UiKitIndexRouteImport } from './routes/ui-kit/index'
 import { Route as UiKitColorsRouteImport } from './routes/ui-kit/colors'
+import { Route as UiKitHerosRouteImport } from './routes/ui-kit/heros'
 import { Route as UiKitLegacyStylesRouteImport } from './routes/ui-kit/legacy-styles'
 import { Route as UiKitSliderRouteImport } from './routes/ui-kit/slider'
 import { Route as UiKitWebglTentacleFooterRouteImport } from './routes/ui-kit/webgl-tentacle-footer'
@@ -142,6 +143,11 @@ const UiKitColorsRoute = UiKitColorsRouteImport.update({
   path: '/colors',
   getParentRoute: () => UiKitRouteRoute,
 } as any)
+const UiKitHerosRoute = UiKitHerosRouteImport.update({
+  id: '/heros',
+  path: '/heros',
+  getParentRoute: () => UiKitRouteRoute,
+} as any)
 const UiKitLegacyStylesRoute = UiKitLegacyStylesRouteImport.update({
   id: '/legacy-styles',
   path: '/legacy-styles',
@@ -198,6 +204,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof AppProjectsRoute
   '/shrines': typeof AppShrinesRouteWithChildren
   '/ui-kit/colors': typeof UiKitColorsRoute
+  '/ui-kit/heros': typeof UiKitHerosRoute
   '/ui-kit/legacy-styles': typeof UiKitLegacyStylesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
@@ -222,6 +229,7 @@ export interface FileRoutesByTo {
   '/experience': typeof AppExperienceRoute
   '/projects': typeof AppProjectsRoute
   '/ui-kit/colors': typeof UiKitColorsRoute
+  '/ui-kit/heros': typeof UiKitHerosRoute
   '/ui-kit/legacy-styles': typeof UiKitLegacyStylesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
@@ -253,6 +261,7 @@ export interface FileRoutesById {
   '/_app/projects': typeof AppProjectsRoute
   '/_app/shrines': typeof AppShrinesRouteWithChildren
   '/ui-kit/colors': typeof UiKitColorsRoute
+  '/ui-kit/heros': typeof UiKitHerosRoute
   '/ui-kit/legacy-styles': typeof UiKitLegacyStylesRoute
   '/ui-kit/slider': typeof UiKitSliderRoute
   '/ui-kit/webgl-tentacle-footer': typeof UiKitWebglTentacleFooterRoute
@@ -285,6 +294,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/shrines'
     | '/ui-kit/colors'
+    | '/ui-kit/heros'
     | '/ui-kit/legacy-styles'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
@@ -309,6 +319,7 @@ export interface FileRouteTypes {
     | '/experience'
     | '/projects'
     | '/ui-kit/colors'
+    | '/ui-kit/heros'
     | '/ui-kit/legacy-styles'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
@@ -339,6 +350,7 @@ export interface FileRouteTypes {
     | '/_app/projects'
     | '/_app/shrines'
     | '/ui-kit/colors'
+    | '/ui-kit/heros'
     | '/ui-kit/legacy-styles'
     | '/ui-kit/slider'
     | '/ui-kit/webgl-tentacle-footer'
@@ -506,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UiKitColorsRouteImport
       parentRoute: typeof UiKitRouteRoute
     }
+    '/ui-kit/heros': {
+      id: '/ui-kit/heros'
+      path: '/heros'
+      fullPath: '/ui-kit/heros'
+      preLoaderRoute: typeof UiKitHerosRouteImport
+      parentRoute: typeof UiKitRouteRoute
+    }
     '/ui-kit/legacy-styles': {
       id: '/ui-kit/legacy-styles'
       path: '/legacy-styles'
@@ -586,6 +605,7 @@ const R2005RouteRouteWithChildren = R2005RouteRoute._addFileChildren(
 
 interface UiKitRouteRouteChildren {
   UiKitColorsRoute: typeof UiKitColorsRoute
+  UiKitHerosRoute: typeof UiKitHerosRoute
   UiKitLegacyStylesRoute: typeof UiKitLegacyStylesRoute
   UiKitSliderRoute: typeof UiKitSliderRoute
   UiKitWebglTentacleFooterRoute: typeof UiKitWebglTentacleFooterRoute
@@ -594,6 +614,7 @@ interface UiKitRouteRouteChildren {
 
 const UiKitRouteRouteChildren: UiKitRouteRouteChildren = {
   UiKitColorsRoute: UiKitColorsRoute,
+  UiKitHerosRoute: UiKitHerosRoute,
   UiKitLegacyStylesRoute: UiKitLegacyStylesRoute,
   UiKitSliderRoute: UiKitSliderRoute,
   UiKitWebglTentacleFooterRoute: UiKitWebglTentacleFooterRoute,

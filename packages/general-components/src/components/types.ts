@@ -1,7 +1,14 @@
 import type * as React from 'react';
 import type { Variants, Transition, MotionValue } from 'motion/react';
 import type { VariantProps } from 'class-variance-authority';
-import type { portfolioButtonVariants } from './portfolio-button';
+import type { AnyFieldApi } from '@tanstack/react-form';
+import type { portfolioButtonVariants } from './atoms/portfolio-button';
+import type { Switch } from './ui/switch';
+import type { Alert } from './ui/alert';
+import type { Badge } from './ui/badge';
+import type { Separator } from './ui/separator';
+import type { DialogContent, DialogTitle } from './ui/dialog';
+import type { TooltipContent } from './ui/tooltip';
 
 export interface ImageProps {
   src: string;
@@ -54,6 +61,20 @@ export interface ContactFormProps {
 }
 
 export type SubmitStatus = 'idle' | 'pending' | 'success' | 'error';
+
+// atoms/form-input.tsx
+export type FormInputVariant = 'legacy' | 'portfolio';
+
+export interface FormInputProps {
+  field: AnyFieldApi;
+  label: string;
+  type?: string;
+  multiline?: boolean;
+  rows?: number;
+  disabled?: boolean;
+  variant?: FormInputVariant;
+  className?: string;
+}
 
 // hero.tsx
 export interface HeroProps extends React.ComponentProps<'div'> {
@@ -115,6 +136,27 @@ export interface GlitchEffectProps {
   hideOverflow?: boolean;
 }
 
+// portfolio-switch.tsx
+export interface PortfolioSwitchProps extends React.ComponentProps<
+  typeof Switch
+> {}
+
+// portfolio-alert.tsx
+export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info' | 'caution';
+
+export interface PortfolioAlertProps extends Omit<
+  React.ComponentProps<typeof Alert>,
+  'variant'
+> {
+  variant?: PortfolioAlertVariant;
+  /** Custom leading icon. Omit for the variant default, pass `false` to hide it. */
+  icon?: React.ReactNode | false;
+  /** Renders a dismiss button and calls this when clicked. Omit to hide it. */
+  onDismiss?: () => void;
+  /** Accessible label for the dismiss button. */
+  dismissLabel?: string;
+}
+
 // portfolio-button.tsx
 export interface PortfolioButtonProps
   extends
@@ -122,6 +164,31 @@ export interface PortfolioButtonProps
     VariantProps<typeof portfolioButtonVariants> {
   asChild?: boolean;
 }
+
+// portfolio-badge.tsx
+export interface PortfolioBadgeProps extends React.ComponentProps<
+  typeof Badge
+> {}
+
+// portfolio-separator.tsx
+export interface PortfolioSeparatorProps extends React.ComponentProps<
+  typeof Separator
+> {}
+
+// portfolio-dialog.tsx
+export interface PortfolioDialogContentProps extends React.ComponentProps<
+  typeof DialogContent
+> {}
+
+export interface PortfolioDialogTitleProps extends React.ComponentProps<
+  typeof DialogTitle
+> {}
+
+// portfolio-form-input.tsx
+export interface PortfolioFormInputProps extends Omit<
+  FormInputProps,
+  'variant'
+> {}
 
 // cassette-carousel.tsx
 export interface CassetteSlideProps {
@@ -233,11 +300,6 @@ export interface ModalProps {
 }
 
 // webgl-tentacle-footer.tsx
-export interface WebGLTentacleFooterProps extends React.ComponentProps<'footer'> {
-  text?: string;
-  tentacleCount?: number;
-}
-
 // animated-title.tsx
 export interface AnimatedTitleProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

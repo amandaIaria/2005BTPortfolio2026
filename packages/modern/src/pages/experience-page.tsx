@@ -14,7 +14,7 @@ function ModernExperiencePage() {
   return (
     <Container
       data-component="modern-experience-page"
-      className="max-w-[1200px] mx-auto grid items-center pt-22 pb-0 md:py-20"
+      className="max-w-300 mx-auto grid items-center pt-22 pb-0 md:py-20"
     >
       <div className="md:px-0 px-4 grid grid-cols-1 items-start gap-10 md:gap-20 md:grid-cols-[300px_1fr]">
         <header className="grid gap-4 md:gap-10 items-center h-[70%]">
@@ -24,16 +24,13 @@ function ModernExperiencePage() {
               {t('experience.subtitle')}
             </p>
             <div className="w-full text-right md:text-left">
-              <Button
-                asChild
-                variant="link"
-                className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
-              >
-                <InternalTransitionLink href="/contact">
-                  {t('experience.ctaLabel')}
-                  <ArrowUpRightIcon className="inline-block h-4 w-4 text-accent" />
+          
+            <InternalTransitionLink href="/contact" className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
+             >
+                  <span>{t('experience.ctaLabel')}</span>
+                  <ArrowUpRightIcon className="ml-2 inline-block h-5 w-5 text-accent bold" />
                 </InternalTransitionLink>
-              </Button>
+          
             </div>
           </div>
         </header>

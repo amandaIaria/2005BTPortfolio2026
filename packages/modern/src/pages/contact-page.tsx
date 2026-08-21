@@ -1,6 +1,6 @@
 import {
-  Alert,
-  AlertDescription,
+  PortfolioAlert,
+  PortfolioAlertDescription,
   Container,
   ContactForm,
   SocialBar,
@@ -34,26 +34,26 @@ function ModernContactPage() {
           <div>
             <div className="mb-4 mt-4 md:mb-0 md:mt-0">
               {status === 'success' && (
-                <Alert
+                <PortfolioAlert
                   variant="success"
                   onDismiss={() => setStatus('idle')}
                   className="animate-in fade-in-0"
                 >
-                  <AlertDescription>
+                  <PortfolioAlertDescription>
                     {t('contact.successMessage')}
-                  </AlertDescription>
-                </Alert>
-               )}
+                  </PortfolioAlertDescription>
+                </PortfolioAlert>
+              )}
               {status === 'error' && (
-                <Alert
+                <PortfolioAlert
                   variant="error"
                   onDismiss={() => setStatus('idle')}
                   className="animate-in fade-in-0"
                 >
-                  <AlertDescription>
+                  <PortfolioAlertDescription>
                     {t('contact.errorMessage')}
-                  </AlertDescription>
-                </Alert>
+                  </PortfolioAlertDescription>
+                </PortfolioAlert>
               )}
             </div>
           </div>

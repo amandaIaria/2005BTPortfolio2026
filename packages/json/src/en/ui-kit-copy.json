@@ -16,6 +16,19 @@
     "title": "Colors",
     "description": "Design tokens defined in tokens.css. Swatches read live CSS variables, so values reflect the current light or dark theme."
   },
+  "heros": {
+    "kicker": "General Components",
+    "title": "Heros",
+    "description": "Full-viewport hero banner. Hero is the base primitive; PortfolioHero applies it as-is on the portfolio site.",
+    "heroSectionTitle": "Hero",
+    "portfolioHeroSectionTitle": "Portfolio Hero",
+    "imageAlt": "Portrait in shadow against a black background",
+    "topText": "Beautiful",
+    "bottomText": "Tragedy",
+    "caption": "Let's build something beautiful together.",
+    "heading": "I'm a Frontend Developer",
+    "hiddenH1": "The Portfolio of Alex Iaria"
+  },
   "webglTentacleFooter": {
     "kicker": "General Components",
     "backLink": "← Back to UI Kit",
@@ -41,8 +54,27 @@
       "small": "Small",
       "disabled": "Disabled"
     },
+    "portfolioSwitch": {
+      "title": "Portfolio Switch",
+      "default": "Default",
+      "disabled": "Disabled"
+    },
     "appHeader": {
       "title": "App Header"
+    },
+    "portfolioButton": {
+      "title": "Portfolio Button",
+      "default": "Default",
+      "secondary": "Secondary",
+      "outline": "Outline",
+      "ghost": "Ghost",
+      "destructive": "Destructive",
+      "link": "Link",
+      "extraSmall": "Extra Small",
+      "small": "Small",
+      "large": "Large",
+      "xl": "X Large",
+      "disabled": "Disabled"
     },
     "button": {
       "title": "Button",
@@ -70,18 +102,36 @@
       "destructive": "Destructive",
       "outline": "Outline"
     },
+    "portfolioBadge": {
+      "title": "Portfolio Badge",
+      "default": "Default",
+      "success": "Success",
+      "secondary": "Secondary",
+      "destructive": "Destructive",
+      "outline": "Outline"
+    },
     "alert": {
       "title": "Alert",
       "defaultTitle": "Default",
+      "defaultDescription": "The plain shadcn primitive, unstyled beyond default/destructive.",
+      "destructiveTitle": "Destructive",
+      "destructiveDescription": "Uses the shadcn destructive token."
+    },
+    "portfolioAlert": {
+      "title": "Portfolio Alert",
+      "defaultTitle": "Default",
       "defaultDescription": "A neutral, informational alert.",
       "infoTitle": "Info",
-      "infoDescription": "Uses the BT active/info blue.",
+      "infoDescription": "Uses the lagoon accent.",
       "successTitle": "Success",
-      "successDescription": "Uses the BT success green.",
+      "successDescription": "Uses the palm accent.",
       "errorTitle": "Error",
-      "errorDescription": "Uses the BT error red.",
+      "errorDescription": "Uses the destructive token.",
+      "cautionTitle": "Caution",
+      "cautionDescription": "Uses the caution token.",
       "dismissibleSuccessTitle": "Dismissible success",
       "dismissibleErrorTitle": "Dismissible error",
+      "dismissibleCautionTitle": "Dismissible caution",
       "dismissDescription": "Click the × to dismiss."
     },
     "card": {
@@ -110,6 +160,15 @@
       "cancel": "Cancel",
       "confirm": "Confirm"
     },
+    "portfolioDialog": {
+      "title": "Portfolio Dialog",
+      "trigger": "Open Dialog",
+      "dialogTitle": "Dialog Title",
+      "description": "This is a description of the dialog content. It explains what the user should expect.",
+      "body": "Dialog body content goes here.",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
     "imageModal": {
       "title": "Image Modal",
       "placeholderAlt": "Placeholder portrait",
@@ -128,8 +187,24 @@
     "contactForm": {
       "title": "Contact Form"
     },
+    "portfolioFormInput": {
+      "title": "Portfolio Form Input",
+      "nameLabel": "Name",
+      "disabledLabel": "Disabled",
+      "errorLabel": "Required field",
+      "errorMessage": "This field is required"
+    },
     "tooltip": {
       "title": "Tooltip",
+      "hoverMe": "Hover me",
+      "hoverContent": "This is a tooltip",
+      "withDelay": "With delay",
+      "delayContent": "Appears on the bottom",
+      "badgeTooltip": "Badge tooltip",
+      "badgeContent": "Works on any element"
+    },
+    "portfolioTooltip": {
+      "title": "Portfolio Tooltip",
       "hoverMe": "Hover me",
       "hoverContent": "This is a tooltip",
       "withDelay": "With delay",
@@ -143,6 +218,18 @@
       "itemA": "Item A",
       "itemB": "Item B",
       "itemC": "Item C"
+    },
+    "portfolioSeparator": {
+      "title": "Portfolio Separator",
+      "horizontalLabel": "Horizontal (default)",
+      "itemA": "Item A",
+      "itemB": "Item B",
+      "itemC": "Item C"
+    },
+    "input": {
+      "title": "Input",
+      "label": "Name",
+      "placeholder": "Enter your name"
     },
     "skeleton": {
       "title": "Skeleton"
