@@ -42,6 +42,8 @@
   --sidebar-ring: oklch(0.708 0 0);
   --body: var(--flat-black);
   --error: var(--bt-error);
+  --info: var(--accent);
+  --caution: var(--color-yellow-300);
   --success: var(--bt-success);
   --accent: var(--color-cyan-500);
   --accent-foreground: var(--lagoon-deep);
@@ -91,6 +93,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-error: var(--error);
   --color-success: var(--success);
+  --color-info: var(--info);
+  --color-caution: var(--caution);
 }
 
 .dark {
@@ -125,6 +129,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --error: var(--color-red-900);
+  --success: var(--color-green-900);
+  --info: var(--color-cyan-900);
+  --caution: var(--color-yellow-700);
 }
 
 @layer base {

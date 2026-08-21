@@ -11,6 +11,9 @@ function PortfolioBadgeSection() {
         <PortfolioBadge variant="secondary">
           {t('sections.portfolioBadge.secondary')}
         </PortfolioBadge>
+        <PortfolioBadge variant="success">
+          {t('sections.portfolioBadge.success')}
+        </PortfolioBadge>
         <PortfolioBadge variant="destructive">
           {t('sections.portfolioBadge.destructive')}
         </PortfolioBadge>

@@ -31,7 +31,7 @@ export function SlideContent({ slide }: SlideContentProps) {
       </div>
       <div className="mt-auto flex flex-col md:flex-row gap-4 justify-between items-center">
         <SliderTags tags={slide.right.tags} />
-        <PortfolioButton asChild size="lg" className="slider-button">
+        <PortfolioButton asChild size="lg" className="">
           <ExternalTransitionLink href={slide.right.link.url}>
             {slide.right.link.copy ?? 'Go to site'}
           </ExternalTransitionLink>

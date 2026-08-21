@@ -5,29 +5,28 @@ import { cn } from '../../lib/utils';
 import type { PortfolioButtonProps } from '@packages/general-components/src/components/types.ts';
 
 const portfolioButtonVariants = cva(
-  "group/portfolio-button inline-flex shrink-0 cursor-pointer items-center justify-center border border-transparent bg-clip-padding whitespace-nowrap transition-colors duration-300 ease-in-out outline-none select-none focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-
+  'cursor-pointer transition-colors duration-300 ease-in-out disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
         default:
-          'border-transparent bg-accent font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--accent-hover)] transition-[box-shadow,transform] duration-100 hover:bg-accent-hover active:translate-y-1 active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent-hover focus-visible:outline-offset-8',
+          'dark:shadow-[inset_0_-4px_0_0_#ffffff)] border-transparent bg-accent font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--flat-black)] transition-[box-shadow,transform] hover:bg-accent-hover active:translate-y-1 active:shadow-none dark:active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent-hover focus-visible:outline-offset-8',
         outline:
           'border border-accent text-accent hover:bg-accent-hover hover:text-white',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground',
+          'dark:shadow-[inset_0_-4px_0_0_#ffffff] shadow-[inset_0_-4px_0_0_#000000] dark:border-white border border-black text-secondary-foreground hover:bg-secondary-foreground/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground hover:text-white active:translate-y-1 active:shadow-none',
         ghost:
           'hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50',
         destructive:
-          'bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40',
-        link: 'text-primary underline-offset-4 hover:underline',
+          'bg-error text-white hover:bg-error/20 focus-visible:border-error/40 focus-visible:ring-error/20 dark:bg-error/20 dark:hover:bg-error/30 dark:focus-visible:ring-error/40',
+        link: 'group text-foreground group-button [&_span]:border-b-transparent [&_span]:pb-2 [&_span]:border-b  [&_span]:hover:border-b-accent focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-8 hover:!no-underline',
       },
       size: {
         default:
-          'h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+          'h-10 gap-1.5 px-4 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
         xs: "text-xs h-6 gap-1 px-2 text-xs has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
         sm: "text-sm font-medium h-7 gap-1 px-2.5 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: 'h-12 text-lg gap-1.5 px-4 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+        lg: 'h-16 text-lg gap-1.5 px-6 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 grid items-center [&_svg:not([class*="size-"])]:size-5',
         xl: 'h-20 text-xl px-8',
         icon: 'size-8',
         'icon-xs': "size-6 [&_svg:not([class*='size-'])]:size-3",

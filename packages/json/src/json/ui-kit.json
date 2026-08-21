@@ -23,6 +23,15 @@
           { "name": "--bt-success", "label": "BT Success" }
         ]
       },
+      {
+        "title": "States",
+        "tokens": [
+          {"name": "--error", "label": "Error"},
+          { "name": "--success", "label": "Success" },
+          { "name": "--info", "label": "Info" },
+          { "name": "--caution", "label": "Caution" }
+        ]
+      },
 
       {
         "title": "Ink & Text",

@@ -91,7 +91,7 @@ function ImageModal(props: ImageModalProps) {
           <DialogPrimitive.Close asChild>
             <PortfolioButton
               size="icon-sm"
-              className="absolute -top-10 right-2 cursor-pointer"
+              className="absolute -top-10 right-2 cursor-pointer flex items-center justify-center"
             >
               <XIcon />
               <span className="sr-only">Close</span>

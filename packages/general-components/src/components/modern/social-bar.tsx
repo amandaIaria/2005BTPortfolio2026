@@ -24,7 +24,7 @@ function SocialBar({
         target="_blank"
         rel="noreferrer"
         aria-label="LinkedIn"
-        className="bg-black"
+        className="bg-black shadow-[inset_0_-4px_0_0_var(--accent)]"
       >
         <LinkedinLogoIcon aria-hidden="true" className="" />
       </PortfolioButton>
@@ -33,7 +33,7 @@ function SocialBar({
         target="_blank"
         rel="noreferrer"
         aria-label="GitHub"
-        className="bg-black"
+        className="bg-black shadow-[inset_0_-4px_0_0_var(--accent)]"
       >
         <GithubLogoIcon aria-hidden="true" className="" />
       </PortfolioButton>

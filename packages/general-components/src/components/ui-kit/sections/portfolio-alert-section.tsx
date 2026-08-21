@@ -35,6 +35,14 @@ function PortfolioAlertSection() {
             {t('sections.portfolioAlert.successDescription')}
           </PortfolioAlertDescription>
         </PortfolioAlert>
+        <PortfolioAlert variant="caution">
+          <PortfolioAlertTitle>
+            {t('sections.portfolioAlert.cautionTitle')}
+          </PortfolioAlertTitle>
+          <PortfolioAlertDescription>
+            {t('sections.portfolioAlert.cautionDescription')}
+          </PortfolioAlertDescription>
+        </PortfolioAlert>
         <PortfolioAlert variant="error">
           <PortfolioAlertTitle>
             {t('sections.portfolioAlert.errorTitle')}
@@ -54,6 +62,14 @@ function PortfolioAlertSection() {
         <PortfolioAlert variant="error" onDismiss={() => {}}>
           <PortfolioAlertTitle>
             {t('sections.portfolioAlert.dismissibleErrorTitle')}
+          </PortfolioAlertTitle>
+          <PortfolioAlertDescription>
+            {t('sections.portfolioAlert.dismissDescription')}
+          </PortfolioAlertDescription>
+        </PortfolioAlert>
+         <PortfolioAlert variant="caution" onDismiss={() => {}}>
+          <PortfolioAlertTitle>
+            {t('sections.portfolioAlert.dismissibleCautionTitle')}
           </PortfolioAlertTitle>
           <PortfolioAlertDescription>
             {t('sections.portfolioAlert.dismissDescription')}

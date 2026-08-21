@@ -12,6 +12,7 @@ import {
   PortfolioDialogFooter,
   PortfolioDialogClose,
 } from '../../atoms/portfolio-dialog';
+import { PortfolioButton } from '../../atoms/portfolio-button';
 
 function PortfolioDialogSection() {
   const { t } = useTranslation('uiKit');
@@ -21,7 +22,7 @@ function PortfolioDialogSection() {
     <Section title={t('sections.portfolioDialog.title')}>
       <PortfolioDialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <PortfolioDialogTrigger asChild>
-          <Button>{t('sections.portfolioDialog.trigger')}</Button>
+          <PortfolioButton>{t('sections.portfolioDialog.trigger')}</PortfolioButton>
         </PortfolioDialogTrigger>
         <PortfolioDialogContent>
           <PortfolioDialogHeader>
@@ -39,13 +40,13 @@ function PortfolioDialogSection() {
           </div>
           <PortfolioDialogFooter>
             <PortfolioDialogClose asChild>
-              <Button variant="outline">
+              <PortfolioButton variant="outline">
                 {t('sections.portfolioDialog.cancel')}
-              </Button>
+              </PortfolioButton>
             </PortfolioDialogClose>
-            <Button onClick={() => setDialogOpen(false)}>
+            <PortfolioButton onClick={() => setDialogOpen(false)}>
               {t('sections.portfolioDialog.confirm')}
-            </Button>
+            </PortfolioButton>
           </PortfolioDialogFooter>
         </PortfolioDialogContent>
       </PortfolioDialog>

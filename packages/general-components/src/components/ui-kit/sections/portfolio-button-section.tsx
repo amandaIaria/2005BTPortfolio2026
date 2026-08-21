@@ -39,6 +39,9 @@ function PortfolioButtonSection() {
         <PortfolioButton size="lg">
           {t('sections.portfolioButton.large')}
         </PortfolioButton>
+        <PortfolioButton size="xl">
+          {t('sections.portfolioButton.xl')}
+        </PortfolioButton>
         <PortfolioButton disabled>
           {t('sections.portfolioButton.disabled')}
         </PortfolioButton>

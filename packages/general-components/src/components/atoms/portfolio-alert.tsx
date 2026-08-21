@@ -13,9 +13,10 @@ import type { PortfolioAlertProps, PortfolioAlertVariant } from '../types';
 
 const VARIANT_CLASSNAMES: Record<PortfolioAlertVariant, string> = {
   default: '',
-  error: 'border-transparent bg-bt-error text-white',
-  success: 'border-transparent bg-bt-success text-foreground',
-  info: 'border-transparent bg-accent text-white [data-slot="alert-description"]:text-white',
+  error: 'border-transparent bg-error text-white',
+  success: 'border-transparent bg-success text-foreground',
+  caution: 'border-transparent bg-caution text-foreground',
+  info: 'border-transparent bg-info text-white [data-slot="alert-description"]:text-white',
 };
 
 const DEFAULT_ICONS: Record<
@@ -25,6 +26,7 @@ const DEFAULT_ICONS: Record<
   default: undefined,
   error: WarningCircleIcon,
   success: CheckCircleIcon,
+  caution: WarningCircleIcon,
   info: InfoIcon,
 };
 

@@ -8,6 +8,7 @@ import { Button } from './ui/button';
 import { FormInput } from './atoms/form-input';
 import { PortfolioButton } from './atoms/portfolio-button';
 import type { ContactFormProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioFormInput } from './atoms/portfolio-form-input';
 
 const CONTACT_ENDPOINT = '/.netlify/functions/contact';
 
@@ -86,7 +87,7 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
         name="name"
         validators={{ onChange: ({ value }) => required('Name')(value) }}
         children={(field) => (
-          <FormInput
+          <PortfolioFormInput
             field={field}
             label={t('contact.namePlaceholder')}
             disabled={isPending}
@@ -101,7 +102,7 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
             (isValidEmail(value) ? undefined : 'Enter a valid email'),
         }}
         children={(field) => (
-          <FormInput
+          <PortfolioFormInput
             field={field}
             label={t('contact.emailPlaceholder')}
             type="email"
@@ -113,7 +114,7 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
         name="message"
         validators={{ onChange: ({ value }) => required('Message')(value) }}
         children={(field) => (
-          <FormInput
+          <PortfolioFormInput
             field={field}
             label={t('contact.messagePlaceholder')}
             multiline
@@ -127,11 +128,7 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
           type="submit"
           size="lg"
           disabled={isPending}
-          className={cn(
-            'cursor-pointer h-auto rounded-xs border border-[var(--bt-active)] bg-[var(--bt-active)] px-6 py-1.5 pb-2 font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--bt-active-deep)] transition-[box-shadow,padding-bottom,top] duration-100',
-            'active:top-1 active:pb-1.5 active:shadow-none',
-            'focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-[var(--bt-active)] focus-visible:outline-offset-8',
-          )}
+         
         >
           {isPending && (
             <CircleNotchIcon className="size-4 shrink-0 animate-spin" />

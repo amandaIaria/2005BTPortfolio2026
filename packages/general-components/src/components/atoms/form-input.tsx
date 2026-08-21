@@ -12,26 +12,26 @@ import type {
 // .aic-a-label / .aic-m-input-field (input/textarea height, colors, and the
 // focus/error ring thickness all match the original values).
 const BARE_FIELD_CLASSNAME =
-  'h-auto border-transparent bg-transparent px-0 text-base shadow-none focus-visible:border-transparent focus-visible:ring-0 aria-invalid:border-transparent aria-invalid:ring-0 dark:bg-transparent dark:aria-invalid:border-transparent dark:aria-invalid:ring-0';
+  'h-auto border-transparent bg-transparent px-0 shadow-none focus-visible:border-transparent focus-visible:ring-0 aria-invalid:border-transparent aria-invalid:ring-0 dark:bg-transparent dark:aria-invalid:border-transparent dark:aria-invalid:ring-0';
 
 const FIELD_CONTAINER_VARIANT_CLASSNAME: Record<FormInputVariant, string> = {
   legacy:
-    'border-[var(--flat-black)] focus-within:border-[var(--bt-active)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-active)]',
+    'border-[var(--flat-black)] dark:border-white dark:active:border-accent   active:border-accent  focus-within:border-accent dark:focus-within:border-accent focus-within:shadow-[inset_0_0_0_4px_var(--accent)]',
   portfolio:
-    'border-[var(--accent)] focus-within:border-[var(--accent-hover)] focus-within:shadow-[inset_0_0_0_4px_var(--accent-hover)]',
+    'border-[var(--flat-black)] dark:border-white dark:active:border-accent   active:border-accent  focus-within:border-accent dark:focus-within:border-accent focus-within:shadow-[inset_0_0_0_4px_var(--accent)]',
 };
 
 const LABEL_VARIANT_CLASSNAME: Record<FormInputVariant, string> = {
-  legacy: 'text-[var(--flat-black)]',
-  portfolio: 'text-[var(--accent)]',
+  legacy: '',
+  portfolio: '',
 };
 
 function fieldContainerClassName(hasError: boolean, variant: FormInputVariant) {
   return cn(
-    'relative border px-2 transition-[border-color,box-shadow] duration-150',
+    'relative border active:border-accent focus-within:border-accent px-2 transition-[border-color,box-shadow] duration-150',
     FIELD_CONTAINER_VARIANT_CLASSNAME[variant],
     hasError &&
-      'border-[var(--bt-error)] shadow-[inset_0_0_0_4px_var(--bt-error)] focus-within:border-[var(--bt-error)] focus-within:shadow-[inset_0_0_0_4px_var(--bt-error)]',
+      'border-error active:dark:border-error focus-within:dark:border-error dark:border-error shadow-[inset_0_0_0_4px_var(--error)] focus-within:border-[var(--error)] focus-within:shadow-[inset_0_0_0_4px_var(--error)] dark:focus-within:shadow-[inset_0_0_0_4px_var(--error)]',
   );
 }
 

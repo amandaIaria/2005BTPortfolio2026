@@ -73,6 +73,7 @@
       "extraSmall": "Extra Small",
       "small": "Small",
       "large": "Large",
+      "xl": "X Large",
       "disabled": "Disabled"
     },
     "button": {
@@ -104,6 +105,7 @@
     "portfolioBadge": {
       "title": "Portfolio Badge",
       "default": "Default",
+      "success": "Success",
       "secondary": "Secondary",
       "destructive": "Destructive",
       "outline": "Outline"
@@ -125,8 +127,11 @@
       "successDescription": "Uses the palm accent.",
       "errorTitle": "Error",
       "errorDescription": "Uses the destructive token.",
+      "cautionTitle": "Caution",
+      "cautionDescription": "Uses the caution token.",
       "dismissibleSuccessTitle": "Dismissible success",
       "dismissibleErrorTitle": "Dismissible error",
+      "dismissibleCautionTitle": "Dismissible caution",
       "dismissDescription": "Click the × to dismiss."
     },
     "card": {

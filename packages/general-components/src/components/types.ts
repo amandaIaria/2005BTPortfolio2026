@@ -142,7 +142,7 @@ export interface PortfolioSwitchProps extends React.ComponentProps<
 > {}
 
 // portfolio-alert.tsx
-export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info';
+export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info' | 'caution';
 
 export interface PortfolioAlertProps extends Omit<
   React.ComponentProps<typeof Alert>,
@@ -188,11 +188,6 @@ export interface PortfolioDialogTitleProps extends React.ComponentProps<
 export interface PortfolioFormInputProps extends Omit<
   FormInputProps,
   'variant'
-> {}
-
-// portfolio-tooltip.tsx
-export interface PortfolioTooltipContentProps extends React.ComponentProps<
-  typeof TooltipContent
 > {}
 
 // cassette-carousel.tsx

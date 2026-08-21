@@ -11,7 +11,7 @@ export default function SliderPage() {
 
   return (
     <>
-      <div className="max-w-300 w-full top-0 absolute z-10 mx-auto bg-white left-0 right-0 px-4">
+      <div className="max-w-300 w-full top-0 absolute z-10 mx-auto bg-background left-0 right-0 px-4">
         <UIKitHeader header={headerObj} />
       </div>
       <div className="w-screen h-auto md:h-screen overflow-visible md:overflow-hidden relative z-1">

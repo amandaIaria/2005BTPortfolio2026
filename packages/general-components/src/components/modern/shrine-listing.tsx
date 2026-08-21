@@ -23,7 +23,7 @@ function ShrineListing({ kicker, heading, intro }: ShrineListingProps) {
         <InternalTransitionLink
           key={item.slug}
           href={`/shrines/${item.slug}`}
-          className="group relative aspect-square overflow-hidden bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg"
+          className="w-full h-full group relative aspect-square overflow-hidden bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg m-0 p-0"
         >
           <figure className="h-full w-full">
             <img

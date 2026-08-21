@@ -33,16 +33,13 @@ function CaseStudyList({
             <h3 className="text-2xl font-bold">{caseStudy.title}</h3>
             <p className="text-muted-foreground">{caseStudy.description}</p>
           </div>
-          <Button
-            asChild
-            variant="link"
-            className="pointer w-fit p-0 text-lg font-bold transition-all duration-500 decoration-accent"
-          >
-            <InternalTransitionLink href={`/case-studies/${caseStudy.slug}`}>
-              {caseStudy.link.copy}
-              <ArrowUpRightIcon className="ml-2 inline-block h-4 w-4 text-accent" />
-            </InternalTransitionLink>
-          </Button>
+          <InternalTransitionLink
+                href={`/case-studies/${caseStudy.slug}`}
+                className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
+              >
+                <span>{caseStudy.link.copy}</span>
+                <ArrowUpRightIcon className="ml-2 inline-block h-5 w-5 text-accent bold" />
+              </InternalTransitionLink>
         </div>
       ))}
     </div>
