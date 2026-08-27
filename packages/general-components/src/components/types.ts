@@ -81,9 +81,13 @@ export interface HeroProps extends React.ComponentProps<'div'> {
   image: ImageProps;
   topText: string;
   bottomText: string;
-  caption: React.ReactNode;
-  heading: React.ReactNode;
+  /** Raw copy — `<br />` and `<accent>...</accent>` are parsed and typed out. */
+  caption: string;
+  heading: string;
   hiddenH1: string;
+  nameStatement: string;
+  /** Set false to hold the typewriter sequence until a loading overlay finishes. Defaults true. */
+  startAnimation?: boolean;
 }
 
 // playlist.tsx
@@ -142,7 +146,12 @@ export interface PortfolioSwitchProps extends React.ComponentProps<
 > {}
 
 // portfolio-alert.tsx
-export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info' | 'caution';
+export type PortfolioAlertVariant =
+  | 'default'
+  | 'error'
+  | 'success'
+  | 'info'
+  | 'caution';
 
 export interface PortfolioAlertProps extends Omit<
   React.ComponentProps<typeof Alert>,
@@ -629,6 +638,11 @@ export interface RevealingTentacleProps {
   className?: string;
 }
 
+// modern/homepage-navigation.tsx
+export interface HomepageNavigationProps {
+  json: { href: string; label: string; icon: string; color?: string }[];
+}
+
 // modern/navigation.tsx
 export interface NavigationProps {
   isOpen: boolean;
@@ -669,4 +683,5 @@ export interface FooterProps extends React.ComponentProps<'footer'> {
 export interface SocialBarProps extends React.ComponentProps<'div'> {
   linkedinHref?: string;
   githubHref?: string;
+  codepenHref?: string;
 }

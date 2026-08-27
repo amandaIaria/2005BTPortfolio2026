@@ -67,7 +67,7 @@ function PortfolioAlertSection() {
             {t('sections.portfolioAlert.dismissDescription')}
           </PortfolioAlertDescription>
         </PortfolioAlert>
-         <PortfolioAlert variant="caution" onDismiss={() => {}}>
+        <PortfolioAlert variant="caution" onDismiss={() => {}}>
           <PortfolioAlertTitle>
             {t('sections.portfolioAlert.dismissibleCautionTitle')}
           </PortfolioAlertTitle>

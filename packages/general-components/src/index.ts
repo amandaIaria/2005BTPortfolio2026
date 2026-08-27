@@ -125,6 +125,7 @@ export { ShrineDetail } from './components/modern/shrine-detail';
 export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
 export { default as LoadIn } from './components/modern/load-in';
 export { default as LoadInCard } from './components/modern/load-in-card';
+export { HomepageNavigation } from './components/modern/homepage-navigation';
 export { Navigation } from './components/modern/navigation';
 export { NavToggle } from './components/modern/nav-toggle';
 export { ThemeToggle } from './components/modern/theme-toggle';
@@ -209,6 +210,7 @@ export type {
   StickySideNavProps,
   LoadInCardProps,
   RevealingTentacleProps,
+  HomepageNavigationProps,
   NavigationProps,
   NavLinkProps,
   NavItemProps,
