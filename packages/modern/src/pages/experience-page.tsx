@@ -24,13 +24,13 @@ function ModernExperiencePage() {
               {t('experience.subtitle')}
             </p>
             <div className="w-full text-right md:text-left">
-          
-            <InternalTransitionLink href="/contact" className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
-             >
-                  <span>{t('experience.ctaLabel')}</span>
-                  <ArrowUpRightIcon className="ml-2 inline-block h-5 w-5 text-accent bold" />
-                </InternalTransitionLink>
-          
+              <InternalTransitionLink
+                href="/contact"
+                className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
+              >
+                <span>{t('experience.ctaLabel')}</span>
+                <ArrowUpRightIcon className="ml-2 inline-block h-5 w-5 text-accent bold" />
+              </InternalTransitionLink>
             </div>
           </div>
         </header>

@@ -124,12 +124,7 @@ function ContactForm({ className, onSubmit }: ContactFormProps) {
         )}
       />
       <div className="flex items-center justify-end">
-        <PortfolioButton
-          type="submit"
-          size="lg"
-          disabled={isPending}
-         
-        >
+        <PortfolioButton type="submit" size="lg" disabled={isPending}>
           {isPending && (
             <CircleNotchIcon className="size-4 shrink-0 animate-spin" />
           )}
