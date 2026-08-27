@@ -31,7 +31,7 @@ function ModernHomePage() {
       />
       <Container
         data-component="modern-home-page"
-        className="max-w-5xl mx-auto absolute inset-0 flex items-center justify-center translate-y-100"
+        className="max-w-5xl w-full mx-auto absolute inset-0 flex items-center justify-center md:translate-y-100"
       >
         {/* <LoadIn json={json} /> */}
         <HomepageNavigation json={json} />

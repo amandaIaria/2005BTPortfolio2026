@@ -37,7 +37,7 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
   return (
     <motion.div
       data-component="home-loading-overlay"
-      className="fixed w-screen h-screen inset-0 z-100 overflow-hidden backdrop-blur-2xl [&_[data-component='webgl-tentacle-wall']]:absolute! [&_[data-component='webgl-tentacle-wall']]:bottom-0!"
+      className="hidden md:fixed w-screen h-screen inset-0 z-100 overflow-hidden backdrop-blur-2xl [&_[data-component='webgl-tentacle-wall']]:absolute! [&_[data-component='webgl-tentacle-wall']]:bottom-0!"
       initial={{ y: 0 }}
       animate={{ y: exiting ? '100%' : 0 }}
       transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}

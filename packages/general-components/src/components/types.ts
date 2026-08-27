@@ -683,4 +683,5 @@ export interface FooterProps extends React.ComponentProps<'footer'> {
 export interface SocialBarProps extends React.ComponentProps<'div'> {
   linkedinHref?: string;
   githubHref?: string;
+  codepenHref?: string;
 }

@@ -52,25 +52,25 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
 
   return (
     <nav className={cn('flex flex-col items-center justify-center')} {...props}>
-      <ul className="flex  items-center justify-center gap-10">
+      <ul className="flex  items-center justify-center gap-4 md:gap-10 flex-wrap md:flex-nowrap -mt-40 md:mt-0">
         {json.map((item, idx) => {
           const NavIcon = iconMap[item.icon];
           return (
             <li
               key={`homepage-nav-item-${idx}`}
-              className="basis-[20%] flex-1 shadow-2xl shadow-success rounded-lg p-4 transition-all duration-300 hover:scale-150 transform-gpu"
+              className="md:basis-[20%] md:flex-1 shadow-2xl shadow-success rounded-lg p-1 md:p-4 transition-all duration-300 hover:scale-150 transform-gpu bg-black md:bg-transparent"
             >
               <a
                 key={`homepage-nav-item-${idx}`}
                 href={item.href}
                 onClick={(event) => handleClick(event, item.href, item.color)}
-                className="font-semibold text-white hover:text-success dark:hover:text-accent transition-colors duration-300 text-center flex flex-col items-center justify-center gap-2"
+                className="font-semibold text-white hover:text-success dark:hover:text-accent transition-colors duration-300 text-center flex flex-col items-center justify-center gap-0.5 md:gap-2"
                 data-color={item.color}
               >
-                <span className=" text-3xl">
+                <span className=" md:text-3xl">
                   <NavIcon weight="bold" />
                 </span>
-                <span className="text-lg whitespace-nowrap">{item.label}</span>
+                <span className="md:text-lg whitespace-nowrap">{item.label}</span>
               </a>
             </li>
           );

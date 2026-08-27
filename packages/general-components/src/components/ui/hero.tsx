@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { cn } from '../../lib/utils';
 import type { HeroProps } from '@packages/general-components/src/components/types.ts';
 import { useReducedMotion } from 'framer-motion';
+import DOMPurify from 'dompurify';
 
 type Segment =
   | { kind: 'text'; text: string; accent: boolean }
@@ -213,13 +214,14 @@ function Hero({
         alt={image.alt}
         className="absolute bottom-0 h-full w-full object-contain object-bottom mix-blend-difference"
       />
-      <div className="absolute inset-x-0 -top-20.5 px-6 py-10 text-center">
+      <div className="absolute inset-x-0 -top-13 md:-top-20.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
           {topText}
         </p>
       </div>
 
-      <div className="absolute inset-1/2 -translate-y-96 -translate-x-200 p-4 text-center h-fit w-fit block">
+      {/* Desktop verion */}
+      <div className="hidden md:block absolute inset-1/2 -translate-y-96 -translate-x-200 p-4 text-center h-fit w-fit">
         <p className="text-8xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference">
           <span className={cn(namePhase === 'pending' && 'invisible')}>
             {contentFor(namePhase, nameSegments, nameTyper.visible)}
@@ -237,7 +239,7 @@ function Hero({
         </p>
       </div>
 
-      <div className="absolute inset-1/2 ml-70 -mt-40  p-4 text-center h-fit w-fit block">
+      <div className="absolute inset-1/2 ml-70 -mt-40  p-4 text-center h-fit w-fit hidden md:block">
         <p
           className={cn(
             'text-5xl font-bold tracking-tight text-white mix-blend-difference',
@@ -254,6 +256,13 @@ function Hero({
         >
           {contentFor(captionPhase, captionSegments, captionTyper.visible)}
         </p>
+      </div>
+
+      {/* Mobile Version */}
+      <div className="absolute bottom-10 md:hidden text-white text-small  p-4 text-center h-fit w-fit block">
+          <p className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(nameStatement)}} />
+          <p className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(heading)}} />
+          <p className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)] text-[12px]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(caption)}} />
       </div>
 
       <div className="absolute inset-x-0 -bottom-12.5 px-6 py-10 text-center">
