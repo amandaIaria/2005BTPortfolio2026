@@ -70,7 +70,9 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
                 <span className=" md:text-3xl">
                   <NavIcon weight="bold" />
                 </span>
-                <span className="md:text-lg whitespace-nowrap">{item.label}</span>
+                <span className="md:text-lg whitespace-nowrap">
+                  {item.label}
+                </span>
               </a>
             </li>
           );

@@ -39,7 +39,11 @@
       "Some Fun things: ",
       "<ul class=\"px-4 pt-0 mt-0 \"><li class=\"before:text-accent \">I love art and draw a lot.</li><li class=\"before:text-accent \">Indie games is where it's at now. Balatro, Hades, Rimworld and some of the best games out there.</li><li class=\"before:text-accent \">Movies have facinated me since I was young. David Lynch's work shaped my love of sureal and the weird</li><li class=\"before:text-accent \">Music? oh course. Right now I'm into synth, goth, post-punk, and anything dark and weird.</li></ul>"
     ],
-    "social": ["https://codepen.io/alexIaria", "http://www.linkedin.com/in/amandaiaria", "https://github.com/amandaIaria"]
+    "social": [
+      "https://codepen.io/alexIaria",
+      "http://www.linkedin.com/in/amandaiaria",
+      "https://github.com/amandaIaria"
+    ]
   },
   "experience": [
     {

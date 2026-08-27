@@ -30,11 +30,13 @@ function phaseFor(stage: Stage, target: Stage) {
   return 'complete';
 }
 
-// Copy uses a tiny fixed markup vocabulary (`<br />`, `<accent>...</accent>`)
-// authored directly in the i18n JSON, not user input, so a straightforward
-// tag-scanning regex is fine here — no nesting or adversarial input to worry
-// about.
-const MARKUP_PATTERN = /<br\s*\/?>|<accent>([\s\S]*?)<\/accent>/gi;
+// Copy uses a tiny fixed markup vocabulary (`<br />`, `<accent>...</accent>`).
+// Accent content is matched with `[^<]*` rather than `[\s\S]*?` — a lazy
+// any-char group here scans to end-of-string on every unclosed `<accent>`
+// tag, which is O(n) per occurrence and O(n^2) overall on adversarial input
+// (CodeQL: polynomial regex). `[^<]*` stops at the next tag boundary, so
+// each attempt is bounded and the whole scan stays linear.
+const MARKUP_PATTERN = /<br\s*\/?>|<accent>([^<]*)<\/accent>/gi;
 
 function parseMarkup(raw: string): Segment[] {
   const segments: Segment[] = [];
@@ -260,9 +262,20 @@ function Hero({
 
       {/* Mobile Version */}
       <div className="absolute bottom-10 md:hidden text-white text-small  p-4 text-center h-fit w-fit block">
-          <p className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(nameStatement)}} />
-          <p className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(heading)}} />
-          <p className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)] text-[12px]" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(caption)}} />
+        <p
+          className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)]"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(nameStatement),
+          }}
+        />
+        <p
+          className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)]"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(heading) }}
+        />
+        <p
+          className="text-shadow-[1px_1px_3px_#000000] [box-shadow:inset_0_33px_3px_rgba(0,0,0,0.5)] text-[12px]"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(caption) }}
+        />
       </div>
 
       <div className="absolute inset-x-0 -bottom-12.5 px-6 py-10 text-center">

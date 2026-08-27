@@ -1,4 +1,8 @@
-import { LinkedinLogoIcon, GithubLogoIcon, CodepenLogoIcon } from '@phosphor-icons/react';
+import {
+  LinkedinLogoIcon,
+  GithubLogoIcon,
+  CodepenLogoIcon,
+} from '@phosphor-icons/react';
 import json from '@json/data/json/about.json';
 import { cn, componentName } from '../../lib/utils';
 import type { SocialBarProps } from '@packages/general-components/src/components/types.ts';
@@ -48,7 +52,6 @@ function SocialBar({
         >
           <LinkedinLogoIcon aria-hidden="true" className="" />
         </a>
-        
       </PortfolioButton>
       <PortfolioButton
         className="bg-black shadow-[inset_0_-4px_0_0_var(--accent)] flex items-center"
