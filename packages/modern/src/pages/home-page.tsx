@@ -6,7 +6,7 @@ import {
   HomeLoadingOverlay,
 } from '@general/components';
 import json from '@json/data/json/navigation.json';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { initialPathname } from '../lib/initial-pathname';
 
@@ -44,25 +44,11 @@ function ModernHomePage() {
         }}
         topText={t('home.heroTopText')}
         bottomText={t('home.heroBottomText')}
-        nameStatement={
-          <Trans
-            i18nKey="home.nameStatement"
-            components={{ accent: <span className="text-accent" /> }}
-          />
-        }
-        caption={
-          <Trans
-            i18nKey="home.subheading"
-            components={{ accent: <span className="text-accent" /> }}
-          />
-        }
-        heading={
-          <Trans
-            i18nKey="home.heading"
-            components={{ accent: <span className="text-accent" /> }}
-          />
-        }
+        nameStatement={t('home.nameStatement')}
+        caption={t('home.subheading')}
+        heading={t('home.heading')}
         hiddenH1={t('home.hiddenH1')}
+        startAnimation={!showIntro}
       />
       <Container
         data-component="modern-home-page"

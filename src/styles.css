@@ -95,6 +95,19 @@
   --color-success: var(--success);
   --color-info: var(--info);
   --color-caution: var(--caution);
+
+  --animate-cursor-blink: cursor-blink 1s steps(1, end) infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .dark {

@@ -81,10 +81,13 @@ export interface HeroProps extends React.ComponentProps<'div'> {
   image: ImageProps;
   topText: string;
   bottomText: string;
-  caption: React.ReactNode;
-  heading: React.ReactNode;
+  /** Raw copy — `<br />` and `<accent>...</accent>` are parsed and typed out. */
+  caption: string;
+  heading: string;
   hiddenH1: string;
   nameStatement: string;
+  /** Set false to hold the typewriter sequence until a loading overlay finishes. Defaults true. */
+  startAnimation?: boolean;
 }
 
 // playlist.tsx
