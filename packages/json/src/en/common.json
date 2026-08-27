@@ -7,9 +7,10 @@
     "heroBottomText": "Tragedy",
     "heroCaption": "Lets build something beautiful together.",
     "heroImageAlt": "Portrait in shadow against a black background",
-    "heading": "I'm a <accent>FrontEnd</accent> Developer",
-    "subheading": "Let's Build something <accent>Beautifu</accent> together",
-    "hiddenH1": "The Portfolio of Alex Iaria"
+    "heading": "Let's Build something <accent>Beautiful</accent> together",
+    "subheading": "Or not. I'm not your dad.",
+    "hiddenH1": "The Portfolio of Alex Iaria",
+    "nameStatement": "I'm Alex, <br /> a <accent>FrontEnd</accent> Developer"
   },
   "about": {
     "ctaLabel": "Contact Me"
@@ -75,6 +76,10 @@
   },
   "loadIn": {
     "selfPortraitAlt": "Self Portrait"
+  },
+  "homepageNavigation": {
+    "selfPortraitAlt": "Self Portrait",
+    "navLabel": "Homepage navigation"
   },
   "imageModal": {
     "viewFullLabel": "View full image: {{alt}}",

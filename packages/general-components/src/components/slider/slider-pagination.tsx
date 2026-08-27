@@ -34,7 +34,10 @@ export function SliderPagination({
         aria-label="Slides"
         className="w-full max-w-39.5 md:max-w-max md:w-fit overflow-hidden"
       >
-        <ol className="list-none flex gap-3 w-full" ref={dotsInnerRef as React.Ref<HTMLOListElement>}>
+        <ol
+          className="list-none flex gap-3 w-full"
+          ref={dotsInnerRef as React.Ref<HTMLOListElement>}
+        >
           {Array.from({ length: total }, (_, i) => (
             <li key={i} role="tab">
               <button

@@ -22,7 +22,9 @@ function PortfolioDialogSection() {
     <Section title={t('sections.portfolioDialog.title')}>
       <PortfolioDialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <PortfolioDialogTrigger asChild>
-          <PortfolioButton>{t('sections.portfolioDialog.trigger')}</PortfolioButton>
+          <PortfolioButton>
+            {t('sections.portfolioDialog.trigger')}
+          </PortfolioButton>
         </PortfolioDialogTrigger>
         <PortfolioDialogContent>
           <PortfolioDialogHeader>

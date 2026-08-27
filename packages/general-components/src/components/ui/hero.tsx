@@ -1,6 +1,7 @@
-import * as React from 'react';
 import { cn } from '../../lib/utils';
 import type { HeroProps } from '@packages/general-components/src/components/types.ts';
+import { motion } from 'framer-motion';
+
 
 function Hero({
   image,
@@ -10,6 +11,7 @@ function Hero({
   heading,
   hiddenH1,
   className,
+  nameStatement,
   ...props
 }: HeroProps) {
   return (
@@ -22,21 +24,29 @@ function Hero({
       <img
         src={image.src}
         alt={image.alt}
-        className="absolute inset-0 h-full w-full object-cover top-[25%]"
+        className="absolute bottom-0 h-full w-full object-contain object-bottom mix-blend-difference"
       />
       <div className="absolute inset-x-0 -top-20.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
           {topText}
         </p>
       </div>
-      <div className="absolute inset-1/2 ml-25 -mt-20  p-4 text-center h-fit w-fit block">
-        <p className="text-5xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference">
+      
+      <motion.div className="absolute inset-1/2 -translate-y-96 -translate-x-200 p-4 text-center h-fit w-fit block">
+        <p className="text-8xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference">
+          {nameStatement}&nbsp;<span className="text-accent">|</span>
+        </p>
+      </motion.div>
+
+      <motion.div className="absolute inset-1/2 ml-70 -mt-40  p-4 text-center h-fit w-fit block">
+        <p className="text-5xl font-bold tracking-tight text-white mix-blend-difference">
           {heading}
         </p>
         <p className="text-xl leading-none tracking-tight text-accent capitalize">
           {caption}
         </p>
-      </div>
+      </motion.div>
+      
       <div className="absolute inset-x-0 -bottom-12.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
           {bottomText}

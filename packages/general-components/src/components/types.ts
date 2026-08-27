@@ -84,6 +84,7 @@ export interface HeroProps extends React.ComponentProps<'div'> {
   caption: React.ReactNode;
   heading: React.ReactNode;
   hiddenH1: string;
+  nameStatement: string;
 }
 
 // playlist.tsx
@@ -142,7 +143,12 @@ export interface PortfolioSwitchProps extends React.ComponentProps<
 > {}
 
 // portfolio-alert.tsx
-export type PortfolioAlertVariant = 'default' | 'error' | 'success' | 'info' | 'caution';
+export type PortfolioAlertVariant =
+  | 'default'
+  | 'error'
+  | 'success'
+  | 'info'
+  | 'caution';
 
 export interface PortfolioAlertProps extends Omit<
   React.ComponentProps<typeof Alert>,
@@ -627,6 +633,11 @@ export interface RevealingTentacleProps {
   maskId: string;
   hovered: boolean;
   className?: string;
+}
+
+// modern/homepage-navigation.tsx
+export interface HomepageNavigationProps {
+  json: { href: string; label: string }[];
 }
 
 // modern/navigation.tsx

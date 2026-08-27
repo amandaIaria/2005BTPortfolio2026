@@ -26,7 +26,7 @@
       {
         "title": "States",
         "tokens": [
-          {"name": "--error", "label": "Error"},
+          { "name": "--error", "label": "Error" },
           { "name": "--success", "label": "Success" },
           { "name": "--info", "label": "Info" },
           { "name": "--caution", "label": "Caution" }
@@ -36,7 +36,7 @@
       {
         "title": "Ink & Text",
         "tokens": [
-          {"name": "--foreground", "label": "foreground"},
+          { "name": "--foreground", "label": "foreground" },
           { "name": "--sea-ink", "label": "Sea Ink" },
           { "name": "--sea-ink-soft", "label": "Sea Ink Soft" }
         ]
@@ -77,7 +77,7 @@
           { "name": "--link-bg-hover", "label": "Link Background Hover" }
         ]
       },
-      
+
       {
         "title": "Hero Gradient",
         "tokens": [
