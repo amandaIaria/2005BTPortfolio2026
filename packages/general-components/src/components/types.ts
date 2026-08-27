@@ -640,7 +640,7 @@ export interface RevealingTentacleProps {
 
 // modern/homepage-navigation.tsx
 export interface HomepageNavigationProps {
-  json: { href: string; label: string }[];
+  json: { href: string; label: string; icon: string }[];
 }
 
 // modern/navigation.tsx
