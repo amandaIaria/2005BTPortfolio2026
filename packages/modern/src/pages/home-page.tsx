@@ -14,7 +14,7 @@ function ModernHomePage() {
   const { t } = useTranslation();
   const [showIntro, setShowIntro] = useState(() => initialPathname === '/');
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       {showIntro && <HomeLoadingOverlay onDone={() => setShowIntro(false)} />}
       <Hero
         image={{
@@ -34,7 +34,7 @@ function ModernHomePage() {
         className="max-w-5xl mx-auto absolute inset-0 flex items-center justify-center translate-y-100"
       >
         {/* <LoadIn json={json} /> */}
-        <HomepageNavigation json={json} /> 
+        <HomepageNavigation json={json} />
       </Container>
     </div>
   );

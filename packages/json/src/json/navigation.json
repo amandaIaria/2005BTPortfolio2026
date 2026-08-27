@@ -2,42 +2,50 @@
   {
     "href": "/about",
     "label": "About",
-    "icon": "user"
+    "icon": "user",
+    "color": "accent"
   },
   {
     "href": "/projects",
     "label": "Projects",
-    "icon": "briefcase"
+    "icon": "briefcase",
+    "color": "error"
   },
   {
     "href": "/art",
     "label": "Art",
-    "icon": "palette"
+    "icon": "palette",
+    "color": "success"
   },
   {
     "href": "/experience",
     "label": "Experience",
-    "icon": "clock"
+    "icon": "clock",
+    "color": "black"
   },
   {
     "href": "/shrines",
     "label": "Shrines",
-    "icon": "pentagram"
+    "icon": "pentagram",
+    "color": "accent"
   },
   {
     "href": "/case-studies",
     "label": "Case Studies",
-    "icon": "article"
+    "icon": "article",
+    "color": "error"
   },
 
   {
     "href": "/ui-kit",
     "label": "UI Kit",
-    "icon": "bag-simple"
+    "icon": "bag-simple",
+    "color": "success"
   },
   {
     "href": "/contact",
     "label": "Contact",
-    "icon": "chats-circle"
+    "icon": "chats-circle",
+    "color": "black"
   }
 ]

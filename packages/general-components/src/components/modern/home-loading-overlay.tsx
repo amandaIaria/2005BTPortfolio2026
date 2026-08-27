@@ -37,7 +37,7 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
   return (
     <motion.div
       data-component="home-loading-overlay"
-      className="fixed inset-0 z-100 backdrop-blur-2xl"
+      className="fixed w-screen h-screen inset-0 z-100 overflow-hidden backdrop-blur-2xl [&_[data-component='webgl-tentacle-wall']]:absolute! [&_[data-component='webgl-tentacle-wall']]:bottom-0!"
       initial={{ y: 0 }}
       animate={{ y: exiting ? '100%' : 0 }}
       transition={{ duration: 0.8, ease: [0.65, 0, 0.35, 1] }}
@@ -45,10 +45,11 @@ function HomeLoadingOverlay({ onDone }: HomeLoadingOverlayProps) {
         if (exiting) onDone();
       }}
     >
+      <div className="bg-white/20 h-screen w-screen absolute inset-0"></div>
       <WebGLTentacleWall
-        rotate={-90}
+        inFooter={true}
         tentacleCount={6}
-        colorValue="var(--color-cyan-500)"
+        colorValue="transparent"
       />
     </motion.div>
   );
