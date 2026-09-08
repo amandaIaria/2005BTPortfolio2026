@@ -1,0 +1,19 @@
+<div class="demo">
+  <h2>Page Transition — Zoom</h2>
+  <p class="desc">Click a card. It grows from its own position to fill the frame, swaps in new content, then fades away to reveal the page beneath — the same shared-element trick used for in-app navigation.</p>
+
+  <div class="stage" id="stage">
+    <div class="page page-a" id="pageA">
+      <div class="grid">
+        <button class="card" style="background:#2dd4bf" data-label="Case Study One">Case Study One</button>
+        <button class="card" style="background:#f59e0b" data-label="Case Study Two">Case Study Two</button>
+        <button class="card" style="background:#818cf8" data-label="Case Study Three">Case Study Three</button>
+      </div>
+    </div>
+    <div class="page page-b hidden" id="pageB">
+      <p>Welcome to the new page.</p>
+      <button class="back" id="backBtn">← Back</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+  </div>
+</div>

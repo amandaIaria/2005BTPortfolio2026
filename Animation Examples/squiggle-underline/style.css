@@ -1,0 +1,70 @@
+:root {
+  --bg: #0b0d10;
+  --text: #e8ecef;
+  --text-soft: #9aa5ad;
+  --lagoon: #2dd4bf;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+h2 { margin: 0 0 8px; font-size: 1.5rem; }
+.demo > p { color: var(--text-soft); margin: 0 0 40px; font-size: 0.95rem; }
+
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+}
+
+.squiggle-title {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.squiggle-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  color: var(--lagoon);
+  pointer-events: none;
+}
+
+.squiggle-line svg {
+  display: block;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.squiggle-title:hover .squiggle-line svg {
+  animation: squiggleSlide 1.2s ease-in-out infinite;
+}
+
+@keyframes squiggleSlide {
+  0% { transform: translateX(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}

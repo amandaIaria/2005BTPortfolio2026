@@ -1,0 +1,78 @@
+:root {
+  --bg: #0b0d10;
+  --surface: #14181d;
+  --accent: #2dd4bf;
+  --text: #e8ecef;
+  --text-soft: #9aa4ad;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); }
+
+.demo {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+h2 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+.desc { color: var(--text-soft); margin: 0 0 2rem; line-height: 1.5; }
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid #22282f;
+  border-radius: 12px;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  overflow: hidden;
+  padding: 0.25rem 0;
+  display: inline-block;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s ease, -webkit-text-stroke 0.2s ease;
+}
+
+.nav-link:hover .label {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+}
+
+.marquee-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+
+.nav-link:hover .marquee-track {
+  opacity: 1;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-item {
+  flex: none;
+  padding-right: 1.5em;
+  color: var(--accent);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}

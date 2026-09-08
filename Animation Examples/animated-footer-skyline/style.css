@@ -1,0 +1,122 @@
+:root {
+  --bg: #05070a;
+  --text: #e8ecef;
+  --text-soft: #9aa5ad;
+  --lagoon: #2dd4bf;
+  --sand: #f2c14e;
+  --building: #10151b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+h2 { margin: 0 0 8px; font-size: 1.5rem; }
+.demo > p { color: var(--text-soft); margin: 0 0 32px; font-size: 0.95rem; }
+
+.skyline {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #050a12, #0b1420 70%, #10151b);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.clouds {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  filter: blur(2px);
+  animation-name: drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.cloud-a { top: 24px; width: 140px; height: 36px; animation-duration: 40s; }
+.cloud-b { top: 60px; width: 100px; height: 28px; animation-duration: 60s; animation-delay: -20s; }
+
+.buildings {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.building {
+  position: relative;
+  flex: 1;
+  background: var(--building);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 4px;
+  padding: 6px;
+}
+
+.window {
+  width: 6px;
+  height: 6px;
+  background: var(--sand);
+  animation-name: flicker;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: .1; }
+  20% { opacity: .9; }
+  40% { opacity: .3; }
+  60% { opacity: 1; }
+  80% { opacity: .5; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .2; }
+  50% { opacity: 1; }
+}
+
+@keyframes drift {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(100vw + 100%)); }
+}

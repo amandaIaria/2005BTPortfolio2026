@@ -1,0 +1,107 @@
+:root {
+  --bg: #0b0d10;
+  --surface: #14181d;
+  --accent: #2dd4bf;
+  --text: #e8ecef;
+  --text-soft: #9aa4ad;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); }
+
+.demo {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+h2 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+.desc { color: var(--text-soft); margin: 0 0 1.5rem; line-height: 1.5; }
+
+.stage {
+  position: relative;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid #22282f;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.logo { font-weight: 700; }
+
+.hamburger {
+  width: 32px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 11px; }
+.hamburger span:nth-child(3) { top: 22px; }
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  background: var(--bg);
+  transition: width 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel.open { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .panel { transition: none; }
+}
+
+.panel-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.panel.open .panel-bg { opacity: 1; }
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.links li {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}

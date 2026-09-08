@@ -1,0 +1,81 @@
+:root {
+  --bg: #05080a;
+  --text: #e8ecef;
+  --text-soft: #9aa5ad;
+  --lagoon: #2dd4bf;
+  --lagoon-deep: #0f766e;
+  --ink: #7dd3c0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+h2 { margin: 0 0 8px; font-size: 1.5rem; }
+.demo > p { color: var(--text-soft); margin: 0 0 32px; font-size: 0.95rem; }
+
+.stage {
+  height: 260px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #051012, #071a1a 60%, #04100f);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tentacle-scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tentacle {
+  animation: tentacle-sway 4s ease-in-out infinite;
+}
+
+.tentacle path {
+  fill: none;
+  stroke: var(--lagoon-deep);
+  stroke-width: 14;
+  stroke-linecap: round;
+}
+
+.sucker {
+  fill: var(--lagoon);
+  animation: sucker-pulse 2s ease-in-out infinite;
+}
+
+.ink-blob {
+  fill: var(--ink);
+  animation: ink-float 6s ease-out infinite;
+}
+
+@keyframes tentacle-sway {
+  0% { transform: translateX(0) scaleY(1); }
+  25% { transform: translateX(3px) scaleY(1.02) rotate(1deg); }
+  50% { transform: translateX(-2px) scaleY(.98); }
+  75% { transform: translateX(4px) scaleY(1.01) rotate(-1deg); }
+  100% { transform: translateX(0) scaleY(1); }
+}
+
+@keyframes sucker-pulse {
+  0%, 100% { opacity: .4; }
+  50% { opacity: 1; }
+}
+
+@keyframes ink-float {
+  0% { transform: translateY(0) scale(1); opacity: .15; }
+  50% { transform: translateY(-20px) scale(1.5); opacity: .05; }
+  100% { transform: translateY(-40px) scale(.5); opacity: 0; }
+}
