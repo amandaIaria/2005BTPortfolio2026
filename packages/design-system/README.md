@@ -13,7 +13,7 @@ Imported once from the app's global stylesheet:
 ## Contents
 
 - `src/tokens.css` — brand color tokens (light + `data-theme="dark"`), spacing/font-size/radius scale, font families.
-- `legacy-bt-scss/` — reference-only copy of the BT-Design-System SCSS source (`github.com/amandaIaria/BT-Design-System`, path `src/assets/style/_bt`). Compiled and imported by `src/pages/legacy-styles-page.tsx` (the `/ui-kit/legacy-styles` showcase). As a narrow, approved exception to its otherwise byte-identical status, `_generic/_generic.scss` had two unresolvable webpack-style `@import`s fixed/removed to make that compilation possible. Otherwise still source material for future one-file-at-a-time translation into `tokens.css` / Tailwind utilities.
+- `legacy-bt-scss/` — reference-only copy of the BT-Design-System SCSS source (`github.com/amandaIaria/BT-Design-System`, path `src/assets/style/_bt`). Compiled and imported (via a relative path — this repo resolves JS/TS imports through tsconfig `paths`, not package.json `exports`, so cross-package scss stays a plain relative import) by `packages/general-components/src/pages/legacy-styles-page.tsx` (the `/ui-kit/legacy-styles` showcase). As a narrow, approved exception to its otherwise byte-identical status, `_generic/_generic.scss` had two unresolvable webpack-style `@import`s fixed/removed to make that compilation possible. Otherwise still source material for future one-file-at-a-time translation into `tokens.css` / Tailwind utilities.
 
 ## Import order
 

@@ -7,9 +7,10 @@
     "heroBottomText": "Tragedy",
     "heroCaption": "Lets build something beautiful together.",
     "heroImageAlt": "Portrait in shadow against a black background",
-    "heading": "I'm a <accent>FrontEnd</accent> Developer",
-    "subheading": "Let's Build something <accent>Beautifu</accent> together",
-    "hiddenH1": "The Portfolio of Alex Iaria"
+    "heading": "Let's Build something <accent>Beautiful</accent> together",
+    "subheading": "Or not. I'm not your dad.",
+    "hiddenH1": "The Portfolio of Alex Iaria",
+    "nameStatement": "I'm Alex, <br /> a <accent>FrontEnd</accent> Developer"
   },
   "about": {
     "ctaLabel": "Contact Me"
@@ -26,7 +27,10 @@
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
     "messagePlaceholder": "Your Message",
-    "submitLabel": "Send Message"
+    "submitLabel": "Send Message",
+    "sendingLabel": "Sending…",
+    "successMessage": "Thanks for reaching out — I'll get back to you soon.",
+    "errorMessage": "Something went wrong sending your message. Please try again or email me directly."
   },
   "experience": {
     "heading": "Experience",
@@ -52,7 +56,7 @@
   "shrines": {
     "kicker": "The Archive",
     "heading": "Shrines",
-    "intro": "Small monuments to the code that shaped me — some sacred, some cursed.",
+    "intro": "2005 Called and said these are small monuments to the code that shaped me — some sacred, some cursed.",
     "detail": {
       "backLink": "Shrines",
       "galleryHeading": "Gallery"
@@ -72,5 +76,18 @@
   },
   "loadIn": {
     "selfPortraitAlt": "Self Portrait"
+  },
+  "homepageNavigation": {
+    "selfPortraitAlt": "Self Portrait",
+    "navLabel": "Homepage navigation"
+  },
+  "imageModal": {
+    "viewFullLabel": "View full image: {{alt}}",
+    "description": "Full-size view of the image. Press Escape or click outside to close.",
+    "defaultTitle": "Image Comparison"
+  },
+  "imageComparison": {
+    "beforeLabel": "Before",
+    "afterLabel": "After"
   }
 }

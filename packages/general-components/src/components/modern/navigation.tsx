@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { cn } from '../../lib/utils';
-import { Container } from '../ui/container';
+import { Container } from '../atoms/container';
 import { WebGLTentacleWall } from '../webgl-tentacle-wall';
 import { Link } from '@tanstack/react-router';
 import json from '@json/data/json/navigation.json';
@@ -9,7 +9,7 @@ import type {
   NavigationProps,
   NavLinkProps,
   NavItemProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 const TICKER_SPEED_PX_PER_SECOND = 120;
 

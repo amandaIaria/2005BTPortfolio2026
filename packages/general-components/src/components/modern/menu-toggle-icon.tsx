@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import type { MenuToggleIconProps } from '@general-purpose/types';
+import type { MenuToggleIconProps } from '@packages/general-components/src/components/types.ts';
 
 function MenuToggleIcon({ isOpen, shouldReduceMotion }: MenuToggleIconProps) {
   const transition = {

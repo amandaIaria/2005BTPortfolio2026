@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '../lib/utils';
-import type { WebGLTentacleWallProps } from '@general-purpose/types';
+import type { WebGLTentacleWallProps } from '@packages/general-components/src/components/types.ts';
 
 /* ------------------------------------------------------------------ */
 /*  Shader sources                                                     */
@@ -22,6 +22,9 @@ const FRAG = `
   uniform float u_time;
   uniform vec2  u_resolution;
   uniform float u_tentacleCount;
+  uniform float u_wall_edge;
+  uniform float u_sideways;
+  uniform float u_in_footer;
   uniform float u_invert;
   uniform vec3  u_customColor;
   uniform float u_useCustomColor;
@@ -122,16 +125,31 @@ const FRAG = `
     vec2 pos = gl_FragCoord.xy;
     float w = u_resolution.x;
     float h = u_resolution.y;
+
+    if (u_in_footer > 0.5) {
+      pos = pos.yx;
+      float swap = w;
+      w = h;
+      h = swap;
+    }
     float time = u_time;
     int count = int(u_tentacleCount);
 
     pos.y = h - pos.y;
 
-    float wallEdge = w * 0.48;
+    float wallEdge = u_in_footer == 1.0 ? 10.0 :  w * u_wall_edge;
+    // u_invert false -> tentacles/wall black, background white.
+    // u_invert true  -> tentacles/wall white, background black.
     vec3 invertColor = mix(vec3(0.0), vec3(1.0), u_invert);
     vec3 baseColor = mix(invertColor, u_customColor, u_useCustomColor);
+    // Background is the exact opposite of the tentacle/wall color — drawn
+    // by the shader itself so this component never depends on the canvas
+    // element's own CSS background classes staying in sync with u_invert.
+    // Custom-color usage keeps the old transparent-background look (it's a
+    // one-off brand-color effect, not part of the dark/light inversion).
+    vec3 bgColor = mix(vec3(1.0) - invertColor, baseColor, u_useCustomColor);
 
-    vec3 col = baseColor;
+    vec3 col = bgColor;
     float alpha = 1.0;
     if (pos.x < wallEdge) {
       col = baseColor;
@@ -155,8 +173,13 @@ const FRAG = `
         totalBody = max(totalBody, body);
       }
 
-      col = mix(col, baseColor, totalBody);
-      alpha = totalBody;
+      if (u_useCustomColor > 0.5) {
+        col = baseColor;
+        alpha = totalBody;
+      } else {
+        col = mix(bgColor, baseColor, totalBody);
+        alpha = 1.0;
+      }
     }
 
     gl_FragColor = vec4(col, alpha);
@@ -206,6 +229,23 @@ function resolveColorToRGB(value: string): [number, number, number] | null {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Dark-mode detection                                                */
+/* ------------------------------------------------------------------ */
+
+// Checked directly every animation frame instead of cached via a
+// MutationObserver — the observer approach missed class/attribute changes
+// in practice (React re-renders can disconnect/reconnect it around the same
+// tick the toggle mutates the DOM, dropping the pending mutation record).
+// A plain per-frame read is just as cheap and can't get out of sync.
+function computeIsDark(): boolean {
+  const root = document.documentElement;
+  return (
+    root.classList.contains('dark') ||
+    root.getAttribute('data-theme') === 'dark'
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  WebGL bootstrap                                                    */
 /* ------------------------------------------------------------------ */
 
@@ -213,7 +253,9 @@ function initWebGL(
   canvas: HTMLCanvasElement,
   colorValue: string | undefined,
   tentacleCount: number,
-  isDarkRef: React.RefObject<boolean>,
+  baseSize: number,
+  isSideways: boolean,
+  inFooter: boolean,
 ): (() => void) | null {
   const gl = canvas.getContext('webgl', { alpha: true, antialias: true });
   if (!gl) return null;
@@ -255,11 +297,17 @@ function initWebGL(
   const uTime = gl.getUniformLocation(prog, 'u_time');
   const uRes = gl.getUniformLocation(prog, 'u_resolution');
   const uCount = gl.getUniformLocation(prog, 'u_tentacleCount');
+  const uWallEdge = gl.getUniformLocation(prog, 'u_wall_edge');
+  const uSideways = gl.getUniformLocation(prog, 'u_sideways');
+  const uInFooter = gl.getUniformLocation(prog, 'u_in_footer');
   const uInvert = gl.getUniformLocation(prog, 'u_invert');
   const uCustomColor = gl.getUniformLocation(prog, 'u_customColor');
   const uUseCustomColor = gl.getUniformLocation(prog, 'u_useCustomColor');
 
   gl.uniform1f(uCount, tentacleCount);
+  gl.uniform1f(uWallEdge, baseSize);
+  gl.uniform1f(uSideways, isSideways ? 1 : 0);
+  gl.uniform1f(uInFooter, inFooter ? 1 : 0);
 
   const customRGB = colorValue ? resolveColorToRGB(colorValue) : null;
   gl.uniform1f(uUseCustomColor, customRGB ? 1 : 0);
@@ -272,8 +320,10 @@ function initWebGL(
   const dpr = Math.min(devicePixelRatio, 1.5);
 
   function frame() {
-    const w = canvas.clientWidth * dpr;
-    const h = canvas.clientHeight * dpr;
+    const cw = canvas.clientWidth * dpr;
+    const ch = canvas.clientHeight * dpr;
+    const w = isSideways ? cw : ch;
+    const h = isSideways ? ch : cw;
     if (canvas.width !== w || canvas.height !== h) {
       canvas.width = w;
       canvas.height = h;
@@ -281,7 +331,7 @@ function initWebGL(
     gl!.viewport(0, 0, canvas.width, canvas.height);
     gl!.uniform1f(uTime, (performance.now() - start) / 1000);
     gl!.uniform2f(uRes, canvas.width, canvas.height);
-    gl!.uniform1f(uInvert, isDarkRef.current ? 1 : 0);
+    gl!.uniform1f(uInvert, computeIsDark() ? 1 : 0);
     gl!.drawArrays(gl!.TRIANGLES, 0, 6);
     raf = requestAnimationFrame(frame);
   }
@@ -318,51 +368,46 @@ function WebGLTentacleWall({
   tentacleCount = 6,
   rotate = 0,
   colorValue,
+  baseSize = 0.48,
+  inFooter = false,
   className,
   children,
   ...props
 }: WebGLTentacleWallProps) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const isDarkRef = React.useRef(
-    typeof document !== 'undefined' &&
-      document.documentElement.classList.contains('dark'),
-  );
+
+  // 90/270 (either direction) swaps which axis is "wide" — the wall/reach
+  // calculations need to swap width and height in lockstep.
+  // inFooter draws the swap in the shader instead, so the CSS-rotate sizing
+  // hack below doesn't apply.
+  const isSideways = !inFooter && Math.abs(((rotate % 180) + 180) % 180) === 90;
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const cleanup = initWebGL(canvas, colorValue, tentacleCount, isDarkRef);
+    const cleanup = initWebGL(
+      canvas,
+      colorValue,
+      tentacleCount,
+      baseSize,
+      isSideways,
+      inFooter,
+    );
     return () => cleanup?.();
-  }, [tentacleCount, colorValue]);
-
-  React.useEffect(() => {
-    const root = document.documentElement;
-    const observer = new MutationObserver(() => {
-      isDarkRef.current = root.classList.contains('dark');
-    });
-    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
-  }, []);
-
-  // 90/270 (either direction) swaps which axis is "wide" — size the
-  // pre-rotation box on the opposite axis so it still fills the
-  // viewport once rotated, instead of leaving gaps or overflowing.
-  const isSideways = Math.abs(((rotate % 180) + 180) % 180) === 90;
+  }, [tentacleCount, colorValue, baseSize, isSideways, inFooter]);
 
   return (
     <div
       data-component="webgl-tentacle-wall"
-      className={cn('relative h-dvh w-dvw overflow-hidden', className)}
+      className={cn(
+        'relative h-dvh w-dvw',
+        inFooter && 'relative h-200 w-dvw -mt-100',
+        className,
+      )}
       {...props}
     >
-      <div
-        className={cn(
-          'absolute left-1/2 top-1/2',
-          isSideways ? 'h-dvw w-dvh' : 'h-dvh w-dvw',
-        )}
-        style={{ transform: `translate(-50%, -50%) rotate(${rotate}deg)` }}
-      >
-        {!isSideways && (
+      <div className={cn('h-full w-full relative')}>
+        {!inFooter && (
           <div
             data-component="webgl-tentacle-wall-backdrop"
             className="absolute inset-0 w-[200vw] h-[200vh] top-[-50vw] bg-white opacity-50 backdrop-blur-lg dark:bg-black"
@@ -373,17 +418,19 @@ function WebGLTentacleWall({
         )}
         <canvas
           ref={canvasRef}
-          className={cn('relative block h-full w-full', {
-            'backdrop-blur-lg': isSideways,
-            'bg-white dark:bg-black': !isSideways,
+          className={cn('relative block', {
+            'backdrop-blur-lg absolute bottom-0': inFooter,
+            // 'bg-white dark:bg-black': !inFooter,
           })}
           aria-hidden="true"
+          style={{
+            height: inFooter ? '250%' : '100%',
+            width: '100%',
+          }}
         />
       </div>
       {children && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          {children}
-        </div>
+        <div className=" flex items-center justify-center">{children}</div>
       )}
     </div>
   );

@@ -1,9 +1,6 @@
 import json from '@json/data/json/shrines.json';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
-import type {
-  ShrineListItemProps,
-  ShrineListingProps,
-} from '@general-purpose/types';
+import type { ShrineListItemProps, ShrineListingProps } from '@general/types';
 
 const items = json.listing as ShrineListItemProps[];
 
@@ -19,16 +16,14 @@ function ShrineListing({ kicker, heading, intro }: ShrineListingProps) {
             {kicker}
           </p>
         )}
-        <h1 className="text-3xl font-bold text-(--sea-ink) sm:text-4xl">
-          {heading}
-        </h1>
+        <h1 className="">{heading}</h1>
         {intro && <p className="text-(--sea-ink-soft)">{intro}</p>}
       </div>
       {items.map((item) => (
         <InternalTransitionLink
           key={item.slug}
           href={`/shrines/${item.slug}`}
-          className="group relative aspect-square overflow-hidden bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg"
+          className="w-full h-full group relative aspect-square overflow-hidden bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg m-0 p-0"
         >
           <figure className="h-full w-full">
             <img

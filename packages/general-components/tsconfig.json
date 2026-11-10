@@ -6,7 +6,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@general-purpose/types": ["./src/components/types.ts"]
+      "@packages/general-components/src/components/types.ts": [
+        "./src/components/types.ts"
+      ]
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "moduleResolution": "bundler",

@@ -1,70 +1,51 @@
 import {
   Button,
   Container,
+  ImageModal,
   InternalTransitionLink,
-  WebGLTentacleWall,
+  Typewriter,
 } from '@general/components';
 import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import DOMPurify from 'dompurify';
-
-interface ModernAboutPageProps {
-  about: {
-    title: string;
-    name: string;
-    image: {
-      src: string;
-      alt: string;
-      height: number;
-      width: number;
-    };
-    summary: string;
-    full: string;
-    social: string[];
-  };
-}
+import type { ModernAboutPageProps } from '@general/components';
 
 function ModernAboutPage() {
   const { about }: ModernAboutPageProps = json;
   const { t } = useTranslation();
+
   return (
     <Container
       data-component="modern-about-page"
-      // className="max-w-5xl h-screen mx-auto grid items-center"
-      className="max-w-[1200px] mx-auto grid items-center py-20"
+      className="max-w-300 mx-auto grid items-center pt-22 pb-0 md:pb-20 md:pt-20"
     >
-      <div className="grid grid-cols-1 gap-20 md:grid-cols-[auto_1fr]">
-        <div className="grid gap-10 items-center h-[70%]">
-          <div className="flex sticky top-[100px] flex-col gap-10">
+      <div className="grid grid-cols-1 px-4 md:px-0 gap-4 md:gap-20 md:grid-cols-[auto_1fr]">
+        <header className="grid items-center h-full md:h-[70%]">
+          <div className="flex md:sticky md:top-25 flex-col gap-0 md:gap-10">
             <div className="flex gap-10 items-center">
-              <div className="overflow-hidden rounded-lg h-[100px] w-[100px] flex items-center justify-center">
-                <img
-                  src={about.image.src}
-                  alt={about.image.alt}
-                  height={about.image.height}
-                  width={about.image.width}
-                  className="object-cover w-full h-full object-center block"
+              <div className="overflow-hidden rounded-lg h-25 w-25 flex items-center justify-center">
+                <ImageModal
+                  variant="compare"
+                  before={about.images.before}
+                  after={about.images.after}
+                  imageClassName=""
                 />
               </div>
-              <h1 className="text-6xl">{about.title}</h1>
+              <h1 className="w-full text-right md:text-left">{about.title}</h1>
             </div>
-            <div>
-              <Button
-                asChild
-                variant="link"
-                className="pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
+            <div className="text-right md:text-left">
+              <InternalTransitionLink
+                href="/contact"
+                className=" pointer p-0 text-xl font-bold transition-all duration-500 decoration-accent"
               >
-                <InternalTransitionLink href="/contact">
-                  {t('about.ctaLabel')}
-                  <ArrowUpRightIcon className="inline-block h-4 w-4 text-accent bold" />
-                </InternalTransitionLink>
-              </Button>
+                <span>{t('about.ctaLabel')}</span>
+                <ArrowUpRightIcon className="ml-2 inline-block h-5 w-5 text-accent bold" />
+              </InternalTransitionLink>
             </div>
           </div>
-        </div>
+        </header>
         <div className="flex flex-col">
-          <div className="grid grid-cols-1 gap-10 pt-20 pb-20">
+          <div className="grid grid-cols-1 gap-4 md:gap-10 md:pt-20 md:pb-20">
             <div className="text-3xl font-bold flex gap-4 items-center">
               <span>{about.name}</span>
               <span className="text-accent animate-caret-blink duration-100">
@@ -74,12 +55,7 @@ function ModernAboutPage() {
             <div className="text-2xl font-medium text-accent">
               <p>{about.summary}</p>
             </div>
-            <div
-              className="prose py-4"
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(about.full),
-              }}
-            />
+            <Typewriter text={about.full} className="pt-0 md:py-4" />
           </div>
         </div>
       </div>

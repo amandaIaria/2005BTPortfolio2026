@@ -6,7 +6,7 @@ function ModernProjectsPage() {
   const { t } = useTranslation();
   return (
     <Container
-      className="w-screen h-screen overflow-hidden"
+      className="md:w-screen md:h-screen overflow-hidden"
       data-component="modern-projects-page"
     >
       <Slider

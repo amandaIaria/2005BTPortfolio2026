@@ -1,0 +1,47 @@
+import { forwardRef } from 'react';
+import { cn } from '../../lib/utils';
+import { UIKitNav } from './ui-kit-nav';
+import { ThemeToggle } from '../modern/theme-toggle';
+import { PortfolioSeparator } from '../atoms/portfolio-separator';
+
+export interface UIKitHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  header: {
+    kicker: string;
+    title: string;
+    descriptionBefore?: string;
+    descriptionCode?: string;
+    descriptionAfter?: string;
+    description?: string;
+  };
+}
+
+const UIKitHeader = forwardRef<HTMLDivElement, UIKitHeaderProps>(
+  ({ header, className, ...props }, ref) => (
+    <header
+      ref={ref}
+      data-component="ui-kit-header"
+      className={cn(className)}
+      {...props}
+    >
+      <div>
+        <UIKitNav />
+      </div>
+      <ThemeToggle />
+      <div>
+        <p className="island-kicker mb-2">{header.kicker}</p>
+        <h1 className="display-title text-accent">{header.title}</h1>
+        <p className="mt-3 max-w-xl mb-10">
+          {header.descriptionBefore && header.descriptionBefore}
+          {header.descriptionCode && <code>{header.descriptionCode}</code>}
+          {header.descriptionAfter && header.descriptionAfter}
+          {header.description && header.description}
+        </p>
+      </div>
+
+      <PortfolioSeparator />
+    </header>
+  ),
+);
+UIKitHeader.displayName = 'UIKitHeader';
+
+export { UIKitHeader };

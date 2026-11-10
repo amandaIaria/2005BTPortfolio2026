@@ -6,7 +6,7 @@ import { boxScale } from './load-in';
 import type {
   LoadInCardProps,
   RevealingTentacleProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 const TENTACLE_VIEWBOX = '0 0 423 513';
 

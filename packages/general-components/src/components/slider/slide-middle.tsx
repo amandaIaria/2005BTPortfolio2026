@@ -2,7 +2,7 @@ export function SliderMiddle() {
   return (
     <>
       <div
-        className="absolute top-0 left-1/2 w-1 h-full bg-line z-5 hidden @lg:block pointer-events-none"
+        className="absolute top-0 left-1/2 w-1 h-full bg-line z-5 hidden md:block pointer-events-none"
         aria-hidden="true"
       />
 
@@ -12,7 +12,7 @@ export function SliderMiddle() {
       />
 
       <div
-        className="absolute top-1/2 z-6 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden @lg:block pointer-events-none"
+        className="absolute top-1/2 z-6 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block pointer-events-none"
         aria-hidden="true"
       >
         <div className="absolute h-8 w-8 -top-1 z-6 left-[19px] rounded-full bg-accent mx-auto" />

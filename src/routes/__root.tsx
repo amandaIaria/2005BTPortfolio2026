@@ -54,7 +54,7 @@ function RootComponent() {
       <PageTransitionProvider>
         <Outlet />
       </PageTransitionProvider>
-      <TanStackDevtools
+      {/* <TanStackDevtools
         config={{
           position: 'bottom-right',
         }}
@@ -64,7 +64,7 @@ function RootComponent() {
             render: <TanStackRouterDevtoolsPanel />,
           },
         ]}
-      />
+      /> */}
     </TooltipProvider>
   );
 }

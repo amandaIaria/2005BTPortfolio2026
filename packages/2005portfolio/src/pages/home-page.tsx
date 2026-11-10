@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import {
   Container,
   ScrollArea,
-  TempNav,
   useAvoidOverlap,
   ImageHeader,
   SidebarOld,
@@ -24,9 +23,6 @@ export default function HomePage() {
     <Container>
       <header data-section="header">
         <ImageHeader pageName="Home" src="./temp-header.jpg" alt="" />
-        <div className="p-4 border mt-4">
-          <TempNav />
-        </div>
       </header>
       <section
         className="grid grid-cols-[175px_1fr] gap-4 mt-4 grid-rows-1 max-h-[calc(100vh-704px)] h-full"

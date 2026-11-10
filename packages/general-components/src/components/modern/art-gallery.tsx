@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import json from '@json/data/json/art.json';
-import type { ArtItemProps } from '@general-purpose/types';
+import type { ArtItemProps } from '@packages/general-components/src/components/types.ts';
 
 // CSS columns fills column-major in DOM order. The source data cycles through
 // aspect ratios every 5 items, which lines up evenly with 3 columns of 10 and

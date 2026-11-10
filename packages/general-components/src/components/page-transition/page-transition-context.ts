@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import type { PageTransitionContextValueProps } from '@general-purpose/types';
+import type { PageTransitionContextValueProps } from '@packages/general-components/src/components/types.ts';
 
 export const PageTransitionContext =
   createContext<PageTransitionContextValueProps | null>(null);

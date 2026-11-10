@@ -6,7 +6,7 @@ import { PageTransitionOverlay } from './page-transition-overlay';
 import type {
   StartTransitionOptionsProps,
   PageTransitionProviderProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 const GROW_TRANSITION = { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const };
 const FADE_TRANSITION = { duration: 0.35, ease: 'easeInOut' as const };

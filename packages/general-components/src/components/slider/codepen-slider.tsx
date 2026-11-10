@@ -14,7 +14,7 @@ import type {
   CodepenUseSliderResultProps,
   CodepenSliderStateProps,
   CodepenSliderActionProps,
-} from '@general-purpose/types';
+} from '@packages/general-components/src/components/types.ts';
 
 function reducer(
   state: CodepenSliderStateProps,

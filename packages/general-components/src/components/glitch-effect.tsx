@@ -2,7 +2,7 @@ import { useGlitch } from 'react-powerglitch';
 import { cn } from '../lib/utils';
 import { useEffect } from 'react';
 import { useReducedMotion } from 'motion/react';
-import type { GlitchEffectProps } from '@general-purpose/types';
+import type { GlitchEffectProps } from '@packages/general-components/src/components/types.ts';
 
 function GlitchEffect({
   children,

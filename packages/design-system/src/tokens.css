@@ -2,6 +2,10 @@
 
 :root {
   --flat-black: #333333;
+  --bt-active: #0cbfef;
+  --bt-active-deep: #08a5d0;
+  --bt-error: #ef0c49;
+  --bt-success: #05f7b5;
   --sea-ink: #173a40;
   --sea-ink-soft: #416166;
   --lagoon: #4fb8b2;
@@ -129,6 +133,11 @@
   --color-link-bg-hover: var(--link-bg-hover);
   --color-hero-a: var(--hero-a);
   --color-hero-b: var(--hero-b);
+  --color-flat-black: var(--flat-black);
+  --color-bt-active: var(--bt-active);
+  --color-bt-active-deep: var(--bt-active-deep);
+  --color-bt-error: var(--bt-error);
+  --color-bt-success: var(--bt-success);
 
   /* Font Families */
   --font-heading: var(--font-mono);
