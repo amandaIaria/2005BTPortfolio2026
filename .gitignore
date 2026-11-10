@@ -16,3 +16,5 @@ todos.json
 packages/json/src/markdown/Portfolio/.obsidian/
 
 deno.lock
+
+workspace.code-workspace
