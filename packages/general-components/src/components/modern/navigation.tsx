@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { cn } from '../../lib/utils';
-import { Container } from '../ui/container';
+import { Container } from '../atoms/container';
 import { WebGLTentacleWall } from '../webgl-tentacle-wall';
 import { Link } from '@tanstack/react-router';
 import json from '@json/data/json/navigation.json';
