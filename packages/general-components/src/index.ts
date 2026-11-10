@@ -13,7 +13,7 @@ export {
   PortfolioButton,
   portfolioButtonVariants,
 } from './components/atoms/portfolio-button';
-export { Container } from './components/ui/container';
+export { Container } from './components/atoms/container';
 export { Input } from './components/ui/input';
 export { Label } from './components/ui/label';
 export { Textarea } from './components/ui/textarea';
