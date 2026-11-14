@@ -11,7 +11,7 @@ name: ESLint
 
 on:
   push:
-    branches: ['main', 'Classic', 'Staging']
+    branches: ['main', 'env/staging', 'env/prod']
   pull_request:
     # The branches below must be a subset of the branches above
     branches: ['main']
@@ -47,7 +47,6 @@ jobs:
           SARIF_ESLINT_IGNORE_SUPPRESSED: 'true'
         run: npx eslint .
           --format @microsoft/eslint-formatter-sarif
-          --output-file eslint-results.sarif
         continue-on-error: true
 
       - name: Upload analysis results to GitHub
