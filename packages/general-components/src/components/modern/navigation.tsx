@@ -46,24 +46,23 @@ function NavItem({ link, onNavigate }: NavItemProps) {
     };
   }, []);
 
-  const solidClassNames = 'text-solid group-hover:text-outline';
+  const solidClassNames = 'text-solid group-hover:text-outline relative block pl-4';
   const outlineClassNames = 'text-outline group-hover:text-solid';
   const isHiddenClass = 'transition-opacity duration-300 group-hover:opacity-0';
 
   return (
-    <li className="group relative">
+    <li className="group relative w-screen">
       <Link
         ref={itemRef}
         to={link.href}
         onClick={onNavigate}
-        className={cn('relative z-10 text-white')}
+        className={cn('relative z-10 text-white ')}
       >
         <span className={cn(solidClassNames, isHiddenClass)}>{link.label}</span>
         {repeatCount > 0 && (
           <div
             aria-hidden="true"
-            style={{ top: centerY, transform: 'translateY(-50%)' }}
-            className="pointer-events-none fixed left-0 z-0 w-screen overflow-hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            className="pointer-events-none absolute top-0 left-0 z-0 w-screen overflow-hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           >
             <motion.div
               className="flex items-center whitespace-nowrap gap-5"
@@ -102,7 +101,7 @@ function Navigation({ isOpen, onNavigate }: NavigationProps) {
         </div>
       )}
       <Container data-component="modern-navigation">
-        <nav className="grid h-screen place-content-center">
+        <nav className="grid h-screen">
           <ul className="font-mono grid gap-[clamp(0.5rem,6vh,2rem)] text-[clamp(1.5rem,6vh,6rem)] font-bold uppercase text-white mix-blend-difference">
             {json.map((link: NavLinkProps) => (
               <NavItem key={link.href} link={link} onNavigate={onNavigate} />

@@ -43,6 +43,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup Java JDK
+      - uses: actions/setup-java@v6
+        with:
+          distribution: microsoft
+          java-version: '25'
+      - run: java --version
+
       - name: Analyze with SonarCloud
 
         # You can pin the exact commit or the version.
