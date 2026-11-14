@@ -11,10 +11,10 @@ describe('SocialBar', () => {
     const [, linkedinHref, githubHref] = json.about.social;
     render(<SocialBar />);
     expect(
-      screen.getByRole('link', { name: 'LinkedIn' }).getAttribute('href'),
+      screen.getByRole('link', { name: 'LinkedIn Profile' }).getAttribute('href'),
     ).toBe(linkedinHref);
     expect(
-      screen.getByRole('link', { name: 'GitHub' }).getAttribute('href'),
+      screen.getByRole('link', { name: 'GitHub Profile' }).getAttribute('href'),
     ).toBe(githubHref);
   });
 
@@ -26,17 +26,17 @@ describe('SocialBar', () => {
       />,
     );
     expect(
-      screen.getByRole('link', { name: 'LinkedIn' }).getAttribute('href'),
+      screen.getByRole('link', { name: 'LinkedIn Profile' }).getAttribute('href'),
     ).toBe('https://linkedin.com/in/example');
     expect(
-      screen.getByRole('link', { name: 'GitHub' }).getAttribute('href'),
+      screen.getByRole('link', { name: 'GitHub Profile' }).getAttribute('href'),
     ).toBe('https://github.com/example');
   });
 
   it('applies a custom className to the root element', () => {
     render(<SocialBar className="extra-class" />);
     const root = screen
-      .getByRole('link', { name: 'LinkedIn' })
+      .getByRole('link', { name: 'LinkedIn Profile' })
       .closest('[data-component="social-bar"]');
     expect(root?.className).toContain('extra-class');
   });
