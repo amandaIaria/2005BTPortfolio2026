@@ -1,7 +1,6 @@
-import * as React from 'react';
 import { cn } from '../../lib/utils';
-import { Badge } from '../ui/badge';
 import type { ExperienceListProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioBadge } from '../atoms/portfolio-badge';
 
 function ExperienceList({
   experiences,
@@ -35,9 +34,9 @@ function ExperienceList({
               </p>
               <div className="flex flex-wrap gap-2">
                 {experience.tags.map((tag) => (
-                  <Badge key={tag} variant="outline">
+                  <PortfolioBadge key={tag} variant="outline">
                     {tag}
-                  </Badge>
+                  </PortfolioBadge>
                 ))}
               </div>
               <p className="text-muted-foreground">{experience.summary}</p>
