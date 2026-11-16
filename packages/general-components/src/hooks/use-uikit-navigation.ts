@@ -1,5 +1,6 @@
 import { useActiveSection } from '../hooks/use-active-section';
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useEffect, useState } from 'react';
+import type { RefObject } from 'react';
 
 export function useUIkitNavigation(ref: RefObject<HTMLDivElement | null>) {
     const [tocItems, setTocItems] = useState<{ id: string; title: string }[]>([]);
