@@ -38,6 +38,7 @@ export default function HerosPage() {
     heading: t('heros.heading'),
     hiddenH1: t('heros.hiddenH1'),
     className: 'relative h-[70vh] w-full',
+    nameStatement: "asdfasdf"
   };
 
   return (

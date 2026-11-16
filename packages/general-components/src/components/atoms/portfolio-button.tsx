@@ -10,16 +10,16 @@ const portfolioButtonVariants = cva(
     variants: {
       variant: {
         default:
-          'dark:shadow-[inset_0_-4px_0_0_#ffffff)] border-transparent bg-accent font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--flat-black)] transition-[box-shadow,transform] hover:bg-accent-hover active:translate-y-1 active:shadow-none dark:active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent-hover focus-visible:outline-offset-8',
+          'dark:shadow-[inset_0_-4px_0_0_#ffffff)] no-underline border-transparent bg-accent font-extrabold text-white uppercase shadow-[inset_0_-4px_0_0_var(--flat-black)] transition-[box-shadow,transform] hover:bg-accent-hover active:translate-y-1 active:shadow-none dark:active:shadow-none focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent-hover focus-visible:outline-offset-8',
         outline:
           'border border-accent text-accent hover:bg-accent-hover hover:text-white',
         secondary:
-          'dark:shadow-[inset_0_-4px_0_0_#ffffff] shadow-[inset_0_-4px_0_0_#000000] dark:border-white border border-black text-secondary-foreground hover:bg-secondary-foreground/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground hover:text-white active:translate-y-1 active:shadow-none',
+          'dark:shadow-[inset_0_-4px_0_0_#ffffff] no-underline shadow-[inset_0_-4px_0_0_#000000] dark:border-white border border-black text-secondary-foreground hover:bg-secondary-foreground/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground hover:text-white active:translate-y-1 active:shadow-none',
         ghost:
           'hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50',
         destructive:
           'bg-error text-white hover:bg-error/20 focus-visible:border-error/40 focus-visible:ring-error/20 dark:bg-error/20 dark:hover:bg-error/30 dark:focus-visible:ring-error/40',
-        link: 'group text-foreground group-button [&_span]:border-b-transparent [&_span]:pb-2 [&_span]:border-b  [&_span]:hover:border-b-accent focus-visible:ring-0 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-8 hover:!no-underline',
+        link: 'group no-underline group-button ',
       },
       size: {
         default:

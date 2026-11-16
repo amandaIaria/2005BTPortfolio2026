@@ -1,5 +1,5 @@
 /* Must stay the first rule in this file - CSS drops @import statements that land after other rules have expanded (see packages/design-system/README.md "Import order"). */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -48,6 +48,13 @@
   --accent: var(--color-cyan-500);
   --accent-foreground: var(--lagoon-deep);
   --accent-hover: var(--lagoon);
+
+  --serif: "Fraunces", serif;
+  --sans: "Noto", ui-sans-serif, system-ui, sans-serif;;
+  --heading: "Roboto";
+  --mono: 'JetBrains Mono Variable', monospace;
+
+
 }
 
 :root[data-theme='dark'] {
@@ -95,7 +102,10 @@
   --color-success: var(--success);
   --color-info: var(--info);
   --color-caution: var(--caution);
-
+  --font-heading: var(--font-mono);
+  --font-mono: var(--mono);
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
   --animate-cursor-blink: cursor-blink 1s steps(1, end) infinite;
 }
 
@@ -171,18 +181,90 @@
   html {
     @apply font-mono;
   }
+
   a {
-    color: var(--color-accent);
-    text-decoration-color: rgba(50, 143, 151, 0.4);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    @apply decoration-gray-900 text-accent decoration-1 underline-offset-6 underline relative;
+    transition: ease 0.5s all;
   }
+
   a:hover {
-    color: #246f76;
+    @apply text-accent;
+  }
+
+  a:hover span {
+    @apply text-accent;
+  }
+
+  a::before {
+    content: "";
+    display: inline-block;
+    background: #333;
+    width: 100%;
+    height: 1px;
+    transition: ease 1s all;
+    position: absolute;
+    bottom: -4px;
+    top: inherit;
+    z-index: 1;
+    left: 0;
+  }
+
+  a span {
+    z-index: 2;
+    position: relative;
+  }
+
+  a:hover::before {
+    height: 100%;
+    top: 0;
+    bottom: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply tracking-tight;
   }
 
   h1 {
-    @apply text-3xl md:text-5xl tracking-tight;
+    @apply text-3xl md:text-5xl font-heading;
+  }
+
+  h2 {
+    @apply text-2xl md:text-4xl font-heading text-accent font-[weight:100] border-b pb-2 mb-2 pt-2;
+  }
+
+  h3 {
+    @apply text-xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-lg md:text-2xl;
+  }
+
+  h5 {
+    @apply text-base md:text-xl;
+  }
+
+  p {
+    @apply text-base pb-4;
+  }
+
+  ul:not(.list-style-none) li:before {
+    content: "•";
+    @apply text-accent mr-2 inline-block;
+  }
+
+  ol {
+    list-style: decimal;
+    @apply pl-4;
+  }
+
+  ol li::marker {
+    /* content: counter(list); */
+    @apply text-accent mr-2 inline-block;
   }
 }
 
