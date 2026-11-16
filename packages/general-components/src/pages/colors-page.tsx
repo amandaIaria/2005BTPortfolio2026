@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import uiKit from '@json/data/json/ui-kit.json';
-import { useActiveSection } from '../hooks/use-active-section';
 import { UIKitShell } from '../components/ui-kit/ui-kit-shell';
 import { Section } from '../components/ui-kit/section';
+import { useUIkitNavigation } from '../hooks/use-uikit-navigation';
 
 type ColorToken = {
   name: string;
@@ -31,20 +31,7 @@ function ColorSwatch({ name, label }: ColorToken) {
 export default function ColorsPage() {
   const { t } = useTranslation('uiKit');
   const contentRef = useRef<HTMLDivElement>(null);
-  const [tocItems, setTocItems] = useState<{ id: string; title: string }[]>([]);
-
-  useEffect(() => {
-    const sections = contentRef.current?.querySelectorAll('section[id]');
-    if (!sections) return;
-    setTocItems(
-      Array.from(sections).map((section) => ({
-        id: section.id,
-        title: section.querySelector('h2')?.textContent ?? section.id,
-      })),
-    );
-  }, []);
-
-  const activeId = useActiveSection(tocItems.map((item) => item.id));
+  const {tocItems, activeId} = useUIkitNavigation(contentRef)
 
   const headerObj = {
     kicker: t('colors.kicker'),

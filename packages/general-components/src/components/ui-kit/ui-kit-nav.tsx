@@ -13,12 +13,12 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
     <nav
       data-component="ui-kit-nav"
       className={cn(
-        'flex flex-wrap items-center justify-between gap-x-4 gap-y-2',
+        'flex  items-center justify-between gap-x-4 gap-y-2 pb-10',
         className,
       )}
       {...props}
     >
-      <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 md:mb-0">
+      <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4 md:mb-0 list-style-none">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -26,14 +26,14 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
               <InternalTransitionLink
                 href={link.href}
                 aria-current={isActive ? 'page' : undefined}
-                className="group text-foreground"
+                className="group"
               >
                 <span
                   className={cn(
-                    'border-b transition ease-in-out',
+                    '',
                     isActive
-                      ? 'border-accent font-semibold'
-                      : 'border-transparent group-hover:border-accent',
+                      ? 'font-semibold'
+                      : '',
                   )}
                 >
                   {link.label}

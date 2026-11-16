@@ -102,7 +102,7 @@ function Navigation({ isOpen, onNavigate }: NavigationProps) {
       )}
       <Container data-component="modern-navigation">
         <nav className="grid h-screen">
-          <ul className="font-mono grid gap-[clamp(0.5rem,6vh,2rem)] text-[clamp(1.5rem,6vh,6rem)] font-bold uppercase text-white mix-blend-difference">
+          <ul className="font-mono grid list-style-none gap-[clamp(0.5rem,6vh,2rem)] text-[clamp(1.5rem,6vh,6rem)] font-bold uppercase text-white mix-blend-difference">
             {json.map((link: NavLinkProps) => (
               <NavItem key={link.href} link={link} onNavigate={onNavigate} />
             ))}

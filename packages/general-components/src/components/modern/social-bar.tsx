@@ -34,9 +34,9 @@ function SocialBar({
           target="_blank"
           rel="noreferrer"
           aria-label="CodePen Profile"
-          className=""
+          className="no-underline"
         >
-          <CodepenLogoIcon aria-hidden="true" className="" />
+          <span><CodepenLogoIcon aria-hidden="true" className="" /></span>
         </a>
       </PortfolioButton>
       <PortfolioButton
@@ -48,9 +48,9 @@ function SocialBar({
           target="_blank"
           rel="noreferrer"
           aria-label="LinkedIn Profile"
-          className=""
+          className="no-underline"
         >
-          <LinkedinLogoIcon aria-hidden="true" className="" />
+          <span><LinkedinLogoIcon aria-hidden="true" className="" /></span>
         </a>
       </PortfolioButton>
       <PortfolioButton
@@ -62,9 +62,9 @@ function SocialBar({
           target="_blank"
           rel="noreferrer"
           aria-label="GitHub Profile"
-          className=""
+          className="no-underline"
         >
-          <GithubLogoIcon aria-hidden="true" className="" />
+          <span><GithubLogoIcon aria-hidden="true" className="" /></span>
         </a>
       </PortfolioButton>
     </div>

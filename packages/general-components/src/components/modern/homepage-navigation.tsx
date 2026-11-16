@@ -52,7 +52,7 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
 
   return (
     <nav className={cn('flex flex-col items-center justify-center')} {...props}>
-      <ul className="flex  items-center justify-center gap-4 md:gap-10 flex-wrap md:flex-nowrap -mt-40 md:mt-0">
+      <ul className="flex list-style-none items-center justify-center gap-4 md:gap-10 flex-wrap md:flex-nowrap -mt-40 md:mt-0">
         {json.map((item, idx) => {
           const NavIcon = iconMap[item.icon];
           return (
