@@ -145,6 +145,7 @@ export { useAvoidOverlap } from './hooks/use-avoid-overlap';
 export type { UseAvoidOverlapOptions } from './hooks/use-avoid-overlap';
 export { useSlider } from './hooks/use-slider';
 export { useActiveSection } from './hooks/use-active-section';
+export { useUIkitNavigation } from './hooks/use-uikit-navigation';
 
 // Prop and data types
 export type {
@@ -157,7 +158,6 @@ export type {
   PortfolioSwitchProps,
   PortfolioAlertProps,
   PortfolioAlertVariant,
-  PortfolioTooltipContentProps,
   CassetteSlideProps,
   CassetteCarouselProps,
   AnimatedFooterProps,

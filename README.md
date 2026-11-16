@@ -1,6 +1,6 @@
-Welcome to your new TanStack Start app!
+# Alex's Portfolio
 
-# Getting Started
+## Getting Started
 
 To run this application:
 
@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-# Building For Production
+## Building For Production
 
 To build this application for production:
 
@@ -117,7 +117,7 @@ export const Route = createRootRoute({
 
 More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
 
-## Server Functions
+### Server Functions
 
 TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
 
@@ -142,7 +142,7 @@ function MyComponent() {
 }
 ```
 
-## API Routes
+### API Routes
 
 You can create API routes by using the `server` property in your route definitions:
 
@@ -190,12 +190,118 @@ function PeopleComponent() {
 
 Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
 
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-# Learn More
+## Learn More
 
 You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
 
 For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+
+## Packages
+
+The site is broken up into packages to keep it relatively organised. 
+
+### @general-components
+This is where all of the components (that has nothing to do with pages except for the UI-Kit), hooks, and lib scripts live.
+
+### @design-system
+This is where all of the legacy styles and design tokens live
+
+### @json
+This is where all copy and content lives. If content needs to be translated this uses `react-i18next` for copy. You can add other languages in it by adding a folder of the language like `en` for english and `es` for spanish.
+
+Also the Markdown files for the content can also be found here.
+
+### @modern
+The Modern version of the site (currently live).
+
+### @2005portfolio
+This throwback version of the site. Not live.
+
+__Other than in the vitests there should be no hardcoded copy.__
+
+## AI
+This site is set up to use Claude and Copilote (mostly Claude), but as of Nov 2026 I am not using AI.
+
+## Hooks
+All can be found in `@general-components/hooks`
+
+### use-active-section.ts
+This grabs the active id in the ui-kit so that it can mark the sticky side nav element that is active
+
+used only in ui-kit.
+
+### use-avoid-overlap.ts
+This is for the 2005Portfolio throwback version of the site. It detects if there isn't enough room to show the bottom right image and shapes the content section.
+
+Used only in the 2005Portfolio version.
+
+### @use-slider.ts
+This is for the project slider. At the moment it is only used for the modern verison of the site.
+
+### use-uikit-navigation.ts
+Adds section ids to the sticky sidenav so that the user can easily navigate the page.
+
+Used only in the ui-kit
+
+## Components
+These use the ShadeCN component library as a starter for most of them. motion/react' for most of the animation, there are some `Webgl` canvas animation (mostly for the tentacles).
+
+All styles should be added in the TailWind way.
+
+- Shadecn - https://ui.shadcn.com/
+- motion/react - https://motion.dev/
+- TailwindCSS - https://tailwindcss.com/
+
+## Figma
+- Legacy Styles - https://www.figma.com/design/lsoJ4nHcmiuNXLIRIH8BzC/Legacy-Design-System?node-id=0-1&t=3CITtZij8rV5z7YJ-1
+- Current Ideas - https://www.figma.com/design/H3TujVNGg8snQwtfqPhKyf/BT2026?node-id=35-31&t=3CITtZij8rV5z7YJ-1
+
+Not for later, this will become the source of truth at some point. But right now it's not set up for design tokens or syncing.
+
+## Testing
+This project uses ViTest as a testing suite. All tests should be in the `__tests__` folders.
+
+Don't create a test just to see it be available. Have a real reason to create a test.
+
+### Example
+Alert.test.tsx
+
+```ts
+describe('Alert', () => {
+  afterEach(cleanup);
+
+  it('renders with role="alert" and default variant', () => {
+    render(
+      <Alert>
+        <AlertTitle>Heads up</AlertTitle>
+        <AlertDescription>Something to know.</AlertDescription>
+      </Alert>,
+    );
+    const alert = screen.getByRole('alert');
+    expect(screen.getByText('Heads up')).not.toBeNull();
+    expect(screen.getByText('Something to know.')).not.toBeNull();
+  });
+
+  it('renders the destructive variant', () => {
+    render(
+      <Alert variant="destructive">
+        <AlertDescription>Message</AlertDescription>
+      </Alert>,
+    );
+    expect(screen.getByRole('alert').className).toContain('text-destructive');
+  });
+});
+```
+
+## Github Actions
+- Solarcloud
+- ViTest
+- codeql
+- eslint
+
+## More
+Some of the instruction files can help you make a bit more sense of the project.
+
+- copilot-instructions - [.github/copilot-instructions.md](.github/copilot-instructions.md)
+- component instructions -  [packages/general-components/INSTRUCTIONS.md](packages/general-components/INSTRUCTIONS.md)
+- slider instructions - [packages/general-components/src/components/slider/INSTRUCTIONS.md](packages/general-components/src/components/slider/INSTRUCTIONS.md)
