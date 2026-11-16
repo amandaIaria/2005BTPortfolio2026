@@ -5,24 +5,12 @@ import { UIKitShell } from '../components/ui-kit/ui-kit-shell';
 import { Section } from '../components/ui-kit/section';
 import { Hero } from '../components/ui/hero';
 import { PortfolioHero } from '../components/atoms/portfolio-hero';
+import { useUIkitNavigation } from '../hooks/use-uikit-navigation';
 
 export default function HerosPage() {
   const { t } = useTranslation('uiKit');
   const contentRef = useRef<HTMLDivElement>(null);
-  const [tocItems, setTocItems] = useState<{ id: string; title: string }[]>([]);
-
-  useEffect(() => {
-    const sections = contentRef.current?.querySelectorAll('section[id]');
-    if (!sections) return;
-    setTocItems(
-      Array.from(sections).map((section) => ({
-        id: section.id,
-        title: section.querySelector('h2')?.textContent ?? section.id,
-      })),
-    );
-  }, []);
-
-  const activeId = useActiveSection(tocItems.map((item) => item.id));
+  const {tocItems, activeId} = useUIkitNavigation(contentRef)
 
   const headerObj = {
     kicker: t('heros.kicker'),

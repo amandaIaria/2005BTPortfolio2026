@@ -1,32 +1,20 @@
+import { useRef } from 'react';
 import { Section } from '../components/ui-kit/section';
 import { UIKitShell } from '../components/ui-kit/ui-kit-shell';
-import { useActiveSection } from '../hooks/use-active-section';
-import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useUIkitNavigation } from '../hooks/use-uikit-navigation';
 
 export default function TypeographyPage() {
   const { t } = useTranslation('uiKit');
   const contentRef = useRef<HTMLDivElement>(null);
-  const [tocItems, setTocItems] = useState<{ id: string; title: string }[]>([]);
-
-  useEffect(() => {
-    const sections = contentRef.current?.querySelectorAll('section[id]');
-    if (!sections) return;
-    setTocItems(
-      Array.from(sections).map((section) => ({
-        id: section.id,
-        title: section.querySelector('h2')?.textContent ?? section.id,
-      })),
-    );
-  }, []);
-
-  const activeId = useActiveSection(tocItems.map((item) => item.id));
+  const {tocItems, activeId} = useUIkitNavigation(contentRef)
 
   const headerObj = {
     kicker: t('typeography.kicker'),
     title: t('typeography.title'),
     description: t('typeography.description'),
   };
+
   return (
     <UIKitShell header={headerObj} tocItems={tocItems} activeId={activeId}>
       <div
