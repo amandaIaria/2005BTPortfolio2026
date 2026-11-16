@@ -19,6 +19,10 @@ const UIKitSticky = forwardRef<HTMLElement, UIKitStickyProps>(
     >
       {tocItems.map(({ id, title }) => (
         <a
+          onClick={(ev) => {
+            ev.preventDefault();
+            document.querySelector(`#${id}`)?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          }}
           key={id}
           href={`#${id}`}
           className={cn(
