@@ -2,11 +2,17 @@ import { cn, componentName } from '../../lib/utils';
 import type { FooterProps } from '@packages/general-components/src/components/types.ts';
 import { WebGLTentacleWall } from '../webgl-tentacle-wall';
 import { SocialBar } from './social-bar';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 function LogoMark() {
   return (
     <div aria-hidden="true" className="max-w-50 w-full">
-      <img src="/img/logo2019.svg" alt="Logo Mark" className="w-full" />
+      <PortfolioImage
+        image={{
+          src: "/img/logo2019.svg",
+          alt: "Logo Mark" 
+        }}
+      />
     </div>
   );
 }

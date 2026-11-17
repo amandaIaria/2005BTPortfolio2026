@@ -6,6 +6,7 @@ import { Breadcrumb } from './breadcrumb';
 import { StickySideNav } from './sticky-side-nav';
 import { ImageModal } from '../image-modal';
 import type { ShrineDetailProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
   const { t } = useTranslation();
@@ -21,13 +22,15 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
 
           <div className="hidden md:block">
             <div className="flex">
-              <figure className="aspect-video overflow-hidden bg-(--surface) basis-[calc(50%+250px)] rounded-r-lg z-2 max-h-[500px]">
-                <img
-                  src={shrine.image.src}
-                  alt={shrine.image.alt}
-                  className="h-full w-full object-cover object-top"
+              <PortfolioImage
+                cn="aspect-video overflow-hidden bg-(--surface) basis-[calc(50%+250px)] rounded-r-lg z-2 max-h-[500px]"
+                  image={{
+                    src: shrine.image.src,
+                    alt: shrine.image.alt
+                  }}
                 />
-              </figure>
+
+              
               {shrine.description && (
                 <div className="bg-accent  pt-4 relative h-[500px] w-full basis-[300px] grid bottom-0 z-1 -ml-8">
                   <p className="text-3xl  text-foreground mix-blend-difference absolute bottom-10 left-[80px] w-[300px] ">
@@ -40,14 +43,15 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
           </div>
 
           <div className="md:hidden block">
-            <div className="">
-              <figure className="aspect-video overflow-hidden">
-                <img
-                  src={shrine.image.src}
-                  alt={shrine.image.alt}
-                  className="h-full w-full object-cover object-top"
-                />
-              </figure>
+            <div>
+              <PortfolioImage
+                cn="aspect-video overflow-hidden"
+                image={{
+                  src: shrine.image.src,
+                  alt: shrine.image.alt
+                }}
+              />
+
               {shrine.description && (
                 <div className="bg-accent">
                   <p className="md:text-3xl  text-foreground text-xl p-4">
@@ -91,13 +95,16 @@ function ShrineDetail({ shrine, className, ...props }: ShrineDetailProps) {
                       </p>
                     )}
                     {content.image && content.image.src !== '' && (
-                      <figure className="h-50 w-full overflow-hidden bg-(--surface)">
-                        <img
-                          src={content.image.src}
-                          alt={content.image.alt}
-                          className="h-full w-full object-cover object-center"
-                        />
-                      </figure>
+                      <PortfolioImage
+                        imageClasses="h-full w-full object-cover object-center"
+                        cn="h-50 w-full overflow-hidden bg-(--surface)"
+                        image={{
+                          src: content.image.src,
+                          alt: content.image.alt
+                        }}
+                      />
+
+                    
                     )}
                   </React.Fragment>
                 );

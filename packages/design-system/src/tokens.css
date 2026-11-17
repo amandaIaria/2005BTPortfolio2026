@@ -138,10 +138,4 @@
   --color-bt-active-deep: var(--bt-active-deep);
   --color-bt-error: var(--bt-error);
   --color-bt-success: var(--bt-success);
-
-  /* Font Families */
-  --font-heading: var(--font-mono);
-  --font-mono: 'JetBrains Mono Variable', monospace;
-  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'DM Serif Text', serif;
 }

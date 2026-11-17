@@ -2,7 +2,6 @@ import { motion } from 'motion/react';
 import { useId, useRef, useState } from 'react';
 import { cn } from '../../lib/utils';
 import { usePageTransition } from '../page-transition/page-transition-context';
-import { boxScale } from './load-in';
 import type {
   LoadInCardProps,
   RevealingTentacleProps,
@@ -168,6 +167,7 @@ function RevealingTentacle({
   hovered,
   className,
 }: RevealingTentacleProps) {
+  const boxScale = { scale: 1.4 };
   return (
     <svg
       className={cn(

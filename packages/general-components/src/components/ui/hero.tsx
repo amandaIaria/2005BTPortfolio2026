@@ -3,6 +3,9 @@ import { cn } from '../../lib/utils';
 import type { HeroProps } from '@packages/general-components/src/components/types.ts';
 import { useReducedMotion } from 'framer-motion';
 import DOMPurify from 'dompurify';
+import { Image } from '@unpic/react/base';
+import { transform } from 'unpic/providers/netlify';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 type Segment =
   | { kind: 'text'; text: string; accent: boolean }
@@ -151,6 +154,7 @@ function Hero({
   startAnimation = true,
   ...props
 }: HeroProps) {
+  
   const prefersReducedMotion = useReducedMotion();
   const [stage, setStage] = useState<Stage>(() => {
     if (prefersReducedMotion) return 'done';
@@ -203,6 +207,7 @@ function Hero({
   ) {
     return renderSegments(phase === 'active' ? typed : segments);
   }
+  
 
   return (
     <div
@@ -210,12 +215,13 @@ function Hero({
       className={cn('relative h-dvh w-dvw overflow-hidden bg-black', className)}
       {...props}
     >
+      
       <h1 className="sr-only">{hiddenH1}</h1>
-      <img
-        src={image.src}
-        alt={image.alt}
-        className="absolute bottom-0 h-full w-full object-contain object-bottom mix-blend-difference"
-      />
+      <div className="grid justify-center content-center absolute bottom-0 h-full w-full">
+        <PortfolioImage image={image} />
+          
+      </div>
+
       <div className="absolute inset-x-0 -top-13 md:-top-20.5 px-6 py-10 text-center">
         <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
           {topText}

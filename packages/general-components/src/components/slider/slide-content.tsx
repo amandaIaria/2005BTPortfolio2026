@@ -33,7 +33,7 @@ export function SlideContent({ slide }: SlideContentProps) {
         <SliderTags tags={slide.right.tags} />
         <PortfolioButton asChild size="lg" className="">
           <ExternalTransitionLink href={slide.right.link.url}>
-            {slide.right.link.copy ?? 'Go to site'}
+            <span>{slide.right.link.copy ?? 'Go to site'}</span>
           </ExternalTransitionLink>
         </PortfolioButton>
       </div>
