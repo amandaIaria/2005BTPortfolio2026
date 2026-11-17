@@ -6,6 +6,7 @@ import { StickySideNav } from './sticky-side-nav';
 import type { CaseStudyDetailProps } from '@packages/general-components/src/components/types.ts';
 import { cn } from '../../lib/utils';
 import { PortfolioSeparator } from '../atoms/portfolio-separator';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 function CaseStudyDetail({
   caseStudy,
@@ -33,10 +34,12 @@ function CaseStudyDetail({
                   {t('caseStudies.detail.featuringInsightsFrom')}
                 </p>
                 <div className="flex items-center gap-3">
-                  <img
-                    src={caseStudy.contributor.avatar.src}
-                    alt={caseStudy.contributor.avatar.alt}
-                    className="h-10 w-10 rounded-full object-cover"
+                  <PortfolioImage 
+                    image={{
+                      src:caseStudy.contributor.avatar.src,
+                      alt: caseStudy.contributor.avatar.alt
+                    }}
+                    imageClasses="h-10 w-10 rounded-full object-cover"
                   />
                   <div>
                     <p className="font-bold">{caseStudy.contributor.name}</p>
@@ -48,11 +51,12 @@ function CaseStudyDetail({
               </div>
             </div>
             <div className="aspect-square overflow-hidden bg-muted md:aspect-auto">
-              <img
-                src={caseStudy.image.src}
-                alt={caseStudy.image.alt}
-                className="h-full w-full object-cover"
-              />
+              <PortfolioImage 
+                    image={{
+                      src: caseStudy.image.src,
+                      alt: caseStudy.image.alt
+                    }}
+                  />
             </div>
           </div>
         </div>
@@ -164,13 +168,13 @@ function CaseStudyDetail({
                     )}
 
                     {section.image && (
-                      <figure className=" shadow-[5px_5px_5px_#ccc] overflow-hidden bg-muted md:-mx-[400px] md:min-h-[200px] ">
-                        <img
-                          src={section.image.src}
-                          alt={section.image.alt}
-                          className="h-full w-full object-cover"
-                        />
-                      </figure>
+                      <PortfolioImage 
+                        image={{
+                          src: section.image.src,
+                          alt: section.image.alt
+                        }}
+                        cn=" shadow-[5px_5px_5px_#ccc] overflow-hidden bg-muted md:-mx-[400px] md:min-h-[200px] "
+                      />
                     )}
                   </div>
                 ))}

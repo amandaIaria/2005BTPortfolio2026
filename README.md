@@ -1,4 +1,5 @@
 # Alex's Portfolio
+[![Netlify Status](https://api.netlify.com/api/v1/badges/431b2b1a-1a65-4317-9555-63ecb27f272f/deploy-status)](https://app.netlify.com/projects/20052026portfolioupdate/deploys)
 
 ## Getting Started
 

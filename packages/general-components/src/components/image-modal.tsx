@@ -15,6 +15,7 @@ import {
 import type { ImageModalProps } from '@packages/general-components/src/components/types.ts';
 import { PortfolioButton } from './atoms/portfolio-button';
 import { ImageComparison } from './image-comparison';
+import { PortfolioImage } from './atoms/portfolio-image';
 
 function ImageModal(props: ImageModalProps) {
   const { thumbnail, className, imageClassName } = props;
@@ -47,12 +48,12 @@ function ImageModal(props: ImageModalProps) {
               thumb
             />
           ) : (
-            <img
-              src={thumbSrc}
-              alt={thumbnailAlt}
-              loading="lazy"
-              className={cn('h-full w-full object-cover', className)}
-            />
+            <div className={cn('h-full w-full object-cover', className)}>
+              <PortfolioImage image={{
+                src: thumbSrc,
+                alt: thumbnailAlt
+              }} />
+            </div>
           )}
         </button>
       </DialogTrigger>
@@ -78,14 +79,12 @@ function ImageModal(props: ImageModalProps) {
                 className={cn(imageClassName)}
               />
             ) : (
-              <img
-                src={props.src}
-                alt={props.alt}
-                className={cn(
+              
+                <PortfolioImage image={props} imageClasses={cn(
                   'mx-auto max-h-[85vh] w-auto object-contain',
                   imageClassName,
-                )}
-              />
+                )} />
+              
             )}
           </div>
           <DialogPrimitive.Close asChild>

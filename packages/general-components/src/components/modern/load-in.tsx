@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import LoadInCard from './load-in-card';
 import { PlayIcon } from '@phosphor-icons/react';
 import { cn } from '@general/components/lib/utils.ts';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 export const boxScale = { scale: 1.4 };
 
@@ -354,13 +355,15 @@ export default function LoadIn({
                   key={index}
                 >
                   <div className="rounded-full bg-transparent h-100 w-100">
-                    <div className="h-full w-full grid place-items-center ">
-                      <img
-                        src="/Object.png"
-                        alt={t('loadIn.selfPortraitAlt')}
-                        className="relative -mt-22 -ml-5"
-                      />
-                    </div>
+                    <PortfolioImage
+                      imageClasses="relative -mt-22 -ml-5"
+                      cn="h-full w-full grid place-items-center "
+                      image={{
+                        src: "/Object.png",
+                        alt: t('loadIn.selfPortraitAlt')
+                      }}
+                    />
+                   
                   </div>
                 </motion.li>
               ),

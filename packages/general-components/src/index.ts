@@ -113,6 +113,7 @@ export { PageTransitionProvider } from './components/page-transition/page-transi
 export { usePageTransition } from './components/page-transition/page-transition-context';
 export { ExternalTransitionLink } from './components/page-transition/external-transition-link';
 export { InternalTransitionLink } from './components/page-transition/internal-transition-link';
+export { PortfolioImage } from './components/atoms/portfolio-image'
 
 // 2005 theme components
 export { ImageHeader } from './components/2005/image-header';

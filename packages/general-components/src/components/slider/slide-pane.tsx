@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import type { SlidePaneProps } from '@packages/general-components/src/components/types.ts';
 import { SlideContent } from './slide-content';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 export function SlidePaneImage({
   slide,
@@ -21,11 +22,14 @@ export function SlidePaneImage({
       className="absolute inset-0 w-1/2 h-full hidden md:block"
       inert={isTransitioning}
     >
-      <img
-        src={slide.left.image.src}
-        alt={slide.left.image.alt}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      <PortfolioImage
+          imageClasses="absolute inset-0 w-full h-full object-cover"
+          image={{
+            src: slide.left.image.src,
+            alt: slide.left.image.alt
+          }}
+        />
+     
     </motion.div>
   );
 }
@@ -72,11 +76,15 @@ export function SlideMobileImage({
       className="absolute inset-0 w-full h-full md:hidden"
       inert={isTransitioning}
     >
-      <img
-        src={slide.left.image.src}
-        alt={slide.left.image.alt}
-        className="w-full h-full object-cover"
-      />
+      <PortfolioImage
+          
+          image={{
+            src: slide.left.image.src,
+            alt: slide.left.image.alt
+          }}
+        />
+
+      
     </motion.div>
   );
 }

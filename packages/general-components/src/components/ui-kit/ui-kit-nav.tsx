@@ -2,6 +2,7 @@ import * as React from 'react';
 import uiKit from '@json/data/json/ui-kit.json';
 import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 const navLinks = uiKit.nav;
 
@@ -44,11 +45,14 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
         })}
       </ul>
       <div>
-        <img
-          src="/img/logo2019.svg"
-          className="w-24 sm:w-32 md:w-40 mb-6 md:mb-0"
-          alt=""
-        />
+        <PortfolioImage
+                  imageClasses="w-24 sm:w-32 md:w-40 mb-6 md:mb-0"
+                  image={{
+                    src: "/img/logo2019.svg",
+                    alt: "logo"
+                  }}
+                />
+        
       </div>
     </nav>
   );
