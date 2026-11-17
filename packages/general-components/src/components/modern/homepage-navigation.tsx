@@ -52,7 +52,7 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
 
   return (
     <nav className={cn('flex flex-col items-center justify-center')} {...props}>
-      <ul className="flex  items-center justify-center gap-4 md:gap-10 flex-wrap md:flex-nowrap -mt-40 md:mt-0">
+      <ul className="flex list-style-none items-center justify-center gap-4 md:gap-10 flex-wrap md:flex-nowrap -mt-40 md:mt-0">
         {json.map((item, idx) => {
           const NavIcon = iconMap[item.icon];
           return (
@@ -64,7 +64,7 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
                 key={`homepage-nav-item-${idx}`}
                 href={item.href}
                 onClick={(event) => handleClick(event, item.href, item.color)}
-                className="font-semibold text-white hover:text-success dark:hover:text-accent transition-colors duration-300 text-center flex flex-col items-center justify-center gap-0.5 md:gap-2"
+                className="font-semibold text-white hover:text-success before:h-0 no-underline dark:hover:text-accent transition-colors duration-300 text-center flex flex-col items-center justify-center gap-0.5 md:gap-2"
                 data-color={item.color}
               >
                 <span className=" md:text-3xl">

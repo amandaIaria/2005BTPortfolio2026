@@ -3,21 +3,12 @@ import { useActiveSection } from '../hooks/use-active-section';
 import { UIKitContent } from '../components/ui-kit/ui-kit-content';
 import { UIKitShell } from '../components/ui-kit/ui-kit-shell';
 import { useTranslation } from 'react-i18next';
+import { useUIkitNavigation } from '../hooks/use-uikit-navigation';
 
 export default function UiKitPage() {
   const contentRef = useRef<HTMLDivElement>(null);
-  const [tocItems, setTocItems] = useState<{ id: string; title: string }[]>([]);
   const { t } = useTranslation('uiKit');
-  useEffect(() => {
-    const sections = contentRef.current?.querySelectorAll('section[id]');
-    if (!sections) return;
-    setTocItems(
-      Array.from(sections).map((section) => ({
-        id: section.id,
-        title: section.querySelector('h2')?.textContent ?? section.id,
-      })),
-    );
-  }, []);
+  const {activeId, tocItems} = useUIkitNavigation(contentRef);
 
   const headerObj = {
     kicker: t('page.kicker'),
@@ -27,7 +18,7 @@ export default function UiKitPage() {
     descriptionAfter: t('page.descriptionAfter'),
   };
 
-  const activeId = useActiveSection(tocItems.map((item) => item.id));
+  
 
   return (
     <UIKitShell header={headerObj} tocItems={tocItems} activeId={activeId}>

@@ -65,23 +65,23 @@ export const StickySideNav = (props: StickySideNavProps) => {
       ref={stickyNavRef}
     >
       <nav className="inner-nav sticky top-4 bg-(--surface)/90 backdrop-blur-md rounded-2xl shadow-lg border border-(--surface-strong) p-4 flex gap-4 md:gap-0 flex-row md:flex-col">
-        <div className="border-b border-b-accent pb-2 mb-4 w-fit md:w-full">
+        <div className="border-b border-b-accent pb-2 w-fit md:w-full">
           <span className="text-lg font-bold">{navLabel}</span>
         </div>
-        <ul className="hidden md:flex flex-row md:flex-col gap-4">
+        <ul className="list-style-none hidden md:flex flex-row md:flex-col gap-0">
           {linksObj.map((link, idx) => (
             <li key={link.id}>
               <a
                 href={`#${link.id}`}
                 className={cn(
-                  'text-accent group flex gap-4 border-l-2 pl-4 text-sm transition-colors',
+                  'text-foreground before:-bottom-[1px] group flex gap-4 border-l-2 pl-4 text-sm transition-colors no-underline',
                   link.id === activeId || (activeId === '0' && idx === 0)
                     ? 'border-accent'
                     : 'border-transparent',
                 )}
                 onClick={stickyNavClickHandler}
               >
-                <span className="text-foreground dark:text-foreground group-hover:border-b-accent border-b-transparent font-bold ease-in-out duration-300 pb-1 border-b-2 mt-1">
+                <span className="font-bold py-4">
                   {link.title}
                 </span>
               </a>

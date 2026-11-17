@@ -21,7 +21,7 @@ function ModernAboutPage() {
     >
       <div className="grid grid-cols-1 px-4 md:px-0 gap-4 md:gap-20 md:grid-cols-[auto_1fr]">
         <header className="grid items-center h-full md:h-[70%]">
-          <div className="flex md:sticky md:top-25 flex-col gap-0 md:gap-10">
+          <div className="flex md:sticky md:top-25 flex-col gap-0 md:gap-4">
             <div className="flex gap-10 items-center">
               <div className="overflow-hidden rounded-lg h-25 w-25 flex items-center justify-center">
                 <ImageModal
@@ -45,17 +45,21 @@ function ModernAboutPage() {
           </div>
         </header>
         <div className="flex flex-col">
-          <div className="grid grid-cols-1 gap-4 md:gap-10 md:pt-20 md:pb-20">
+          <div className="grid grid-cols-1 gap-4 md:gap-10 md:pt-20">
             <div className="text-3xl font-bold flex gap-4 items-center">
               <span>{about.name}</span>
               <span className="text-accent animate-caret-blink duration-100">
                 |
               </span>
             </div>
-            <div className="text-2xl font-medium text-accent">
+            <div className="text-2xl font-medium text-accent w-[500px]">
               <p>{about.summary}</p>
             </div>
-            <Typewriter text={about.full} className="pt-0 md:py-4" />
+          </div>
+          <div className="w-[500px]"> 
+            {about.full.map((copy: string, idx: number) => (
+              <div key={`about-key__${idx}`} className="my-4" dangerouslySetInnerHTML={{__html:copy }}/>
+            ))}
           </div>
         </div>
       </div>

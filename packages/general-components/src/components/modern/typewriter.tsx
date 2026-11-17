@@ -100,6 +100,8 @@ const Typewriter = forwardRef<HTMLDivElement, TypewriterProps>(
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.4 }}
+                  id={`paragraph__${idx}`}
+                  data-component="typewriter-paragraph"
                 >
                   <span className="sr-only">{copy}</span>
                   {copy.split(' ').map((word, index) => (
@@ -108,6 +110,7 @@ const Typewriter = forwardRef<HTMLDivElement, TypewriterProps>(
                       className="inline-block"
                       aria-hidden={true}
                       variants={characterVariants(index)}
+                      data-component="typewriter-span"
                     >
                       {word}
                       {'\u00A0'}

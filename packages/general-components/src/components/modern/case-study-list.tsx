@@ -4,6 +4,7 @@ import { cn } from '../../lib/utils';
 import { InternalTransitionLink } from '../page-transition/internal-transition-link';
 import { Button } from '../ui/button';
 import type { CaseStudyListProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 function CaseStudyList({
   caseStudies,
@@ -22,13 +23,15 @@ function CaseStudyList({
           data-component="case-study-list-item"
           className="flex flex-col gap-6"
         >
-          <div className="aspect-video overflow-hidden bg-muted">
-            <img
-              src={caseStudy.image.src}
-              alt={caseStudy.image.alt}
-              className="h-full w-full object-cover"
+         
+            <PortfolioImage 
+              image={{
+                src: caseStudy.image.src,
+                alt: caseStudy.image.alt
+              }}
+              imageClasses="aspect-video overflow-hidden bg-muted"
             />
-          </div>
+          
           <div className="flex flex-col gap-3">
             <h3 className="text-2xl font-bold">{caseStudy.title}</h3>
             <p className="text-muted-foreground">{caseStudy.description}</p>

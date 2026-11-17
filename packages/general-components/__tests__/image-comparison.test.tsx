@@ -25,10 +25,10 @@ describe('ImageComparison', () => {
       />,
     );
     expect(screen.getByAltText('Before shot').getAttribute('src')).toBe(
-      '/before.jpg',
+      '/.netlify/images?fit=cover&fm=webp&q=80&url=%2Fbefore.jpg',
     );
     expect(screen.getByAltText('After shot').getAttribute('src')).toBe(
-      '/after.jpg',
+      '/.netlify/images?fit=cover&fm=webp&q=80&url=%2Fafter.jpg',
     );
   });
 

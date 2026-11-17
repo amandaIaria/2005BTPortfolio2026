@@ -11,3 +11,8 @@
   targetPort = 3000
   port = 8888
   autoLaunch = false
+
+[images]
+  remote_images = [
+    'https://beautiful-tragedy\.com/\.netlify/functions/watermark.*'
+  ]
