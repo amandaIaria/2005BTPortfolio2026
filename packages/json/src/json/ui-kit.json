@@ -4,6 +4,7 @@
     { "href": "/ui-kit/slider", "label": "Project Slider" },
     { "href": "/ui-kit/heros", "label": "Heros" },
     { "href": "/ui-kit/colors", "label": "Colors" },
+    { "href": "/ui-kit/typeography", "label": "Typeography" },
     { "href": "/ui-kit/legacy-styles", "label": "Legacy BT Styles" },
     {
       "href": "/ui-kit/webgl-tentacle-footer",

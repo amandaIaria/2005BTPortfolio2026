@@ -16,6 +16,11 @@
     "title": "Colors",
     "description": "Design tokens defined in tokens.css. Swatches read live CSS variables, so values reflect the current light or dark theme."
   },
+   "typeography": {
+    "kicker": "Design System",
+    "title": "Typeography",
+    "description": "All of the fonts used for my Branding and site."
+  },
   "heros": {
     "kicker": "General Components",
     "title": "Heros",

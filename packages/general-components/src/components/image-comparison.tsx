@@ -4,6 +4,7 @@ import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 
 import { cn } from '../lib/utils';
 import type { ImageComparisonProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioImage } from './atoms/portfolio-image';
 
 const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
   (
@@ -91,23 +92,20 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
         )}
         {...props}
       >
-        <img
-          src={before.src}
-          alt={before.alt}
-          className={cn(
+        <div className={cn(
             'absolute inset-0 h-full w-full object-cover',
             before.className,
-          )}
-        />
-        <img
-          src={after.src}
-          alt={after.alt}
-          className={cn(
+          )}>
+          <PortfolioImage image={before} />
+        </div>
+        <div className={cn(
             'absolute inset-0 h-full w-full object-cover',
             after.className,
           )}
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-        />
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
+          <PortfolioImage image={after} />
+        </div>
+        
         <span className="sr-only">{resolvedBeforeLabel}</span>
         <span className="sr-only">{resolvedAfterLabel}</span>
         <div
@@ -146,23 +144,22 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
         className={cn('relative h-20 w-20 overflow-hidden', className)}
         {...props}
       >
-        <img
-          src={before.src}
-          alt={before.alt}
-          className={cn(
+         
+        <PortfolioImage image={before} imageClasses={cn(
             'absolute inset-0 h-full w-full object-cover',
             before.className,
-          )}
-        />
-        <img
-          src={after.src}
-          alt={after.alt}
-          className={cn(
+        )} />
+        
+        
+        <PortfolioImage 
+          image={after} 
+          imageClasses={cn(
             'absolute inset-0 h-full w-full object-cover',
             after.className,
           )}
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         />
+        
         <span className="sr-only">{resolvedBeforeLabel}</span>
         <span className="sr-only">{resolvedAfterLabel}</span>
         <div

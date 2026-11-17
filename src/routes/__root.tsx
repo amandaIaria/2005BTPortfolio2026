@@ -39,7 +39,9 @@ function NotFoundComponent() {
           to="/"
           className="inline-block mt-6 text-[var(--lagoon-800)] dark:text-[var(--lagoon)] font-bold underline underline-offset-4"
         >
+          <span>
           &larr; Back home
+          </span>
         </Link>
       </div>
     </div>

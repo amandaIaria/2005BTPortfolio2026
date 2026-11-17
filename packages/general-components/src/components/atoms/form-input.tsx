@@ -92,7 +92,10 @@ function FormInput({
             aria-invalid={hasError}
             disabled={disabled}
             rows={rows}
-            className={cn(BARE_FIELD_CLASSNAME, 'peer w-full')}
+            className={cn(BARE_FIELD_CLASSNAME, 'peer w-full bg-transparent', {
+              'focus:bg-accent/10': !hasError,
+              'focus:bg-error/10': hasError
+            })}
           />
         ) : (
           <Input
@@ -105,7 +108,10 @@ function FormInput({
             onChange={(e) => field.handleChange(e.target.value)}
             aria-invalid={hasError}
             disabled={disabled}
-            className={cn(BARE_FIELD_CLASSNAME, 'peer w-full')}
+             className={cn(BARE_FIELD_CLASSNAME, 'peer w-full bg-transparent', {
+              'focus:bg-accent/10': !hasError,
+              'focus:bg-error/10': hasError
+            })}
           />
         )}
         <Label

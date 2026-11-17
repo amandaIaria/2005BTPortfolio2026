@@ -18,8 +18,8 @@ describe('Footer', () => {
 
   it('renders LinkedIn and GitHub links', () => {
     render(<Footer />);
-    expect(screen.queryByRole('link', { name: 'LinkedIn' })).not.toBeNull();
-    expect(screen.queryByRole('link', { name: 'GitHub' })).not.toBeNull();
+    expect(screen.queryByRole('link', { name: 'LinkedIn Profile' })).not.toBeNull();
+    expect(screen.queryByRole('link', { name: 'GitHub Profile' })).not.toBeNull();
   });
 
   it('renders the given year', () => {

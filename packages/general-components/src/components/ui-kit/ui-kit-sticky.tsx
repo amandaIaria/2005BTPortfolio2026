@@ -19,16 +19,20 @@ const UIKitSticky = forwardRef<HTMLElement, UIKitStickyProps>(
     >
       {tocItems.map(({ id, title }) => (
         <a
+          onClick={(ev) => {
+            ev.preventDefault();
+            document.querySelector(`#${id}`)?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+          }}
           key={id}
           href={`#${id}`}
           className={cn(
-            'shrink-0 border-b-2 py-1 text-sm transition-colors md:border-b-0 md:border-l-2 md:pl-4',
+            'shrink-0 border-b-2 py-1 text-sm transition-colors md:border-b-0 md:border-l-2 md:pl-4 no-underline',
             id === activeId
-              ? 'border-accent font-semibold text-[var(--sea-ink)]'
-              : 'border-transparent text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)]',
+              ? 'border-accent font-semibold text-accent'
+              : 'border-transparent text-[#333]',
           )}
         >
-          {title}
+          <span>{title}</span>
         </a>
       ))}
     </nav>

@@ -4,6 +4,7 @@ import {
   // LoadIn,
   HomepageNavigation,
   HomeLoadingOverlay,
+  Modal,
 } from '@general/components';
 import json from '@json/data/json/navigation.json';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +14,7 @@ import { initialPathname } from '../lib/initial-pathname';
 function ModernHomePage() {
   const { t } = useTranslation();
   const [showIntro, setShowIntro] = useState(() => initialPathname === '/');
+  const [modalOpen, setModalOpen] = useState(true);
   return (
     <div className="relative overflow-hidden">
       {showIntro && <HomeLoadingOverlay onDone={() => setShowIntro(false)} />}
@@ -36,6 +38,14 @@ function ModernHomePage() {
         {/* <LoadIn json={json} /> */}
         <HomepageNavigation json={json} />
       </Container>
+       <Modal
+        open={modalOpen}
+        id="load-check"
+        title="V 0.95"
+        description="Just a heads up this site is still being worked on. Images maybe too big and some navigation might be weird."
+        type="confirmation"
+        onOpenChange={setModalOpen}
+      />
     </div>
   );
 }

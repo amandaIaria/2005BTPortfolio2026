@@ -11,6 +11,7 @@ import LoadInCard from './load-in-card';
 import { PlayIcon } from '@phosphor-icons/react';
 import { cn } from '@general/components/lib/utils.ts';
 import type { HomepageNavigationProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 const HALF_SIZE = 48; // half of the 96px (h-24/w-24) card
 const CORNER_RADIUS = 18; // matches --radius-2xl override, src/styles.css:175
@@ -344,13 +345,16 @@ function HomepageNavigation({ json }: HomepageNavigationProps) {
                   key={index}
                 >
                   <div className="rounded-full bg-transparent h-100 w-100">
-                    <div className="h-full w-full grid place-items-center ">
-                      <img
-                        src="/Object.png"
-                        alt={t('homepageNavigation.selfPortraitAlt')}
-                        className="relative -mt-22 -ml-5"
-                      />
-                    </div>
+                    <PortfolioImage
+                      imageClasses="relative -mt-22 -ml-5"
+                      cn="h-full w-full grid place-items-center "
+                      image={{
+                        src: "/Object.png",
+                        alt: t('homepageNavigation.selfPortraitAlt')
+                      }}
+                    />
+
+                   
                   </div>
                 </motion.li>
               ),

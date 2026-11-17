@@ -17,7 +17,12 @@ const config = defineConfig({
   ],
   test: {
     environment: 'jsdom',
+    setupFiles: ['./setup-tests.ts'],
+    globals: true,
+    reporters: 'dot',
   },
 });
 
 export default config;
+
+
