@@ -33,7 +33,7 @@ describe('ImageModal', () => {
     const dialog = screen.getByRole('dialog');
     const fullImage = screen.getByAltText('A mountain view');
     expect(dialog).not.toBeNull();
-    expect(fullImage.getAttribute('src')).toBe('/.netlify/images?fit=cover&fm=webp&url=%2Ffull.jpg');
+    expect(fullImage.getAttribute('src')).toBe('/.netlify/images?fit=cover&fm=webp&q=80&url=%2Ffull.jpg');
   });
 
   it('closes when the close button is clicked', () => {
@@ -57,7 +57,7 @@ describe('ImageModal', () => {
       name: 'View full image: A mountain view',
     });
     const thumb = trigger.querySelector('img');
-    expect(thumb?.getAttribute('src')).toBe('/.netlify/images?fit=cover&fm=webp&url=%2Fthumb.jpg');
+    expect(thumb?.getAttribute('src')).toBe('/.netlify/images?fit=cover&fm=webp&q=80&url=%2Fthumb.jpg');
   });
 
   it('renders the ImageComparison slider inside the dialog for variant="compare"', () => {
@@ -75,10 +75,10 @@ describe('ImageModal', () => {
     expect(dialog).not.toBeNull();
     expect(screen.getByRole('slider')).not.toBeNull();
     expect(screen.getByAltText('Before shot').getAttribute('src')).toBe(
-      '/.netlify/images?fit=cover&fm=webp&url=%2Fbefore.jpg',
+      '/.netlify/images?fit=cover&fm=webp&q=80&url=%2Fbefore.jpg',
     );
     expect(screen.getByAltText('After shot').getAttribute('src')).toBe(
-      '/.netlify/images?fit=cover&fm=webp&url=%2Fafter.jpg',
+      '/.netlify/images?fit=cover&fm=webp&q=80&url=%2Fafter.jpg',
     );
   });
 
@@ -94,6 +94,6 @@ describe('ImageModal', () => {
       name: 'View full image: Before shot',
     });
     const thumb = trigger.querySelector('img');
-    expect(thumb?.getAttribute('src')).toBe('/.netlify/images?fit=cover&fm=webp&url=%2Fbefore.jpg');
+    expect(thumb?.getAttribute('src')).toBe('/.netlify/images?fit=cover&fm=webp&q=80&url=%2Fbefore.jpg');
   });
 });
