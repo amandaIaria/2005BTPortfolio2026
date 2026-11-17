@@ -124,7 +124,6 @@ export { ArtGallery } from './components/modern/art-gallery';
 export { ShrineListing } from './components/modern/shrine-listing';
 export { ShrineDetail } from './components/modern/shrine-detail';
 export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
-export { default as LoadIn } from './components/modern/load-in';
 export { default as LoadInCard } from './components/modern/load-in-card';
 export { HomepageNavigation } from './components/modern/homepage-navigation';
 export { Navigation } from './components/modern/navigation';
