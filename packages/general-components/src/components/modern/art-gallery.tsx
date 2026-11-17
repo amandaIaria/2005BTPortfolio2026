@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import json from '@json/data/json/art.json';
 import type { ArtItemProps } from '@packages/general-components/src/components/types.ts';
+import { PortfolioImage } from '../atoms/portfolio-image';
 
 // CSS columns fills column-major in DOM order. The source data cycles through
 // aspect ratios every 5 items, which lines up evenly with 3 columns of 10 and
@@ -24,22 +25,16 @@ export function ArtGallery() {
       className="columns-1 gap-4 p-4 sm:columns-2 sm:gap-6 sm:p-6 lg:columns-3"
     >
       {items.map((item, index) => (
-        <figure
+        <PortfolioImage 
           key={index}
-          className="group relative mb-4 break-inside-avoid overflow-hidden rounded-2xl bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg sm:mb-6"
-        >
-          <img
-            src={item.image.src}
-            alt={item.image.alt}
-            width={item.image.width}
-            height={item.image.height}
-            loading="lazy"
-            className="h-auto w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          />
-          <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-(--sea-ink)/85 via-(--sea-ink)/30 to-transparent p-4 pt-10 text-sm font-medium text-white">
-            {item.title}
-          </figcaption>
-        </figure>
+          image={item.image} 
+          cn="group relative mb-4 break-inside-avoid overflow-hidden rounded-2xl bg-(--surface) shadow-sm transition-shadow duration-300 hover:shadow-lg sm:mb-6" 
+          imageClasses="h-auto w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          >
+            <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-(--sea-ink)/85 via-(--sea-ink)/30 to-transparent p-4 pt-10 text-sm font-medium text-white">
+              {item.title}
+            </figcaption>
+          </PortfolioImage>
       ))}
     </div>
   );

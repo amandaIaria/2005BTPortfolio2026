@@ -60,7 +60,6 @@ function ModernAboutPage() {
             {about.full.map((copy: string, idx: number) => (
               <div key={`about-key__${idx}`} className="my-4" dangerouslySetInnerHTML={{__html:copy }}/>
             ))}
-            {/* <Typewriter text={about.full} className="pt-0 md:py-4" /> */}
           </div>
         </div>
       </div>

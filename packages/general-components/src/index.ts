@@ -113,6 +113,7 @@ export { PageTransitionProvider } from './components/page-transition/page-transi
 export { usePageTransition } from './components/page-transition/page-transition-context';
 export { ExternalTransitionLink } from './components/page-transition/external-transition-link';
 export { InternalTransitionLink } from './components/page-transition/internal-transition-link';
+export { PortfolioImage } from './components/atoms/portfolio-image'
 
 // 2005 theme components
 export { ImageHeader } from './components/2005/image-header';
@@ -123,7 +124,6 @@ export { ArtGallery } from './components/modern/art-gallery';
 export { ShrineListing } from './components/modern/shrine-listing';
 export { ShrineDetail } from './components/modern/shrine-detail';
 export { HomeLoadingOverlay } from './components/modern/home-loading-overlay';
-export { default as LoadIn } from './components/modern/load-in';
 export { default as LoadInCard } from './components/modern/load-in-card';
 export { HomepageNavigation } from './components/modern/homepage-navigation';
 export { Navigation } from './components/modern/navigation';
