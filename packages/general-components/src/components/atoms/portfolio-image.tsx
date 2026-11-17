@@ -2,7 +2,7 @@
 import { Image } from '@unpic/react/base';
 import { transform } from 'unpic/providers/netlify';
 import type { ImageProps } from '../types';
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode, StyleHTMLAttributes } from 'react';
 
 interface PropsType {
     image: ImageProps & {
@@ -12,13 +12,14 @@ interface PropsType {
     cn?: string;
     imageClasses?: string;
     children?: ReactNode;
+    style?: CSSProperties;
 }
 
-export function PortfolioImage({children, image, cn, imageClasses}:PropsType) {
+export function PortfolioImage({children, image, cn, imageClasses, style}:PropsType) {
     const dimensions = {
         width: image.width ?? "",
         height: image.height ?? "",
-        layout: image.width && image.height && "fullWidth"
+        layout: (image.width && image.height) ?? "fullWidth"
     }
     
     return (
@@ -35,6 +36,7 @@ export function PortfolioImage({children, image, cn, imageClasses}:PropsType) {
                     fit: 'cover',
                     fm: 'webp',
                 }}
+                style={style ?? ""}
             />
             {children}
         </figure>

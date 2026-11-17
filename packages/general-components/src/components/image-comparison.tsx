@@ -144,19 +144,22 @@ const ImageComparison = React.forwardRef<HTMLDivElement, ImageComparisonProps>(
         className={cn('relative h-20 w-20 overflow-hidden', className)}
         {...props}
       >
-         <div className={cn(
+         
+        <PortfolioImage image={before} imageClasses={cn(
             'absolute inset-0 h-full w-full object-cover',
             before.className,
-          )}>
-          <PortfolioImage image={before} />
-        </div>
-        <div className={cn(
+        )} />
+        
+        
+        <PortfolioImage 
+          image={after} 
+          imageClasses={cn(
             'absolute inset-0 h-full w-full object-cover',
             after.className,
           )}
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
-          <PortfolioImage image={after} />
-        </div>
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        />
+        
         <span className="sr-only">{resolvedBeforeLabel}</span>
         <span className="sr-only">{resolvedAfterLabel}</span>
         <div

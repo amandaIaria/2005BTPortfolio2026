@@ -36,10 +36,12 @@ function CaseStudyDetail({
                 <div className="flex items-center gap-3">
                   <PortfolioImage 
                     image={{
-                      src:caseStudy.contributor.avatar.src,
-                      alt: caseStudy.contributor.avatar.alt
+                      src: caseStudy.contributor.avatar.src,
+                      alt: caseStudy.contributor.avatar.alt,
+                      height: "40",
+                      width: "40"
                     }}
-                    imageClasses="h-10 w-10 rounded-full object-cover"
+                    imageClasses="rounded-full object-cover"
                   />
                   <div>
                     <p className="font-bold">{caseStudy.contributor.name}</p>

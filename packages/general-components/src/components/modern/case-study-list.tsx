@@ -23,14 +23,15 @@ function CaseStudyList({
           data-component="case-study-list-item"
           className="flex flex-col gap-6"
         >
-          <div className="aspect-video overflow-hidden bg-muted">
+         
             <PortfolioImage 
               image={{
                 src: caseStudy.image.src,
                 alt: caseStudy.image.alt
               }}
+              imageClasses="aspect-video overflow-hidden bg-muted"
             />
-          </div>
+          
           <div className="flex flex-col gap-3">
             <h3 className="text-2xl font-bold">{caseStudy.title}</h3>
             <p className="text-muted-foreground">{caseStudy.description}</p>

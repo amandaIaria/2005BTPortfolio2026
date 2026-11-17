@@ -46,12 +46,14 @@ function UIKitNav({ className, ...props }: React.ComponentProps<'nav'>) {
       </ul>
       <div>
         <PortfolioImage
-                  imageClasses="w-24 sm:w-32 md:w-40 mb-6 md:mb-0"
-                  image={{
-                    src: "/img/logo2019.svg",
-                    alt: "logo"
-                  }}
-                />
+          imageClasses="w-24 sm:w-32 md:w-40 mb-6 md:mb-0"
+          cn="w-50"
+          image={{
+            src: "/img/logo2019.svg",
+            alt: "logo",
+            width: "160"
+          }}
+        />
         
       </div>
     </nav>

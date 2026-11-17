@@ -4,7 +4,7 @@
     "title": "Creating a personal Brand and Design System",
     "description": "Created a personal brand and design system that could be used for other work.",
     "image": {
-      "src": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop",
+      "src": "/img/placeholder-computer.jpg",
       "alt": "Design system component grid on a laptop screen"
     },
     "link": { "copy": "Read more" },
@@ -12,7 +12,7 @@
       "name": "Alex Iaria",
       "role": "Senior Front-End Engineer",
       "avatar": {
-        "src": "https://i.pravatar.cc/150?u=scaling-a-sitecore-design-system",
+        "src": "/img/drawing1.jpg",
         "alt": "Portrait of Alex Iaria"
       }
     },
