@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "watermark": "tsx scripts/generate-watermarked.ts",
+    "build": "npm run watermark && vite build",
     "preview": "vite preview",
     "netlify:dev": "cd .git && netlify dev --cwd \"$OLDPWD\"",
     "test": "vitest run",
@@ -71,6 +72,7 @@
     "netlify-cli": "^27.1.1",
     "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.2",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^5.1.4",

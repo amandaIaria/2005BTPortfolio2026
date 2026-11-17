@@ -18,3 +18,4 @@ packages/json/src/markdown/Portfolio/.obsidian/
 deno.lock
 
 *.code-workspace
+/public/watermarked/
