@@ -66,8 +66,8 @@ for (const image of images) {
   // Get original image dimensions
   const metadata = await sharp(image).metadata();
 
-  const imageWidth = metadata.width ?? 800;
-  const imageHeight = metadata.height ?? 600;
+  const imageWidth = !metadata.width ? 800 : metadata.width;
+  const imageHeight = !metadata.height ? 600 : metadata.height;
 
   // Calculate maximum watermark dimensions
   const watermarkWidth = Math.round(imageWidth * 0.25);
@@ -90,8 +90,8 @@ for (const image of images) {
   ).metadata();
 
   if (
-    watermarkMetadata.width! > imageWidth ||
-    watermarkMetadata.height! > imageHeight
+    watermarkMetadata.width > imageWidth ||
+    watermarkMetadata.height > imageHeight
   ) {
     throw new Error(`Watermark too large for ${image}`);
   }
