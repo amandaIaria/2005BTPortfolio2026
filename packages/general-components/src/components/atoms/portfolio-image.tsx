@@ -8,11 +8,13 @@ interface PropsType {
     image: ImageProps & {
         height?: string;
         width?: string;
+        watermark?: boolean;
     };
     cn?: string;
     imageClasses?: string;
     children?: ReactNode;
     style?: CSSProperties;
+
 }
 
 export function PortfolioImage({children, image, cn, imageClasses, style}:PropsType) {
@@ -21,16 +23,20 @@ export function PortfolioImage({children, image, cn, imageClasses, style}:PropsT
         height: image.height ?? "",
         layout: (image.width && image.height) ?? "fullWidth"
     }
+
+    const watermarkSrc = image.watermark
+        ? `${location.origin}/.netlify/functions/watermark?src=${encodeURIComponent(image.src)}`
+        : image.src;
     
     return (
         <figure className={cn}>
             <Image
-                src={image.src}
+                src={watermarkSrc}
                 alt={image.alt}
                 {...dimensions}
                 fallback="netlify"
                 breakpoints={[400, 800, 1200]}
-                transformer={transform}
+                transformer={image.watermark ? undefined : transform}
                 className={imageClasses}
                 operations={{
                     fit: 'cover',
