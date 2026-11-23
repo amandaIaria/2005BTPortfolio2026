@@ -100,7 +100,7 @@ function renderSegments(segments: Segment[]) {
     if (segment.kind === 'break') return <br key={`break-${index}`} />;
     if (segment.accent) {
       return (
-        <span key={`accent-${index}`} className="text-accent">
+        <span key={`accent-${index}`} className="text-accent font-art">
           {segment.text}
         </span>
       );
@@ -217,53 +217,57 @@ function Hero({
     >
       
       <h1 className="sr-only">{hiddenH1}</h1>
-      <div className="grid justify-center content-center absolute bottom-0 h-full w-full">
+      <div className="grid justify-center absolute bottom-0 h-full w-full">
         <PortfolioImage image={image} />
           
       </div>
 
-      <div className="absolute inset-x-0 -top-13 md:-top-20.5 px-6 py-10 text-center">
-        <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
+      <div className="absolute inset-x-0 -top-12 md:-top-20.5 px-6 py-10 text-center">
+        <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold font-heading tracking-tight text-white uppercase mix-blend-difference">
           {topText}
         </p>
       </div>
 
+      <div className="hidden md:block absolute mx-auto max-w-7xl w-full h-full">
       {/* Desktop verion */}
-      <div className="hidden md:block absolute inset-1/2 -translate-y-96 -translate-x-200 p-4 text-center h-fit w-fit">
-        <p className="text-8xl font-bold leading-none tracking-tight text-white uppercase mix-blend-difference">
-          <span className={cn(namePhase === 'pending' && 'invisible')}>
-            {contentFor(namePhase, nameSegments, nameTyper.visible)}
-          </span>
-          &nbsp;
-          <span
+        <div className=" absolute inset-1/2 -translate-y-96 -translate-x-100 p-4 text-center h-fit w-125">
+          <p className="text-6xl font-bold font-heading leading-none tracking-tight text-white uppercase mix-blend-difference">
+            <span className={cn(namePhase === 'pending' && 'invisible')}>
+              {contentFor(namePhase, nameSegments, nameTyper.visible)}
+            </span>
+            &nbsp;
+            <span
+              className={cn(
+                'text-accent',
+                (stage === 'namePause' || stage === 'done') &&
+                  'motion-safe:animate-cursor-blink',
+              )}
+            >
+              |
+            </span>
+          </p>
+        </div>
+
+
+        <div className="absolute inset-1/2 -translate-x-100  p-4 text-center h-fit w-125  -translate-y-35 bg-[rgba(0,0,0,0.5)] backdrop-blur-sm">
+          <p
             className={cn(
-              'text-accent',
-              (stage === 'namePause' || stage === 'done') &&
-                'motion-safe:animate-cursor-blink',
+              'text-4xl font-bold tracking-tight text-white mix-blend-difference',
+              headingPhase === 'pending' && 'invisible',
             )}
           >
-            |
-          </span>
-        </p>
-      </div>
+            {contentFor(headingPhase, headingSegments, headingTyper.visible)}
+          </p>
+          <p
+            className={cn(
+              'text-lg leading-none tracking-tight text-accent capitalize',
+              captionPhase === 'pending' && 'invisible',
+            )}
+          >
+            {contentFor(captionPhase, captionSegments, captionTyper.visible)}
+          </p>
+        </div>
 
-      <div className="absolute inset-1/2 ml-70 -mt-40  p-4 text-center h-fit w-fit hidden md:block">
-        <p
-          className={cn(
-            'text-5xl font-bold tracking-tight text-white mix-blend-difference',
-            headingPhase === 'pending' && 'invisible',
-          )}
-        >
-          {contentFor(headingPhase, headingSegments, headingTyper.visible)}
-        </p>
-        <p
-          className={cn(
-            'text-xl leading-none tracking-tight text-accent capitalize',
-            captionPhase === 'pending' && 'invisible',
-          )}
-        >
-          {contentFor(captionPhase, captionSegments, captionTyper.visible)}
-        </p>
       </div>
 
       {/* Mobile Version */}
@@ -284,8 +288,8 @@ function Hero({
         />
       </div>
 
-      <div className="absolute inset-x-0 -bottom-12.5 px-6 py-10 text-center">
-        <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold tracking-tight text-white uppercase mix-blend-difference">
+      <div className="absolute inset-x-0 -bottom-12 px-6 py-10 text-center">
+        <p className="text-[clamp(2.5rem,10vw,8rem)] leading-none font-bold font-heading tracking-tight text-white uppercase mix-blend-difference">
           {bottomText}
         </p>
       </div>
