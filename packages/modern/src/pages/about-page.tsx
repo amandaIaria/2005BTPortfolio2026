@@ -9,6 +9,7 @@ import * as json from '@json/data/json/about';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import type { ModernAboutPageProps } from '@general/components';
+import DOMPurify from 'dompurify';
 
 function ModernAboutPage() {
   const { about }: ModernAboutPageProps = json;
@@ -58,7 +59,7 @@ function ModernAboutPage() {
           </div>
           <div className="w-[500px]"> 
             {about.full.map((copy: string, idx: number) => (
-              <div key={`about-key__${idx}`} className="my-4" dangerouslySetInnerHTML={{__html:copy }}/>
+              <div key={`about-key__${idx}`} className="my-4" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(copy) }}/>
             ))}
           </div>
         </div>
