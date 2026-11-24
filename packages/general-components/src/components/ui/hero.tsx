@@ -100,7 +100,7 @@ function renderSegments(segments: Segment[]) {
     if (segment.kind === 'break') return <br key={`break-${index}`} />;
     if (segment.accent) {
       return (
-        <span key={`accent-${index}`} className="text-accent font-art">
+        <span key={`accent-${index}`} className="text-accent font-art [-webkit-text-stroke:0]">
           {segment.text}
         </span>
       );
@@ -228,11 +228,11 @@ function Hero({
         </p>
       </div>
 
-      <div className="hidden md:block absolute mx-auto max-w-7xl w-full h-full">
+      <div className="hidden md:grid content-center mx-auto max-w-7xl w-full h-full">
       {/* Desktop verion */}
-        <div className=" absolute inset-1/2 -translate-y-96 -translate-x-100 p-4 text-center h-fit w-125">
-          <p className="text-6xl font-bold font-heading leading-none tracking-tight text-white uppercase mix-blend-difference">
-            <span className={cn(namePhase === 'pending' && 'invisible')}>
+        <div className="   p-4 text-center h-fit w-125">
+          <p className="text-6xl font-bold font-heading leading-none tracking-tight text-white uppercase mix-blend-difference ">
+            <span className={cn(namePhase === 'pending' && 'invisible', "[-webkit-text-stroke:1.5px_black]")}>
               {contentFor(namePhase, nameSegments, nameTyper.visible)}
             </span>
             &nbsp;
@@ -247,12 +247,12 @@ function Hero({
             </span>
           </p>
         </div>
+{/* [-webkit-text-stroke:1.5px_black] */}
 
-
-        <div className="absolute inset-1/2 -translate-x-100  p-4 text-center h-fit w-125  -translate-y-35 bg-[rgba(0,0,0,0.5)] backdrop-blur-sm">
+        <div className="  p-4 text-center h-fit w-125">
           <p
             className={cn(
-              'text-4xl font-bold tracking-tight text-white mix-blend-difference',
+              'text-4xl font-bold tracking-tight text-white mix-blend-difference [-webkit-text-stroke:1.5px_black]',
               headingPhase === 'pending' && 'invisible',
             )}
           >
@@ -260,7 +260,7 @@ function Hero({
           </p>
           <p
             className={cn(
-              'text-lg leading-none tracking-tight text-accent capitalize',
+              'text-lg leading-none tracking-tight text-accent capitalize mix-blend-difference',
               captionPhase === 'pending' && 'invisible',
             )}
           >
