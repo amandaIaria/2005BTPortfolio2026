@@ -12,6 +12,7 @@
     "dev": "vite dev --port 3000",
     "watermark": "tsx scripts/generate-watermarked.ts",
     "build": "npm run watermark && vite build",
+    "build-check": "vite build",
     "preview": "vite preview",
     "netlify:dev": "cd .git && netlify dev --cwd \"$OLDPWD\"",
     "test": "vitest run",
