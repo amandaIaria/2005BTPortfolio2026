@@ -1,5 +1,5 @@
 /* Must stay the first rule in this file - CSS drops @import statements that land after other rules have expanded (see packages/design-system/README.md "Import order"). */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Give+You+Glory&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Reenie+Beanie&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -53,8 +53,8 @@
   --sans: "Noto", ui-sans-serif, system-ui, sans-serif;;
   --heading: "Roboto";
   --mono: 'JetBrains Mono Variable', monospace;
-
-
+  --art:  "Give You Glory", cursive;
+  --handwriting: "Reenie Beanie", cursive;
 }
 
 :root[data-theme='dark'] {
@@ -106,6 +106,8 @@
   --font-mono: var(--mono);
   --font-sans: var(--sans);
   --font-serif: var(--serif);
+  --font-art: var(--art);
+  --font-handwriting: var(--handwriting);
   --animate-cursor-blink: cursor-blink 1s steps(1, end) infinite;
 }
 
@@ -287,7 +289,7 @@
 
   .list-item-chevron::before {
     content: '›';
-    @apply absolute left-0 text-[24px] leading-[24px] text-accent;
+    @apply absolute left-0 text-[24px] leading-6 text-accent;
   }
 }
 

@@ -13,6 +13,7 @@ import {
   UserIcon,
 } from '@phosphor-icons/react';
 import type { MouseEvent } from 'react';
+import { BoilText } from '../atoms/boil-effect-svg';
 
 const iconMap: Record<string, Icon> = {
   user: UserIcon,
@@ -51,14 +52,14 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
   }
 
   return (
-    <nav className={cn('flex flex-col items-center justify-center')} {...props}>
-      <ul className="flex list-style-none items-center justify-center gap-4 md:gap-10 flex-wrap md:flex-nowrap -mt-40 md:mt-0">
+    <nav className={cn('flex flex-col items-center justify-center ')} {...props}>
+      <ul className="flex flex-col list-style-none items-center justify-end gap-0  flex-wrap md:flex-nowrap -mt-40 md:mt-0">
         {json.map((item, idx) => {
           const NavIcon = iconMap[item.icon];
           return (
             <li
               key={`homepage-nav-item-${idx}`}
-              className="md:basis-[20%] md:flex-1 shadow-2xl shadow-success rounded-lg p-1 md:p-4 transition-all duration-300 hover:scale-150 transform-gpu bg-black md:bg-transparent"
+              className="md:basis-[20%] md:flex-1 shadow-success transition-all duration-300 transform-gpu bg-black md:bg-transparent"
             >
               <a
                 key={`homepage-nav-item-${idx}`}
@@ -67,12 +68,7 @@ function HomepageNavigation({ json, ...props }: HomepageNavigationProps) {
                 className="font-semibold text-white hover:text-success before:h-0 no-underline dark:hover:text-accent transition-colors duration-300 text-center flex flex-col items-center justify-center gap-0.5 md:gap-2"
                 data-color={item.color}
               >
-                <span className=" md:text-3xl">
-                  <NavIcon weight="bold" />
-                </span>
-                <span className="md:text-lg whitespace-nowrap">
-                  {item.label}
-                </span>
+                <BoilText copy={item.label} />
               </a>
             </li>
           );

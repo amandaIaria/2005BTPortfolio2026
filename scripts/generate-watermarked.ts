@@ -5,7 +5,7 @@ import path from "node:path";
 
 const inputDir = "public/img";
 const outputDir = "public/watermarked";
-const watermarkPath = "public/watermark.svg";
+const watermarkPath = "public/img/watermark.svg";
 
 const supportedExtensions = [
   ".jpg",

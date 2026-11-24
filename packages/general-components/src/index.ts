@@ -85,6 +85,7 @@ export {
 export { CassetteCarousel } from './components/2005/cassette-carousel';
 export { Playlist } from './components/2005/playlist';
 export { AnimatedFooter } from './components/2005/animated-footer';
+export { BoilText } from './components/atoms/boil-effect-svg';
 export { TentacleFooter } from './components/2005/tentacle-footer';
 export { WebGLTentacleWall } from './components/webgl-tentacle-wall';
 export { ExperienceList } from './components/modern/experience-list';
